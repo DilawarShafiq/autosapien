@@ -77,7 +77,7 @@ export function Contact() {
             <div className="grid sm:grid-cols-3 gap-8">
               <div>
                 <span className="label-technical text-ember-500/60 block mb-2">Headquarters</span>
-                <p className="text-carbon-300 font-body">United States</p>
+                <p className="text-carbon-300 font-body">Pakistan</p>
               </div>
               <div>
                 <span className="label-technical text-ember-500/60 block mb-2">Inquiries</span>
