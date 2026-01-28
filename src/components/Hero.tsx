@@ -63,10 +63,10 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-8"
         >
-          <h1 className="font-display font-bold text-display-2xl mb-6">
-            <span className="block text-white">WHERE</span>
-            <span className="block text-gradient">INTELLIGENCE</span>
-            <span className="block text-white">MEETS FORM</span>
+          <h1 className="font-display font-bold text-display-xl mb-6">
+            <span className="block text-white">ENGINEERING</span>
+            <span className="block text-gradient">INTELLIGENT</span>
+            <span className="block text-white">MACHINES</span>
           </h1>
         </motion.div>
 
