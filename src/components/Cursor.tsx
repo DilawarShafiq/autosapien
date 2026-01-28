@@ -42,39 +42,41 @@ export function Cursor() {
 
   return (
     <>
-      {/* Main cursor dot */}
+      {/* Main cursor - small square for industrial feel */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 rounded-full bg-white mix-blend-difference pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-2 h-2 bg-ember-400 pointer-events-none z-[9999]"
+        style={{ transform: 'rotate(45deg)' }}
         animate={{
-          x: position.x - 6,
-          y: position.y - 6,
+          x: position.x - 4,
+          y: position.y - 4,
           scale: isPointer ? 0.5 : 1,
           opacity: isHidden ? 0 : 1,
         }}
         transition={{ type: 'spring', stiffness: 500, damping: 28, mass: 0.5 }}
       />
 
-      {/* Cursor ring */}
+      {/* Cursor ring - square outline */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 rounded-full border border-white/50 mix-blend-difference pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-8 h-8 border border-ember-500/50 pointer-events-none z-[9999]"
         animate={{
-          x: position.x - 20,
-          y: position.y - 20,
+          x: position.x - 16,
+          y: position.y - 16,
           scale: isPointer ? 1.5 : 1,
           opacity: isHidden ? 0 : 0.5,
+          rotate: isPointer ? 45 : 0,
         }}
         transition={{ type: 'spring', stiffness: 250, damping: 20, mass: 0.8 }}
       />
 
-      {/* Glow effect */}
+      {/* Subtle glow effect */}
       <motion.div
-        className="fixed top-0 left-0 w-40 h-40 rounded-full pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 w-32 h-32 rounded-full pointer-events-none z-[9998]"
         style={{
-          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(251, 191, 36, 0.08) 0%, transparent 70%)',
         }}
         animate={{
-          x: position.x - 80,
-          y: position.y - 80,
+          x: position.x - 64,
+          y: position.y - 64,
           opacity: isHidden ? 0 : 1,
         }}
         transition={{ type: 'spring', stiffness: 150, damping: 15 }}

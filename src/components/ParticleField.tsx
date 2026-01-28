@@ -4,52 +4,27 @@ import * as THREE from 'three'
 
 function Particles() {
   const meshRef = useRef<THREE.Points>(null)
-  const count = 2000
+  const count = 800
 
   const particles = useMemo(() => {
     const positions = new Float32Array(count * 3)
-    const colors = new Float32Array(count * 3)
 
     for (let i = 0; i < count; i++) {
       const i3 = i * 3
-      positions[i3] = (Math.random() - 0.5) * 50
-      positions[i3 + 1] = (Math.random() - 0.5) * 50
-      positions[i3 + 2] = (Math.random() - 0.5) * 50
-
-      // Color gradient from neural to plasma to cyber
-      const t = Math.random()
-      if (t < 0.33) {
-        colors[i3] = 0.39 // neural
-        colors[i3 + 1] = 0.4
-        colors[i3 + 2] = 0.95
-      } else if (t < 0.66) {
-        colors[i3] = 0.85 // plasma
-        colors[i3 + 1] = 0.27
-        colors[i3 + 2] = 0.94
-      } else {
-        colors[i3] = 0.02 // cyber
-        colors[i3 + 1] = 0.71
-        colors[i3 + 2] = 0.83
-      }
+      positions[i3] = (Math.random() - 0.5) * 40
+      positions[i3 + 1] = (Math.random() - 0.5) * 40
+      positions[i3 + 2] = (Math.random() - 0.5) * 40
     }
 
-    return { positions, colors }
+    return { positions }
   }, [])
 
   useFrame((state) => {
     if (!meshRef.current) return
 
     const time = state.clock.getElapsedTime()
-    meshRef.current.rotation.y = time * 0.02
-    meshRef.current.rotation.x = Math.sin(time * 0.01) * 0.1
-
-    // Animate particles
-    const positions = meshRef.current.geometry.attributes.position.array as Float32Array
-    for (let i = 0; i < count; i++) {
-      const i3 = i * 3
-      positions[i3 + 1] += Math.sin(time + positions[i3]) * 0.001
-    }
-    meshRef.current.geometry.attributes.position.needsUpdate = true
+    meshRef.current.rotation.y = time * 0.015
+    meshRef.current.rotation.x = Math.sin(time * 0.01) * 0.05
   })
 
   return (
@@ -61,18 +36,12 @@ function Particles() {
           array={particles.positions}
           itemSize={3}
         />
-        <bufferAttribute
-          attach="attributes-color"
-          count={count}
-          array={particles.colors}
-          itemSize={3}
-        />
       </bufferGeometry>
       <pointsMaterial
-        size={0.05}
-        vertexColors
+        size={0.03}
+        color="#f59e0b"
         transparent
-        opacity={0.6}
+        opacity={0.3}
         sizeAttenuation
         blending={THREE.AdditiveBlending}
       />
@@ -80,31 +49,60 @@ function Particles() {
   )
 }
 
-function FloatingOrbs() {
-  const orbsRef = useRef<THREE.Group>(null)
+function GridLines() {
+  const groupRef = useRef<THREE.Group>(null)
 
   useFrame((state) => {
-    if (!orbsRef.current) return
+    if (!groupRef.current) return
+    const time = state.clock.getElapsedTime()
+    groupRef.current.rotation.y = time * 0.01
+  })
+
+  return (
+    <group ref={groupRef} position={[0, 0, -15]}>
+      {/* Subtle grid plane */}
+      <mesh rotation={[-Math.PI / 6, 0, 0]}>
+        <planeGeometry args={[40, 40, 20, 20]} />
+        <meshBasicMaterial
+          color="#1a1a1a"
+          wireframe
+          transparent
+          opacity={0.15}
+        />
+      </mesh>
+    </group>
+  )
+}
+
+function GeometricShapes() {
+  const groupRef = useRef<THREE.Group>(null)
+
+  useFrame((state) => {
+    if (!groupRef.current) return
     const time = state.clock.getElapsedTime()
 
-    orbsRef.current.children.forEach((orb, i) => {
-      orb.position.y = Math.sin(time * 0.5 + i * 2) * 2
-      orb.position.x = Math.cos(time * 0.3 + i) * 3
+    groupRef.current.children.forEach((child, i) => {
+      child.rotation.x = time * 0.1 + i
+      child.rotation.y = time * 0.15 + i
+      child.position.y = Math.sin(time * 0.5 + i * 2) * 0.5
     })
   })
 
   return (
-    <group ref={orbsRef}>
-      {[...Array(5)].map((_, i) => (
-        <mesh key={i} position={[i * 4 - 8, 0, -10]}>
-          <sphereGeometry args={[0.5, 32, 32]} />
-          <meshBasicMaterial
-            color={i % 2 === 0 ? '#6366f1' : '#d946ef'}
-            transparent
-            opacity={0.3}
-          />
-        </mesh>
-      ))}
+    <group ref={groupRef}>
+      {/* Floating geometric wireframe shapes */}
+      <mesh position={[-8, 2, -10]}>
+        <boxGeometry args={[1.5, 1.5, 1.5]} />
+        <meshBasicMaterial color="#f59e0b" wireframe transparent opacity={0.2} />
+      </mesh>
+      <mesh position={[8, -2, -12]}>
+        <octahedronGeometry args={[1]} />
+        <meshBasicMaterial color="#f59e0b" wireframe transparent opacity={0.15} />
+      </mesh>
+      <mesh position={[0, 4, -8]}>
+        <tetrahedronGeometry args={[0.8]} />
+        <meshBasicMaterial color="#00d4ff" wireframe transparent opacity={0.1} />
+      </mesh>
     </group>
   )
 }
@@ -115,16 +113,17 @@ export function ParticleField() {
       <Canvas
         camera={{ position: [0, 0, 15], fov: 60 }}
         gl={{ antialias: true, alpha: true }}
-        style={{ background: 'transparent' }}
+        style={{ background: '#0a0a0a' }}
+        dpr={[1, 1.5]}
       >
-        <ambientLight intensity={0.5} />
         <Particles />
-        <FloatingOrbs />
+        <GridLines />
+        <GeometricShapes />
       </Canvas>
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-void via-transparent to-void pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-neural-950/30 via-transparent to-plasma-950/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-carbon-900 via-transparent to-carbon-900 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-carbon-900/50 via-transparent to-carbon-900/50 pointer-events-none" />
     </div>
   )
 }
