@@ -63,7 +63,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-8"
         >
-          <h1 className="font-display font-bold text-display-xl mb-6">
+          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-display-xl mb-6">
             <span className="block text-white">ENGINEERING</span>
             <span className="block text-gradient">INTELLIGENT</span>
             <span className="block text-white">MACHINES</span>
