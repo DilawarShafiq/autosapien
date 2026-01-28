@@ -96,12 +96,12 @@ export function Hero() {
             </span>
           </button>
 
-          <button className="btn-secondary group">
+          <a href="https://xehr.io" target="_blank" rel="noopener noreferrer" className="btn-secondary group">
             <span className="flex items-center gap-3">
               Explore xEHR.io
               <div className="w-2 h-2 rounded-full bg-green-400 group-hover:animate-pulse" />
             </span>
-          </button>
+          </a>
         </motion.div>
 
         {/* Stats row */}
