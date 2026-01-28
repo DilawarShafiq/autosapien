@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Circle } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -56,19 +56,6 @@ export function Hero() {
         style={{ opacity, scale }}
         className="relative z-10 max-w-7xl mx-auto px-6"
       >
-        {/* Top badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center mb-12"
-        >
-          <div className="badge badge-ember">
-            <Circle className="w-2 h-2 fill-ember-400 text-ember-400" />
-            <span>Building Tomorrow's Machines</span>
-          </div>
-        </motion.div>
-
         {/* Main heading - massive typography */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
