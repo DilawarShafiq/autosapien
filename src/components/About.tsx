@@ -76,7 +76,7 @@ export function About() {
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-plasma-500/50 to-transparent" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-20">
           {/* Left side - Text content */}
           <motion.div
@@ -98,7 +98,7 @@ export function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 }}
-              className="text-4xl sm:text-5xl font-bold mb-6"
+              className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6"
             >
               Creating machines that{' '}
               <span className="gradient-text">understand</span> humanity
@@ -108,7 +108,7 @@ export function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 }}
-              className="text-lg text-neutral-400 mb-6 leading-relaxed"
+              className="text-base sm:text-lg text-neutral-400 mb-4 sm:mb-6 leading-relaxed"
             >
               Autosapien was founded on a singular belief: the next great leap in human civilization
               won't come from AI alone—it will come from AI that can <em>act</em> in the physical world.
@@ -119,7 +119,7 @@ export function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5 }}
-              className="text-lg text-neutral-400 mb-6 leading-relaxed"
+              className="text-base sm:text-lg text-neutral-400 mb-4 sm:mb-6 leading-relaxed"
             >
               Our vision spans from the home to the hospital, from the factory floor to the film set.
               We're developing humanoid robots that will become household companions, industrial systems
@@ -131,7 +131,7 @@ export function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.6 }}
-              className="text-lg text-neutral-400 mb-10 leading-relaxed"
+              className="text-base sm:text-lg text-neutral-400 mb-8 sm:mb-10 leading-relaxed"
             >
               With xEHR.io already transforming healthcare for millions of patients, and our Autosapien One
               humanoid in active development, we're not waiting for the future—we're building it, one
@@ -172,13 +172,13 @@ export function About() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative"
           >
-            <div className="glass rounded-3xl p-8 lg:p-12">
+            <div className="glass rounded-3xl p-5 sm:p-8 lg:p-12">
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-neural-500/30 to-plasma-500/30 rounded-full blur-2xl" />
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-cyber-500/30 to-synth-500/30 rounded-full blur-2xl" />
 
               <div className="relative">
-                <div className="text-6xl font-bold gradient-text mb-6">"</div>
-                <p className="text-xl lg:text-2xl text-white font-medium leading-relaxed mb-8">
+                <div className="text-4xl sm:text-6xl font-bold gradient-text mb-4 sm:mb-6">"</div>
+                <p className="text-base sm:text-xl lg:text-2xl text-white font-medium leading-relaxed mb-6 sm:mb-8">
                   We believe the defining technology of this century won't be artificial intelligence
                   in isolation—it will be artificial intelligence given a body, purpose, and the
                   ability to heal, help, and create alongside humanity.

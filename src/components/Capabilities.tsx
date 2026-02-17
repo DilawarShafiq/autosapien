@@ -139,7 +139,7 @@ export function Capabilities() {
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-neural-600/20 rounded-full blur-3xl -translate-y-1/2" />
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-plasma-600/20 rounded-full blur-3xl -translate-y-1/2" />
 
-      <div ref={ref} className="relative max-w-7xl mx-auto px-6">
+      <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -150,11 +150,11 @@ export function Capabilities() {
           <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-plasma-400 mb-6">
             What We Build
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             Six frontiers of{' '}
             <span className="gradient-text-alt">innovation</span>
           </h2>
-          <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-neutral-400 max-w-3xl mx-auto">
             From humanoid companions to autonomous factories, from healing healthcare to
             generating cinema—we're building across every domain where AI can transform
             the physical world.

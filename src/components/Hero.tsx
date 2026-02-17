@@ -78,14 +78,14 @@ export function Hero() {
       {/* Main content */}
       <motion.div
         style={{ opacity, scale }}
-        className="relative z-10 max-w-6xl mx-auto px-6 text-center"
+        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center pt-20 sm:pt-0"
       >
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
+          className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
           <Sparkles className="w-4 h-4 text-neural-400" />
           <span className="text-sm text-neutral-300">Building the Machines That Will Build Tomorrow</span>
@@ -96,7 +96,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
+          className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 sm:mb-6"
         >
           <span className="block text-white text-shadow-glow">Where</span>
           <span className="block gradient-text">Intelligence</span>
@@ -108,7 +108,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg sm:text-xl text-neutral-400 max-w-3xl mx-auto mb-12 text-balance"
+          className="text-base sm:text-xl text-neutral-400 max-w-3xl mx-auto mb-8 sm:mb-12 text-balance"
         >
           Autosapien is pioneering the convergence of artificial intelligence and physical robotics.
           From humanoid companions to healthcare automation, industrial machines to AI-generated cinema—we're
@@ -122,7 +122,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button className="group relative px-8 py-4 rounded-2xl bg-gradient-to-r from-neural-600 to-plasma-600 text-white font-medium text-lg overflow-hidden">
+          <button className="group relative px-6 py-3 sm:px-8 sm:py-4 rounded-2xl bg-gradient-to-r from-neural-600 to-plasma-600 text-white font-medium text-base sm:text-lg overflow-hidden">
             <span className="relative z-10 flex items-center gap-2">
               Meet Our Robots
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -132,7 +132,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-plasma-600 to-cyber-600 opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
 
-          <button className="group px-8 py-4 rounded-2xl glass text-white font-medium text-lg hover:bg-white/10 transition-colors">
+          <button className="group px-6 py-3 sm:px-8 sm:py-4 rounded-2xl glass text-white font-medium text-base sm:text-lg hover:bg-white/10 transition-colors">
             <span className="flex items-center gap-2">
               Explore xEHR.io
               <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
@@ -162,8 +162,8 @@ export function Hero() {
               transition={{ delay: 1 + i * 0.1 }}
               className="text-center"
             >
-              <div className="text-3xl sm:text-4xl font-bold gradient-text mb-1">{stat.value}</div>
-              <div className="text-sm text-neutral-500">{stat.label}</div>
+              <div className="text-2xl sm:text-4xl font-bold gradient-text mb-1">{stat.value}</div>
+              <div className="text-xs sm:text-sm text-neutral-500">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

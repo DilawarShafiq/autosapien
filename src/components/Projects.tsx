@@ -119,7 +119,7 @@ export function Projects() {
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-plasma-600/10 rounded-full blur-3xl" />
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto px-6">
+      <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -130,11 +130,11 @@ export function Projects() {
           <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-cyber-400 mb-6">
             What We're Building
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             From silicon minds to{' '}
             <span className="gradient-text">steel bodies</span>
           </h2>
-          <p className="text-lg text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-neutral-400 max-w-3xl mx-auto">
             Each project represents a frontier where AI meets the physical world. Humanoids that
             walk among us. Factories that think. Films that dream themselves into existence. Healthcare
             that heals itself. This is what we're building.
@@ -142,7 +142,7 @@ export function Projects() {
         </motion.div>
 
         {/* Bento grid layout */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.id}
@@ -155,7 +155,7 @@ export function Projects() {
             >
               <Link to={project.slug} className="block h-full">
                 <div
-                  className={`relative h-full glass rounded-3xl p-6 lg:p-8 hover-lift card-shine overflow-hidden ${
+                  className={`relative h-full glass rounded-3xl p-4 sm:p-6 lg:p-8 hover-lift card-shine overflow-hidden ${
                     project.featured ? 'min-h-[400px]' : ''
                   }`}
                 >

@@ -44,7 +44,7 @@ export function Technology() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-neural-600/10 rounded-full blur-3xl" />
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto px-6">
+      <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,13 +55,13 @@ export function Technology() {
           <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-synth-400 mb-6">
             Technology Stack
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             Built on{' '}
             <span className="gradient-text">cutting-edge</span>
             <br />
             infrastructure
           </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto">
             We leverage the most advanced technologies to build reliable, scalable,
             and intelligent systems.
           </p>
@@ -96,8 +96,8 @@ export function Technology() {
           </motion.div>
 
           {/* Fade edges */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-void to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-void to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-void to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-void to-transparent pointer-events-none" />
         </div>
 
         {/* Metrics */}
@@ -105,7 +105,7 @@ export function Technology() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6"
         >
           {metrics.map((metric, i) => (
             <motion.div
@@ -115,14 +115,14 @@ export function Technology() {
               transition={{ delay: 0.5 + i * 0.1 }}
               className="relative group"
             >
-              <div className="glass rounded-3xl p-8 text-center hover-lift">
+              <div className="glass rounded-3xl p-4 sm:p-8 text-center hover-lift">
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-neural-500/20 to-plasma-500/20 opacity-0 group-hover:opacity-100 transition-opacity blur-xl -z-10" />
 
-                <div className="text-4xl lg:text-5xl font-bold gradient-text mb-2">
+                <div className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-2">
                   {metric.value}
                 </div>
-                <div className="text-lg font-semibold text-white mb-1">{metric.label}</div>
+                <div className="text-sm sm:text-lg font-semibold text-white mb-1">{metric.label}</div>
                 <div className="text-sm text-neutral-500">{metric.description}</div>
               </div>
             </motion.div>
@@ -136,8 +136,8 @@ export function Technology() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-20"
         >
-          <div className="glass rounded-3xl p-8 lg:p-12">
-            <div className="grid lg:grid-cols-3 gap-8">
+          <div className="glass rounded-3xl p-4 sm:p-8 lg:p-12">
+            <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
               {/* Data Layer */}
               <div className="text-center">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-cyber-500 to-blue-500 flex items-center justify-center">

@@ -52,7 +52,7 @@ export function PageHero({
         <div className="absolute inset-0 neural-grid opacity-20" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
         {/* Back button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -105,7 +105,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4"
             >
               <span className={`bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
                 {title}
@@ -116,7 +116,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl sm:text-2xl text-neutral-300 mb-6"
+              className="text-base sm:text-xl md:text-2xl text-neutral-300 mb-4 sm:mb-6"
             >
               {subtitle}
             </motion.p>
@@ -125,7 +125,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg text-neutral-400 mb-10 max-w-xl"
+              className="text-base sm:text-lg text-neutral-400 mb-8 sm:mb-10 max-w-xl"
             >
               {description}
             </motion.p>
@@ -138,7 +138,7 @@ export function PageHero({
             >
               <a
                 href="mailto:info@autosapien.com"
-                className={`px-8 py-4 rounded-xl bg-gradient-to-r ${gradient} text-white font-medium flex items-center gap-2 hover:opacity-90 transition-opacity`}
+                className={`px-5 py-3 sm:px-8 sm:py-4 rounded-xl bg-gradient-to-r ${gradient} text-white font-medium text-sm sm:text-base flex items-center gap-2 hover:opacity-90 transition-opacity`}
               >
                 info@autosapien.com
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
