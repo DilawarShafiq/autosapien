@@ -80,18 +80,16 @@ export function Hero() {
         style={{ opacity, scale }}
         className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center pt-20 sm:pt-0"
       >
-        {/* Badge - hidden on mobile */}
-        <div className="hidden sm:block">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
-          >
-            <Sparkles className="w-4 h-4 text-neural-400" />
-            <span className="text-sm text-neutral-300">Building the Machines That Will Build Tomorrow</span>
-          </motion.div>
-        </div>
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass mb-6 sm:mb-8"
+        >
+          <Sparkles className="w-4 h-4 text-neural-400" />
+          <span className="text-xs sm:text-sm text-neutral-300">Building the Machines That Will Build Tomorrow</span>
+        </motion.div>
 
         {/* Main heading */}
         <motion.h1
@@ -101,7 +99,7 @@ export function Hero() {
           className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 sm:mb-6"
         >
           <span className="block text-white text-shadow-glow">Where</span>
-          <span className="block gradient-text">Intelligence</span>
+          <span className="block gradient-text pb-1 sm:pb-2">Intelligence</span>
           <span className="block text-white text-shadow-glow">Meets Form</span>
         </motion.h1>
 

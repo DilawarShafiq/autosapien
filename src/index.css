@@ -61,6 +61,9 @@
 
   .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-neural-400 via-plasma-400 to-cyber-400;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding-bottom: 0.1em;
   }
 
   .gradient-text-alt {
