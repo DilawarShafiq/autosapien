@@ -29,7 +29,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <Router basename="/autosapien">
+    <Router basename="/">
       <ScrollToTop />
       <div className="relative min-h-screen">
         {/* Noise overlay for texture */}
