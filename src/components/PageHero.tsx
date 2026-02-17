@@ -44,7 +44,7 @@ export function PageHero({
   }, [])
 
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-24">
+    <section className="relative min-h-[60vh] sm:min-h-[80vh] flex items-center overflow-hidden pt-24">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className={`absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br ${gradient} opacity-10 blur-3xl`} />
@@ -116,7 +116,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-2xl text-neutral-300 mb-6"
+              className="text-xl sm:text-2xl text-neutral-300 mb-6"
             >
               {subtitle}
             </motion.p>
@@ -154,7 +154,7 @@ export function PageHero({
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
               {features.map((feature, i) => (
                 <motion.div

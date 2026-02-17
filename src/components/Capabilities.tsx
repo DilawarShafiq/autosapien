@@ -133,7 +133,7 @@ export function Capabilities() {
   }, [])
 
   return (
-    <section id="capabilities" className="relative py-32 overflow-hidden">
+    <section id="capabilities" className="relative py-16 sm:py-32 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 neural-grid opacity-20" />
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-neural-600/20 rounded-full blur-3xl -translate-y-1/2" />
@@ -162,19 +162,19 @@ export function Capabilities() {
         </motion.div>
 
         {/* Interactive capability showcase */}
-        <div className="grid lg:grid-cols-[1fr_2fr] gap-8">
+        <div className="grid md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2fr] gap-8">
           {/* Capability selector */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-3"
+            className="flex md:flex-col gap-3 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0"
           >
             {capabilities.map((cap) => (
               <button
                 key={cap.id}
                 onClick={() => setActiveCapability(cap)}
-                className={`w-full p-4 rounded-2xl text-left transition-all duration-300 group ${
+                className={`flex-none md:w-full min-w-[200px] md:min-w-0 p-4 rounded-2xl text-left transition-all duration-300 group ${
                   activeCapability.id === cap.id
                     ? 'glass bg-white/10'
                     : 'hover:bg-white/5'
@@ -248,7 +248,7 @@ export function Capabilities() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="glass rounded-3xl p-8 lg:p-12 h-full"
+                className="glass rounded-3xl p-6 sm:p-8 lg:p-12 h-full"
               >
                 {/* Glow effect */}
                 <div

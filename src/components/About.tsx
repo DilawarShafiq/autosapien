@@ -69,7 +69,7 @@ export function About() {
   }, [])
 
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
+    <section id="about" className="relative py-16 sm:py-32 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-neural-500/50 to-transparent" />
@@ -77,7 +77,7 @@ export function About() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-20">
           {/* Left side - Text content */}
           <motion.div
             ref={ref}

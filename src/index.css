@@ -10,12 +10,23 @@
   html {
     @apply scroll-smooth;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-void text-white antialiased;
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
   }
 
   ::selection {

@@ -37,7 +37,7 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 right-1/4 w-20 h-20 glass rounded-2xl flex items-center justify-center"
+          className="absolute top-1/4 right-1/4 w-20 h-20 glass rounded-2xl hidden sm:flex items-center justify-center"
         >
           <Bot className="w-10 h-10 text-plasma-400" />
         </motion.div>
@@ -45,7 +45,7 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute bottom-1/3 left-1/4 w-16 h-16 glass rounded-2xl flex items-center justify-center"
+          className="absolute bottom-1/3 left-1/4 w-16 h-16 glass rounded-2xl hidden sm:flex items-center justify-center"
         >
           <Brain className="w-8 h-8 text-neural-400" />
         </motion.div>
@@ -53,7 +53,7 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-          className="absolute top-1/3 left-[15%] w-14 h-14 glass rounded-xl flex items-center justify-center"
+          className="absolute top-1/3 left-[15%] w-14 h-14 glass rounded-xl hidden sm:flex items-center justify-center"
         >
           <Heart className="w-7 h-7 text-rose-400" />
         </motion.div>
@@ -61,7 +61,7 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, 15, 0], rotate: [0, -8, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-          className="absolute bottom-1/4 right-[15%] w-14 h-14 glass rounded-xl flex items-center justify-center"
+          className="absolute bottom-1/4 right-[15%] w-14 h-14 glass rounded-xl hidden sm:flex items-center justify-center"
         >
           <Film className="w-7 h-7 text-synth-400" />
         </motion.div>
@@ -69,7 +69,7 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, -12, 0], rotate: [0, 6, 0] }}
           transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-          className="absolute top-[40%] right-[10%] w-12 h-12 glass rounded-xl flex items-center justify-center"
+          className="absolute top-[40%] right-[10%] w-12 h-12 glass rounded-xl hidden sm:flex items-center justify-center"
         >
           <Cpu className="w-6 h-6 text-cyber-400" />
         </motion.div>
@@ -96,7 +96,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
         >
           <span className="block text-white text-shadow-glow">Where</span>
           <span className="block gradient-text">Intelligence</span>
@@ -147,7 +147,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+          className="mt-12 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8"
         >
           {[
             { value: '4', label: 'Robot Platforms' },
@@ -174,7 +174,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

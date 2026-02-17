@@ -34,7 +34,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative pt-20 pb-10 overflow-hidden">
+    <footer className="relative pt-12 sm:pt-20 pb-6 sm:pb-10 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent" />
@@ -43,7 +43,7 @@ export function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Main footer content */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 mb-16">
           {/* Brand column */}
           <div className="col-span-2">
             <motion.div

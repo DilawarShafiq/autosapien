@@ -7,7 +7,7 @@ export function Contact() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
+    <section id="contact" className="relative py-16 sm:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-neural-950/30 to-transparent" />
@@ -41,7 +41,7 @@ export function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="glass rounded-3xl p-8 inline-block"
           >
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-neural-500 to-plasma-500 flex items-center justify-center">
                 <Mail className="w-8 h-8 text-white" />
               </div>
