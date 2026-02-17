@@ -34,7 +34,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative pt-24 pb-12 overflow-hidden bg-carbon-950">
+    <footer className="relative pt-16 sm:pt-24 pb-8 sm:pb-12 overflow-hidden bg-carbon-950">
       {/* Background */}
       <div className="absolute inset-0 bg-technical-grid opacity-20" />
 
@@ -43,7 +43,7 @@ export function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Main footer grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 sm:gap-12 mb-12 sm:mb-20">
           {/* Brand column */}
           <div className="col-span-2">
             <motion.div className="inline-block mb-8" whileHover={{ scale: 1.02 }}>

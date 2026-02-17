@@ -28,9 +28,9 @@ export function Hero() {
         }}
       />
 
-      {/* Geometric accent shapes */}
+      {/* Geometric accent shapes - hidden on small screens to prevent overflow */}
       <motion.div
-        className="absolute top-1/4 left-[10%] w-64 h-64 border border-ember-500/10"
+        className="hidden sm:block absolute top-1/4 left-[10%] w-32 sm:w-48 lg:w-64 h-32 sm:h-48 lg:h-64 border border-ember-500/10"
         style={{ rotate: 45 }}
         animate={{
           rotate: [45, 50, 45],
@@ -39,7 +39,7 @@ export function Hero() {
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute bottom-1/4 right-[10%] w-48 h-48 border border-volt-500/10"
+        className="hidden sm:block absolute bottom-1/4 right-[10%] w-24 sm:w-36 lg:w-48 h-24 sm:h-36 lg:h-48 border border-volt-500/10"
         style={{ rotate: 45 }}
         animate={{
           rotate: [45, 40, 45],
@@ -61,9 +61,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mb-8"
+          className="text-center mb-6 sm:mb-8"
         >
-          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-display-xl mb-6">
+          <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-display-xl mb-4 sm:mb-6">
             <span className="block text-white">ENGINEERING</span>
             <span className="block text-gradient">INTELLIGENT</span>
             <span className="block text-white">MACHINES</span>
@@ -75,7 +75,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-carbon-300 max-w-3xl mx-auto text-center mb-16 font-body leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-carbon-300 max-w-3xl mx-auto text-center mb-10 sm:mb-16 font-body leading-relaxed px-2 sm:px-0"
         >
           Autosapien is engineering the convergence of artificial intelligence and physical robotics.
           From humanoid companions to autonomous factories—we're not imagining the future,
@@ -87,7 +87,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-16 sm:mb-24"
         >
           <button className="btn-primary group">
             <span className="flex items-center gap-3">
@@ -109,7 +109,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-16"
         >
           {[
             { value: '04', label: 'Robot Platforms', suffix: '' },
@@ -125,7 +125,7 @@ export function Hero() {
               className="text-center"
             >
               <div className="flex items-baseline justify-center gap-1 mb-2">
-                <span className="stat-display text-5xl md:text-6xl">{stat.value}</span>
+                <span className="stat-display text-3xl sm:text-5xl md:text-6xl">{stat.value}</span>
                 {stat.suffix && (
                   <span className="text-ember-400 text-lg font-mono">{stat.suffix}</span>
                 )}
@@ -141,7 +141,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-12 left-1/2 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

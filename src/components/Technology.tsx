@@ -37,12 +37,12 @@ export function Technology() {
   const x2 = useTransform(scrollYProgress, [0, 1], [0, 200])
 
   return (
-    <section id="technology" ref={containerRef} className="relative py-32 overflow-hidden bg-carbon-900">
+    <section id="technology" ref={containerRef} className="relative py-16 sm:py-32 overflow-hidden bg-carbon-900">
       {/* Background */}
       <div className="absolute inset-0 bg-technical-grid opacity-30" />
 
-      {/* Geometric accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-ember-500/5" style={{ transform: 'translate(-50%, -50%) rotate(45deg)' }} />
+      {/* Geometric accent - hidden on mobile */}
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-ember-500/5" style={{ transform: 'translate(-50%, -50%) rotate(45deg)' }} />
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-6">
         {/* Section header */}
@@ -116,7 +116,7 @@ export function Technology() {
               className="card-industrial p-8 text-center group hover-lift"
             >
               <div className="flex items-baseline justify-center gap-1 mb-2">
-                <span className="stat-display text-5xl">{metric.value}</span>
+                <span className="stat-display text-3xl sm:text-5xl">{metric.value}</span>
                 {metric.unit && (
                   <span className="text-ember-400 text-xl font-mono">{metric.unit}</span>
                 )}
@@ -133,11 +133,11 @@ export function Technology() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <div className="card-industrial p-8 lg:p-12 corner-accent">
+          <div className="card-industrial p-5 sm:p-8 lg:p-12 corner-accent">
             {/* Header */}
-            <div className="flex items-center justify-between mb-12">
-              <h3 className="font-display font-bold text-2xl text-white">System Architecture</h3>
-              <span className="label-technical text-ember-500/60">ARCH-001</span>
+            <div className="flex items-center justify-between mb-8 sm:mb-12">
+              <h3 className="font-display font-bold text-xl sm:text-2xl text-white">System Architecture</h3>
+              <span className="label-technical text-ember-500/60 hidden sm:inline">ARCH-001</span>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8">

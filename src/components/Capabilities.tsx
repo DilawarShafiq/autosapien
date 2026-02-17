@@ -130,9 +130,9 @@ export function Capabilities() {
       {/* Background */}
       <div className="absolute inset-0 bg-technical-grid opacity-20" />
 
-      {/* Geometric accents */}
-      <div className="absolute top-1/2 left-0 w-64 h-64 border border-ember-500/10 -translate-y-1/2 -translate-x-1/2" style={{ transform: 'rotate(45deg) translate(-50%, -50%)' }} />
-      <div className="absolute top-1/2 right-0 w-64 h-64 border border-volt-500/10 -translate-y-1/2 translate-x-1/2" style={{ transform: 'rotate(45deg) translate(50%, -50%)' }} />
+      {/* Geometric accents - hidden on mobile to prevent overflow */}
+      <div className="hidden md:block absolute top-1/2 left-0 w-64 h-64 border border-ember-500/10 -translate-y-1/2 -translate-x-1/2" style={{ transform: 'rotate(45deg) translate(-50%, -50%)' }} />
+      <div className="hidden md:block absolute top-1/2 right-0 w-64 h-64 border border-volt-500/10 -translate-y-1/2 translate-x-1/2" style={{ transform: 'rotate(45deg) translate(50%, -50%)' }} />
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-6">
         {/* Section header */}
@@ -157,19 +157,19 @@ export function Capabilities() {
         </motion.div>
 
         {/* Interactive capability showcase */}
-        <div className="grid lg:grid-cols-[350px_1fr] gap-8">
+        <div className="grid md:grid-cols-[280px_1fr] lg:grid-cols-[350px_1fr] gap-6 md:gap-8">
           {/* Capability selector */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-2"
+            className="flex md:flex-col gap-2 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory md:snap-none"
           >
             {capabilities.map((cap) => (
               <button
                 key={cap.id}
                 onClick={() => setActiveCapability(cap)}
-                className={`w-full p-4 text-left transition-all duration-300 group border ${
+                className={`flex-none md:w-full p-3 md:p-4 text-left transition-all duration-300 group border snap-start min-w-[200px] md:min-w-0 ${
                   activeCapability.id === cap.id
                     ? 'bg-carbon-800 border-ember-500/30'
                     : 'border-carbon-700 hover:border-carbon-600 hover:bg-carbon-850'
@@ -234,18 +234,18 @@ export function Capabilities() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="card-industrial p-8 lg:p-12 h-full corner-accent"
+                className="card-industrial p-5 sm:p-8 lg:p-12 h-full corner-accent"
               >
                 <div className="relative">
                   {/* Header */}
-                  <div className="flex items-start justify-between mb-8">
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 border-2 border-ember-500 flex items-center justify-center">
-                        <activeCapability.icon className="w-8 h-8 text-ember-400" />
+                  <div className="flex flex-col sm:flex-row items-start sm:justify-between gap-4 mb-6 sm:mb-8">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 border-2 border-ember-500 flex items-center justify-center flex-shrink-0">
+                        <activeCapability.icon className="w-6 h-6 sm:w-8 sm:h-8 text-ember-400" />
                       </div>
                       <div>
                         <span className="label-technical text-ember-500">{activeCapability.code}</span>
-                        <h3 className="font-display font-bold text-2xl text-white">
+                        <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
                           {activeCapability.title}
                         </h3>
                       </div>
@@ -277,12 +277,12 @@ export function Capabilities() {
                   </p>
 
                   {/* Description */}
-                  <p className="text-lg text-carbon-300 font-body mb-10 leading-relaxed">
+                  <p className="text-base sm:text-lg text-carbon-300 font-body mb-6 sm:mb-10 leading-relaxed">
                     {activeCapability.description}
                   </p>
 
                   {/* Features grid */}
-                  <div className="grid sm:grid-cols-2 gap-3 mb-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 sm:mb-10">
                     {activeCapability.features.map((feature, i) => (
                       <motion.div
                         key={feature}

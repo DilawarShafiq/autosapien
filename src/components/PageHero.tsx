@@ -44,13 +44,13 @@ export function PageHero({
   }, [])
 
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-24 bg-carbon-900">
+    <section className="relative min-h-[60vh] sm:min-h-[80vh] flex items-center overflow-hidden pt-20 sm:pt-24 bg-carbon-900">
       {/* Background */}
       <div className="absolute inset-0 bg-technical-grid opacity-30" />
 
-      {/* Geometric accents */}
-      <div className="absolute top-1/4 right-[10%] w-64 h-64 border border-ember-500/10" style={{ transform: 'rotate(45deg)' }} />
-      <div className="absolute bottom-1/4 left-[10%] w-48 h-48 border border-volt-500/10" style={{ transform: 'rotate(45deg)' }} />
+      {/* Geometric accents - hidden on mobile to prevent overflow */}
+      <div className="hidden md:block absolute top-1/4 right-[10%] w-64 h-64 border border-ember-500/10" style={{ transform: 'rotate(45deg)' }} />
+      <div className="hidden md:block absolute bottom-1/4 left-[10%] w-48 h-48 border border-volt-500/10" style={{ transform: 'rotate(45deg)' }} />
 
       <div className="relative max-w-7xl mx-auto px-6 py-20 w-full">
         {/* Back button */}
@@ -122,7 +122,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-2xl text-white font-display font-semibold mb-6"
+              className="text-xl sm:text-2xl text-white font-display font-semibold mb-4 sm:mb-6"
             >
               {subtitle}
             </motion.p>
@@ -158,7 +158,7 @@ export function PageHero({
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
             >
               {features.map((feature, i) => (
                 <motion.div

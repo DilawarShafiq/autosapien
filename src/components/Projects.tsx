@@ -142,25 +142,25 @@ export function Projects() {
         </motion.div>
 
         {/* Projects grid - asymmetric layout */}
-        <div className="grid lg:grid-cols-12 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-4">
           {/* Featured project - large card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-8 lg:row-span-2"
+            className="md:col-span-2 lg:col-span-8 lg:row-span-2"
           >
             <Link to={projects[0].slug} className="block h-full group">
-              <div className="card-industrial h-full p-8 lg:p-12 corner-accent flex flex-col">
+              <div className="card-industrial h-full p-5 sm:p-8 lg:p-12 corner-accent flex flex-col">
                 {/* Header */}
-                <div className="flex items-start justify-between mb-8">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 border-2 border-ember-500 flex items-center justify-center">
-                      <Bot className="w-8 h-8 text-ember-400" />
+                <div className="flex flex-col sm:flex-row items-start sm:justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 border-2 border-ember-500 flex items-center justify-center flex-shrink-0">
+                      <Bot className="w-6 h-6 sm:w-8 sm:h-8 text-ember-400" />
                     </div>
                     <div>
                       <span className="label-technical text-ember-500">{projects[0].code}</span>
-                      <h3 className="font-display font-bold text-3xl text-white group-hover:text-ember-400 transition-colors">
+                      <h3 className="font-display font-bold text-xl sm:text-3xl text-white group-hover:text-ember-400 transition-colors">
                         {projects[0].title}
                       </h3>
                     </div>
@@ -172,12 +172,12 @@ export function Projects() {
                 </div>
 
                 {/* Description */}
-                <p className="text-carbon-300 font-body text-lg leading-relaxed mb-8 max-w-2xl">
+                <p className="text-carbon-300 font-body text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-2xl">
                   {projects[0].description}
                 </p>
 
                 {/* Features grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 mb-6 sm:mb-8">
                   {projects[0].features.map((feature) => (
                     <div key={feature} className="p-4 bg-carbon-800 border border-carbon-700">
                       <span className="text-sm text-white font-body">{feature}</span>
@@ -189,9 +189,9 @@ export function Projects() {
                 <div className="flex-1" />
 
                 {/* Footer */}
-                <div className="flex items-center justify-between pt-8 border-t border-carbon-700">
+                <div className="flex items-center justify-between pt-6 sm:pt-8 border-t border-carbon-700">
                   <div>
-                    <div className="stat-display text-5xl">{projects[0].metrics.value}</div>
+                    <div className="stat-display text-3xl sm:text-5xl">{projects[0].metrics.value}</div>
                     <div className="label-technical mt-1">{projects[0].metrics.label}</div>
                   </div>
                   <div className="w-14 h-14 border border-carbon-600 flex items-center justify-center group-hover:border-ember-500 group-hover:bg-ember-500 transition-all">
@@ -209,7 +209,7 @@ export function Projects() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-              className="lg:col-span-4"
+              className="md:col-span-1 lg:col-span-4"
             >
               <Link to={project.slug} className="block h-full group">
                 <div className="card-industrial h-full p-6 flex flex-col">

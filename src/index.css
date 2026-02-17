@@ -10,16 +10,29 @@
   html {
     @apply scroll-smooth;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-carbon-900 text-white antialiased;
     font-family: 'Outfit', system-ui, sans-serif;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
 
   ::selection {
     @apply bg-ember-500/30 text-white;
+  }
+
+  /* Improve touch targets and remove tap highlight on mobile */
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Ensure images and media don't overflow */
+  img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
   }
 
   ::-webkit-scrollbar {
@@ -143,7 +156,7 @@
 
   /* Button styles */
   .btn-primary {
-    @apply relative px-8 py-4 font-display font-semibold text-carbon-900 overflow-hidden;
+    @apply relative px-6 py-3 sm:px-8 sm:py-4 font-display font-semibold text-carbon-900 overflow-hidden text-sm sm:text-base;
     background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -170,7 +183,7 @@
   }
 
   .btn-secondary {
-    @apply px-8 py-4 font-display font-semibold border-2 border-carbon-500 text-white;
+    @apply px-6 py-3 sm:px-8 sm:py-4 font-display font-semibold border-2 border-carbon-500 text-white text-sm sm:text-base;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 

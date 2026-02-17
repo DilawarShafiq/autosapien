@@ -68,7 +68,7 @@ export function About() {
   }, [])
 
   return (
-    <section id="about" className="relative py-32 overflow-hidden bg-carbon-900">
+    <section id="about" className="relative py-16 sm:py-32 overflow-hidden bg-carbon-900">
       {/* Background elements */}
       <div className="absolute inset-0 bg-technical-grid opacity-30" />
 
@@ -77,7 +77,7 @@ export function About() {
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section header */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-start mb-16 sm:mb-24">
           {/* Left - Main content */}
           <motion.div
             ref={ref}
@@ -154,16 +154,16 @@ export function About() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative"
           >
-            <div className="card-industrial p-8 lg:p-12 corner-accent">
+            <div className="card-industrial p-5 sm:p-8 lg:p-12 corner-accent">
               {/* Technical header */}
-              <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center justify-between mb-6 sm:mb-8">
                 <span className="label-technical">Vision Statement</span>
-                <span className="label-technical">REF: VS-001</span>
+                <span className="label-technical hidden sm:inline">REF: VS-001</span>
               </div>
 
               <blockquote className="relative">
-                <div className="text-6xl font-display font-bold text-ember-500/20 absolute -top-4 -left-2">"</div>
-                <p className="text-xl lg:text-2xl text-white font-display leading-relaxed pl-8">
+                <div className="text-4xl sm:text-6xl font-display font-bold text-ember-500/20 absolute -top-4 -left-2">"</div>
+                <p className="text-lg sm:text-xl lg:text-2xl text-white font-display leading-relaxed pl-6 sm:pl-8">
                   We believe the defining technology of this century won't be artificial
                   intelligence in isolation—it will be artificial intelligence given a body,
                   purpose, and the ability to heal, help, and create alongside humanity.
@@ -183,7 +183,7 @@ export function About() {
             </div>
 
             {/* Decorative geometric shape */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 border border-ember-500/20 -z-10" style={{ transform: 'rotate(45deg)' }} />
+            <div className="hidden sm:block absolute -bottom-6 -right-6 w-24 h-24 border border-ember-500/20 -z-10" style={{ transform: 'rotate(45deg)' }} />
           </motion.div>
         </div>
 
