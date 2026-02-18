@@ -10,7 +10,12 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+assets
 *.local
+
+# Claude Code local settings
+.claude/settings.local.json
+.claude/*.local.json
 
 # Editor directories and files
 .vscode/*
