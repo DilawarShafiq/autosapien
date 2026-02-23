@@ -15,9 +15,9 @@ const projects = [
   {
     id: 'humanoid',
     slug: '/projects/humanoid',
-    title: 'Autosapien G1',
+    title: 'Autosapien One',
     category: 'Humanoid Robotics',
-    description: 'Our flagship humanoid robot—the culmination of decades of robotics research compressed into a single platform. Standing at human height with 40+ degrees of freedom, Autosapien G1 is designed to work alongside humans in homes, hospitals, and factories. This is not science fiction. This is next year.',
+    description: 'Our flagship humanoid robot—the culmination of decades of robotics research compressed into a single platform. Standing at human height with 40+ degrees of freedom, Autosapien One is designed to work alongside humans in homes, hospitals, and factories. This is not science fiction. This is next year.',
     icon: Bot,
     features: ['Bipedal Locomotion', 'Human-like Dexterity', 'Natural Conversation', 'Emotional Intelligence'],
     metrics: { value: '40+', label: 'Degrees of Freedom' },
@@ -142,7 +142,7 @@ export function Projects() {
                     </div>
                     <div>
                       <span className="label-technical text-ember-500">{projects[0].code}</span>
-                      <h3 className="font-display font-bold text-2xl sm:text-3xl text-carbon-100 group-hover:text-ember-400 transition-colors">
+                      <h3 className="font-display font-bold text-2xl sm:text-3xl text-white group-hover:text-ember-400 transition-colors">
                         {projects[0].title}
                       </h3>
                     </div>
@@ -162,7 +162,7 @@ export function Projects() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                   {projects[0].features.map((feature) => (
                     <div key={feature} className="p-4 bg-carbon-800 border border-carbon-700">
-                      <span className="text-sm text-carbon-100 font-body">{feature}</span>
+                      <span className="text-sm text-white font-body">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -177,7 +177,7 @@ export function Projects() {
                     <div className="label-technical mt-1">{projects[0].metrics.label}</div>
                   </div>
                   <div className="w-14 h-14 border border-carbon-600 flex items-center justify-center group-hover:border-ember-500 group-hover:bg-ember-500 transition-all">
-                    <ArrowUpRight className="w-6 h-6 text-carbon-400 group-hover:text-neutral-900 transition-colors" />
+                    <ArrowUpRight className="w-6 h-6 text-carbon-400 group-hover:text-carbon-900 transition-colors" />
                   </div>
                 </div>
               </div>
@@ -220,7 +220,7 @@ export function Projects() {
                     {/* Title & category */}
                     <div className="mb-3">
                       <span className="label-technical text-ember-500/60">{project.code}</span>
-                      <h3 className="font-display font-bold text-xl text-carbon-100 group-hover:text-ember-400 transition-colors">
+                      <h3 className="font-display font-bold text-xl text-white group-hover:text-ember-400 transition-colors">
                         {project.title}
                       </h3>
                       <span className="label-technical">{project.category}</span>

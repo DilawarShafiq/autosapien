@@ -55,12 +55,12 @@ export function Contact() {
                 </div>
                 <div className="text-center sm:text-left">
                   <div className="label-technical mb-2">Email us at</div>
-                  <div className="text-xl sm:text-2xl font-display font-bold text-carbon-100 group-hover:text-ember-400 transition-colors break-all">
+                  <div className="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-ember-400 transition-colors break-all">
                     info@autosapien.com
                   </div>
                 </div>
                 <div className="hidden sm:flex w-12 h-12 border border-carbon-600 items-center justify-center ml-4 group-hover:border-ember-500 group-hover:bg-ember-500 transition-all">
-                  <ArrowRight className="w-5 h-5 text-carbon-400 group-hover:text-neutral-900 transition-colors" />
+                  <ArrowRight className="w-5 h-5 text-carbon-400 group-hover:text-carbon-900 transition-colors" />
                 </div>
               </div>
             </a>

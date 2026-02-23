@@ -120,7 +120,7 @@ export function Humanoid() {
             <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-plasma-400 mb-6">
               Technical Specifications
             </span>
-            <h2 className="text-3xl font-bold text-carbon-100">Built to human scale</h2>
+            <h2 className="text-3xl font-bold text-white">Built to human scale</h2>
           </motion.div>
 
           <div className="glass rounded-3xl p-8 md:p-12">
@@ -137,7 +137,7 @@ export function Humanoid() {
                     {spec.value}
                   </div>
                   <div className="text-sm text-neutral-500 mb-1">{spec.unit}</div>
-                  <div className="text-carbon-100 font-medium">{spec.label}</div>
+                  <div className="text-white font-medium">{spec.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -183,7 +183,7 @@ export function Humanoid() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-plasma-500/20 to-neural-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <cap.icon className="w-7 h-7 text-plasma-400" />
                 </div>
-                <h3 className="text-xl font-bold text-carbon-100 mb-3">{cap.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
                 <p className="text-neutral-400">{cap.description}</p>
               </motion.div>
             ))}
@@ -228,7 +228,7 @@ export function Humanoid() {
                   <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${useCase.color} flex items-center justify-center`}>
                     <useCase.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-carbon-100">{useCase.title}</h3>
+                  <h3 className="text-xl font-bold text-white">{useCase.title}</h3>
                 </div>
                 <p className="text-neutral-400">{useCase.description}</p>
               </motion.div>
@@ -246,7 +246,7 @@ export function Humanoid() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-carbon-100 mb-4">Development Timeline</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Development Timeline</h3>
             <p className="text-neutral-400">From prototype to production</p>
           </motion.div>
 
@@ -277,7 +277,7 @@ export function Humanoid() {
                       </svg>
                     )}
                   </div>
-                  <div className="text-lg font-bold text-carbon-100 mb-1">{item.year}</div>
+                  <div className="text-lg font-bold text-white mb-1">{item.year}</div>
                   <div className="text-sm text-neutral-400">{item.milestone}</div>
                 </motion.div>
               ))}
@@ -295,7 +295,7 @@ export function Humanoid() {
             viewport={{ once: true }}
             className="glass rounded-3xl p-12"
           >
-            <h2 className="text-3xl font-bold text-carbon-100 mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               Be part of the future
             </h2>
             <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">

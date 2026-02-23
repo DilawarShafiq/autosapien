@@ -15,10 +15,10 @@ const capabilities = [
     id: 'humanoid',
     icon: Bot,
     title: 'Humanoid Robotics',
-    subtitle: 'Autosapien G1',
+    subtitle: 'Autosapien One',
     status: 'developing',
     code: 'CAP-001',
-    description: 'Our flagship humanoid robot represents the pinnacle of embodied AI. Standing at human height with 40+ degrees of freedom, Autosapien G1 is designed to navigate human environments, manipulate objects with dexterity, and interact naturally through voice, gesture, and expression. This is not a lab prototype—it\'s the beginning of a new species of helpful machines.',
+    description: 'Our flagship humanoid robot represents the pinnacle of embodied AI. Standing at human height with 40+ degrees of freedom, Autosapien One is designed to navigate human environments, manipulate objects with dexterity, and interact naturally through voice, gesture, and expression. This is not a lab prototype—it\'s the beginning of a new species of helpful machines.',
     features: [
       'Bipedal locomotion on any terrain',
       'Human-like hand dexterity',
@@ -176,7 +176,7 @@ export function Capabilities() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3
                         className={`font-display font-semibold transition-colors ${
-                          activeCapability.id === cap.id ? 'text-carbon-100' : 'text-carbon-300'
+                          activeCapability.id === cap.id ? 'text-white' : 'text-carbon-300'
                         }`}
                       >
                         {cap.title}
@@ -225,7 +225,7 @@ export function Capabilities() {
                       </div>
                       <div>
                         <span className="label-technical text-ember-500">{activeCapability.code}</span>
-                        <h3 className="font-display font-bold text-2xl text-carbon-100">
+                        <h3 className="font-display font-bold text-2xl text-white">
                           {activeCapability.title}
                         </h3>
                       </div>

@@ -128,7 +128,7 @@ export function HomeRobotics() {
                   <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neural-500 to-indigo-500 bg-clip-text text-transparent mb-2">
                     {spec.value}
                   </div>
-                  <div className="text-carbon-100 font-medium mb-1">{spec.label}</div>
+                  <div className="text-white font-medium mb-1">{spec.label}</div>
                   <div className="text-sm text-neutral-500">{spec.description}</div>
                 </motion.div>
               ))}
@@ -173,7 +173,7 @@ export function HomeRobotics() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-neural-500/20 to-indigo-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <feature.icon className="w-7 h-7 text-neural-400" />
                 </div>
-                <h3 className="text-xl font-bold text-carbon-100 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
                 <p className="text-neutral-400">{feature.description}</p>
               </motion.div>
             ))}
@@ -215,7 +215,7 @@ export function HomeRobotics() {
                 className="glass rounded-3xl p-8 hover-lift"
               >
                 <div className={`w-full h-2 rounded-full bg-gradient-to-r ${useCase.color} mb-6`} />
-                <h3 className="text-xl font-bold text-carbon-100 mb-3">{useCase.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{useCase.title}</h3>
                 <p className="text-neutral-400 mb-6">{useCase.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {useCase.personas.map((persona) => (
@@ -268,7 +268,7 @@ export function HomeRobotics() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-neural-500/20 to-indigo-500/20 flex items-center justify-center mb-6 mx-auto">
                   <feature.icon className="w-8 h-8 text-neural-400" />
                 </div>
-                <h3 className="text-xl font-bold text-carbon-100 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
                 <p className="text-neutral-400">{feature.description}</p>
               </motion.div>
             ))}
@@ -286,7 +286,7 @@ export function HomeRobotics() {
             className="glass rounded-3xl p-12"
           >
             <Sparkles className="w-12 h-12 text-neural-400 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-carbon-100 mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               The beginning of robotic household members
             </h2>
             <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">

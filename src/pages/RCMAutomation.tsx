@@ -122,7 +122,7 @@ export function RCMAutomation() {
                   <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-carbon-100 font-medium mb-1">{metric.label}</div>
+                  <div className="text-white font-medium mb-1">{metric.label}</div>
                   <div className="text-sm text-neutral-500">{metric.description}</div>
                 </motion.div>
               ))}
@@ -168,7 +168,7 @@ export function RCMAutomation() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <feature.icon className="w-7 h-7 text-violet-400" />
                 </div>
-                <h3 className="text-xl font-bold text-carbon-100 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
                 <p className="text-neutral-400">{feature.description}</p>
               </motion.div>
             ))}
@@ -219,7 +219,7 @@ export function RCMAutomation() {
                     </div>
                     <span className="text-3xl font-bold text-violet-500/30">{step.step}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-carbon-100 mb-3">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-neutral-400 text-sm">{step.description}</p>
                 </div>
               </motion.div>
@@ -237,7 +237,7 @@ export function RCMAutomation() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-carbon-100 mb-4">Solving Real Problems</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Solving Real Problems</h3>
             <p className="text-neutral-400">Common RCM challenges and how we solve them</p>
           </motion.div>
 
@@ -254,7 +254,7 @@ export function RCMAutomation() {
                 <div className="text-red-400 text-sm font-medium mb-2 line-through opacity-60">
                   {item.problem}
                 </div>
-                <div className="text-carbon-100 font-medium flex items-center gap-2">
+                <div className="text-white font-medium flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-400" />
                   {item.solution}
                 </div>

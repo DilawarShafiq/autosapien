@@ -76,7 +76,7 @@ export function Technology() {
                 key={`${tech.name}-${i}`}
                 className="flex-none px-6 py-4 bg-carbon-850 border border-carbon-700 hover:border-ember-500/30 transition-colors group"
               >
-                <div className="text-lg font-display font-semibold text-carbon-100 group-hover:text-ember-400 transition-colors">{tech.name}</div>
+                <div className="text-lg font-display font-semibold text-white group-hover:text-ember-400 transition-colors">{tech.name}</div>
                 <div className="label-technical">{tech.category}</div>
               </div>
             ))}
@@ -89,7 +89,7 @@ export function Technology() {
                 key={`${tech.name}-rev-${i}`}
                 className="flex-none px-6 py-4 bg-carbon-850 border border-carbon-700 hover:border-volt-500/30 transition-colors group"
               >
-                <div className="text-lg font-display font-semibold text-carbon-100 group-hover:text-volt-400 transition-colors">{tech.name}</div>
+                <div className="text-lg font-display font-semibold text-white group-hover:text-volt-400 transition-colors">{tech.name}</div>
                 <div className="label-technical">{tech.category}</div>
               </div>
             ))}
@@ -121,7 +121,7 @@ export function Technology() {
                   <span className="text-ember-400 text-lg sm:text-xl font-mono">{metric.unit}</span>
                 )}
               </div>
-              <div className="text-sm sm:text-lg font-display font-semibold text-carbon-100 mb-1">{metric.label}</div>
+              <div className="text-sm sm:text-lg font-display font-semibold text-white mb-1">{metric.label}</div>
               <div className="label-technical">{metric.description}</div>
             </motion.div>
           ))}
@@ -136,7 +136,7 @@ export function Technology() {
           <div className="card-industrial p-4 sm:p-8 lg:p-12 corner-accent">
             {/* Header */}
             <div className="flex items-center justify-between mb-12">
-              <h3 className="font-display font-bold text-2xl text-carbon-100">System Architecture</h3>
+              <h3 className="font-display font-bold text-2xl text-white">System Architecture</h3>
               <span className="label-technical text-ember-500/60">ARCH-001</span>
             </div>
 
@@ -149,7 +149,7 @@ export function Technology() {
                   </svg>
                 </div>
                 <span className="label-technical text-volt-500 mb-2 block">Layer 01</span>
-                <h4 className="text-xl font-display font-semibold text-carbon-100 mb-3">Data Layer</h4>
+                <h4 className="text-xl font-display font-semibold text-white mb-3">Data Layer</h4>
                 <p className="text-sm text-carbon-400 font-body">
                   Distributed data infrastructure with real-time streaming and batch processing.
                 </p>
@@ -163,7 +163,7 @@ export function Technology() {
                   </svg>
                 </div>
                 <span className="label-technical text-ember-500 mb-2 block">Layer 02</span>
-                <h4 className="text-xl font-display font-semibold text-carbon-100 mb-3">AI Core</h4>
+                <h4 className="text-xl font-display font-semibold text-white mb-3">AI Core</h4>
                 <p className="text-sm text-carbon-400 font-body">
                   Multi-model orchestration with GPU-accelerated inference engines.
                 </p>
@@ -177,7 +177,7 @@ export function Technology() {
                   </svg>
                 </div>
                 <span className="label-technical text-sage-500 mb-2 block">Layer 03</span>
-                <h4 className="text-xl font-display font-semibold text-carbon-100 mb-3">Integration</h4>
+                <h4 className="text-xl font-display font-semibold text-white mb-3">Integration</h4>
                 <p className="text-sm text-carbon-400 font-body">
                   API-first architecture with enterprise connectors and webhooks.
                 </p>
