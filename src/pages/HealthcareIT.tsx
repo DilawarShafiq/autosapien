@@ -55,7 +55,7 @@ const aiCapabilities = [
 ]
 
 const metrics = [
-  { value: '2M+', label: 'Patient Records', description: 'Managed securely' },
+  { value: '100%', label: 'AI-Native Platform', description: 'Built from the ground up' },
   { value: '98%', label: 'Clean Claim Rate', description: 'First-pass acceptance' },
   { value: '70%', label: 'Admin Time Saved', description: 'For clinical staff' },
   { value: '15%', label: 'Revenue Increase', description: 'Average improvement' },

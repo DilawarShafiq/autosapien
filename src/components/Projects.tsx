@@ -45,7 +45,7 @@ const projects = [
     icon: Heart,
     gradient: 'from-rose-500 to-pink-500',
     features: ['AI Clinical Documentation', 'Autonomous RCM', 'FHIR R4 Native', '98% Clean Claims'],
-    metrics: { value: '2M+', label: 'Patient Records' },
+    metrics: { value: '#1', label: 'AI-Powered Healthcare IT' },
     status: 'launching',
     launchDate: 'March 22',
   },
