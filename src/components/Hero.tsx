@@ -17,6 +17,14 @@ export function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Frosted white overlay so particles don't compete with text */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 60% 50% at 50% 45%, rgba(250, 250, 248, 0.85) 0%, rgba(250, 250, 248, 0.4) 70%, transparent 100%)'
+        }}
+      />
+
       {/* Radial gold glow behind headline */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -24,9 +32,6 @@ export function Hero() {
           background: 'radial-gradient(ellipse 50% 40% at 50% 45%, rgba(201, 164, 76, 0.06) 0%, transparent 70%)'
         }}
       />
-
-      {/* Subtle grid overlay */}
-      <div className="absolute inset-0 grid-pattern pointer-events-none opacity-30" />
 
       {/* Main content */}
       <motion.div
@@ -133,6 +138,14 @@ export function Hero() {
           ))}
         </motion.div>
       </motion.div>
+
+      {/* Bottom fade to separate hero from content below */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, transparent, #fafaf8)'
+        }}
+      />
 
       {/* Scroll indicator */}
       <motion.div

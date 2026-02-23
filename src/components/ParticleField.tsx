@@ -126,10 +126,10 @@ function NetworkParticles() {
           const mouseDist = Math.sqrt((midX - mx) ** 2 + (midY - my) ** 2)
           const mouseBoost = mouseDist < MOUSE_RADIUS ? (1 - mouseDist / MOUSE_RADIUS) * 0.6 : 0
 
-          const r = 0.60 + mouseBoost * 0.15
-          const g = 0.47 + mouseBoost * 0.15
-          const b = 0.19 + mouseBoost * 0.15
-          const a = alpha * 0.18 + mouseBoost * 0.4
+          const r = 0.83 + mouseBoost * 0.1
+          const g = 0.72 + mouseBoost * 0.1
+          const b = 0.50 + mouseBoost * 0.1
+          const a = alpha * 0.12 + mouseBoost * 0.25
 
           linePosArr[lineIdx] = ix; linePosArr[lineIdx + 1] = iy; linePosArr[lineIdx + 2] = iz
           linePosArr[lineIdx + 3] = jx; linePosArr[lineIdx + 4] = jy; linePosArr[lineIdx + 5] = jz
@@ -172,9 +172,9 @@ function NetworkParticles() {
         </bufferGeometry>
         <pointsMaterial
           size={0.05}
-          color="#9a7830"
+          color="#d4a84b"
           transparent
-          opacity={0.35}
+          opacity={0.25}
           sizeAttenuation
           depthWrite={false}
         />
@@ -221,10 +221,10 @@ function FloatingWireframe() {
     <mesh ref={meshRef} position={[8, 2, -5]}>
       <icosahedronGeometry args={[2.5, 1]} />
       <meshBasicMaterial
-        color="#b8933f"
+        color="#d4a84b"
         wireframe
         transparent
-        opacity={0.08}
+        opacity={0.06}
       />
     </mesh>
   )
@@ -245,10 +245,10 @@ function FloatingOctahedron() {
     <mesh ref={meshRef} position={[-10, -3, -8]}>
       <octahedronGeometry args={[2, 0]} />
       <meshBasicMaterial
-        color="#b8933f"
+        color="#d4a84b"
         wireframe
         transparent
-        opacity={0.06}
+        opacity={0.05}
       />
     </mesh>
   )
