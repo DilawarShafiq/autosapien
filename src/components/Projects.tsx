@@ -93,12 +93,9 @@ export function Projects() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="projects" className="relative py-16 sm:py-32 overflow-hidden bg-carbon-850">
-      {/* Background */}
-      <div className="absolute inset-0 bg-technical-grid opacity-20" />
-
-      {/* Top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ember-500/30 to-transparent" />
+    <section id="projects" className="relative py-16 sm:py-32 overflow-hidden bg-obsidian-850/50">
+      <div className="absolute inset-0 bg-grid opacity-20" />
+      <div className="divider-glow absolute top-0 left-0 right-0" />
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
@@ -109,23 +106,23 @@ export function Projects() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-20"
         >
           <div>
-            <span className="badge badge-ember mb-6">
-              <span className="label-technical">Active Projects</span>
+            <span className="badge-hud mb-6">
+              <span>SYS.PROJECTS</span>
             </span>
             <h2 className="font-display font-bold text-display-lg">
               From silicon minds to{' '}
-              <span className="text-gradient">steel bodies</span>
+              <span className="text-signal-400">steel bodies</span>
             </h2>
           </div>
-          <p className="text-carbon-400 font-body max-w-md text-base sm:text-lg">
+          <p className="text-muted font-body max-w-md text-base sm:text-lg">
             Each project represents a frontier where AI meets the physical world.
             This is what we're building.
           </p>
         </motion.div>
 
-        {/* Projects grid - asymmetric layout */}
-        <div className="grid lg:grid-cols-12 gap-4">
-          {/* Featured project - large card */}
+        {/* Projects grid */}
+        <div className="grid lg:grid-cols-12 gap-3">
+          {/* Featured project */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -133,83 +130,77 @@ export function Projects() {
             className="lg:col-span-8 lg:row-span-2"
           >
             <Link to={projects[0].slug} className="block h-full group">
-              <div className="card-industrial h-full p-6 sm:p-8 lg:p-12 corner-accent flex flex-col">
-                {/* Header */}
+              <div className="card-hud h-full p-6 sm:p-8 lg:p-12 hud-corners flex flex-col">
                 <div className="flex items-start justify-between mb-8 flex-wrap gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 border-2 border-ember-500 flex items-center justify-center">
-                      <Bot className="w-8 h-8 text-ember-400" />
+                    <div className="w-14 h-14 border border-signal-400/30 flex items-center justify-center">
+                      <Bot className="w-7 h-7 text-signal-400" />
                     </div>
                     <div>
-                      <span className="label-technical text-ember-500">{projects[0].code}</span>
-                      <h3 className="font-display font-bold text-2xl sm:text-3xl text-carbon-100 group-hover:text-ember-400 transition-colors">
+                      <span className="label-mono text-signal-400/40">{projects[0].code}</span>
+                      <h3 className="font-display font-bold text-2xl sm:text-3xl text-white group-hover:text-signal-400 transition-colors">
                         {projects[0].title}
                       </h3>
                     </div>
                   </div>
-                  <span className="badge">
+                  <span className="badge-hud">
                     <span className="status-dot developing" />
-                    <span className="text-ember-400">In Development</span>
+                    <span>In Development</span>
                   </span>
                 </div>
 
-                {/* Description */}
-                <p className="text-carbon-300 font-body text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+                <p className="text-dim font-body text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
                   {projects[0].description}
                 </p>
 
-                {/* Features grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
                   {projects[0].features.map((feature) => (
-                    <div key={feature} className="p-4 bg-carbon-800 border border-carbon-700">
-                      <span className="text-sm text-carbon-100 font-body">{feature}</span>
+                    <div key={feature} className="p-3 bg-obsidian-800/40 border border-obsidian-700/30">
+                      <span className="text-sm text-obsidian-100 font-body">{feature}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* Spacer */}
                 <div className="flex-1" />
 
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-8 border-t border-carbon-700">
+                <div className="flex items-center justify-between pt-8 border-t border-obsidian-700/40">
                   <div>
                     <div className="stat-display text-4xl sm:text-5xl">{projects[0].metrics.value}</div>
-                    <div className="label-technical mt-1">{projects[0].metrics.label}</div>
+                    <div className="label-mono mt-1">{projects[0].metrics.label}</div>
                   </div>
-                  <div className="w-14 h-14 border border-carbon-600 flex items-center justify-center group-hover:border-ember-500 group-hover:bg-ember-500 transition-all">
-                    <ArrowUpRight className="w-6 h-6 text-carbon-400 group-hover:text-neutral-900 transition-colors" />
+                  <div className="w-12 h-12 border border-obsidian-600 flex items-center justify-center group-hover:border-signal-400 group-hover:bg-signal-400 transition-all">
+                    <ArrowUpRight className="w-5 h-5 text-obsidian-400 group-hover:text-obsidian-950 transition-colors" />
                   </div>
                 </div>
               </div>
             </Link>
           </motion.div>
 
-          {/* Secondary projects - smaller cards */}
+          {/* Secondary projects */}
           {projects.slice(1).map((project, i) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.2 + i * 0.08 }}
               className="lg:col-span-4"
             >
               {(() => {
                 const cardContent = (
-                  <div className="card-industrial h-full p-6 flex flex-col">
-                    {/* Header */}
+                  <div className="card-hud h-full p-5 flex flex-col">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-12 h-12 border border-carbon-600 flex items-center justify-center group-hover:border-ember-500/50 transition-colors">
-                        <project.icon className="w-6 h-6 text-ember-400" />
+                      <div className="w-10 h-10 border border-obsidian-600 flex items-center justify-center group-hover:border-signal-400/30 transition-colors">
+                        <project.icon className="w-5 h-5 text-signal-400" />
                       </div>
                       <div className="flex items-center gap-2">
                         {project.status === 'developing' && (
-                          <span className="badge text-xs py-1 px-2">
+                          <span className="badge-hud text-[10px] py-1 px-2">
                             <span className="status-dot developing" />
-                            <span className="text-ember-400">Dev</span>
+                            <span>Dev</span>
                           </span>
                         )}
                         {project.status === 'active' && (
-                          <span className="badge badge-active text-xs py-1 px-2">
+                          <span className="badge-hud badge-live text-[10px] py-1 px-2">
                             <span className="status-dot active" />
                             <span>Live</span>
                           </span>
@@ -217,43 +208,38 @@ export function Projects() {
                       </div>
                     </div>
 
-                    {/* Title & category */}
                     <div className="mb-3">
-                      <span className="label-technical text-ember-500/60">{project.code}</span>
-                      <h3 className="font-display font-bold text-xl text-carbon-100 group-hover:text-ember-400 transition-colors">
+                      <span className="label-mono text-signal-400/25">{project.code}</span>
+                      <h3 className="font-display font-bold text-lg text-white group-hover:text-signal-400 transition-colors">
                         {project.title}
                       </h3>
-                      <span className="label-technical">{project.category}</span>
+                      <span className="label-mono">{project.category}</span>
                     </div>
 
-                    {/* Description */}
-                    <p className="text-sm text-carbon-400 font-body leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-sm text-muted font-body leading-relaxed mb-4 line-clamp-3">
                       {project.description}
                     </p>
 
-                    {/* Features pills */}
                     <div className="flex flex-wrap gap-1 mb-4">
                       {project.features.slice(0, 3).map((feature) => (
                         <span
                           key={feature}
-                          className="px-2 py-1 bg-carbon-800 text-xs text-carbon-300 font-mono"
+                          className="px-2 py-1 bg-obsidian-800/40 text-xs text-obsidian-200 font-mono border border-obsidian-700/20"
                         >
                           {feature}
                         </span>
                       ))}
                     </div>
 
-                    {/* Spacer */}
                     <div className="flex-1" />
 
-                    {/* Footer */}
-                    <div className="flex items-center justify-between pt-4 border-t border-carbon-700">
+                    <div className="flex items-center justify-between pt-4 border-t border-obsidian-700/30">
                       <div>
-                        <div className="stat-display text-2xl">{project.metrics.value}</div>
-                        <div className="label-technical">{project.metrics.label}</div>
+                        <div className="stat-display text-xl">{project.metrics.value}</div>
+                        <div className="label-mono">{project.metrics.label}</div>
                       </div>
-                      <div className="w-10 h-10 border border-carbon-600 flex items-center justify-center group-hover:border-ember-500 transition-colors">
-                        <ArrowUpRight className="w-4 h-4 text-carbon-500 group-hover:text-ember-400 transition-colors" />
+                      <div className="w-9 h-9 border border-obsidian-600 flex items-center justify-center group-hover:border-signal-400 transition-colors">
+                        <ArrowUpRight className="w-4 h-4 text-obsidian-400 group-hover:text-signal-400 transition-colors" />
                       </div>
                     </div>
                   </div>
@@ -277,15 +263,15 @@ export function Projects() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-20 pt-16 border-t border-carbon-700"
+          className="text-center mt-20 pt-16 border-t border-obsidian-700/30"
         >
-          <p className="text-carbon-500 font-body mb-6 max-w-2xl mx-auto">
+          <p className="text-muted font-body mb-6 max-w-2xl mx-auto">
             Every project is interconnected. The AI that powers our humanoid also optimizes our factories.
             The models that generate films also understand clinical documentation.
           </p>
           <a
             href="#technology"
-            className="inline-flex items-center gap-3 text-ember-400 hover:text-ember-300 transition-colors group"
+            className="inline-flex items-center gap-3 text-signal-400 hover:text-signal-300 transition-colors group"
           >
             <span className="font-display font-semibold">Explore Our Technology Stack</span>
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

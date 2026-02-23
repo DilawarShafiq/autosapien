@@ -31,29 +31,28 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="relative min-h-screen">
-        {/* Noise overlay for texture */}
+      <div className="relative min-h-screen bg-obsidian-900">
+        {/* Noise overlay */}
         <div className="noise-overlay" />
 
         {/* Custom cursor */}
         <Cursor />
 
-        {/* Background particle field */}
+        {/* 3D particle background */}
         <ParticleField />
 
-        {/* Main content */}
+        {/* Content */}
+        <div className="relative z-[1]">
         <Navbar />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* Main Product Pages */}
             <Route path="/projects/humanoid" element={<Humanoid />} />
             <Route path="/projects/home-robotics" element={<HomeRobotics />} />
             <Route path="/projects/industrial-robotics" element={<IndustrialRobotics />} />
             <Route path="/projects/healthcare-it" element={<HealthcareIT />} />
             <Route path="/projects/film-studio" element={<FilmStudio />} />
             <Route path="/projects/foundation-models" element={<FoundationModels />} />
-            {/* Legacy/Additional Healthcare Pages */}
             <Route path="/projects/rcm-automation" element={<RCMAutomation />} />
             <Route path="/projects/medical-coding" element={<MedicalCoding />} />
             <Route path="/projects/smart-scheduling" element={<SmartScheduling />} />
@@ -62,6 +61,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        </div>
       </div>
     </Router>
   )

@@ -109,13 +109,8 @@ export function Capabilities() {
   const [activeCapability, setActiveCapability] = useState(capabilities[0])
 
   return (
-    <section id="capabilities" className="relative py-16 sm:py-32 overflow-hidden bg-carbon-900">
-      {/* Background */}
-      <div className="absolute inset-0 bg-technical-grid opacity-20" />
-
-      {/* Geometric accents */}
-      <div className="absolute top-1/2 left-0 w-64 h-64 border border-ember-500/10 -translate-y-1/2 -translate-x-1/2 hidden sm:block" style={{ transform: 'rotate(45deg) translate(-50%, -50%)' }} />
-      <div className="absolute top-1/2 right-0 w-64 h-64 border border-volt-500/10 -translate-y-1/2 translate-x-1/2 hidden sm:block" style={{ transform: 'rotate(45deg) translate(50%, -50%)' }} />
+    <section id="capabilities" className="relative py-16 sm:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-20" />
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
@@ -125,14 +120,14 @@ export function Capabilities() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <span className="badge badge-ember mb-6">
-            <span className="label-technical">Capabilities</span>
+          <span className="badge-hud mb-6">
+            <span>SYS.CAPABILITIES</span>
           </span>
           <h2 className="font-display font-bold text-display-lg mb-6">
             Six frontiers of{' '}
-            <span className="text-gradient-cool">innovation</span>
+            <span className="text-signal-400">innovation</span>
           </h2>
-          <p className="text-base sm:text-lg text-carbon-400 font-body max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted font-body max-w-3xl mx-auto">
             From humanoid companions to autonomous factories, from healing healthcare to
             generating cinema—we're building across every domain where AI can transform
             the physical world.
@@ -140,7 +135,7 @@ export function Capabilities() {
         </motion.div>
 
         {/* Interactive capability showcase */}
-        <div className="grid lg:grid-cols-[350px_1fr] gap-8">
+        <div className="grid lg:grid-cols-[350px_1fr] gap-6">
           {/* Capability selector */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -154,45 +149,41 @@ export function Capabilities() {
                 onClick={() => setActiveCapability(cap)}
                 className={`flex-none lg:w-full min-w-[200px] lg:min-w-0 p-4 text-left transition-all duration-300 group border ${
                   activeCapability.id === cap.id
-                    ? 'bg-carbon-800 border-ember-500/30'
-                    : 'border-carbon-700 hover:border-carbon-600 hover:bg-carbon-850'
+                    ? 'bg-obsidian-800/60 border-signal-400/15'
+                    : 'border-obsidian-700/30 hover:border-obsidian-600 hover:bg-obsidian-850/40'
                 }`}
               >
                 <div className="flex items-center gap-4">
                   <div
-                    className={`w-12 h-12 border flex items-center justify-center transition-all ${
+                    className={`w-11 h-11 border flex items-center justify-center transition-all ${
                       activeCapability.id === cap.id
-                        ? 'border-ember-500 bg-ember-500/10'
-                        : 'border-carbon-600 group-hover:border-carbon-500'
+                        ? 'border-signal-400/40 bg-signal-400/5'
+                        : 'border-obsidian-600 group-hover:border-obsidian-500'
                     }`}
                   >
                     <cap.icon
-                      className={`w-6 h-6 ${
-                        activeCapability.id === cap.id ? 'text-ember-400' : 'text-carbon-400'
+                      className={`w-5 h-5 ${
+                        activeCapability.id === cap.id ? 'text-signal-400' : 'text-obsidian-300'
                       }`}
                     />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3
-                        className={`font-display font-semibold transition-colors ${
-                          activeCapability.id === cap.id ? 'text-carbon-100' : 'text-carbon-300'
+                        className={`font-display font-semibold text-sm transition-colors ${
+                          activeCapability.id === cap.id ? 'text-white' : 'text-obsidian-200'
                         }`}
                       >
                         {cap.title}
                       </h3>
-                      {cap.status === 'developing' && (
-                        <span className="status-dot developing" />
-                      )}
-                      {cap.status === 'active' && (
-                        <span className="status-dot active" />
-                      )}
+                      {cap.status === 'developing' && <span className="status-dot developing" />}
+                      {cap.status === 'active' && <span className="status-dot active" />}
                     </div>
-                    <p className="text-sm text-carbon-500 font-body">{cap.subtitle}</p>
+                    <p className="text-xs text-obsidian-400 font-body">{cap.subtitle}</p>
                   </div>
                   <ChevronRight
-                    className={`w-5 h-5 text-carbon-500 transition-transform flex-shrink-0 ${
-                      activeCapability.id === cap.id ? 'rotate-90 text-ember-400' : ''
+                    className={`w-4 h-4 text-obsidian-500 transition-transform flex-shrink-0 ${
+                      activeCapability.id === cap.id ? 'rotate-90 text-signal-400' : ''
                     }`}
                   />
                 </div>
@@ -214,64 +205,60 @@ export function Capabilities() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="card-industrial p-6 sm:p-8 lg:p-12 h-full corner-accent"
+                className="card-hud p-6 sm:p-8 lg:p-12 h-full hud-corners"
               >
                 <div className="relative">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-8 flex-wrap gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 border-2 border-ember-500 flex items-center justify-center">
-                        <activeCapability.icon className="w-8 h-8 text-ember-400" />
+                      <div className="w-14 h-14 border border-signal-400/30 flex items-center justify-center">
+                        <activeCapability.icon className="w-7 h-7 text-signal-400" />
                       </div>
                       <div>
-                        <span className="label-technical text-ember-500">{activeCapability.code}</span>
-                        <h3 className="font-display font-bold text-2xl text-carbon-100">
+                        <span className="label-mono text-signal-400/50">{activeCapability.code}</span>
+                        <h3 className="font-display font-bold text-2xl text-white">
                           {activeCapability.title}
                         </h3>
                       </div>
                     </div>
-                    {/* Status Badge */}
                     {activeCapability.status === 'developing' && (
-                      <span className="badge">
+                      <span className="badge-hud">
                         <span className="status-dot developing" />
-                        <span className="text-ember-400">Development</span>
+                        <span>Development</span>
                       </span>
                     )}
                     {activeCapability.status === 'active' && (
-                      <span className="badge badge-active">
+                      <span className="badge-hud badge-live">
                         <span className="status-dot active" />
                         <span>Live</span>
                       </span>
                     )}
                   </div>
 
-                  {/* Subtitle */}
-                  <p className="text-ember-400 font-display font-semibold mb-6">
+                  <p className="text-signal-400 font-display font-semibold mb-6">
                     {activeCapability.subtitle}
                   </p>
 
-                  {/* Description */}
-                  <p className="text-base sm:text-lg text-carbon-300 font-body mb-10 leading-relaxed">
+                  <p className="text-base sm:text-lg text-dim font-body mb-10 leading-relaxed">
                     {activeCapability.description}
                   </p>
 
-                  {/* Features grid */}
+                  {/* Features */}
                   <div className="grid sm:grid-cols-2 gap-3 mb-10">
                     {activeCapability.features.map((feature, i) => (
                       <motion.div
                         key={feature}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.1 }}
-                        className="flex items-center gap-3 p-4 bg-carbon-800 border border-carbon-700"
+                        transition={{ delay: i * 0.08 }}
+                        className="flex items-center gap-3 p-4 bg-obsidian-800/40 border border-obsidian-700/30"
                       >
-                        <div className="w-1.5 h-1.5 bg-ember-400" />
-                        <span className="text-sm text-carbon-200 font-body">{feature}</span>
+                        <div className="w-1 h-1 bg-signal-400" />
+                        <span className="text-sm text-obsidian-100 font-body">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
 
-                  {/* CTA */}
                   <button className="btn-primary group">
                     <span className="flex items-center gap-3">
                       Explore {activeCapability.title}
@@ -285,8 +272,7 @@ export function Capabilities() {
         </div>
       </div>
 
-      {/* Bottom border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-carbon-600 to-transparent" />
+      <div className="divider-glow absolute bottom-0 left-0 right-0" />
     </section>
   )
 }

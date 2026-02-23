@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-    @apply border-carbon-700;
+    @apply border-obsidian-700;
   }
 
   html {
@@ -14,8 +14,9 @@
   }
 
   body {
-    @apply bg-carbon-900 text-carbon-100 antialiased;
+    @apply bg-obsidian-900 antialiased;
     font-family: 'Outfit', system-ui, sans-serif;
+    color: #e8e4de;
     overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
   }
@@ -30,99 +31,107 @@
   }
 
   ::selection {
-    @apply bg-ember-500/30 text-carbon-100;
+    background: rgba(240, 160, 48, 0.25);
+    color: #fff;
   }
 
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 3px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-carbon-950;
+    background: #06060a;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-ember-600/50 rounded-full;
+    background: rgba(240, 160, 48, 0.25);
+    border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-ember-500;
+    background: rgba(240, 160, 48, 0.5);
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Syne', system-ui, sans-serif;
+    color: #ffffff;
   }
 }
 
 @layer components {
-  /* Industrial card style */
-  .card-industrial {
-    @apply bg-carbon-850 border border-carbon-700 relative overflow-hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* =============================================
+     CARD - Minimal, single-border, premium feel
+     ============================================= */
+  .card-hud {
+    @apply relative overflow-hidden;
+    background: rgba(10, 10, 16, 0.6);
+    border: 1px solid rgba(240, 160, 48, 0.06);
+    backdrop-filter: blur(12px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .card-industrial::before {
+  .card-hud::before {
     content: '';
-    @apply absolute top-0 left-0 w-full h-px;
-    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.5), transparent);
+    @apply absolute top-0 left-0 right-0 h-px;
+    background: linear-gradient(90deg, transparent, rgba(240, 160, 48, 0.25), transparent);
     opacity: 0;
-    transition: opacity 0.4s;
+    transition: opacity 0.5s;
   }
 
-  .card-industrial:hover {
-    @apply border-ember-500/30 bg-carbon-800;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(251, 191, 36, 0.2);
+  .card-hud:hover {
+    border-color: rgba(240, 160, 48, 0.12);
+    background: rgba(15, 15, 22, 0.8);
   }
 
-  .card-industrial:hover::before {
+  .card-hud:hover::before {
     opacity: 1;
   }
 
-  /* Technical corner accent */
-  .corner-accent {
+  /* =============================================
+     CORNER BRACKETS - Precise engineering feel
+     ============================================= */
+  .hud-corners {
     @apply relative;
   }
 
-  .corner-accent::before,
-  .corner-accent::after {
+  .hud-corners::before,
+  .hud-corners::after {
     content: '';
-    @apply absolute w-6 h-6 border-ember-500/50;
-    transition: all 0.3s;
+    @apply absolute w-4 h-4;
+    transition: all 0.4s;
   }
 
-  .corner-accent::before {
-    @apply top-0 left-0 border-t-2 border-l-2;
+  .hud-corners::before {
+    @apply top-0 left-0;
+    border-top: 1px solid rgba(240, 160, 48, 0.3);
+    border-left: 1px solid rgba(240, 160, 48, 0.3);
   }
 
-  .corner-accent::after {
-    @apply bottom-0 right-0 border-b-2 border-r-2;
+  .hud-corners::after {
+    @apply bottom-0 right-0;
+    border-bottom: 1px solid rgba(240, 160, 48, 0.3);
+    border-right: 1px solid rgba(240, 160, 48, 0.3);
   }
 
-  .corner-accent:hover::before,
-  .corner-accent:hover::after {
-    @apply w-8 h-8 border-ember-400;
+  .hud-corners:hover::before,
+  .hud-corners:hover::after {
+    @apply w-6 h-6;
+    border-color: rgba(240, 160, 48, 0.5);
   }
 
-  /* Gradient text - warm amber */
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #d97706 100%);
-  }
-
-  .text-gradient-cool {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #00d4ff 0%, #00b8e6 50%, #0093bf 100%);
-  }
-
-  /* Technical grid background */
-  .bg-technical-grid {
+  /* =============================================
+     GRID BACKGROUND
+     ============================================= */
+  .bg-grid {
     background-image:
-      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
+      linear-gradient(rgba(240, 160, 48, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(240, 160, 48, 0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
   }
 
-  /* Scan line effect */
+  /* =============================================
+     SCAN LINE - Subtle sweep
+     ============================================= */
   .scan-line {
     @apply absolute inset-0 pointer-events-none overflow-hidden;
   }
@@ -130,50 +139,38 @@
   .scan-line::after {
     content: '';
     @apply absolute left-0 w-full h-px;
-    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.3), transparent);
-    animation: scan 4s linear infinite;
+    background: linear-gradient(90deg, transparent, rgba(240, 160, 48, 0.2), transparent);
+    animation: scan 8s linear infinite;
   }
 
-  /* Badge styles */
-  .badge {
-    @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-mono uppercase tracking-wider;
-    @apply border border-carbon-600 bg-carbon-850;
+  /* =============================================
+     BADGE - Mono, restrained
+     ============================================= */
+  .badge-hud {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 font-mono text-xs uppercase tracking-[0.15em];
+    border: 1px solid rgba(240, 160, 48, 0.12);
+    color: rgba(240, 160, 48, 0.7);
   }
 
-  .badge-ember {
-    @apply border-ember-500/30 text-ember-400;
+  .badge-live {
+    border-color: rgba(61, 220, 132, 0.15);
+    color: rgba(61, 220, 132, 0.8);
   }
 
-  .badge-volt {
-    @apply border-volt-500/30 text-volt-400;
-  }
-
-  .badge-active {
-    @apply border-green-500/30 text-green-400;
-  }
-
-  /* Button styles */
+  /* =============================================
+     BUTTONS - Solid, confident
+     ============================================= */
   .btn-primary {
-    @apply relative px-8 py-4 font-display font-semibold text-neutral-900 overflow-hidden;
-    background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .btn-primary::before {
-    content: '';
-    @apply absolute inset-0;
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-    opacity: 0;
-    transition: opacity 0.3s;
+    @apply relative px-8 py-4 font-display font-semibold overflow-hidden;
+    background: #f0a030;
+    color: #06060a;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-primary:hover {
+    background: #ffd666;
     transform: translateY(-2px);
-    box-shadow: 0 10px 40px rgba(251, 191, 36, 0.3);
-  }
-
-  .btn-primary:hover::before {
-    opacity: 1;
+    box-shadow: 0 12px 40px rgba(240, 160, 48, 0.2);
   }
 
   .btn-primary span {
@@ -181,65 +178,90 @@
   }
 
   .btn-secondary {
-    @apply px-8 py-4 font-display font-semibold border-2 border-carbon-600 text-carbon-100;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply px-8 py-4 font-display font-semibold;
+    color: #f0a030;
+    border: 1px solid rgba(240, 160, 48, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-secondary:hover {
-    @apply border-ember-500 text-ember-400;
+    border-color: rgba(240, 160, 48, 0.5);
+    background: rgba(240, 160, 48, 0.04);
     transform: translateY(-2px);
   }
 
-  /* Number/stat display */
+  /* =============================================
+     TYPOGRAPHY HELPERS
+     ============================================= */
   .stat-display {
     @apply font-display font-bold tracking-tight;
-    background: linear-gradient(180deg, #111827 0%, #6b7280 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #f0a030;
   }
 
-  /* Technical label */
-  .label-technical {
-    @apply font-mono text-xs uppercase tracking-[0.2em] text-carbon-400;
+  .label-mono {
+    @apply font-mono text-xs uppercase tracking-[0.2em];
+    color: rgba(240, 160, 48, 0.35);
   }
 
-  /* Hover lift effect */
+  .text-muted {
+    color: rgba(232, 228, 222, 0.45);
+  }
+
+  .text-dim {
+    color: rgba(232, 228, 222, 0.65);
+  }
+
+  /* =============================================
+     HOVER LIFT
+     ============================================= */
   .hover-lift {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s;
   }
 
   .hover-lift:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 
-  /* Noise overlay */
+  /* =============================================
+     NOISE OVERLAY
+     ============================================= */
   .noise-overlay {
     @apply fixed inset-0 pointer-events-none;
     z-index: 9999;
-    opacity: 0.015;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   }
 
-  /* Status indicator */
+  /* =============================================
+     STATUS DOTS
+     ============================================= */
   .status-dot {
-    @apply w-2 h-2 rounded-full;
+    @apply w-1.5 h-1.5 rounded-full;
   }
 
   .status-dot.active {
-    @apply bg-green-400;
-    box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
-    animation: pulse 2s infinite;
+    background: #3ddc84;
+    box-shadow: 0 0 8px rgba(61, 220, 132, 0.5);
   }
 
   .status-dot.developing {
-    @apply bg-ember-400;
-    animation: pulse 2s infinite;
+    background: #f0a030;
+    box-shadow: 0 0 8px rgba(240, 160, 48, 0.4);
+    animation: pulse 3s infinite;
   }
 
-  .status-dot.launching {
-    @apply bg-volt-400;
-    animation: pulse 1s infinite;
+  /* =============================================
+     DIVIDERS
+     ============================================= */
+  .divider-glow {
+    @apply h-px w-full;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(240, 160, 48, 0.08) 20%,
+      rgba(240, 160, 48, 0.2) 50%,
+      rgba(240, 160, 48, 0.08) 80%,
+      transparent 100%
+    );
   }
 }
 
@@ -251,11 +273,6 @@
   .mask-fade-b {
     mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  }
-
-  .mask-fade-t {
-    mask-image: linear-gradient(to top, black 60%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to top, black 60%, transparent 100%);
   }
 
   .mask-fade-edges {

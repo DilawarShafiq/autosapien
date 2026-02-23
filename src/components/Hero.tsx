@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Circle } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -10,76 +10,62 @@ export function Hero() {
   })
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9])
+  const y = useTransform(scrollYProgress, [0, 0.5], [0, -60])
 
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-carbon-900"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Technical grid background */}
-      <div className="absolute inset-0 bg-technical-grid opacity-50" />
+      {/* Subtle grid */}
+      <div className="absolute inset-0 bg-grid opacity-60" />
 
-      {/* Radial gradient fade */}
+      {/* Radial vignette */}
       <div
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 80% 50% at 50% 50%, transparent 0%, #ffffff 100%)'
+          background: 'radial-gradient(ellipse 70% 60% at 50% 50%, transparent 0%, #0a0a10 100%)'
         }}
       />
 
-      {/* Geometric accent shapes */}
-      <motion.div
-        className="absolute top-1/4 left-[10%] w-64 h-64 border border-ember-500/10 hidden sm:block"
-        style={{ rotate: 45 }}
-        animate={{
-          rotate: [45, 50, 45],
-          scale: [1, 1.05, 1]
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-[10%] w-48 h-48 border border-volt-500/10 hidden sm:block"
-        style={{ rotate: 45 }}
-        animate={{
-          rotate: [45, 40, 45],
-          scale: [1, 1.1, 1]
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-      />
-
-      {/* Scan line effect */}
+      {/* Scan line */}
       <div className="scan-line" />
+
+      {/* Corner HUD brackets */}
+      <div className="absolute top-24 left-6 sm:left-12 w-12 h-12 border-t border-l border-signal-400/20 hidden lg:block" />
+      <div className="absolute top-24 right-6 sm:right-12 w-12 h-12 border-t border-r border-signal-400/20 hidden lg:block" />
+      <div className="absolute bottom-12 left-6 sm:left-12 w-12 h-12 border-b border-l border-signal-400/20 hidden lg:block" />
+      <div className="absolute bottom-12 right-6 sm:right-12 w-12 h-12 border-b border-r border-signal-400/20 hidden lg:block" />
 
       {/* Main content */}
       <motion.div
-        style={{ opacity, scale }}
+        style={{ opacity, y }}
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-0"
       >
-        {/* Top badge */}
+        {/* System status badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center mb-8 sm:mb-12"
+          transition={{ duration: 0.8 }}
+          className="flex justify-center mb-10 sm:mb-14"
         >
-          <div className="badge badge-ember">
-            <Circle className="w-2 h-2 fill-ember-400 text-ember-400" />
-            <span className="text-xs sm:text-sm">Building the Machines That Will Build Tomorrow</span>
+          <div className="badge-hud">
+            <span className="status-dot active" />
+            <span>Building the Machines That Will Build Tomorrow</span>
           </div>
         </motion.div>
 
-        {/* Main heading */}
+        {/* Main heading - massive, solid, no gradients */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 1, delay: 0.2 }}
           className="text-center mb-8"
         >
-          <h1 className="font-display font-bold text-display-2xl mb-6">
-            <span className="block text-carbon-100">WHERE</span>
-            <span className="block text-gradient">INTELLIGENCE</span>
-            <span className="block text-carbon-100">MEETS FORM</span>
+          <h1 className="font-display font-bold text-display-2xl">
+            <span className="block text-white">WHERE</span>
+            <span className="block text-signal-400">INTELLIGENCE</span>
+            <span className="block text-white">MEETS FORM</span>
           </h1>
         </motion.div>
 
@@ -87,8 +73,8 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-base sm:text-lg md:text-xl text-carbon-300 max-w-3xl mx-auto text-center mb-10 sm:mb-16 font-body leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-base sm:text-lg md:text-xl text-dim max-w-3xl mx-auto text-center mb-10 sm:mb-16 font-body leading-relaxed"
         >
           Autosapien is pioneering the convergence of artificial intelligence and physical robotics.
           From humanoid companions to healthcare automation, industrial machines to AI-generated cinema—we're
@@ -99,7 +85,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-24"
         >
           <button className="btn-primary group">
@@ -112,7 +98,7 @@ export function Hero() {
           <a href="https://xehr.io" target="_blank" rel="noopener noreferrer" className="btn-secondary group">
             <span className="flex items-center gap-3">
               Explore xEHR.io
-              <div className="w-2 h-2 rounded-full bg-green-400 group-hover:animate-pulse" />
+              <span className="status-dot active" />
             </span>
           </a>
         </motion.div>
@@ -121,35 +107,35 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-16"
         >
           {[
             { value: '6', label: 'Core AI Verticals', href: '#capabilities' },
             { value: '#1', label: 'AI-Powered Healthcare IT', href: 'https://xehr.io' },
-            { value: '1st', label: 'Humanoid in Development', suffix: '' },
+            { value: '1st', label: 'Humanoid in Development' },
             { value: '24/7', label: 'Agentic AI FTEs', href: 'https://rcmemployee.com' },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1 + i * 0.1 }}
+              transition={{ delay: 1.1 + i * 0.1 }}
               className="text-center"
             >
               {stat.href ? (
                 <a href={stat.href} {...(stat.href.startsWith('#') ? {} : { target: '_blank', rel: 'noopener noreferrer' })} className="group">
-                  <div className="flex items-baseline justify-center gap-1 mb-2">
+                  <div className="mb-2">
                     <span className="stat-display text-3xl sm:text-5xl md:text-6xl group-hover:opacity-80 transition-opacity">{stat.value}</span>
                   </div>
-                  <div className="label-technical group-hover:text-carbon-200 transition-colors">{stat.label}</div>
+                  <div className="label-mono group-hover:text-signal-400/50 transition-colors">{stat.label}</div>
                 </a>
               ) : (
                 <>
-                  <div className="flex items-baseline justify-center gap-1 mb-2">
+                  <div className="mb-2">
                     <span className="stat-display text-3xl sm:text-5xl md:text-6xl">{stat.value}</span>
                   </div>
-                  <div className="label-technical">{stat.label}</div>
+                  <div className="label-mono">{stat.label}</div>
                 </>
               )}
             </motion.div>
@@ -161,27 +147,27 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 1.8 }}
         className="absolute bottom-4 sm:bottom-12 left-1/2 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{ duration: 2.5, repeat: Infinity }}
           className="flex flex-col items-center gap-4"
         >
-          <span className="label-technical">Scroll to Explore</span>
-          <div className="w-px h-12 bg-gradient-to-b from-ember-500 to-transparent" />
+          <span className="label-mono">Scroll to Explore</span>
+          <div className="w-px h-12 bg-gradient-to-b from-signal-400/40 to-transparent" />
         </motion.div>
       </motion.div>
 
-      {/* Side technical labels */}
+      {/* Side labels */}
       <div className="hidden lg:block absolute left-8 top-1/2 -translate-y-1/2">
-        <div className="label-technical -rotate-90 origin-left whitespace-nowrap">
+        <div className="label-mono -rotate-90 origin-left whitespace-nowrap">
           AI & ROBOTICS — EST. 2024
         </div>
       </div>
       <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2">
-        <div className="label-technical rotate-90 origin-right whitespace-nowrap">
+        <div className="label-mono rotate-90 origin-right whitespace-nowrap">
           ENGINEERING INTELLIGENCE
         </div>
       </div>

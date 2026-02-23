@@ -44,16 +44,14 @@ export function PageHero({
   }, [])
 
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-24 bg-carbon-900">
-      {/* Background */}
-      <div className="absolute inset-0 bg-technical-grid opacity-30" />
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-24">
+      <div className="absolute inset-0 bg-grid opacity-25" />
 
       {/* Geometric accents */}
-      <div className="absolute top-1/4 right-[10%] w-64 h-64 border border-ember-500/10 hidden sm:block" style={{ transform: 'rotate(45deg)' }} />
-      <div className="absolute bottom-1/4 left-[10%] w-48 h-48 border border-volt-500/10 hidden sm:block" style={{ transform: 'rotate(45deg)' }} />
+      <div className="absolute top-1/4 right-[10%] w-48 h-48 border border-signal-400/5 hidden sm:block" style={{ transform: 'rotate(45deg)' }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 w-full">
-        {/* Back button */}
+        {/* Back */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -61,46 +59,44 @@ export function PageHero({
         >
           <Link
             to="/"
-            className="inline-flex items-center gap-3 text-carbon-400 hover:text-ember-400 transition-colors mb-12 group"
+            className="inline-flex items-center gap-3 text-obsidian-300 hover:text-signal-400 transition-colors mb-12 group"
           >
-            <div className="w-10 h-10 border border-carbon-600 flex items-center justify-center group-hover:border-ember-500 transition-colors">
+            <div className="w-9 h-9 border border-obsidian-600 flex items-center justify-center group-hover:border-signal-400/40 transition-colors">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             </div>
-            <span className="font-body">Back to Home</span>
+            <span className="font-body text-sm">Back to Home</span>
           </Link>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left content */}
           <div>
-            {/* Header with icon and category */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="flex items-start gap-4 mb-8"
             >
-              <div className="w-16 h-16 border-2 border-ember-500 flex items-center justify-center">
-                <Icon className="w-8 h-8 text-ember-400" />
+              <div className="w-14 h-14 border border-signal-400/25 flex items-center justify-center">
+                <Icon className="w-7 h-7 text-signal-400" />
               </div>
               <div>
-                <span className="label-technical text-ember-500">{code}</span>
-                <span className="label-technical ml-2">{category}</span>
+                <span className="label-mono text-signal-400/50">{code}</span>
+                <span className="label-mono ml-2">{category}</span>
                 <div className="flex items-center gap-3 mt-2">
                   {status === 'developing' && (
-                    <span className="badge">
+                    <span className="badge-hud">
                       <span className="status-dot developing" />
-                      <span className="text-ember-400">Development</span>
+                      <span>Development</span>
                     </span>
                   )}
                   {status === 'launching' && (
-                    <span className="badge badge-volt">
+                    <span className="badge-hud">
                       <Clock className="w-3 h-3" />
                       <span>{daysUntilLaunch} days</span>
                     </span>
                   )}
                   {status === 'active' && (
-                    <span className="badge badge-active">
+                    <span className="badge-hud badge-live">
                       <span className="status-dot active" />
                       <span>Live</span>
                     </span>
@@ -113,16 +109,16 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display font-bold text-display-xl mb-4"
+              className="font-display font-bold text-display-xl mb-4 text-signal-400"
             >
-              <span className="text-gradient">{title}</span>
+              {title}
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-2xl text-carbon-100 font-display font-semibold mb-6"
+              className="text-2xl text-white font-display font-semibold mb-6"
             >
               {subtitle}
             </motion.p>
@@ -131,7 +127,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg text-carbon-400 font-body mb-10 max-w-xl leading-relaxed"
+              className="text-lg text-muted font-body mb-10 max-w-xl leading-relaxed"
             >
               {description}
             </motion.p>
@@ -152,26 +148,25 @@ export function PageHero({
             </motion.div>
           </div>
 
-          {/* Right content - Features */}
           {features && (
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-3"
             >
               {features.map((feature, i) => (
                 <motion.div
                   key={feature}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.1 }}
-                  className="card-industrial p-6 group hover-lift"
+                  transition={{ delay: 0.4 + i * 0.08 }}
+                  className="card-hud p-5 group hover-lift"
                 >
-                  <div className="w-10 h-10 border border-carbon-600 flex items-center justify-center mb-4 group-hover:border-ember-500/50 transition-colors">
-                    <div className="w-2 h-2 bg-ember-400" />
+                  <div className="w-8 h-8 border border-obsidian-600 flex items-center justify-center mb-4 group-hover:border-signal-400/30 transition-colors">
+                    <div className="w-1.5 h-1.5 bg-signal-400" />
                   </div>
-                  <p className="text-carbon-100 font-display font-medium">{feature}</p>
+                  <p className="text-white font-display font-medium text-sm">{feature}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -179,8 +174,7 @@ export function PageHero({
         </div>
       </div>
 
-      {/* Bottom border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-carbon-600 to-transparent" />
+      <div className="divider-glow absolute bottom-0 left-0 right-0" />
     </section>
   )
 }
