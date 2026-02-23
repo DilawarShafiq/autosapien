@@ -14,7 +14,10 @@
   }
 
   body {
-    @apply bg-white text-ink-700 antialiased;
+    background: #ffffff;
+    color: #4a4a4a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-family: 'Outfit', system-ui, sans-serif;
     overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
@@ -53,7 +56,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Syne', system-ui, sans-serif;
-    @apply text-ink-900;
+    color: #1a1a1a;
   }
 }
 
