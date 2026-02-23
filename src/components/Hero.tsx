@@ -78,7 +78,7 @@ export function Hero() {
         className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 items-center"
       >
         <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-300 -rotate-90 origin-center whitespace-nowrap">
-          AI & Robotics — Est. 2024
+          Autosapien (Pvt) Ltd — Est. 2024
         </span>
       </motion.div>
       <motion.div
