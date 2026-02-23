@@ -129,7 +129,7 @@ export function Robotics() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-plasma-500/20 to-cyber-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <cap.icon className="w-7 h-7 text-plasma-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
+                <h3 className="text-xl font-bold text-carbon-100 mb-3">{cap.title}</h3>
                 <p className="text-neutral-400">{cap.description}</p>
               </motion.div>
             ))}
@@ -200,7 +200,7 @@ export function Robotics() {
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${app.image} flex items-center justify-center mb-6`}>
                     <Zap className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{app.title}</h3>
+                  <h3 className="text-2xl font-bold text-carbon-100 mb-3">{app.title}</h3>
                   <p className="text-neutral-400 mb-6">{app.description}</p>
                   <button className="text-sm text-plasma-400 hover:text-plasma-300 transition-colors flex items-center gap-2">
                     Learn more

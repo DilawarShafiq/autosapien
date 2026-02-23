@@ -125,7 +125,7 @@ export function IndustrialRobotics() {
                   <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyber-500 to-blue-500 bg-clip-text text-transparent mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-white font-medium mb-1">{metric.label}</div>
+                  <div className="text-carbon-100 font-medium mb-1">{metric.label}</div>
                   <div className="text-sm text-neutral-500">{metric.description}</div>
                 </motion.div>
               ))}
@@ -172,7 +172,7 @@ export function IndustrialRobotics() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyber-500/20 to-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <cap.icon className="w-7 h-7 text-cyber-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
+                <h3 className="text-xl font-bold text-carbon-100 mb-3">{cap.title}</h3>
                 <p className="text-neutral-400">{cap.description}</p>
               </motion.div>
             ))}
@@ -221,7 +221,7 @@ export function IndustrialRobotics() {
                     {app.metrics}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{app.title}</h3>
+                <h3 className="text-xl font-bold text-carbon-100 mb-3">{app.title}</h3>
                 <p className="text-neutral-400">{app.description}</p>
               </motion.div>
             ))}
@@ -238,7 +238,7 @@ export function IndustrialRobotics() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Safety & Compliance</h3>
+            <h3 className="text-2xl font-bold text-carbon-100 mb-4">Safety & Compliance</h3>
             <p className="text-neutral-400">Meeting and exceeding global industrial standards</p>
           </motion.div>
 
@@ -254,7 +254,7 @@ export function IndustrialRobotics() {
                   className="text-center p-4 rounded-2xl bg-white/5"
                 >
                   <Shield className="w-8 h-8 text-cyber-400 mx-auto mb-3" />
-                  <div className="font-bold text-white mb-1">{standard.standard}</div>
+                  <div className="font-bold text-carbon-100 mb-1">{standard.standard}</div>
                   <div className="text-sm text-neutral-500">{standard.description}</div>
                 </motion.div>
               ))}
@@ -273,7 +273,7 @@ export function IndustrialRobotics() {
             className="glass rounded-3xl p-12 text-center"
           >
             <RefreshCw className="w-12 h-12 text-cyber-400 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-carbon-100 mb-4">
               Seamless integration with your existing systems
             </h2>
             <p className="text-lg text-neutral-400 mb-8">

@@ -132,7 +132,7 @@ export function HealthcareIT() {
                   <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-white font-medium mb-1">{metric.label}</div>
+                  <div className="text-carbon-100 font-medium mb-1">{metric.label}</div>
                   <div className="text-sm text-neutral-500">{metric.description}</div>
                 </motion.div>
               ))}
@@ -181,7 +181,7 @@ export function HealthcareIT() {
                     <module.icon className="w-7 h-7 text-rose-400" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{module.title}</h3>
+                    <h3 className="text-xl font-bold text-carbon-100 mb-2">{module.title}</h3>
                     <p className="text-neutral-400 text-sm">{module.description}</p>
                   </div>
                 </div>
@@ -240,7 +240,7 @@ export function HealthcareIT() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <cap.icon className="w-7 h-7 text-rose-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
+                <h3 className="text-xl font-bold text-carbon-100 mb-3">{cap.title}</h3>
                 <p className="text-neutral-400">{cap.description}</p>
               </motion.div>
             ))}
@@ -282,12 +282,12 @@ export function HealthcareIT() {
               >
                 <div className="flex-1">
                   <div className="text-neutral-500 text-sm mb-1">The Problem</div>
-                  <div className="text-white font-medium">{item.problem}</div>
+                  <div className="text-carbon-100 font-medium">{item.problem}</div>
                 </div>
                 <ArrowRight className="w-6 h-6 text-rose-400 hidden md:block" />
                 <div className="flex-1">
                   <div className="text-rose-400 text-sm mb-1">Our Solution</div>
-                  <div className="text-white font-medium">{item.solution}</div>
+                  <div className="text-carbon-100 font-medium">{item.solution}</div>
                 </div>
               </motion.div>
             ))}
@@ -304,7 +304,7 @@ export function HealthcareIT() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Enterprise Compliance</h3>
+            <h3 className="text-2xl font-bold text-carbon-100 mb-4">Enterprise Compliance</h3>
             <p className="text-neutral-400">Meeting the highest standards in healthcare security and interoperability</p>
           </motion.div>
 
@@ -319,7 +319,7 @@ export function HealthcareIT() {
                 className="glass rounded-2xl px-8 py-6 text-center"
               >
                 <Shield className="w-8 h-8 text-rose-400 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-white mb-1">{item.badge}</div>
+                <div className="text-2xl font-bold text-carbon-100 mb-1">{item.badge}</div>
                 <div className="text-sm text-neutral-500">{item.description}</div>
               </motion.div>
             ))}
@@ -339,7 +339,7 @@ export function HealthcareIT() {
             <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-pink-500/10" />
             <div className="relative">
               <Clock className="w-12 h-12 text-rose-400 mx-auto mb-6" />
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-3xl font-bold text-carbon-100 mb-4">
                 Ready to transform your practice?
               </h2>
               <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">
