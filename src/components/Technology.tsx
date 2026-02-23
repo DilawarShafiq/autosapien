@@ -31,13 +31,8 @@ export function Technology() {
   const x2 = useTransform(scrollYProgress, [0, 1], [0, 200])
 
   return (
-    <section id="technology" ref={containerRef} className="relative py-20 sm:py-36 overflow-hidden" style={{ background: '#f5f5f0' }}>
-      <div className="divider" />
-
-      {/* Grid pattern */}
-      <div className="absolute inset-0 grid-pattern pointer-events-none" />
-
-      <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-36">
+    <section id="technology" ref={containerRef} className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#f5f5f0' }}>
+      <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

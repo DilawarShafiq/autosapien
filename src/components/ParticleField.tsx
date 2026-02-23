@@ -2,8 +2,8 @@ import { useRef, useMemo, useCallback } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 
-const PARTICLE_COUNT = 500
-const CONNECTION_DISTANCE = 3.5
+const PARTICLE_COUNT = 350
+const CONNECTION_DISTANCE = 3.2
 const MOUSE_RADIUS = 6
 const MOUSE_STRENGTH = 1.8
 
@@ -65,20 +65,16 @@ function NetworkParticles() {
     const mx = mouse3D.current.x
     const my = mouse3D.current.y
 
-    // Update particles
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3
-      // Slow drift
       posArray[i3] += velocities[i3] + Math.sin(time * 0.3 + i * 0.1) * 0.002
       posArray[i3 + 1] += velocities[i3 + 1] + Math.cos(time * 0.2 + i * 0.15) * 0.002
       posArray[i3 + 2] += velocities[i3 + 2]
 
-      // Gently return to base region
       posArray[i3] += (basePositions[i3] - posArray[i3]) * 0.0005
       posArray[i3 + 1] += (basePositions[i3 + 1] - posArray[i3 + 1]) * 0.0005
       posArray[i3 + 2] += (basePositions[i3 + 2] - posArray[i3 + 2]) * 0.001
 
-      // Mouse repulsion
       const dx = posArray[i3] - mx
       const dy = posArray[i3 + 1] - my
       const dist = Math.sqrt(dx * dx + dy * dy)
@@ -86,7 +82,6 @@ function NetworkParticles() {
         const force = (1 - dist / MOUSE_RADIUS) * MOUSE_STRENGTH * 0.02
         posArray[i3] += dx * force
         posArray[i3 + 1] += dy * force
-        // Enlarge near cursor
         sizeArray[i] = sizes[i] * (1 + (1 - dist / MOUSE_RADIUS) * 3)
       } else {
         sizeArray[i] = sizes[i]
@@ -96,7 +91,6 @@ function NetworkParticles() {
     meshRef.current.geometry.attributes.position.needsUpdate = true
     meshRef.current.geometry.attributes.size.needsUpdate = true
 
-    // Draw connections
     const lineGeo = linesRef.current.geometry
     const linePosArr = lineGeo.attributes.position.array as Float32Array
     const lineColArr = lineGeo.attributes.color.array as Float32Array
@@ -120,16 +114,16 @@ function NetworkParticles() {
         if (dist < CONNECTION_DISTANCE && lineIdx < linePosArr.length - 6) {
           const alpha = 1 - dist / CONNECTION_DISTANCE
 
-          // Check proximity to mouse for glow
           const midX = (ix + jx) / 2
           const midY = (iy + jy) / 2
           const mouseDist = Math.sqrt((midX - mx) ** 2 + (midY - my) ** 2)
-          const mouseBoost = mouseDist < MOUSE_RADIUS ? (1 - mouseDist / MOUSE_RADIUS) * 0.6 : 0
+          const mouseBoost = mouseDist < MOUSE_RADIUS ? (1 - mouseDist / MOUSE_RADIUS) * 0.5 : 0
 
-          const r = 0.83 + mouseBoost * 0.1
-          const g = 0.72 + mouseBoost * 0.1
-          const b = 0.50 + mouseBoost * 0.1
-          const a = alpha * 0.12 + mouseBoost * 0.25
+          // Very light warm tones — close to background color so they feel ethereal
+          const r = 0.90 + mouseBoost * 0.05
+          const g = 0.82 + mouseBoost * 0.05
+          const b = 0.65 + mouseBoost * 0.1
+          const a = alpha * 0.08 + mouseBoost * 0.2
 
           linePosArr[lineIdx] = ix; linePosArr[lineIdx + 1] = iy; linePosArr[lineIdx + 2] = iz
           linePosArr[lineIdx + 3] = jx; linePosArr[lineIdx + 4] = jy; linePosArr[lineIdx + 5] = jz
@@ -142,7 +136,6 @@ function NetworkParticles() {
       }
     }
 
-    // Zero out remaining lines
     for (let i = lineIdx; i < linePosArr.length; i++) {
       linePosArr[i] = 0
       lineColArr[i] = 0
@@ -172,9 +165,9 @@ function NetworkParticles() {
         </bufferGeometry>
         <pointsMaterial
           size={0.05}
-          color="#d4a84b"
+          color="#e0cfa0"
           transparent
-          opacity={0.25}
+          opacity={0.18}
           sizeAttenuation
           depthWrite={false}
         />
@@ -206,54 +199,6 @@ function NetworkParticles() {
   )
 }
 
-function FloatingWireframe() {
-  const meshRef = useRef<THREE.Mesh>(null)
-
-  useFrame((state) => {
-    if (!meshRef.current) return
-    const t = state.clock.getElapsedTime()
-    meshRef.current.rotation.x = t * 0.08
-    meshRef.current.rotation.y = t * 0.12
-    meshRef.current.position.y = Math.sin(t * 0.3) * 0.8
-  })
-
-  return (
-    <mesh ref={meshRef} position={[10, -4, -8]}>
-      <icosahedronGeometry args={[2.5, 1]} />
-      <meshBasicMaterial
-        color="#e8c86a"
-        wireframe
-        transparent
-        opacity={0.04}
-      />
-    </mesh>
-  )
-}
-
-function FloatingOctahedron() {
-  const meshRef = useRef<THREE.Mesh>(null)
-
-  useFrame((state) => {
-    if (!meshRef.current) return
-    const t = state.clock.getElapsedTime()
-    meshRef.current.rotation.x = t * 0.1
-    meshRef.current.rotation.z = t * 0.06
-    meshRef.current.position.y = Math.cos(t * 0.25) * 0.6
-  })
-
-  return (
-    <mesh ref={meshRef} position={[-12, -5, -10]}>
-      <octahedronGeometry args={[2, 0]} />
-      <meshBasicMaterial
-        color="#e8c86a"
-        wireframe
-        transparent
-        opacity={0.03}
-      />
-    </mesh>
-  )
-}
-
 function SceneSetup() {
   const { scene } = useThree()
   scene.background = new THREE.Color('#fafaf8')
@@ -272,8 +217,6 @@ export function ParticleField() {
       >
         <SceneSetup />
         <NetworkParticles />
-        <FloatingWireframe />
-        <FloatingOctahedron />
       </Canvas>
     </div>
   )

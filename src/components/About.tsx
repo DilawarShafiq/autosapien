@@ -52,10 +52,8 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="relative py-20 sm:py-36 overflow-hidden" style={{ background: '#fafaf8' }}>
-      <div className="divider" />
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-36">
+    <section id="about" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#fafaf8' }}>
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 sm:gap-20 items-start mb-28">
           {/* Left */}
           <motion.div

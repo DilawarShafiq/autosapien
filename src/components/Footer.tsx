@@ -34,10 +34,8 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative pt-12 sm:pt-20 pb-6 sm:pb-10" style={{ background: '#f5f5f0' }}>
-      <div className="divider" />
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20">
+    <footer className="relative pt-16 sm:pt-24 pb-6 sm:pb-10" style={{ background: '#f5f5f0' }}>
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-10 mb-12 sm:mb-16">
           {/* Brand */}
           <div className="col-span-2">

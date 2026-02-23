@@ -41,10 +41,8 @@ export function Capabilities() {
   const [activeCapability, setActiveCapability] = useState(capabilities[0])
 
   return (
-    <section id="capabilities" className="relative py-20 sm:py-36 overflow-hidden" style={{ background: '#ffffff' }}>
-      <div className="divider" />
-
-      <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-36">
+    <section id="capabilities" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#ffffff' }}>
+      <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

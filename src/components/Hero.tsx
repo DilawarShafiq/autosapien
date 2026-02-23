@@ -1,6 +1,39 @@
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+
+function AnimatedNumber({ value, suffix = '' }: { value: string; suffix?: string }) {
+  const [display, setDisplay] = useState('0')
+  const ref = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    const num = parseInt(value.replace(/\D/g, ''))
+    if (isNaN(num)) {
+      setDisplay(value)
+      return
+    }
+
+    let start = 0
+    const duration = 1800
+    const startTime = performance.now()
+
+    function tick(now: number) {
+      const elapsed = now - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      // ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3)
+      start = Math.round(eased * num)
+
+      const prefix = value.startsWith('#') ? '#' : value.startsWith('<') ? '<' : ''
+      setDisplay(prefix + start + suffix)
+
+      if (progress < 1) requestAnimationFrame(tick)
+    }
+    requestAnimationFrame(tick)
+  }, [value, suffix])
+
+  return <span ref={ref}>{display}</span>
+}
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -17,43 +50,47 @@ export function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Frosted overlay so particles don't compete with text */}
+      {/* Soft radial warmth behind headline — no heavy frosted overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 60% 50% at 50% 45%, rgba(250, 250, 248, 0.85) 0%, rgba(250, 250, 248, 0.4) 70%, transparent 100%)'
+          background: 'radial-gradient(ellipse 45% 35% at 50% 45%, rgba(201, 164, 76, 0.04) 0%, transparent 70%)'
         }}
       />
 
-      {/* Radial gold glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 50% 40% at 50% 45%, rgba(201, 164, 76, 0.06) 0%, transparent 70%)'
-        }}
-      />
-
-      {/* Corner brackets */}
-      <div className="absolute top-28 left-6 sm:left-12 w-10 h-10 border-t border-l border-amber-400/30 hidden lg:block" />
-      <div className="absolute top-28 right-6 sm:right-12 w-10 h-10 border-t border-r border-amber-400/30 hidden lg:block" />
-      <div className="absolute bottom-16 left-6 sm:left-12 w-10 h-10 border-b border-l border-amber-400/30 hidden lg:block" />
-      <div className="absolute bottom-16 right-6 sm:right-12 w-10 h-10 border-b border-r border-amber-400/30 hidden lg:block" />
+      {/* Corner brackets — bolder, larger */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.8 }}
+      >
+        <div className="absolute top-28 left-6 sm:left-10 w-14 h-14 border-t-2 border-l-2 border-amber-300/40 hidden lg:block" />
+        <div className="absolute top-28 right-6 sm:right-10 w-14 h-14 border-t-2 border-r-2 border-amber-300/40 hidden lg:block" />
+        <div className="absolute bottom-20 left-6 sm:left-10 w-14 h-14 border-b-2 border-l-2 border-amber-300/40 hidden lg:block" />
+        <div className="absolute bottom-20 right-6 sm:right-10 w-14 h-14 border-b-2 border-r-2 border-amber-300/40 hidden lg:block" />
+      </motion.div>
 
       {/* Side rotated labels */}
-      <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 items-center">
-        <span
-          className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-300 -rotate-90 origin-center whitespace-nowrap"
-        >
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 items-center"
+      >
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-300 -rotate-90 origin-center whitespace-nowrap">
           AI & Robotics — Est. 2024
         </span>
-      </div>
-      <div className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 items-center">
-        <span
-          className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-300 rotate-90 origin-center whitespace-nowrap"
-        >
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 items-center"
+      >
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-300 rotate-90 origin-center whitespace-nowrap">
           Engineering Intelligence
         </span>
-      </div>
+      </motion.div>
 
       {/* Main content */}
       <motion.div
@@ -81,9 +118,9 @@ export function Hero() {
           className="text-center mb-8"
         >
           <h1 className="font-display font-bold text-display-2xl text-ink-900">
-            <span className="block opacity-80">WHERE</span>
-            <span className="block" style={{ color: '#b8933f' }}>INTELLIGENCE</span>
-            <span className="block opacity-80">MEETS FORM</span>
+            <span className="block opacity-75">WHERE</span>
+            <span className="block text-amber-600">INTELLIGENCE</span>
+            <span className="block opacity-75">MEETS FORM</span>
           </h1>
         </motion.div>
 
@@ -92,7 +129,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-body text-ink-500 leading-relaxed"
+          className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-body text-ink-400 leading-relaxed"
         >
           Autosapien is pioneering the convergence of artificial intelligence and physical robotics.
           From humanoid companions to healthcare automation, industrial machines to AI-generated cinema—we're
@@ -121,7 +158,7 @@ export function Hero() {
           </a>
         </motion.div>
 
-        {/* Stat cards */}
+        {/* Stat cards with animated counters */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -144,33 +181,27 @@ export function Hero() {
                 <a
                   href={stat.href}
                   {...(stat.href.startsWith('#') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-                  className="block p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/60 backdrop-blur-sm text-center group hover:border-amber-300 hover:shadow-card transition-all"
+                  className="block p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center group hover:border-amber-300 hover:shadow-elevated transition-all duration-300"
                 >
                   <div className="mb-2">
-                    <span className="stat-display-gold text-2xl sm:text-4xl md:text-5xl group-hover:opacity-80 transition-opacity">{stat.value}</span>
+                    <span className="stat-display-gold text-2xl sm:text-4xl md:text-5xl group-hover:opacity-80 transition-opacity">
+                      <AnimatedNumber value={stat.value} />
+                    </span>
                   </div>
                   <div className="label-mono text-[9px] sm:text-[10px]">{stat.label}</div>
                 </a>
               ) : (
-                <div className="p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/60 backdrop-blur-sm text-center">
+                <div className="p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center">
                   <div className="mb-2">
-                    <span className="stat-display-gold text-2xl sm:text-4xl md:text-5xl">{stat.value}</span>
+                    <span className="stat-display-gold text-2xl sm:text-4xl md:text-5xl">
+                      <AnimatedNumber value={stat.value} />
+                    </span>
                   </div>
                   <div className="label-mono text-[9px] sm:text-[10px]">{stat.label}</div>
                 </div>
               )}
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Bottom rule */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="mt-12 sm:mt-16 max-w-4xl mx-auto"
-        >
-          <div className="h-px w-full bg-surface-300" />
         </motion.div>
       </motion.div>
 
@@ -187,13 +218,13 @@ export function Hero() {
           className="flex flex-col items-center gap-3"
         >
           <span className="label-mono text-[9px]">Scroll</span>
-          <div className="w-px h-8" style={{ background: 'linear-gradient(to bottom, rgba(184, 147, 63, 0.3), transparent)' }} />
+          <div className="w-px h-8 bg-gradient-to-b from-surface-300 to-transparent" />
         </motion.div>
       </motion.div>
 
-      {/* Bottom fade to separate hero from content */}
+      {/* Bottom fade */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
         style={{
           background: 'linear-gradient(to bottom, transparent, #fafaf8)'
         }}
