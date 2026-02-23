@@ -2,14 +2,12 @@ import { useRef, useMemo, useCallback } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 
-const PARTICLE_COUNT = 350
-const CONNECTION_DISTANCE = 3.2
+const PARTICLE_COUNT = 400
 const MOUSE_RADIUS = 6
 const MOUSE_STRENGTH = 1.8
 
-function NetworkParticles() {
+function FloatingDots() {
   const meshRef = useRef<THREE.Points>(null)
-  const linesRef = useRef<THREE.LineSegments>(null)
   const mouseRef = useRef(new THREE.Vector2(999, 999))
   const mouse3D = useRef(new THREE.Vector3(999, 999, 0))
   const { size, camera } = useThree()
@@ -49,16 +47,8 @@ function NetworkParticles() {
     return { positions: pos, velocities: vel, basePositions: base, sizes: sz }
   }, [])
 
-  const linePositions = useMemo(() => {
-    return new Float32Array(PARTICLE_COUNT * PARTICLE_COUNT * 0.1 * 6)
-  }, [])
-
-  const lineColors = useMemo(() => {
-    return new Float32Array(PARTICLE_COUNT * PARTICLE_COUNT * 0.1 * 6)
-  }, [])
-
   useFrame((state) => {
-    if (!meshRef.current || !linesRef.current) return
+    if (!meshRef.current) return
     const time = state.clock.getElapsedTime()
     const posArray = meshRef.current.geometry.attributes.position.array as Float32Array
     const sizeArray = meshRef.current.geometry.attributes.size.array as Float32Array
@@ -90,112 +80,33 @@ function NetworkParticles() {
 
     meshRef.current.geometry.attributes.position.needsUpdate = true
     meshRef.current.geometry.attributes.size.needsUpdate = true
-
-    const lineGeo = linesRef.current.geometry
-    const linePosArr = lineGeo.attributes.position.array as Float32Array
-    const lineColArr = lineGeo.attributes.color.array as Float32Array
-    let lineIdx = 0
-
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const ix = posArray[i * 3]
-      const iy = posArray[i * 3 + 1]
-      const iz = posArray[i * 3 + 2]
-
-      for (let j = i + 1; j < PARTICLE_COUNT; j++) {
-        const jx = posArray[j * 3]
-        const jy = posArray[j * 3 + 1]
-        const jz = posArray[j * 3 + 2]
-
-        const dx = ix - jx
-        const dy = iy - jy
-        const dz = iz - jz
-        const dist = Math.sqrt(dx * dx + dy * dy + dz * dz)
-
-        if (dist < CONNECTION_DISTANCE && lineIdx < linePosArr.length - 6) {
-          const alpha = 1 - dist / CONNECTION_DISTANCE
-
-          const midX = (ix + jx) / 2
-          const midY = (iy + jy) / 2
-          const mouseDist = Math.sqrt((midX - mx) ** 2 + (midY - my) ** 2)
-          const mouseBoost = mouseDist < MOUSE_RADIUS ? (1 - mouseDist / MOUSE_RADIUS) * 0.5 : 0
-
-          // Very light warm tones — close to background color so they feel ethereal
-          const r = 0.90 + mouseBoost * 0.05
-          const g = 0.82 + mouseBoost * 0.05
-          const b = 0.65 + mouseBoost * 0.1
-          const a = alpha * 0.08 + mouseBoost * 0.2
-
-          linePosArr[lineIdx] = ix; linePosArr[lineIdx + 1] = iy; linePosArr[lineIdx + 2] = iz
-          linePosArr[lineIdx + 3] = jx; linePosArr[lineIdx + 4] = jy; linePosArr[lineIdx + 5] = jz
-
-          lineColArr[lineIdx] = r * a; lineColArr[lineIdx + 1] = g * a; lineColArr[lineIdx + 2] = b * a
-          lineColArr[lineIdx + 3] = r * a; lineColArr[lineIdx + 4] = g * a; lineColArr[lineIdx + 5] = b * a
-
-          lineIdx += 6
-        }
-      }
-    }
-
-    for (let i = lineIdx; i < linePosArr.length; i++) {
-      linePosArr[i] = 0
-      lineColArr[i] = 0
-    }
-
-    lineGeo.attributes.position.needsUpdate = true
-    lineGeo.attributes.color.needsUpdate = true
-    lineGeo.setDrawRange(0, lineIdx / 3)
   })
 
   return (
-    <>
-      <points ref={meshRef}>
-        <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            count={PARTICLE_COUNT}
-            array={positions}
-            itemSize={3}
-          />
-          <bufferAttribute
-            attach="attributes-size"
-            count={PARTICLE_COUNT}
-            array={sizes}
-            itemSize={1}
-          />
-        </bufferGeometry>
-        <pointsMaterial
-          size={0.05}
-          color="#e0cfa0"
-          transparent
-          opacity={0.18}
-          sizeAttenuation
-          depthWrite={false}
+    <points ref={meshRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={PARTICLE_COUNT}
+          array={positions}
+          itemSize={3}
         />
-      </points>
-
-      <lineSegments ref={linesRef}>
-        <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            count={linePositions.length / 3}
-            array={linePositions}
-            itemSize={3}
-          />
-          <bufferAttribute
-            attach="attributes-color"
-            count={lineColors.length / 3}
-            array={lineColors}
-            itemSize={3}
-          />
-        </bufferGeometry>
-        <lineBasicMaterial
-          vertexColors
-          transparent
-          opacity={1}
-          depthWrite={false}
+        <bufferAttribute
+          attach="attributes-size"
+          count={PARTICLE_COUNT}
+          array={sizes}
+          itemSize={1}
         />
-      </lineSegments>
-    </>
+      </bufferGeometry>
+      <pointsMaterial
+        size={0.06}
+        color="#d4a84b"
+        transparent
+        opacity={0.15}
+        sizeAttenuation
+        depthWrite={false}
+      />
+    </points>
   )
 }
 
@@ -216,7 +127,7 @@ export function ParticleField() {
         onCreated={({ scene }) => { scene.background = new THREE.Color('#fafaf8') }}
       >
         <SceneSetup />
-        <NetworkParticles />
+        <FloatingDots />
       </Canvas>
     </div>
   )
