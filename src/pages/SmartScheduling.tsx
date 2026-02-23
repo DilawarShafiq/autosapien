@@ -118,7 +118,7 @@ export function SmartScheduling() {
                   <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-white font-medium mb-1">{metric.label}</div>
+                  <div className="text-carbon-100 font-medium mb-1">{metric.label}</div>
                   <div className="text-sm text-neutral-500">{metric.description}</div>
                 </motion.div>
               ))}
@@ -161,7 +161,7 @@ export function SmartScheduling() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <feature.icon className="w-7 h-7 text-pink-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-carbon-100 mb-3">{feature.title}</h3>
                 <p className="text-neutral-400">{feature.description}</p>
               </motion.div>
             ))}
@@ -207,7 +207,7 @@ export function SmartScheduling() {
                     <useCase.icon className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-3">{useCase.title}</h3>
+                    <h3 className="text-xl font-bold text-carbon-100 mb-3">{useCase.title}</h3>
                     <p className="text-neutral-400">{useCase.description}</p>
                   </div>
                 </div>
@@ -226,7 +226,7 @@ export function SmartScheduling() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Seamless Integrations</h3>
+            <h3 className="text-2xl font-bold text-carbon-100 mb-4">Seamless Integrations</h3>
             <p className="text-neutral-400">Connect with your existing systems</p>
           </motion.div>
 
@@ -240,7 +240,7 @@ export function SmartScheduling() {
                 transition={{ delay: i * 0.05 }}
                 className="glass rounded-xl px-6 py-3"
               >
-                <div className="text-white font-medium">{integration.name}</div>
+                <div className="text-carbon-100 font-medium">{integration.name}</div>
                 <div className="text-xs text-neutral-500">{integration.type}</div>
               </motion.div>
             ))}

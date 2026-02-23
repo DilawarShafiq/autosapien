@@ -39,11 +39,10 @@ function Particles() {
       </bufferGeometry>
       <pointsMaterial
         size={0.03}
-        color="#f59e0b"
+        color="#d97706"
         transparent
-        opacity={0.3}
+        opacity={0.4}
         sizeAttenuation
-        blending={THREE.AdditiveBlending}
       />
     </points>
   )
@@ -63,10 +62,10 @@ function GridLines() {
       <mesh rotation={[-Math.PI / 6, 0, 0]}>
         <planeGeometry args={[40, 40, 20, 20]} />
         <meshBasicMaterial
-          color="#1a1a1a"
+          color="#d1d5db"
           wireframe
           transparent
-          opacity={0.15}
+          opacity={0.3}
         />
       </mesh>
     </group>
@@ -111,7 +110,7 @@ export function ParticleField() {
       <Canvas
         camera={{ position: [0, 0, 15], fov: 60 }}
         gl={{ antialias: true, alpha: true }}
-        style={{ background: '#0a0a0a' }}
+        style={{ background: '#ffffff' }}
         dpr={[1, 1.5]}
       >
         <Particles />

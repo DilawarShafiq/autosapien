@@ -24,7 +24,7 @@ export function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 80% 50% at 50% 50%, transparent 0%, #0a0a0a 100%)'
+          background: 'radial-gradient(ellipse 80% 50% at 50% 50%, transparent 0%, #ffffff 100%)'
         }}
       />
 
@@ -77,9 +77,9 @@ export function Hero() {
           className="text-center mb-8"
         >
           <h1 className="font-display font-bold text-display-2xl mb-6">
-            <span className="block text-white">WHERE</span>
+            <span className="block text-carbon-100">WHERE</span>
             <span className="block text-gradient">INTELLIGENCE</span>
-            <span className="block text-white">MEETS FORM</span>
+            <span className="block text-carbon-100">MEETS FORM</span>
           </h1>
         </motion.div>
 
@@ -142,7 +142,7 @@ export function Hero() {
                   <div className="flex items-baseline justify-center gap-1 mb-2">
                     <span className="stat-display text-3xl sm:text-5xl md:text-6xl group-hover:opacity-80 transition-opacity">{stat.value}</span>
                   </div>
-                  <div className="label-technical group-hover:text-carbon-300 transition-colors">{stat.label}</div>
+                  <div className="label-technical group-hover:text-carbon-200 transition-colors">{stat.label}</div>
                 </a>
               ) : (
                 <>

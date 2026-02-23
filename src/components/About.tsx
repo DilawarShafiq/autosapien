@@ -6,7 +6,7 @@ const pillars = [
   {
     icon: Bot,
     title: 'Humanoid Robotics',
-    description: 'Developing the Autosapien One—our flagship humanoid robot designed to live alongside humans.',
+    description: 'Developing the Autosapien G1—our flagship humanoid robot designed to live alongside humans.',
     status: 'developing',
     code: 'HMD-01',
   },
@@ -97,7 +97,7 @@ export function About() {
               <p>
                 Autosapien was founded on a singular belief: the next great leap in human civilization
                 won't come from AI alone—it will come from AI that can{' '}
-                <em className="text-white not-italic">act</em> in the physical world.
+                <em className="text-carbon-100 not-italic">act</em> in the physical world.
                 We're building the robots, the intelligence, and the infrastructure to make that happen.
               </p>
               <p>
@@ -107,7 +107,7 @@ export function About() {
                 across the USA and beyond.
               </p>
               <p>
-                With xEHR.io already transforming healthcare for millions of patients, and our Autosapien One
+                With xEHR.io already transforming healthcare for millions of patients, and our Autosapien G1
                 humanoid in active development, we're not waiting for the future—we're building it, one
                 breakthrough at a time.
               </p>
@@ -124,7 +124,7 @@ export function About() {
                 {[0, 1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-none bg-carbon-700 border-2 border-carbon-900 flex items-center justify-center"
+                    className="w-10 h-10 rounded-none bg-carbon-700 border-2 border-white flex items-center justify-center"
                     style={{ transform: `rotate(${i * 5}deg)` }}
                   >
                     <span className="text-xs font-mono text-carbon-400">{String(i + 1).padStart(2, '0')}</span>
@@ -132,7 +132,7 @@ export function About() {
                 ))}
               </div>
               <div>
-                <div className="text-white font-display font-semibold">Multidisciplinary Team</div>
+                <div className="text-carbon-100 font-display font-semibold">Multidisciplinary Team</div>
                 <div className="label-technical">Roboticists, AI Researchers, Healthcare Experts</div>
               </div>
             </motion.div>
@@ -154,7 +154,7 @@ export function About() {
 
               <blockquote className="relative">
                 <div className="text-6xl font-display font-bold text-ember-500/20 absolute -top-4 -left-2">"</div>
-                <p className="text-base sm:text-xl lg:text-2xl text-white font-display leading-relaxed pl-8">
+                <p className="text-base sm:text-xl lg:text-2xl text-carbon-100 font-display leading-relaxed pl-8">
                   We believe the defining technology of this century won't be artificial intelligence
                   in isolation—it will be artificial intelligence given a body, purpose, and the
                   ability to heal, help, and create alongside humanity.
@@ -164,10 +164,10 @@ export function About() {
               {/* Attribution */}
               <div className="mt-8 pt-8 border-t border-carbon-700 flex items-center gap-4">
                 <div className="w-12 h-12 bg-ember-500 flex items-center justify-center">
-                  <span className="font-mono text-carbon-900 font-bold">AS</span>
+                  <span className="font-mono text-neutral-900 font-bold">AS</span>
                 </div>
                 <div>
-                  <div className="text-white font-display font-semibold">The Autosapien Vision</div>
+                  <div className="text-carbon-100 font-display font-semibold">The Autosapien Vision</div>
                   <div className="label-technical">Intelligence Embodied</div>
                 </div>
               </div>
@@ -185,7 +185,7 @@ export function About() {
           transition={{ delay: 0.6 }}
           className="text-center mb-16"
         >
-          <h3 className="font-display font-bold text-2xl text-white mb-4">Our Six Pillars</h3>
+          <h3 className="font-display font-bold text-2xl text-carbon-100 mb-4">Our Six Pillars</h3>
           <p className="text-carbon-400 font-body">The domains where we're building the future</p>
         </motion.div>
 
@@ -224,7 +224,7 @@ export function About() {
               <div className="mb-4">
                 <span className="label-technical text-ember-500/60">{pillar.code}</span>
               </div>
-              <h3 className="font-display font-semibold text-lg text-white mb-2 group-hover:text-ember-400 transition-colors">
+              <h3 className="font-display font-semibold text-lg text-carbon-100 mb-2 group-hover:text-ember-400 transition-colors">
                 {pillar.title}
               </h3>
               <p className="text-sm text-carbon-400 font-body leading-relaxed">

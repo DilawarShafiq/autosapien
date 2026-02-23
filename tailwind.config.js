@@ -7,19 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Core palette - Industrial Futurism
+        // Core palette - Light Theme
         'carbon': {
-          950: '#050505',
-          900: '#0a0a0a',
-          850: '#0f0f0f',
-          800: '#141414',
-          700: '#1a1a1a',
-          600: '#252525',
-          500: '#333333',
-          400: '#555555',
-          300: '#777777',
-          200: '#999999',
-          100: '#cccccc',
+          950: '#f1f3f5',
+          900: '#ffffff',
+          850: '#f8f9fa',
+          800: '#f1f3f5',
+          700: '#e5e7eb',
+          600: '#d1d5db',
+          500: '#9ca3af',
+          400: '#6b7280',
+          300: '#4b5563',
+          200: '#1f2937',
+          100: '#111827',
         },
         // Accent - Warm amber/gold for premium feel
         'ember': {
@@ -113,17 +113,17 @@ export default {
         },
       },
       backgroundImage: {
-        'grid-pattern': `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`,
-        'grid-dense': `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                       linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
-        'radial-fade': 'radial-gradient(ellipse at center, transparent 0%, #0a0a0a 70%)',
+        'grid-pattern': `linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)`,
+        'grid-dense': `linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+                       linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)`,
+        'radial-fade': 'radial-gradient(ellipse at center, transparent 0%, #ffffff 70%)',
         'diagonal-lines': `repeating-linear-gradient(
           -45deg,
           transparent,
           transparent 10px,
-          rgba(255,255,255,0.02) 10px,
-          rgba(255,255,255,0.02) 11px
+          rgba(0,0,0,0.03) 10px,
+          rgba(0,0,0,0.03) 11px
         )`,
       },
       backgroundSize: {
@@ -132,8 +132,8 @@ export default {
       },
       boxShadow: {
         'inner-glow': 'inset 0 0 60px rgba(251, 191, 36, 0.1)',
-        'card': '0 4px 30px rgba(0, 0, 0, 0.5)',
-        'card-hover': '0 8px 50px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(251, 191, 36, 0.2)',
+        'card': '0 4px 30px rgba(0, 0, 0, 0.06)',
+        'card-hover': '0 8px 50px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(251, 191, 36, 0.2)',
       },
     },
   },
