@@ -176,7 +176,7 @@ export function Capabilities() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3
                         className={`font-display font-semibold transition-colors ${
-                          activeCapability.id === cap.id ? 'text-white' : 'text-carbon-300'
+                          activeCapability.id === cap.id ? 'text-carbon-100' : 'text-carbon-300'
                         }`}
                       >
                         {cap.title}
@@ -225,7 +225,7 @@ export function Capabilities() {
                       </div>
                       <div>
                         <span className="label-technical text-ember-500">{activeCapability.code}</span>
-                        <h3 className="font-display font-bold text-2xl text-white">
+                        <h3 className="font-display font-bold text-2xl text-carbon-100">
                           {activeCapability.title}
                         </h3>
                       </div>

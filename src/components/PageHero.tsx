@@ -122,7 +122,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-2xl text-white font-display font-semibold mb-6"
+              className="text-2xl text-carbon-100 font-display font-semibold mb-6"
             >
               {subtitle}
             </motion.p>
@@ -171,7 +171,7 @@ export function PageHero({
                   <div className="w-10 h-10 border border-carbon-600 flex items-center justify-center mb-4 group-hover:border-ember-500/50 transition-colors">
                     <div className="w-2 h-2 bg-ember-400" />
                   </div>
-                  <p className="text-white font-display font-medium">{feature}</p>
+                  <p className="text-carbon-100 font-display font-medium">{feature}</p>
                 </motion.div>
               ))}
             </motion.div>

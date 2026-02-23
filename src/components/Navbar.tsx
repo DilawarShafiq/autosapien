@@ -37,7 +37,7 @@ export function Navbar() {
           <nav
             className={`relative flex items-center justify-between transition-all duration-500 ${
               isScrolled
-                ? 'bg-carbon-900/90 backdrop-blur-xl border border-carbon-700 rounded-none px-6 py-3'
+                ? 'bg-white/90 backdrop-blur-xl border border-carbon-700 rounded-none px-6 py-3'
                 : 'bg-transparent'
             }`}
           >
@@ -58,7 +58,7 @@ export function Navbar() {
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  className="relative px-4 py-2 text-sm font-body text-carbon-300 hover:text-white transition-colors group"
+                  className="relative px-4 py-2 text-sm font-body text-carbon-400 hover:text-carbon-100 transition-colors group"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
@@ -74,7 +74,7 @@ export function Navbar() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
-              className="hidden md:flex items-center gap-2 px-5 py-2.5 border border-carbon-600 text-white text-sm font-body"
+              className="hidden md:flex items-center gap-2 px-5 py-2.5 border border-carbon-600 text-carbon-100 text-sm font-body"
             >
               AI & Robotics
             </motion.span>
@@ -82,7 +82,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-carbon-300 hover:text-white transition-colors"
+              className="md:hidden p-2 text-carbon-400 hover:text-carbon-100 transition-colors"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -99,7 +99,7 @@ export function Navbar() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-40 md:hidden"
           >
-            <div className="absolute inset-0 bg-carbon-950/98 backdrop-blur-xl" />
+            <div className="absolute inset-0 bg-white/98 backdrop-blur-xl" />
 
             {/* Technical grid overlay */}
             <div className="absolute inset-0 bg-technical-grid opacity-30" />
@@ -113,7 +113,7 @@ export function Navbar() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="text-3xl font-display font-bold text-carbon-300 hover:text-ember-400 transition-colors"
+                  className="text-3xl font-display font-bold text-carbon-200 hover:text-ember-400 transition-colors"
                 >
                   {link.name}
                 </motion.a>

@@ -97,7 +97,7 @@ export function Footer() {
 
           {/* Links columns */}
           <div>
-            <h4 className="label-technical text-white mb-4 sm:mb-6">Company</h4>
+            <h4 className="label-technical text-carbon-100 mb-4 sm:mb-6">Company</h4>
             <ul className="space-y-3 sm:space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -113,7 +113,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="label-technical text-white mb-4 sm:mb-6">Robotics</h4>
+            <h4 className="label-technical text-carbon-100 mb-4 sm:mb-6">Robotics</h4>
             <ul className="space-y-3 sm:space-y-4">
               {footerLinks.robotics.map((link) => (
                 <li key={link.name}>
@@ -138,7 +138,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="label-technical text-white mb-4 sm:mb-6">Platforms</h4>
+            <h4 className="label-technical text-carbon-100 mb-4 sm:mb-6">Platforms</h4>
             <ul className="space-y-3 sm:space-y-4">
               {footerLinks.platforms.map((link) => (
                 <li key={link.name}>
@@ -164,7 +164,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="label-technical text-white mb-4 sm:mb-6">Legal</h4>
+            <h4 className="label-technical text-carbon-100 mb-4 sm:mb-6">Legal</h4>
             <ul className="space-y-3 sm:space-y-4">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
@@ -181,18 +181,18 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-carbon-800">
+        <div className="pt-8 border-t border-carbon-700">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="label-technical text-carbon-600">
+              <span className="label-technical text-carbon-400">
                 &copy; {new Date().getFullYear()} Autosapien
               </span>
-              <span className="text-carbon-700">|</span>
-              <span className="label-technical text-carbon-600">All rights reserved</span>
+              <span className="text-carbon-500">|</span>
+              <span className="label-technical text-carbon-400">All rights reserved</span>
             </div>
 
             <div className="flex items-center gap-6">
-              <span className="text-sm text-carbon-600 font-body">
+              <span className="text-sm text-carbon-400 font-body">
                 Engineering intelligence into existence
               </span>
               <button
