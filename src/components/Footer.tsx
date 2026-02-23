@@ -19,6 +19,7 @@ const footerLinks = {
     { name: 'xEHR.io', href: '/projects/healthcare-it', isRoute: true },
     { name: 'AI Film Studio', href: '/projects/film-studio', isRoute: true },
     { name: 'Agentic AI', href: '/projects/agentic-ai', isRoute: true },
+    { name: 'RCM AI Employees', href: 'https://rcmemployee.com' },
   ],
   legal: [
     { name: 'Privacy', href: '#privacy' },
@@ -151,6 +152,7 @@ export function Footer() {
                   ) : (
                     <a
                       href={link.href}
+                      {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                       className="text-sm text-neutral-500 hover:text-white transition-colors"
                     >
                       {link.name}
