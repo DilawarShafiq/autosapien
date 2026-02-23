@@ -116,7 +116,7 @@ export function FilmStudio() {
   const isProcessInView = useInView(processRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={Film}
         category="Generative Cinema"
@@ -320,6 +320,6 @@ export function FilmStudio() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }

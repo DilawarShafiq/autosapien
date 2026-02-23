@@ -74,7 +74,7 @@ export function Robotics() {
   const isApplicationsInView = useInView(applicationsRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={Bot}
         category="Robotics"
@@ -209,6 +209,6 @@ export function Robotics() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }

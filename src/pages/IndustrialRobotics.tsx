@@ -89,7 +89,7 @@ export function IndustrialRobotics() {
   const isApplicationsInView = useInView(applicationsRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={Factory}
         category="Industrial Robotics"
@@ -290,6 +290,6 @@ export function IndustrialRobotics() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }

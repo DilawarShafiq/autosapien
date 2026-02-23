@@ -96,7 +96,7 @@ export function HealthcareIT() {
   const isImpactInView = useInView(impactRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={Heart}
         category="Healthcare AI"
@@ -357,6 +357,6 @@ export function HealthcareIT() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }

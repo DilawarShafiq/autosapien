@@ -83,7 +83,7 @@ export function MedicalCoding() {
   const isProcessInView = useInView(processRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={FileText}
         category="Medical Coding"
@@ -249,6 +249,6 @@ export function MedicalCoding() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }

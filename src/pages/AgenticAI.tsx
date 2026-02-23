@@ -101,7 +101,7 @@ export function AgenticAI() {
   const isCapabilitiesInView = useInView(capabilitiesRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={Bot}
         category="AI FTEs & Custom Agents"
@@ -292,6 +292,6 @@ export function AgenticAI() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }

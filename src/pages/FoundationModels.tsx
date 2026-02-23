@@ -107,7 +107,7 @@ export function FoundationModels() {
   const isApplicationsInView = useInView(applicationsRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={Brain}
         category="Foundation Models"
@@ -345,6 +345,6 @@ export function FoundationModels() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }

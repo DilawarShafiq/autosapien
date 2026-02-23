@@ -87,7 +87,7 @@ export function RCMAutomation() {
   const isWorkflowInView = useInView(workflowRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={TrendingUp}
         category="Revenue Cycle"
@@ -259,6 +259,6 @@ export function RCMAutomation() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }

@@ -89,7 +89,7 @@ export function Humanoid() {
   const isUseCasesInView = useInView(useCasesRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={Bot}
         category="Humanoid Robotics"
@@ -302,6 +302,6 @@ export function Humanoid() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }

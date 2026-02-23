@@ -92,7 +92,7 @@ export function HomeRobotics() {
   const isSafetyInView = useInView(safetyRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={Home}
         category="Home Robotics"
@@ -293,6 +293,6 @@ export function HomeRobotics() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }

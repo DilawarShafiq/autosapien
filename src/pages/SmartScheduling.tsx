@@ -83,7 +83,7 @@ export function SmartScheduling() {
   const isUseCasesInView = useInView(useCasesRef, { once: true, margin: '-100px' })
 
   return (
-    <>
+    <div style={{ background: '#fafaf8' }}>
       <PageHero
         icon={Calendar}
         category="Operations"
@@ -243,6 +243,6 @@ export function SmartScheduling() {
       </section>
 
       <Contact />
-    </>
+    </div>
   )
 }
