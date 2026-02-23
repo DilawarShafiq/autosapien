@@ -117,8 +117,8 @@ export function HealthcareIT() {
 
       {/* Metrics Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="glass rounded-3xl p-8 md:p-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="card-clean rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -129,11 +129,11 @@ export function HealthcareIT() {
                   transition={{ delay: i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent mb-2">
+                  <div className="stat-display text-3xl sm:text-4xl lg:text-5xl mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-white font-medium mb-1">{metric.label}</div>
-                  <div className="text-sm text-neutral-500">{metric.description}</div>
+                  <div className="text-ink-900 font-medium mb-1">{metric.label}</div>
+                  <div className="text-sm text-ink-500">{metric.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -143,26 +143,23 @@ export function HealthcareIT() {
 
       {/* Core Modules Section */}
       <section ref={modulesRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 dot-pattern opacity-30" />
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-rose-600/10 rounded-full blur-3xl -translate-y-1/2" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isModulesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-rose-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Platform Modules
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               One platform.{' '}
-              <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 Complete healthcare operations.
               </span>
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 max-w-2xl mx-auto">
               Everything healthcare organizations need—unified, intelligent, and working together.
             </p>
           </motion.div>
@@ -174,22 +171,22 @@ export function HealthcareIT() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isModulesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift"
+                className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 flex items-center justify-center flex-shrink-0">
-                    <module.icon className="w-7 h-7 text-rose-400" />
+                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
+                    <module.icon className="w-7 h-7 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{module.title}</h3>
-                    <p className="text-neutral-400 text-sm">{module.description}</p>
+                    <h3 className="text-xl font-bold text-ink-900 mb-2">{module.title}</h3>
+                    <p className="text-ink-400 text-sm">{module.description}</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-4">
                   {module.features.map((feature) => (
                     <span
                       key={feature}
-                      className="px-3 py-1 rounded-lg bg-white/5 text-xs text-neutral-300"
+                      className="px-3 py-1 rounded-lg bg-surface-100 text-xs text-ink-500"
                     >
                       {feature}
                     </span>
@@ -203,27 +200,23 @@ export function HealthcareIT() {
 
       {/* AI Capabilities Section */}
       <section ref={aiRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-pink-600/10 rounded-full blur-3xl -translate-y-1/2" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isAiInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-pink-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               AI-Powered Features
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Healthcare AI that{' '}
-              <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 actually works
               </span>
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 max-w-2xl mx-auto">
               Not demos or proofs of concept—production AI handling millions of real healthcare transactions.
             </p>
           </motion.div>
@@ -235,13 +228,13 @@ export function HealthcareIT() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isAiInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift group"
+                className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-rose-400" />
+                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
-                <p className="text-neutral-400">{cap.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
+                <p className="text-ink-400">{cap.description}</p>
               </motion.div>
             ))}
           </div>
@@ -250,23 +243,23 @@ export function HealthcareIT() {
 
       {/* Impact on USA Healthcare Section */}
       <section ref={impactRef} className="relative py-32 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isImpactInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-rose-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Why It Matters
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Healing{' '}
-              <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 USA healthcare
               </span>
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 max-w-2xl mx-auto">
               The USA's healthcare system is drowning in administrative burden. We're building the technology to change that.
             </p>
           </motion.div>
@@ -278,16 +271,16 @@ export function HealthcareIT() {
                 initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
                 animate={isImpactInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-2xl p-6 flex flex-col md:flex-row md:items-center gap-4"
+                className="card-clean rounded-lg p-6 flex flex-col md:flex-row md:items-center gap-4"
               >
                 <div className="flex-1">
-                  <div className="text-neutral-500 text-sm mb-1">The Problem</div>
-                  <div className="text-white font-medium">{item.problem}</div>
+                  <div className="text-ink-500 text-sm mb-1">The Problem</div>
+                  <div className="text-ink-900 font-medium">{item.problem}</div>
                 </div>
-                <ArrowRight className="w-6 h-6 text-rose-400 hidden md:block" />
+                <ArrowRight className="w-6 h-6 text-amber-600 hidden md:block" />
                 <div className="flex-1">
-                  <div className="text-rose-400 text-sm mb-1">Our Solution</div>
-                  <div className="text-white font-medium">{item.solution}</div>
+                  <div className="text-amber-600 text-sm mb-1">Our Solution</div>
+                  <div className="text-ink-900 font-medium">{item.solution}</div>
                 </div>
               </motion.div>
             ))}
@@ -297,15 +290,15 @@ export function HealthcareIT() {
 
       {/* Compliance Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Enterprise Compliance</h3>
-            <p className="text-neutral-400">Meeting the highest standards in healthcare security and interoperability</p>
+            <h3 className="text-2xl font-bold text-ink-900 mb-4">Enterprise Compliance</h3>
+            <p className="text-ink-400">Meeting the highest standards in healthcare security and interoperability</p>
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-6">
@@ -316,11 +309,11 @@ export function HealthcareIT() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass rounded-2xl px-8 py-6 text-center"
+                className="card-clean rounded-lg px-8 py-6 text-center"
               >
-                <Shield className="w-8 h-8 text-rose-400 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-white mb-1">{item.badge}</div>
-                <div className="text-sm text-neutral-500">{item.description}</div>
+                <Shield className="w-8 h-8 text-amber-600 mx-auto mb-3" />
+                <div className="text-2xl font-bold text-ink-900 mb-1">{item.badge}</div>
+                <div className="text-sm text-ink-500">{item.description}</div>
               </motion.div>
             ))}
           </div>
@@ -329,31 +322,31 @@ export function HealthcareIT() {
 
       {/* CTA Section */}
       <section className="relative py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-3xl p-12 relative overflow-hidden"
+            className="card-clean rounded-xl p-12 relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-pink-500/10" />
+            <div className="absolute inset-0 bg-amber-50/50" />
             <div className="relative">
-              <Clock className="w-12 h-12 text-rose-400 mx-auto mb-6" />
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <Clock className="w-12 h-12 text-amber-600 mx-auto mb-6" />
+              <h2 className="text-3xl font-bold text-ink-900 mb-4">
                 Ready to transform your practice?
               </h2>
-              <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-ink-400 mb-8 max-w-2xl mx-auto">
                 See how xEHR.io can reduce administrative burden, accelerate collections, and let your team focus on patients.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 text-white font-medium text-lg hover:opacity-90 transition-opacity">
+                <button className="btn-primary rounded-lg">
                   Schedule Demo
                 </button>
                 <a
                   href="https://xehr.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 rounded-2xl glass text-white font-medium text-lg hover:bg-white/10 transition-colors"
+                  className="btn-secondary rounded-lg"
                 >
                   Visit xEHR.io
                 </a>
