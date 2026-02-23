@@ -68,7 +68,7 @@ const compliance = [
   { badge: 'ONC', description: 'Certified' },
 ]
 
-const americanHealthcare = [
+const usaHealthcare = [
   {
     problem: 'Burnout epidemic—62% of physicians report symptoms',
     solution: 'AI documentation reduces charting time by 70%',
@@ -101,8 +101,8 @@ export function HealthcareIT() {
         icon={Heart}
         category="Healthcare AI"
         title="xEHR.io Platform"
-        subtitle="The intelligent healthcare platform transforming American medicine"
-        description="xEHR.io combines a FHIR R4-native EHR, comprehensive practice management, and autonomous revenue cycle automation into a single platform. Powered by AI agents that work 24/7, we're eliminating the administrative burden crushing American healthcare—so providers can focus on what matters: patients."
+        subtitle="The intelligent healthcare platform transforming USA medicine"
+        description="xEHR.io combines a FHIR R4-native EHR, comprehensive practice management, and autonomous revenue cycle automation into a single platform. Powered by AI agents that work 24/7, we're eliminating the administrative burden crushing USA healthcare—so providers can focus on what matters: patients."
         gradient="from-rose-500 to-pink-500"
         status="launching"
         features={[
@@ -248,7 +248,7 @@ export function HealthcareIT() {
         </div>
       </section>
 
-      {/* Impact on American Healthcare Section */}
+      {/* Impact on USA Healthcare Section */}
       <section ref={impactRef} className="relative py-32 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6">
           <motion.div
@@ -263,16 +263,16 @@ export function HealthcareIT() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Healing{' '}
               <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
-                American healthcare
+                USA healthcare
               </span>
             </h2>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-              America's healthcare system is drowning in administrative burden. We're building the technology to change that.
+              The USA's healthcare system is drowning in administrative burden. We're building the technology to change that.
             </p>
           </motion.div>
 
           <div className="space-y-4">
-            {americanHealthcare.map((item, i) => (
+            {usaHealthcare.map((item, i) => (
               <motion.div
                 key={item.problem}
                 initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}

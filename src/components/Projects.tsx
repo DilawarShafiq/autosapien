@@ -38,9 +38,10 @@ const projects = [
   {
     id: 'healthcare-it',
     slug: '/projects/healthcare-it',
+    externalUrl: 'https://xehr.io',
     title: 'xEHR.io Platform',
     category: 'Healthcare AI',
-    description: 'The intelligent healthcare platform transforming how America delivers care. Combining EHR, practice management, and revenue cycle automation with AI agents that work 24/7 to eliminate administrative burden.',
+    description: 'The intelligent healthcare platform transforming how the USA delivers care. Combining EHR, practice management, and revenue cycle automation with AI agents that work 24/7 to eliminate administrative burden.',
     icon: Heart,
     gradient: 'from-rose-500 to-pink-500',
     features: ['AI Clinical Documentation', 'Autonomous RCM', 'FHIR R4 Native', '98% Clean Claims'],
@@ -89,11 +90,11 @@ const projects = [
     slug: '/projects/agentic-ai',
     title: 'Agentic AI',
     category: 'AI Employees',
-    description: 'AI FTEs that work 24/7—fully autonomous AI employees handling complex workflows across healthcare, operations, and enterprise. Custom agent development for your specific needs.',
+    description: 'AI FTEs that work 24/7—including RCM Employee (rcmemployee.com) for USA healthcare providers. We build custom agents for workflow automation, RCM automation, and healthcare administrative tasks.',
     icon: Brain,
     gradient: 'from-neural-400 to-plasma-400',
-    features: ['AI FTEs', 'Custom Agents', '24/7 Operation', 'Enterprise Compliance'],
-    metrics: { value: '10x', label: 'Productivity' },
+    features: ['RCM Employee', 'Workflow Automation', 'RCM Automation', 'Custom Agents'],
+    metrics: { value: '24/7', label: 'AI Employees' },
     status: 'active',
   },
 ]
@@ -153,100 +154,111 @@ export function Projects() {
                 project.featured ? 'lg:col-span-2 lg:row-span-2' : ''
               }`}
             >
-              <Link to={project.slug} className="block h-full">
-                <div
-                  className={`relative h-full glass rounded-3xl p-4 sm:p-6 lg:p-8 hover-lift card-shine overflow-hidden ${
-                    project.featured ? 'min-h-[400px]' : ''
-                  }`}
-                >
-                  {/* Gradient background on hover */}
+              {(() => {
+                const cardContent = (
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                  />
+                    className={`relative h-full glass rounded-3xl p-4 sm:p-6 lg:p-8 hover-lift card-shine overflow-hidden ${
+                      project.featured ? 'min-h-[400px]' : ''
+                    }`}
+                  >
+                    {/* Gradient background on hover */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                    />
 
-                  {/* Content */}
-                  <div className="relative h-full flex flex-col">
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div
-                        className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
-                      >
-                        <project.icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div className="flex items-center gap-2">
-                        {/* Status Badge */}
-                        {project.status === 'developing' && (
-                          <span className="px-3 py-1 rounded-full bg-amber-500/20 text-xs text-amber-400 font-medium animate-pulse">
-                            Developing...
-                          </span>
-                        )}
-                        {project.status === 'launching' && (
-                          <span className="px-3 py-1 rounded-full bg-rose-500/20 text-xs text-rose-400 font-medium flex items-center gap-1">
-                            <Clock className="w-3 h-3" />
-                            {daysUntilLaunch} days
-                          </span>
-                        )}
-                        {project.status === 'active' && (
-                          <span className="px-3 py-1 rounded-full bg-green-500/20 text-xs text-green-400 font-medium flex items-center gap-1">
-                            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                            Active
-                          </span>
-                        )}
-                        <span className="px-3 py-1 rounded-full bg-white/5 text-xs text-neutral-400">
-                          {project.category}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Title & Description */}
-                    <h3 className={`font-bold text-white mb-3 ${project.featured ? 'text-2xl lg:text-3xl' : 'text-xl'}`}>
-                      {project.title}
-                    </h3>
-                    <p className={`text-neutral-400 mb-6 ${project.featured ? 'text-base lg:text-lg' : 'text-sm'} leading-relaxed`}>
-                      {project.description}
-                    </p>
-
-                    {/* Features */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.features.map((feature) => (
-                        <span
-                          key={feature}
-                          className="px-3 py-1 rounded-lg bg-white/5 text-xs text-neutral-300"
+                    {/* Content */}
+                    <div className="relative h-full flex flex-col">
+                      {/* Header */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div
+                          className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
                         >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Spacer */}
-                    <div className="flex-1" />
-
-                    {/* Footer */}
-                    <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                      <div>
-                        {project.status === 'launching' ? (
-                          <>
-                            <div className={`font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent ${project.featured ? 'text-3xl' : 'text-2xl'}`}>
-                              {project.launchDate}
-                            </div>
-                            <div className="text-xs text-neutral-500">Launch Date</div>
-                          </>
-                        ) : (
-                          <>
-                            <div className={`font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent ${project.featured ? 'text-3xl' : 'text-2xl'}`}>
-                              {project.metrics.value}
-                            </div>
-                            <div className="text-xs text-neutral-500">{project.metrics.label}</div>
-                          </>
-                        )}
+                          <project.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex items-center gap-2">
+                          {/* Status Badge */}
+                          {project.status === 'developing' && (
+                            <span className="px-3 py-1 rounded-full bg-amber-500/20 text-xs text-amber-400 font-medium animate-pulse">
+                              Developing...
+                            </span>
+                          )}
+                          {project.status === 'launching' && (
+                            <span className="px-3 py-1 rounded-full bg-rose-500/20 text-xs text-rose-400 font-medium flex items-center gap-1">
+                              <Clock className="w-3 h-3" />
+                              {daysUntilLaunch} days
+                            </span>
+                          )}
+                          {project.status === 'active' && (
+                            <span className="px-3 py-1 rounded-full bg-green-500/20 text-xs text-green-400 font-medium flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                              Active
+                            </span>
+                          )}
+                          <span className="px-3 py-1 rounded-full bg-white/5 text-xs text-neutral-400">
+                            {project.category}
+                          </span>
+                        </div>
                       </div>
-                      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                        <ArrowUpRight className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+
+                      {/* Title & Description */}
+                      <h3 className={`font-bold text-white mb-3 ${project.featured ? 'text-2xl lg:text-3xl' : 'text-xl'}`}>
+                        {project.title}
+                      </h3>
+                      <p className={`text-neutral-400 mb-6 ${project.featured ? 'text-base lg:text-lg' : 'text-sm'} leading-relaxed`}>
+                        {project.description}
+                      </p>
+
+                      {/* Features */}
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.features.map((feature) => (
+                          <span
+                            key={feature}
+                            className="px-3 py-1 rounded-lg bg-white/5 text-xs text-neutral-300"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Spacer */}
+                      <div className="flex-1" />
+
+                      {/* Footer */}
+                      <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                        <div>
+                          {project.status === 'launching' ? (
+                            <>
+                              <div className={`font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent ${project.featured ? 'text-3xl' : 'text-2xl'}`}>
+                                {project.launchDate}
+                              </div>
+                              <div className="text-xs text-neutral-500">Launch Date</div>
+                            </>
+                          ) : (
+                            <>
+                              <div className={`font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent ${project.featured ? 'text-3xl' : 'text-2xl'}`}>
+                                {project.metrics.value}
+                              </div>
+                              <div className="text-xs text-neutral-500">{project.metrics.label}</div>
+                            </>
+                          )}
+                        </div>
+                        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                          <ArrowUpRight className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Link>
+                );
+                return project.externalUrl ? (
+                  <a href={project.externalUrl} target="_blank" rel="noopener noreferrer" className="block h-full">
+                    {cardContent}
+                  </a>
+                ) : (
+                  <Link to={project.slug} className="block h-full">
+                    {cardContent}
+                  </Link>
+                );
+              })()}
             </motion.div>
           ))}
         </div>

@@ -36,7 +36,7 @@ const pillars = [
   {
     icon: Heart,
     title: 'Healthcare AI',
-    description: 'xEHR.io—our AI-powered platform transforming how America delivers and manages healthcare.',
+    description: 'xEHR.io—our AI-powered platform transforming how the USA delivers and manages healthcare.',
     color: 'rose',
     status: 'launching',
   },
@@ -50,7 +50,7 @@ const pillars = [
   {
     icon: Brain,
     title: 'Agentic AI',
-    description: 'AI FTEs and custom agents that work 24/7—fully autonomous AI employees for healthcare, operations, and enterprise workflows.',
+    description: 'AI FTEs and custom agents that work 24/7—including RCM Employee for USA healthcare providers, workflow automation, and RCM automation for administrative tasks.',
     color: 'neural',
     status: 'active',
   },
@@ -124,7 +124,7 @@ export function About() {
               Our vision spans from the home to the hospital, from the factory floor to the film set.
               We're developing humanoid robots that will become household companions, industrial systems
               that will reshape manufacturing, and AI that will revolutionize how healthcare is delivered
-              across America and beyond.
+              across the USA and beyond.
             </motion.p>
 
             <motion.p

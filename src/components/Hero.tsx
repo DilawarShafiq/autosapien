@@ -132,14 +132,14 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-plasma-600 to-cyber-600 opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
 
-          <button className="group px-6 py-3 sm:px-8 sm:py-4 rounded-2xl glass text-white font-medium text-base sm:text-lg hover:bg-white/10 transition-colors">
+          <a href="https://xehr.io" target="_blank" rel="noopener noreferrer" className="group px-6 py-3 sm:px-8 sm:py-4 rounded-2xl glass text-white font-medium text-base sm:text-lg hover:bg-white/10 transition-colors">
             <span className="flex items-center gap-2">
               Explore xEHR.io
               <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                 <Heart className="w-4 h-4" />
               </div>
             </span>
-          </button>
+          </a>
         </motion.div>
 
         {/* Stats */}
@@ -150,10 +150,10 @@ export function Hero() {
           className="mt-12 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8"
         >
           {[
-            { value: '4', label: 'Robot Platforms' },
-            { value: '2M+', label: 'Patient Records on xEHR' },
+            { value: '6', label: 'Core AI Verticals' },
+            { value: '2M+', label: 'Healthcare IT (xEHR)', href: 'https://xehr.io' },
             { value: '1st', label: 'Humanoid in Development' },
-            { value: '∞', label: 'Films to Generate' },
+            { value: '24/7', label: 'Agentic AI Employees', href: 'https://rcmemployee.com' },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -162,8 +162,17 @@ export function Hero() {
               transition={{ delay: 1 + i * 0.1 }}
               className="text-center"
             >
-              <div className="text-2xl sm:text-4xl font-bold gradient-text mb-1">{stat.value}</div>
-              <div className="text-xs sm:text-sm text-neutral-500">{stat.label}</div>
+              {stat.href ? (
+                <a href={stat.href} target="_blank" rel="noopener noreferrer" className="group">
+                  <div className="text-2xl sm:text-4xl font-bold gradient-text mb-1 group-hover:opacity-80 transition-opacity">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-neutral-500 group-hover:text-neutral-300 transition-colors">{stat.label}</div>
+                </a>
+              ) : (
+                <>
+                  <div className="text-2xl sm:text-4xl font-bold gradient-text mb-1">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-neutral-500">{stat.label}</div>
+                </>
+              )}
             </motion.div>
           ))}
         </motion.div>
