@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowDown, Sparkles, Brain, Bot, Cpu, Film, Heart } from 'lucide-react'
+import { ArrowRight, Circle } from 'lucide-react'
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -9,106 +9,86 @@ export function Hero() {
     offset: ['start start', 'end start'],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200])
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9])
 
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-carbon-900"
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Morphing blob */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-neural-600/30 via-plasma-600/20 to-transparent blur-3xl animate-morph"
-          style={{ y }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-cyber-600/30 via-neural-600/20 to-transparent blur-3xl animate-morph"
-          style={{ y: useTransform(y, (v) => -v * 0.5) }}
-        />
+      {/* Technical grid background */}
+      <div className="absolute inset-0 bg-technical-grid opacity-50" />
 
-        {/* Grid overlay */}
-        <div className="absolute inset-0 neural-grid opacity-30" />
+      {/* Radial gradient fade */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse 80% 50% at 50% 50%, transparent 0%, #0a0a0a 100%)'
+        }}
+      />
 
-        {/* Floating elements representing core pillars */}
-        <motion.div
-          animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 right-1/4 w-20 h-20 glass rounded-2xl hidden sm:flex items-center justify-center"
-        >
-          <Bot className="w-10 h-10 text-plasma-400" />
-        </motion.div>
+      {/* Geometric accent shapes */}
+      <motion.div
+        className="absolute top-1/4 left-[10%] w-64 h-64 border border-ember-500/10 hidden sm:block"
+        style={{ rotate: 45 }}
+        animate={{
+          rotate: [45, 50, 45],
+          scale: [1, 1.05, 1]
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute bottom-1/4 right-[10%] w-48 h-48 border border-volt-500/10 hidden sm:block"
+        style={{ rotate: 45 }}
+        animate={{
+          rotate: [45, 40, 45],
+          scale: [1, 1.1, 1]
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+      />
 
-        <motion.div
-          animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute bottom-1/3 left-1/4 w-16 h-16 glass rounded-2xl hidden sm:flex items-center justify-center"
-        >
-          <Brain className="w-8 h-8 text-neural-400" />
-        </motion.div>
-
-        <motion.div
-          animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-          className="absolute top-1/3 left-[15%] w-14 h-14 glass rounded-xl hidden sm:flex items-center justify-center"
-        >
-          <Heart className="w-7 h-7 text-rose-400" />
-        </motion.div>
-
-        <motion.div
-          animate={{ y: [0, 15, 0], rotate: [0, -8, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-          className="absolute bottom-1/4 right-[15%] w-14 h-14 glass rounded-xl hidden sm:flex items-center justify-center"
-        >
-          <Film className="w-7 h-7 text-synth-400" />
-        </motion.div>
-
-        <motion.div
-          animate={{ y: [0, -12, 0], rotate: [0, 6, 0] }}
-          transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-          className="absolute top-[40%] right-[10%] w-12 h-12 glass rounded-xl hidden sm:flex items-center justify-center"
-        >
-          <Cpu className="w-6 h-6 text-cyber-400" />
-        </motion.div>
-      </div>
+      {/* Scan line effect */}
+      <div className="scan-line" />
 
       {/* Main content */}
       <motion.div
         style={{ opacity, scale }}
-        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center pt-20 sm:pt-0"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-0"
       >
-        {/* Badge */}
+        {/* Top badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass mb-6 sm:mb-8"
+          className="flex justify-center mb-8 sm:mb-12"
         >
-          <Sparkles className="w-4 h-4 text-neural-400" />
-          <span className="text-xs sm:text-sm text-neutral-300">Building the Machines That Will Build Tomorrow</span>
+          <div className="badge badge-ember">
+            <Circle className="w-2 h-2 fill-ember-400 text-ember-400" />
+            <span className="text-xs sm:text-sm">Building the Machines That Will Build Tomorrow</span>
+          </div>
         </motion.div>
 
         {/* Main heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 sm:mb-6"
+          className="text-center mb-8"
         >
-          <span className="block text-white text-shadow-glow">Where</span>
-          <span className="block gradient-text pb-1 sm:pb-2">Intelligence</span>
-          <span className="block text-white text-shadow-glow">Meets Form</span>
-        </motion.h1>
+          <h1 className="font-display font-bold text-display-2xl mb-6">
+            <span className="block text-white">WHERE</span>
+            <span className="block text-gradient">INTELLIGENCE</span>
+            <span className="block text-white">MEETS FORM</span>
+          </h1>
+        </motion.div>
 
         {/* Subheading */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-base sm:text-xl text-neutral-400 max-w-3xl mx-auto mb-8 sm:mb-12 text-balance"
+          className="text-base sm:text-lg md:text-xl text-carbon-300 max-w-3xl mx-auto text-center mb-10 sm:mb-16 font-body leading-relaxed"
         >
           Autosapien is pioneering the convergence of artificial intelligence and physical robotics.
           From humanoid companions to healthcare automation, industrial machines to AI-generated cinema—we're
@@ -120,39 +100,34 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-24"
         >
-          <button className="group relative px-6 py-3 sm:px-8 sm:py-4 rounded-2xl bg-gradient-to-r from-neural-600 to-plasma-600 text-white font-medium text-base sm:text-lg overflow-hidden">
-            <span className="relative z-10 flex items-center gap-2">
+          <button className="btn-primary group">
+            <span className="flex items-center gap-3">
               Robotics — Under Development
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-plasma-600 to-cyber-600 opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
 
-          <a href="https://xehr.io" target="_blank" rel="noopener noreferrer" className="group px-6 py-3 sm:px-8 sm:py-4 rounded-2xl glass text-white font-medium text-base sm:text-lg hover:bg-white/10 transition-colors">
-            <span className="flex items-center gap-2">
+          <a href="https://xehr.io" target="_blank" rel="noopener noreferrer" className="btn-secondary group">
+            <span className="flex items-center gap-3">
               Explore xEHR.io
-              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                <Heart className="w-4 h-4" />
-              </div>
+              <div className="w-2 h-2 rounded-full bg-green-400 group-hover:animate-pulse" />
             </span>
           </a>
         </motion.div>
 
-        {/* Stats */}
+        {/* Stats row */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-12 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-16"
         >
           {[
             { value: '6', label: 'Core AI Verticals', href: '#capabilities' },
             { value: '#1', label: 'AI-Powered Healthcare IT', href: 'https://xehr.io' },
-            { value: '1st', label: 'Humanoid in Development' },
+            { value: '1st', label: 'Humanoid in Development', suffix: '' },
             { value: '24/7', label: 'Agentic AI FTEs', href: 'https://rcmemployee.com' },
           ].map((stat, i) => (
             <motion.div
@@ -164,13 +139,17 @@ export function Hero() {
             >
               {stat.href ? (
                 <a href={stat.href} {...(stat.href.startsWith('#') ? {} : { target: '_blank', rel: 'noopener noreferrer' })} className="group">
-                  <div className="text-2xl sm:text-4xl font-bold gradient-text mb-1 group-hover:opacity-80 transition-opacity">{stat.value}</div>
-                  <div className="text-xs sm:text-sm text-neutral-500 group-hover:text-neutral-300 transition-colors">{stat.label}</div>
+                  <div className="flex items-baseline justify-center gap-1 mb-2">
+                    <span className="stat-display text-3xl sm:text-5xl md:text-6xl group-hover:opacity-80 transition-opacity">{stat.value}</span>
+                  </div>
+                  <div className="label-technical group-hover:text-carbon-300 transition-colors">{stat.label}</div>
                 </a>
               ) : (
                 <>
-                  <div className="text-2xl sm:text-4xl font-bold gradient-text mb-1">{stat.value}</div>
-                  <div className="text-xs sm:text-sm text-neutral-500">{stat.label}</div>
+                  <div className="flex items-baseline justify-center gap-1 mb-2">
+                    <span className="stat-display text-3xl sm:text-5xl md:text-6xl">{stat.value}</span>
+                  </div>
+                  <div className="label-technical">{stat.label}</div>
                 </>
               )}
             </motion.div>
@@ -178,22 +157,34 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Bottom scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-4 sm:bottom-12 left-1/2 -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-neutral-500"
+          className="flex flex-col items-center gap-4"
         >
-          <span className="text-xs uppercase tracking-widest">Discover</span>
-          <ArrowDown className="w-4 h-4" />
+          <span className="label-technical">Scroll to Explore</span>
+          <div className="w-px h-12 bg-gradient-to-b from-ember-500 to-transparent" />
         </motion.div>
       </motion.div>
+
+      {/* Side technical labels */}
+      <div className="hidden lg:block absolute left-8 top-1/2 -translate-y-1/2">
+        <div className="label-technical -rotate-90 origin-left whitespace-nowrap">
+          AI & ROBOTICS — EST. 2024
+        </div>
+      </div>
+      <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2">
+        <div className="label-technical rotate-90 origin-right whitespace-nowrap">
+          ENGINEERING INTELLIGENCE
+        </div>
+      </div>
     </section>
   )
 }
