@@ -52,27 +52,6 @@ export function Contact() {
             </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-14 pt-10 border-t border-surface-200"
-          >
-            <div className="grid sm:grid-cols-3 gap-8">
-              <div>
-                <span className="label-mono text-[10px] text-amber-600 block mb-2">Headquarters</span>
-                <p className="text-ink-600 font-body">United States</p>
-              </div>
-              <div>
-                <span className="label-mono text-[10px] text-amber-600 block mb-2">Inquiries</span>
-                <p className="text-ink-600 font-body">Partnerships & Investment</p>
-              </div>
-              <div>
-                <span className="label-mono text-[10px] text-amber-600 block mb-2">Response Time</span>
-                <p className="text-ink-600 font-body">Within 24 hours</p>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
