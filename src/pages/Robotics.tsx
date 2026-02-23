@@ -41,22 +41,22 @@ const applications = [
   {
     title: 'Industrial Automation',
     description: 'Autonomous manufacturing, assembly, and quality inspection systems.',
-    image: 'from-blue-500 to-cyan-500',
+    image: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Healthcare Robotics',
     description: 'Surgical assistance, rehabilitation, and patient care automation.',
-    image: 'from-emerald-500 to-teal-500',
+    image: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Logistics & Warehousing',
     description: 'Autonomous material handling, sorting, and inventory management.',
-    image: 'from-orange-500 to-amber-500',
+    image: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Agricultural Robotics',
     description: 'Precision farming, harvesting, and crop monitoring systems.',
-    image: 'from-green-500 to-lime-500',
+    image: 'from-amber-400 to-amber-600',
   },
 ]
 
@@ -94,25 +94,23 @@ export function Robotics() {
 
       {/* Capabilities Section */}
       <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 dot-pattern opacity-30" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-plasma-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Core Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Built for the{' '}
-              <span className="bg-gradient-to-r from-plasma-500 to-cyber-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 real world
               </span>
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 max-w-2xl mx-auto">
               Our robotics platform combines state-of-the-art AI with robust engineering for reliable real-world deployment.
             </p>
           </motion.div>
@@ -124,13 +122,13 @@ export function Robotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift group"
+                className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-plasma-500/20 to-cyber-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-plasma-400" />
+                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
-                <p className="text-neutral-400">{cap.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
+                <p className="text-ink-400">{cap.description}</p>
               </motion.div>
             ))}
           </div>
@@ -139,8 +137,8 @@ export function Robotics() {
 
       {/* Specifications */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="glass rounded-3xl p-8 md:p-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="card-clean rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {specs.map((spec, i) => (
                 <motion.div
@@ -151,10 +149,10 @@ export function Robotics() {
                   transition={{ delay: i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-plasma-500 to-cyber-500 bg-clip-text text-transparent mb-2">
+                  <div className="stat-display text-3xl sm:text-4xl mb-2">
                     {spec.value}
                   </div>
-                  <div className="text-neutral-400">{spec.label}</div>
+                  <div className="text-ink-400">{spec.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -164,23 +162,19 @@ export function Robotics() {
 
       {/* Applications Section */}
       <section ref={applicationsRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-plasma-600/10 rounded-full blur-3xl -translate-y-1/2" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isApplicationsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-cyber-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Applications
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Transforming{' '}
-              <span className="bg-gradient-to-r from-plasma-500 to-cyber-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 industries
               </span>
             </h2>
@@ -193,16 +187,15 @@ export function Robotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isApplicationsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="group relative glass rounded-3xl p-8 overflow-hidden hover-lift"
+                className="group relative card-clean rounded-xl p-8 overflow-hidden hover-lift"
               >
-                <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${app.image} opacity-10 rounded-full blur-3xl group-hover:opacity-20 transition-opacity`} />
                 <div className="relative">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${app.image} flex items-center justify-center mb-6`}>
-                    <Zap className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-6">
+                    <Zap className="w-6 h-6 text-amber-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{app.title}</h3>
-                  <p className="text-neutral-400 mb-6">{app.description}</p>
-                  <button className="text-sm text-plasma-400 hover:text-plasma-300 transition-colors flex items-center gap-2">
+                  <h3 className="text-2xl font-bold text-ink-900 mb-3">{app.title}</h3>
+                  <p className="text-ink-400 mb-6">{app.description}</p>
+                  <button className="text-sm text-amber-600 hover:text-amber-500 transition-colors flex items-center gap-2">
                     Learn more
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

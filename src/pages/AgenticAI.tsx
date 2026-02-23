@@ -9,25 +9,25 @@ const agents = [
     name: 'Intake Agent',
     description: 'Handles patient registration, demographic verification, and insurance eligibility.',
     tasks: ['Patient Registration', 'Insurance Verification', 'Demographic Updates', 'Consent Management'],
-    color: 'from-neural-500 to-plasma-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     name: 'Scheduling Agent',
     description: 'Manages appointments, handles rescheduling, and optimizes provider calendars.',
     tasks: ['Appointment Booking', 'Rescheduling', 'Waitlist Management', 'Reminder Automation'],
-    color: 'from-plasma-500 to-cyber-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     name: 'Billing Agent',
     description: 'Processes claims, manages denials, and handles payment posting.',
     tasks: ['Claim Submission', 'Denial Appeals', 'Payment Posting', 'Patient Billing'],
-    color: 'from-cyber-500 to-synth-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     name: 'Clinical Agent',
     description: 'Assists with documentation, coding, and clinical decision support.',
     tasks: ['Chart Prep', 'Medical Coding', 'CDI Queries', 'Order Management'],
-    color: 'from-synth-500 to-neural-500',
+    color: 'from-amber-400 to-amber-600',
   },
 ]
 
@@ -127,8 +127,8 @@ export function AgenticAI() {
 
       {/* Metrics Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="glass rounded-3xl p-8 md:p-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="card-clean rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -139,11 +139,11 @@ export function AgenticAI() {
                   transition={{ delay: i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neural-500 to-plasma-500 bg-clip-text text-transparent mb-2">
+                  <div className="stat-display text-3xl sm:text-4xl mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-white font-medium mb-1">{metric.label}</div>
-                  <div className="text-sm text-neutral-500">{metric.description}</div>
+                  <div className="text-ink-900 font-medium mb-1">{metric.label}</div>
+                  <div className="text-sm text-ink-500">{metric.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -153,25 +153,23 @@ export function AgenticAI() {
 
       {/* Agents Section */}
       <section ref={agentsRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 dot-pattern opacity-30" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isAgentsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-neural-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               AI Agent Fleet
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Meet your{' '}
-              <span className="bg-gradient-to-r from-neural-500 to-plasma-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 AI workforce
               </span>
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 max-w-2xl mx-auto">
               Specialized agents that handle every aspect of healthcare operations with expert-level competence.
             </p>
           </motion.div>
@@ -183,26 +181,26 @@ export function AgenticAI() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isAgentsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift"
+                className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${agent.color} flex items-center justify-center`}>
-                    <Bot className="w-7 h-7 text-white" />
+                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center">
+                    <Bot className="w-7 h-7 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">{agent.name}</h3>
+                    <h3 className="text-xl font-bold text-ink-900">{agent.name}</h3>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                      <span className="text-xs text-green-400">Active</span>
+                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                      <span className="text-xs text-green-600">Active</span>
                     </div>
                   </div>
                 </div>
-                <p className="text-neutral-400 mb-6">{agent.description}</p>
+                <p className="text-ink-400 mb-6">{agent.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {agent.tasks.map((task) => (
                     <span
                       key={task}
-                      className="px-3 py-1 rounded-lg bg-white/5 text-xs text-neutral-300"
+                      className="px-3 py-1 rounded-lg bg-surface-100 text-xs text-ink-500"
                     >
                       {task}
                     </span>
@@ -216,23 +214,19 @@ export function AgenticAI() {
 
       {/* Capabilities Section */}
       <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-neural-600/10 rounded-full blur-3xl -translate-y-1/2" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-plasma-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Core Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Beyond simple{' '}
-              <span className="bg-gradient-to-r from-neural-500 to-plasma-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 automation
               </span>
             </h2>
@@ -245,13 +239,13 @@ export function AgenticAI() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift group"
+                className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-neural-500/20 to-plasma-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-neural-400" />
+                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
-                <p className="text-neutral-400">{cap.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
+                <p className="text-ink-400">{cap.description}</p>
               </motion.div>
             ))}
           </div>
@@ -260,18 +254,18 @@ export function AgenticAI() {
 
       {/* Architecture Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Platform Architecture</h3>
-            <p className="text-neutral-400">Built for scale, security, and reliability</p>
+            <h3 className="text-2xl font-bold text-ink-900 mb-4">Platform Architecture</h3>
+            <p className="text-ink-400">Built for scale, security, and reliability</p>
           </motion.div>
 
-          <div className="glass rounded-3xl p-8">
+          <div className="card-clean rounded-xl p-8">
             <div className="space-y-4">
               {architecture.map((layer, i) => (
                 <motion.div
@@ -280,16 +274,16 @@ export function AgenticAI() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-6 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors"
+                  className="flex items-center gap-6 p-4 rounded-lg bg-surface-100 hover:bg-surface-100 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-neural-500/20 to-plasma-500/20 flex items-center justify-center flex-shrink-0">
-                    <layer.icon className="w-6 h-6 text-neural-400" />
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0">
+                    <layer.icon className="w-6 h-6 text-amber-600" />
                   </div>
                   <div className="flex-1">
-                    <div className="font-bold text-white">{layer.layer}</div>
-                    <div className="text-sm text-neutral-400">{layer.description}</div>
+                    <div className="font-bold text-ink-900">{layer.layer}</div>
+                    <div className="text-sm text-ink-400">{layer.description}</div>
                   </div>
-                  <div className="hidden sm:block w-8 h-px bg-gradient-to-r from-neural-500/50 to-transparent" />
+                  <div className="hidden sm:block w-8 h-px bg-amber-400/30" />
                 </motion.div>
               ))}
             </div>

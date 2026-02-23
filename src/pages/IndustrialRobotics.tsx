@@ -43,28 +43,28 @@ const applications = [
     description: 'High-speed, precision assembly with 24/7 operation. From electronics to automotive, our robots handle complex assembly tasks.',
     metrics: '99.9% accuracy',
     icon: Factory,
-    color: 'from-cyber-500 to-blue-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Logistics & Warehousing',
     description: 'Autonomous picking, packing, and palletizing. Optimize warehouse operations and reduce fulfillment times.',
     metrics: '5x throughput',
     icon: Package,
-    color: 'from-blue-500 to-indigo-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Quality Inspection',
     description: 'Visual inspection at production speed. Catch defects, measure tolerances, and ensure compliance automatically.',
     metrics: '100% inspection',
     icon: Eye,
-    color: 'from-indigo-500 to-purple-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Material Handling',
     description: 'Heavy lifting, precise placement, and dangerous environment operation. Let robots handle what humans shouldn\'t.',
     metrics: '500kg payload',
     icon: Zap,
-    color: 'from-purple-500 to-cyber-500',
+    color: 'from-amber-400 to-amber-600',
   },
 ]
 
@@ -110,8 +110,8 @@ export function IndustrialRobotics() {
 
       {/* Metrics Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="glass rounded-3xl p-8 md:p-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="card-clean rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -122,11 +122,11 @@ export function IndustrialRobotics() {
                   transition={{ delay: i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyber-500 to-blue-500 bg-clip-text text-transparent mb-2">
+                  <div className="stat-display text-3xl sm:text-4xl mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-white font-medium mb-1">{metric.label}</div>
-                  <div className="text-sm text-neutral-500">{metric.description}</div>
+                  <div className="text-ink-900 font-medium mb-1">{metric.label}</div>
+                  <div className="text-sm text-ink-500">{metric.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -136,26 +136,23 @@ export function IndustrialRobotics() {
 
       {/* Capabilities Section */}
       <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 dot-pattern opacity-30" />
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-cyber-600/10 rounded-full blur-3xl -translate-y-1/2" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-cyber-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Core Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Intelligence that{' '}
-              <span className="bg-gradient-to-r from-cyber-500 to-blue-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 never stops improving
               </span>
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 max-w-2xl mx-auto">
               Every operation teaches our robots something new. Every cycle is an opportunity for optimization.
             </p>
           </motion.div>
@@ -167,13 +164,13 @@ export function IndustrialRobotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift group"
+                className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyber-500/20 to-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-cyber-400" />
+                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
-                <p className="text-neutral-400">{cap.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
+                <p className="text-ink-400">{cap.description}</p>
               </motion.div>
             ))}
           </div>
@@ -182,23 +179,19 @@ export function IndustrialRobotics() {
 
       {/* Applications Section */}
       <section ref={applicationsRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isApplicationsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-blue-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Applications
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Transforming{' '}
-              <span className="bg-gradient-to-r from-cyber-500 to-blue-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 manufacturing
               </span>
             </h2>
@@ -211,18 +204,18 @@ export function IndustrialRobotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isApplicationsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift"
+                className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-start justify-between mb-6">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.color} flex items-center justify-center`}>
-                    <app.icon className="w-7 h-7 text-white" />
+                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center">
+                    <app.icon className="w-7 h-7 text-amber-600" />
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${app.color} text-white`}>
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
                     {app.metrics}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{app.title}</h3>
-                <p className="text-neutral-400">{app.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{app.title}</h3>
+                <p className="text-ink-400">{app.description}</p>
               </motion.div>
             ))}
           </div>
@@ -231,18 +224,18 @@ export function IndustrialRobotics() {
 
       {/* Safety & Compliance Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Safety & Compliance</h3>
-            <p className="text-neutral-400">Meeting and exceeding global industrial standards</p>
+            <h3 className="text-2xl font-bold text-ink-900 mb-4">Safety & Compliance</h3>
+            <p className="text-ink-400">Meeting and exceeding global industrial standards</p>
           </motion.div>
 
-          <div className="glass rounded-3xl p-8">
+          <div className="card-clean rounded-xl p-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {safetyStandards.map((standard, i) => (
                 <motion.div
@@ -251,11 +244,11 @@ export function IndustrialRobotics() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="text-center p-4 rounded-2xl bg-white/5"
+                  className="text-center p-4 rounded-lg bg-surface-100"
                 >
-                  <Shield className="w-8 h-8 text-cyber-400 mx-auto mb-3" />
-                  <div className="font-bold text-white mb-1">{standard.standard}</div>
-                  <div className="text-sm text-neutral-500">{standard.description}</div>
+                  <Shield className="w-8 h-8 text-amber-600 mx-auto mb-3" />
+                  <div className="font-bold text-ink-900 mb-1">{standard.standard}</div>
+                  <div className="text-sm text-ink-500">{standard.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -265,31 +258,31 @@ export function IndustrialRobotics() {
 
       {/* Integration Section */}
       <section className="relative py-20">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-3xl p-12 text-center"
+            className="card-clean rounded-xl p-12 text-center"
           >
-            <RefreshCw className="w-12 h-12 text-cyber-400 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <RefreshCw className="w-12 h-12 text-amber-600 mx-auto mb-6" />
+            <h2 className="text-3xl font-bold text-ink-900 mb-4">
               Seamless integration with your existing systems
             </h2>
-            <p className="text-lg text-neutral-400 mb-8">
+            <p className="text-lg text-ink-400 mb-8">
               Our robots integrate with existing PLCs, MES, ERP, and SCADA systems. No rip-and-replace required—we enhance what you already have.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               {['Siemens', 'Rockwell', 'ABB', 'Fanuc', 'KUKA', 'Universal Robots'].map((partner) => (
                 <span
                   key={partner}
-                  className="px-4 py-2 rounded-lg bg-white/5 text-neutral-300"
+                  className="px-4 py-2 rounded-lg bg-surface-100 text-ink-500"
                 >
                   {partner}
                 </span>
               ))}
             </div>
-            <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyber-500 to-blue-500 text-white font-medium text-lg hover:opacity-90 transition-opacity">
+            <button className="btn-primary rounded-lg">
               Schedule Factory Assessment
             </button>
           </motion.div>
