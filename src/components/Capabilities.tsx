@@ -41,7 +41,7 @@ export function Capabilities() {
   const [activeCapability, setActiveCapability] = useState(capabilities[0])
 
   return (
-    <section id="capabilities" className="relative py-20 sm:py-36 bg-surface-50 overflow-hidden">
+    <section id="capabilities" className="relative py-20 sm:py-36 overflow-hidden" style={{ background: '#ffffff' }}>
       <div className="divider" />
 
       <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-36">
@@ -130,10 +130,10 @@ export function Capabilities() {
                     </div>
                   </div>
                   {activeCapability.status === 'developing' && (
-                    <span className="badge-pill badge-amber"><span className="status-dot developing" />Development</span>
+                    <span className="badge-pill badge-amber rounded-full"><span className="status-dot developing" />Development</span>
                   )}
                   {activeCapability.status === 'active' && (
-                    <span className="badge-pill badge-live"><span className="status-dot active" />Live</span>
+                    <span className="badge-pill badge-live rounded-full"><span className="status-dot active" />Live</span>
                   )}
                 </div>
 

@@ -34,7 +34,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative pt-12 sm:pt-20 pb-6 sm:pb-10 bg-surface-50">
+    <footer className="relative pt-12 sm:pt-20 pb-6 sm:pb-10" style={{ background: '#f5f5f0' }}>
       <div className="divider" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20">

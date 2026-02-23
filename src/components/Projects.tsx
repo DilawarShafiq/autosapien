@@ -48,7 +48,7 @@ export function Projects() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="projects" className="relative py-20 sm:py-36 overflow-hidden">
+    <section id="projects" className="relative py-20 sm:py-36 overflow-hidden" style={{ background: '#fafaf8' }}>
       <div className="divider" />
 
       <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-36">

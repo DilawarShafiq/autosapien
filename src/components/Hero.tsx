@@ -17,13 +17,16 @@ export function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Subtle radial warmth */}
+      {/* Radial gold glow behind headline */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 60% 50% at 50% 40%, rgba(240, 160, 48, 0.04) 0%, transparent 70%)'
+          background: 'radial-gradient(ellipse 50% 40% at 50% 45%, rgba(201, 164, 76, 0.08) 0%, transparent 70%)'
         }}
       />
+
+      {/* Subtle grid overlay */}
+      <div className="absolute inset-0 grid-pattern pointer-events-none opacity-40" />
 
       {/* Main content */}
       <motion.div
@@ -37,7 +40,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="flex justify-center mb-10 sm:mb-14"
         >
-          <div className="badge-pill badge-amber">
+          <div className="badge-pill-dark rounded-full">
             <span className="status-dot developing" />
             <span>Building the Machines That Will Build Tomorrow</span>
           </div>
@@ -50,10 +53,10 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.15 }}
           className="text-center mb-8"
         >
-          <h1 className="font-display font-bold text-display-2xl">
-            <span className="block">WHERE</span>
-            <span className="block text-amber-500">INTELLIGENCE</span>
-            <span className="block">MEETS FORM</span>
+          <h1 className="font-display font-bold text-display-2xl !text-white">
+            <span className="block opacity-90">WHERE</span>
+            <span className="block" style={{ color: '#d4a84b' }}>INTELLIGENCE</span>
+            <span className="block opacity-90">MEETS FORM</span>
           </h1>
         </motion.div>
 
@@ -62,7 +65,8 @@ export function Hero() {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-base sm:text-lg md:text-xl text-ink-500 max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-body leading-relaxed"
+          className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto text-center mb-12 sm:mb-16 font-body leading-relaxed"
+          style={{ color: 'rgba(255, 255, 255, 0.5)' }}
         >
           Autosapien is pioneering the convergence of artificial intelligence and physical robotics.
           From humanoid companions to healthcare automation, industrial machines to AI-generated cinema—we're
@@ -76,15 +80,15 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 sm:mb-28"
         >
-          <button className="btn-primary group">
+          <button className="btn-gold group rounded-lg">
             <span className="flex items-center gap-3">
               Robotics — Under Development
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
           </button>
 
-          <a href="https://xehr.io" target="_blank" rel="noopener noreferrer" className="btn-secondary group">
-            <span className="flex items-center gap-3">
+          <a href="https://xehr.io" target="_blank" rel="noopener noreferrer" className="px-8 py-4 font-display font-semibold rounded-lg group" style={{ color: 'rgba(255,255,255,0.7)', border: '1.5px solid rgba(94, 94, 120, 0.4)' }}>
+            <span className="flex items-center gap-3 group-hover:text-white transition-colors">
               Explore xEHR.io
               <span className="status-dot active" />
             </span>
@@ -114,16 +118,16 @@ export function Hero() {
               {stat.href ? (
                 <a href={stat.href} {...(stat.href.startsWith('#') ? {} : { target: '_blank', rel: 'noopener noreferrer' })} className="group">
                   <div className="mb-2">
-                    <span className="stat-display text-3xl sm:text-5xl md:text-6xl group-hover:text-amber-600 transition-colors">{stat.value}</span>
+                    <span className="stat-display-gold text-3xl sm:text-5xl md:text-6xl group-hover:opacity-80 transition-opacity">{stat.value}</span>
                   </div>
-                  <div className="label-mono">{stat.label}</div>
+                  <div className="label-mono-light">{stat.label}</div>
                 </a>
               ) : (
                 <>
                   <div className="mb-2">
-                    <span className="stat-display text-3xl sm:text-5xl md:text-6xl">{stat.value}</span>
+                    <span className="stat-display-gold text-3xl sm:text-5xl md:text-6xl">{stat.value}</span>
                   </div>
-                  <div className="label-mono">{stat.label}</div>
+                  <div className="label-mono-light">{stat.label}</div>
                 </>
               )}
             </motion.div>
@@ -143,8 +147,8 @@ export function Hero() {
           transition={{ duration: 2.5, repeat: Infinity }}
           className="flex flex-col items-center gap-3"
         >
-          <span className="label-mono">Scroll</span>
-          <div className="w-px h-10 bg-gradient-to-b from-ink-300 to-transparent" />
+          <span className="label-mono-light">Scroll</span>
+          <div className="w-px h-10" style={{ background: 'linear-gradient(to bottom, rgba(201, 164, 76, 0.4), transparent)' }} />
         </motion.div>
       </motion.div>
     </section>

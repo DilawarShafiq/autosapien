@@ -31,9 +31,12 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="relative min-h-screen bg-white">
+      <div className="relative min-h-screen">
         <Cursor />
         <ParticleField />
+
+        {/* Noise texture overlay */}
+        <div className="noise-overlay" />
 
         <div className="relative z-[1]">
         <Navbar />

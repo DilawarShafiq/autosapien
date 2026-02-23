@@ -52,7 +52,7 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="relative py-20 sm:py-36 overflow-hidden">
+    <section id="about" className="relative py-20 sm:py-36 overflow-hidden" style={{ background: '#fafaf8' }}>
       <div className="divider" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-36">
@@ -112,7 +112,7 @@ export function About() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="card-tinted p-6 sm:p-10">
+            <div className="card-tinted p-6 sm:p-10 rounded-xl">
               <div className="flex items-center justify-between mb-8">
                 <span className="label-mono">Vision</span>
                 <span className="label-mono">VS-001</span>
@@ -159,20 +159,20 @@ export function About() {
               initial={{ opacity: 0, y: 25 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5 + i * 0.06, duration: 0.5 }}
-              className="group card-clean p-6 hover-lift cursor-pointer"
+              className="group card-clean p-6 rounded-xl hover-lift cursor-pointer"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="w-10 h-10 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-amber-50 transition-colors">
                   <pillar.icon className="w-5 h-5 text-ink-400 group-hover:text-amber-600 transition-colors" />
                 </div>
                 {pillar.status === 'developing' && (
-                  <span className="badge-pill badge-amber text-[10px] py-1 px-2">
+                  <span className="badge-pill badge-amber text-[10px] py-1 px-2 rounded-full">
                     <span className="status-dot developing" />
                     Dev
                   </span>
                 )}
                 {pillar.status === 'active' && (
-                  <span className="badge-pill badge-live text-[10px] py-1 px-2">
+                  <span className="badge-pill badge-live text-[10px] py-1 px-2 rounded-full">
                     <span className="status-dot active" />
                     Live
                   </span>
