@@ -181,7 +181,7 @@ export function Hero() {
                 <a
                   href={stat.href}
                   {...(stat.href.startsWith('#') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-                  className="block p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center group hover:border-amber-300 hover:shadow-elevated transition-all duration-300"
+                  className="block h-full p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center group hover:border-amber-300 hover:shadow-elevated transition-all duration-300 flex flex-col items-center justify-center"
                 >
                   <div className="mb-2">
                     <span className={`stat-display-gold group-hover:opacity-80 transition-opacity ${stat.value.length > 5 ? 'text-sm sm:text-base md:text-lg' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
@@ -191,7 +191,7 @@ export function Hero() {
                   <div className="label-mono text-[9px] sm:text-[10px]">{stat.label}</div>
                 </a>
               ) : (
-                <div className="p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center">
+                <div className="h-full p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center flex flex-col items-center justify-center">
                   <div className="mb-2">
                     <span className={`stat-display-gold ${stat.value.length > 5 ? 'text-sm sm:text-base md:text-lg' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
                       <AnimatedNumber value={stat.value} />
