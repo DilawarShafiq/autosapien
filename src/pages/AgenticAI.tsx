@@ -142,7 +142,7 @@ export function AgenticAI() {
                   <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neural-500 to-plasma-500 bg-clip-text text-transparent mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-carbon-100 font-medium mb-1">{metric.label}</div>
+                  <div className="text-white font-medium mb-1">{metric.label}</div>
                   <div className="text-sm text-neutral-500">{metric.description}</div>
                 </motion.div>
               ))}
@@ -190,7 +190,7 @@ export function AgenticAI() {
                     <Bot className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-carbon-100">{agent.name}</h3>
+                    <h3 className="text-xl font-bold text-white">{agent.name}</h3>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                       <span className="text-xs text-green-400">Active</span>
@@ -250,7 +250,7 @@ export function AgenticAI() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-neural-500/20 to-plasma-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <cap.icon className="w-7 h-7 text-neural-400" />
                 </div>
-                <h3 className="text-xl font-bold text-carbon-100 mb-3">{cap.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
                 <p className="text-neutral-400">{cap.description}</p>
               </motion.div>
             ))}
@@ -267,7 +267,7 @@ export function AgenticAI() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-carbon-100 mb-4">Platform Architecture</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Platform Architecture</h3>
             <p className="text-neutral-400">Built for scale, security, and reliability</p>
           </motion.div>
 
@@ -286,7 +286,7 @@ export function AgenticAI() {
                     <layer.icon className="w-6 h-6 text-neural-400" />
                   </div>
                   <div className="flex-1">
-                    <div className="font-bold text-carbon-100">{layer.layer}</div>
+                    <div className="font-bold text-white">{layer.layer}</div>
                     <div className="text-sm text-neutral-400">{layer.description}</div>
                   </div>
                   <div className="hidden sm:block w-8 h-px bg-gradient-to-r from-neural-500/50 to-transparent" />

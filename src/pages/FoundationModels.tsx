@@ -142,7 +142,7 @@ export function FoundationModels() {
                   <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neural-400 to-plasma-400 bg-clip-text text-transparent mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-carbon-100 font-medium mb-1">{metric.label}</div>
+                  <div className="text-white font-medium mb-1">{metric.label}</div>
                   <div className="text-sm text-neutral-500">{metric.description}</div>
                 </motion.div>
               ))}
@@ -189,7 +189,7 @@ export function FoundationModels() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-neural-400/20 to-plasma-400/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <cap.icon className="w-7 h-7 text-neural-400" />
                 </div>
-                <h3 className="text-xl font-bold text-carbon-100 mb-3">{cap.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
                 <p className="text-neutral-400">{cap.description}</p>
               </motion.div>
             ))}
@@ -242,7 +242,7 @@ export function FoundationModels() {
                     {area.status}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-carbon-100 mb-3">{area.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{area.title}</h3>
                 <p className="text-neutral-400">{area.description}</p>
               </motion.div>
             ))}
@@ -283,7 +283,7 @@ export function FoundationModels() {
                 className="glass rounded-3xl p-6 text-center hover-lift"
               >
                 <div className="text-4xl mb-4">{app.icon}</div>
-                <h3 className="text-lg font-bold text-carbon-100 mb-2">{app.name}</h3>
+                <h3 className="text-lg font-bold text-white mb-2">{app.name}</h3>
                 <p className="text-sm text-neutral-500 mb-4">{app.description}</p>
                 <div className="space-y-2">
                   {app.models.map((model) => (
@@ -313,7 +313,7 @@ export function FoundationModels() {
             <div className="absolute inset-0 bg-gradient-to-br from-neural-400/10 to-plasma-400/10" />
             <div className="relative">
               <Sparkles className="w-12 h-12 text-neural-400 mx-auto mb-6" />
-              <h2 className="text-3xl font-bold text-carbon-100 mb-6">
+              <h2 className="text-3xl font-bold text-white mb-6">
                 Our Philosophy
               </h2>
               <p className="text-lg text-neutral-300 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -338,7 +338,7 @@ export function FoundationModels() {
             className="glass rounded-3xl p-12"
           >
             <Cpu className="w-12 h-12 text-plasma-400 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-carbon-100 mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               Join our research team
             </h2>
             <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">

@@ -152,7 +152,7 @@ export function FilmStudio() {
                   <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-synth-500 to-amber-500 bg-clip-text text-transparent mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-carbon-100 font-medium mb-1">{metric.label}</div>
+                  <div className="text-white font-medium mb-1">{metric.label}</div>
                   <div className="text-sm text-neutral-500">{metric.description}</div>
                 </motion.div>
               ))}
@@ -201,7 +201,7 @@ export function FilmStudio() {
                     <agent.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-carbon-100">{agent.name}</h3>
+                    <h3 className="font-bold text-white">{agent.name}</h3>
                     <p className="text-xs text-neutral-500">{agent.role}</p>
                   </div>
                 </div>
@@ -248,7 +248,7 @@ export function FilmStudio() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-synth-500/20 to-amber-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <cap.icon className="w-7 h-7 text-synth-400" />
                 </div>
-                <h3 className="text-xl font-bold text-carbon-100 mb-3">{cap.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
                 <p className="text-neutral-400">{cap.description}</p>
               </motion.div>
             ))}
@@ -289,7 +289,7 @@ export function FilmStudio() {
                   {step.step}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-carbon-100 mb-2">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
                   <p className="text-neutral-400">{step.description}</p>
                 </div>
               </motion.div>
@@ -312,7 +312,7 @@ export function FilmStudio() {
               <div className="w-20 h-20 rounded-full bg-gradient-to-r from-synth-500 to-amber-500 flex items-center justify-center mx-auto mb-6">
                 <Play className="w-10 h-10 text-white ml-1" />
               </div>
-              <h2 className="text-3xl font-bold text-carbon-100 mb-4">
+              <h2 className="text-3xl font-bold text-white mb-4">
                 See it in action
               </h2>
               <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">

@@ -118,7 +118,7 @@ export function MedicalCoding() {
                   <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-carbon-100 font-medium mb-1">{metric.label}</div>
+                  <div className="text-white font-medium mb-1">{metric.label}</div>
                   <div className="text-sm text-neutral-500">{metric.description}</div>
                 </motion.div>
               ))}
@@ -136,7 +136,7 @@ export function MedicalCoding() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-carbon-100 mb-4">Comprehensive Code Coverage</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Comprehensive Code Coverage</h3>
             <p className="text-neutral-400">AI-powered coding across all major code sets</p>
           </motion.div>
 
@@ -151,7 +151,7 @@ export function MedicalCoding() {
                 className="glass rounded-2xl p-6 flex items-center justify-between"
               >
                 <div>
-                  <div className="text-xl font-bold text-carbon-100 mb-1">{type.code}</div>
+                  <div className="text-xl font-bold text-white mb-1">{type.code}</div>
                   <div className="text-sm text-neutral-500">{type.description}</div>
                 </div>
                 <div className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
@@ -197,7 +197,7 @@ export function MedicalCoding() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <feature.icon className="w-7 h-7 text-amber-400" />
                 </div>
-                <h3 className="text-xl font-bold text-carbon-100 mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
                 <p className="text-neutral-400">{feature.description}</p>
               </motion.div>
             ))}
@@ -245,7 +245,7 @@ export function MedicalCoding() {
                   <div className="text-5xl font-bold bg-gradient-to-br from-amber-500/20 to-orange-500/20 bg-clip-text text-transparent mb-4">
                     {step.step}
                   </div>
-                  <h3 className="text-xl font-bold text-carbon-100 mb-3">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-neutral-400 text-sm">{step.description}</p>
                 </div>
               </motion.div>
