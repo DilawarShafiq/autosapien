@@ -15,10 +15,10 @@ const capabilities = [
     id: 'humanoid',
     icon: Bot,
     title: 'Humanoid Robotics',
-    subtitle: 'Autosapien One',
+    subtitle: 'Autosapien G1',
     status: 'developing',
     code: 'CAP-001',
-    description: 'Our flagship humanoid robot represents the pinnacle of embodied AI. Standing at human height with 40+ degrees of freedom, Autosapien One is designed to navigate human environments, manipulate objects with dexterity, and interact naturally through voice, gesture, and expression. This is not a lab prototype—it\'s the beginning of a new species of helpful machines.',
+    description: 'Our flagship humanoid robot represents the pinnacle of embodied AI. Standing at human height with 40+ degrees of freedom, Autosapien G1 is designed to navigate human environments, manipulate objects with dexterity, and interact naturally through voice, gesture, and expression. This is not a lab prototype—it\'s the beginning of a new species of helpful machines.',
     features: [
       'Bipedal locomotion on any terrain',
       'Human-like hand dexterity',

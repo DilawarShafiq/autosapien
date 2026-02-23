@@ -49,7 +49,7 @@ const capabilities = [
 const useCases = [
   {
     title: 'Home Assistance',
-    description: 'From cleaning and cooking to eldercare and companionship, Autosapien One becomes a helpful household member.',
+    description: 'From cleaning and cooking to eldercare and companionship, Autosapien G1 becomes a helpful household member.',
     icon: Heart,
     color: 'from-rose-500 to-pink-500',
   },
@@ -93,9 +93,9 @@ export function Humanoid() {
       <PageHero
         icon={Bot}
         category="Humanoid Robotics"
-        title="Autosapien One"
+        title="Autosapien G1"
         subtitle="The first humanoid designed to live among us"
-        description="Standing at human height with over 40 degrees of freedom, Autosapien One represents the culmination of robotics research—a machine built not for factories alone, but for homes, hospitals, and everywhere humans need a helping hand. This isn't science fiction. This is what's next."
+        description="Standing at human height with over 40 degrees of freedom, Autosapien G1 represents the culmination of robotics research—a machine built not for factories alone, but for homes, hospitals, and everywhere humans need a helping hand. This isn't science fiction. This is what's next."
         gradient="from-plasma-500 to-neural-500"
         status="developing"
         features={[

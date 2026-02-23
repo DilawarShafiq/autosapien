@@ -10,7 +10,7 @@ const footerLinks = {
     { name: 'Contact', href: '/#contact' },
   ],
   robotics: [
-    { name: 'Autosapien One', href: '/projects/humanoid', isRoute: true },
+    { name: 'Autosapien G1', href: '/projects/humanoid', isRoute: true },
     { name: 'Home Robots', href: '/projects/home-robotics', isRoute: true },
     { name: 'Industrial Robots', href: '/projects/industrial-robotics', isRoute: true },
     { name: 'Foundation Models', href: '/projects/foundation-models', isRoute: true },

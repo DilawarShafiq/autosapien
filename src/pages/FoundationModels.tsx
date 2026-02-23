@@ -67,7 +67,7 @@ const researchAreas = [
 const applications = [
   {
     name: 'Humanoid Control',
-    description: 'The brain behind Autosapien One',
+    description: 'The brain behind Autosapien G1',
     icon: '🤖',
     models: ['Motion Planning', 'Balance Control', 'Manipulation'],
   },

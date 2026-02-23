@@ -6,7 +6,7 @@ const pillars = [
   {
     icon: Bot,
     title: 'Humanoid Robotics',
-    description: 'Developing the Autosapien One—our flagship humanoid robot designed to live alongside humans.',
+    description: 'Developing the Autosapien G1—our flagship humanoid robot designed to live alongside humans.',
     status: 'developing',
     code: 'HMD-01',
   },
@@ -107,7 +107,7 @@ export function About() {
                 across the USA and beyond.
               </p>
               <p>
-                With xEHR.io already transforming healthcare for millions of patients, and our Autosapien One
+                With xEHR.io already transforming healthcare for millions of patients, and our Autosapien G1
                 humanoid in active development, we're not waiting for the future—we're building it, one
                 breakthrough at a time.
               </p>

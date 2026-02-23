@@ -15,9 +15,9 @@ const projects = [
   {
     id: 'humanoid',
     slug: '/projects/humanoid',
-    title: 'Autosapien One',
+    title: 'Autosapien G1',
     category: 'Humanoid Robotics',
-    description: 'Our flagship humanoid robot—the culmination of decades of robotics research compressed into a single platform. Standing at human height with 40+ degrees of freedom, Autosapien One is designed to work alongside humans in homes, hospitals, and factories. This is not science fiction. This is next year.',
+    description: 'Our flagship humanoid robot—the culmination of decades of robotics research compressed into a single platform. Standing at human height with 40+ degrees of freedom, Autosapien G1 is designed to work alongside humans in homes, hospitals, and factories. This is not science fiction. This is next year.',
     icon: Bot,
     features: ['Bipedal Locomotion', 'Human-like Dexterity', 'Natural Conversation', 'Emotional Intelligence'],
     metrics: { value: '40+', label: 'Degrees of Freedom' },
