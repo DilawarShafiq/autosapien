@@ -153,7 +153,7 @@ export function Hero() {
             { value: '6', label: 'Core AI Verticals' },
             { value: '#1', label: 'AI-Powered Healthcare IT', href: 'https://xehr.io' },
             { value: '1st', label: 'Humanoid in Development' },
-            { value: '24/7', label: 'Agentic AI Employees', href: 'https://rcmemployee.com' },
+            { value: '24/7', label: 'Agentic AI FTEs', href: 'https://rcmemployee.com' },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
