@@ -103,8 +103,8 @@ export function SmartScheduling() {
 
       {/* Metrics Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="glass rounded-3xl p-8 md:p-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="card-clean rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -115,11 +115,11 @@ export function SmartScheduling() {
                   transition={{ delay: i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent mb-2">
+                  <div className="stat-display text-3xl sm:text-4xl mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-white font-medium mb-1">{metric.label}</div>
-                  <div className="text-sm text-neutral-500">{metric.description}</div>
+                  <div className="text-ink-900 font-medium mb-1">{metric.label}</div>
+                  <div className="text-sm text-ink-500">{metric.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -129,21 +129,19 @@ export function SmartScheduling() {
 
       {/* Features Section */}
       <section ref={featuresRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 dot-pattern opacity-30" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-pink-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Platform Features
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Scheduling that{' '}
-              <span className="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 works for everyone
               </span>
             </h2>
@@ -156,13 +154,13 @@ export function SmartScheduling() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift group"
+                className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <feature.icon className="w-7 h-7 text-pink-400" />
+                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <feature.icon className="w-7 h-7 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-neutral-400">{feature.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
+                <p className="text-ink-400">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -171,23 +169,19 @@ export function SmartScheduling() {
 
       {/* Use Cases Section */}
       <section ref={useCasesRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-pink-600/10 rounded-full blur-3xl -translate-y-1/2" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isUseCasesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-rose-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Use Cases
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Built for{' '}
-              <span className="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 every setting
               </span>
             </h2>
@@ -200,15 +194,15 @@ export function SmartScheduling() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isUseCasesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift"
+                className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center flex-shrink-0">
-                    <useCase.icon className="w-7 h-7 text-white" />
+                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
+                    <useCase.icon className="w-7 h-7 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-3">{useCase.title}</h3>
-                    <p className="text-neutral-400">{useCase.description}</p>
+                    <h3 className="text-xl font-bold text-ink-900 mb-3">{useCase.title}</h3>
+                    <p className="text-ink-400">{useCase.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -219,15 +213,15 @@ export function SmartScheduling() {
 
       {/* Integrations Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Seamless Integrations</h3>
-            <p className="text-neutral-400">Connect with your existing systems</p>
+            <h3 className="text-2xl font-bold text-ink-900 mb-4">Seamless Integrations</h3>
+            <p className="text-ink-400">Connect with your existing systems</p>
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -238,10 +232,10 @@ export function SmartScheduling() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="glass rounded-xl px-6 py-3"
+                className="card-clean rounded-xl px-6 py-3"
               >
-                <div className="text-white font-medium">{integration.name}</div>
-                <div className="text-xs text-neutral-500">{integration.type}</div>
+                <div className="text-ink-900 font-medium">{integration.name}</div>
+                <div className="text-xs text-ink-500">{integration.type}</div>
               </motion.div>
             ))}
           </div>

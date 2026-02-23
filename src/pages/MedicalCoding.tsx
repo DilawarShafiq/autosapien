@@ -103,8 +103,8 @@ export function MedicalCoding() {
 
       {/* Metrics Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="glass rounded-3xl p-8 md:p-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="card-clean rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -115,11 +115,11 @@ export function MedicalCoding() {
                   transition={{ delay: i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent mb-2">
+                  <div className="stat-display text-3xl sm:text-4xl mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-white font-medium mb-1">{metric.label}</div>
-                  <div className="text-sm text-neutral-500">{metric.description}</div>
+                  <div className="text-ink-900 font-medium mb-1">{metric.label}</div>
+                  <div className="text-sm text-ink-500">{metric.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -129,15 +129,15 @@ export function MedicalCoding() {
 
       {/* Code Types Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Comprehensive Code Coverage</h3>
-            <p className="text-neutral-400">AI-powered coding across all major code sets</p>
+            <h3 className="text-2xl font-bold text-ink-900 mb-4">Comprehensive Code Coverage</h3>
+            <p className="text-ink-400">AI-powered coding across all major code sets</p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -148,13 +148,13 @@ export function MedicalCoding() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="glass rounded-2xl p-6 flex items-center justify-between"
+                className="card-clean rounded-lg p-6 flex items-center justify-between"
               >
                 <div>
-                  <div className="text-xl font-bold text-white mb-1">{type.code}</div>
-                  <div className="text-sm text-neutral-500">{type.description}</div>
+                  <div className="text-xl font-bold text-ink-900 mb-1">{type.code}</div>
+                  <div className="text-sm text-ink-500">{type.description}</div>
                 </div>
-                <div className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
+                <div className="stat-display text-3xl sm:text-4xl">
                   {type.accuracy}
                 </div>
               </motion.div>
@@ -165,21 +165,19 @@ export function MedicalCoding() {
 
       {/* Features Section */}
       <section ref={featuresRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 dot-pattern opacity-30" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-amber-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Platform Features
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Coding intelligence{' '}
-              <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 reimagined
               </span>
             </h2>
@@ -192,13 +190,13 @@ export function MedicalCoding() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift group"
+                className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <feature.icon className="w-7 h-7 text-amber-400" />
+                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <feature.icon className="w-7 h-7 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-neutral-400">{feature.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
+                <p className="text-ink-400">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -207,23 +205,19 @@ export function MedicalCoding() {
 
       {/* Process Section */}
       <section ref={processRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-amber-600/10 rounded-full blur-3xl -translate-y-1/2" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isProcessInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-orange-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               How It Works
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               From documentation to{' '}
-              <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 accurate codes
               </span>
             </h2>
@@ -239,14 +233,14 @@ export function MedicalCoding() {
                 className="relative"
               >
                 {i < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-gradient-to-r from-amber-500/50 to-transparent" />
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-amber-300" />
                 )}
-                <div className="glass rounded-3xl p-8 h-full">
-                  <div className="text-5xl font-bold bg-gradient-to-br from-amber-500/20 to-orange-500/20 bg-clip-text text-transparent mb-4">
+                <div className="card-clean rounded-xl p-8 h-full">
+                  <div className="text-5xl font-bold text-amber-500/20 mb-4">
                     {step.step}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-neutral-400 text-sm">{step.description}</p>
+                  <h3 className="text-xl font-bold text-ink-900 mb-3">{step.title}</h3>
+                  <p className="text-ink-400 text-sm">{step.description}</p>
                 </div>
               </motion.div>
             ))}
