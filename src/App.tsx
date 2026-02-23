@@ -31,17 +31,10 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="relative min-h-screen bg-obsidian-900">
-        {/* Noise overlay */}
-        <div className="noise-overlay" />
-
-        {/* Custom cursor */}
+      <div className="relative min-h-screen bg-white">
         <Cursor />
-
-        {/* 3D particle background */}
         <ParticleField />
 
-        {/* Content */}
         <div className="relative z-[1]">
         <Navbar />
         <main>

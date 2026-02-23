@@ -45,12 +45,7 @@ export function PageHero({
 
   return (
     <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-24">
-      <div className="absolute inset-0 bg-grid opacity-25" />
-
-      {/* Geometric accents */}
-      <div className="absolute top-1/4 right-[10%] w-48 h-48 border border-signal-400/5 hidden sm:block" style={{ transform: 'rotate(45deg)' }} />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 w-full">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 w-full">
         {/* Back */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -59,10 +54,10 @@ export function PageHero({
         >
           <Link
             to="/"
-            className="inline-flex items-center gap-3 text-obsidian-300 hover:text-signal-400 transition-colors mb-12 group"
+            className="inline-flex items-center gap-3 text-ink-400 hover:text-ink-900 transition-colors mb-12 group"
           >
-            <div className="w-9 h-9 border border-obsidian-600 flex items-center justify-center group-hover:border-signal-400/40 transition-colors">
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <div className="w-9 h-9 rounded-full border border-surface-300 flex items-center justify-center group-hover:border-ink-900 transition-colors">
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
             </div>
             <span className="font-body text-sm">Back to Home</span>
           </Link>
@@ -76,30 +71,23 @@ export function PageHero({
               transition={{ duration: 0.6 }}
               className="flex items-start gap-4 mb-8"
             >
-              <div className="w-14 h-14 border border-signal-400/25 flex items-center justify-center">
-                <Icon className="w-7 h-7 text-signal-400" />
+              <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center">
+                <Icon className="w-6 h-6 text-amber-600" />
               </div>
               <div>
-                <span className="label-mono text-signal-400/50">{code}</span>
-                <span className="label-mono ml-2">{category}</span>
-                <div className="flex items-center gap-3 mt-2">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="label-mono text-amber-600 text-[10px]">{code}</span>
+                  <span className="label-mono text-[10px]">{category}</span>
+                </div>
+                <div className="flex items-center gap-3">
                   {status === 'developing' && (
-                    <span className="badge-hud">
-                      <span className="status-dot developing" />
-                      <span>Development</span>
-                    </span>
+                    <span className="badge-pill badge-amber"><span className="status-dot developing" />Development</span>
                   )}
                   {status === 'launching' && (
-                    <span className="badge-hud">
-                      <Clock className="w-3 h-3" />
-                      <span>{daysUntilLaunch} days</span>
-                    </span>
+                    <span className="badge-pill"><Clock className="w-3 h-3" />{daysUntilLaunch} days</span>
                   )}
                   {status === 'active' && (
-                    <span className="badge-hud badge-live">
-                      <span className="status-dot active" />
-                      <span>Live</span>
-                    </span>
+                    <span className="badge-pill badge-live"><span className="status-dot active" />Live</span>
                   )}
                 </div>
               </div>
@@ -109,7 +97,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display font-bold text-display-xl mb-4 text-signal-400"
+              className="font-display font-bold text-display-xl mb-4 text-amber-600"
             >
               {title}
             </motion.h1>
@@ -118,7 +106,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-2xl text-white font-display font-semibold mb-6"
+              className="text-2xl text-ink-900 font-display font-semibold mb-6"
             >
               {subtitle}
             </motion.p>
@@ -127,7 +115,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg text-muted font-body mb-10 max-w-xl leading-relaxed"
+              className="text-lg text-ink-400 font-body mb-10 max-w-xl leading-relaxed"
             >
               {description}
             </motion.p>
@@ -137,7 +125,7 @@ export function PageHero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <a href="mailto:info@autosapien.com" className="btn-primary group">
+              <a href="mailto:info@autosapien.com" className="btn-primary group rounded-lg">
                 <span className="flex items-center gap-3">
                   Contact Us
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -158,15 +146,15 @@ export function PageHero({
               {features.map((feature, i) => (
                 <motion.div
                   key={feature}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + i * 0.08 }}
-                  className="card-hud p-5 group hover-lift"
+                  transition={{ delay: 0.4 + i * 0.06 }}
+                  className="card-clean p-5 rounded-xl group hover-lift"
                 >
-                  <div className="w-8 h-8 border border-obsidian-600 flex items-center justify-center mb-4 group-hover:border-signal-400/30 transition-colors">
-                    <div className="w-1.5 h-1.5 bg-signal-400" />
+                  <div className="w-8 h-8 rounded-lg bg-surface-100 flex items-center justify-center mb-3 group-hover:bg-amber-50 transition-colors">
+                    <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                   </div>
-                  <p className="text-white font-display font-medium text-sm">{feature}</p>
+                  <p className="text-ink-900 font-display font-medium text-sm">{feature}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -174,7 +162,7 @@ export function PageHero({
         </div>
       </div>
 
-      <div className="divider-glow absolute bottom-0 left-0 right-0" />
+      <div className="divider absolute bottom-0 left-0 right-0" />
     </section>
   )
 }
