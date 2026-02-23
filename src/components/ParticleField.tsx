@@ -126,10 +126,10 @@ function NetworkParticles() {
           const mouseDist = Math.sqrt((midX - mx) ** 2 + (midY - my) ** 2)
           const mouseBoost = mouseDist < MOUSE_RADIUS ? (1 - mouseDist / MOUSE_RADIUS) * 0.6 : 0
 
-          const r = 0.78 + mouseBoost * 0.2
-          const g = 0.64 + mouseBoost * 0.3
-          const b = 0.3 + mouseBoost * 0.4
-          const a = alpha * 0.25 + mouseBoost * 0.5
+          const r = 0.60 + mouseBoost * 0.15
+          const g = 0.47 + mouseBoost * 0.15
+          const b = 0.19 + mouseBoost * 0.15
+          const a = alpha * 0.18 + mouseBoost * 0.4
 
           linePosArr[lineIdx] = ix; linePosArr[lineIdx + 1] = iy; linePosArr[lineIdx + 2] = iz
           linePosArr[lineIdx + 3] = jx; linePosArr[lineIdx + 4] = jy; linePosArr[lineIdx + 5] = jz
@@ -172,11 +172,10 @@ function NetworkParticles() {
         </bufferGeometry>
         <pointsMaterial
           size={0.05}
-          color="#c9a44c"
+          color="#9a7830"
           transparent
-          opacity={0.5}
+          opacity={0.35}
           sizeAttenuation
-          blending={THREE.AdditiveBlending}
           depthWrite={false}
         />
       </points>
@@ -200,7 +199,6 @@ function NetworkParticles() {
           vertexColors
           transparent
           opacity={1}
-          blending={THREE.AdditiveBlending}
           depthWrite={false}
         />
       </lineSegments>
@@ -223,10 +221,10 @@ function FloatingWireframe() {
     <mesh ref={meshRef} position={[8, 2, -5]}>
       <icosahedronGeometry args={[2.5, 1]} />
       <meshBasicMaterial
-        color="#c9a44c"
+        color="#b8933f"
         wireframe
         transparent
-        opacity={0.06}
+        opacity={0.08}
       />
     </mesh>
   )
@@ -247,10 +245,10 @@ function FloatingOctahedron() {
     <mesh ref={meshRef} position={[-10, -3, -8]}>
       <octahedronGeometry args={[2, 0]} />
       <meshBasicMaterial
-        color="#c9a44c"
+        color="#b8933f"
         wireframe
         transparent
-        opacity={0.05}
+        opacity={0.06}
       />
     </mesh>
   )
@@ -258,7 +256,7 @@ function FloatingOctahedron() {
 
 function SceneSetup() {
   const { scene } = useThree()
-  scene.background = new THREE.Color('#1a1a22')
+  scene.background = new THREE.Color('#fafaf8')
   return null
 }
 
@@ -268,9 +266,9 @@ export function ParticleField() {
       <Canvas
         camera={{ position: [0, 0, 20], fov: 50 }}
         gl={{ antialias: true, alpha: false }}
-        style={{ background: '#1a1a22' }}
+        style={{ background: '#fafaf8' }}
         dpr={[1, 1.5]}
-        onCreated={({ scene }) => { scene.background = new THREE.Color('#1a1a22') }}
+        onCreated={({ scene }) => { scene.background = new THREE.Color('#fafaf8') }}
       >
         <SceneSetup />
         <NetworkParticles />

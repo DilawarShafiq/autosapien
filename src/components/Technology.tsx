@@ -31,8 +31,8 @@ export function Technology() {
   const x2 = useTransform(scrollYProgress, [0, 1], [0, 200])
 
   return (
-    <section id="technology" ref={containerRef} className="section-dark relative py-20 sm:py-36 overflow-hidden">
-      <div className="divider-dark" />
+    <section id="technology" ref={containerRef} className="relative py-20 sm:py-36 overflow-hidden" style={{ background: '#f5f5f0' }}>
+      <div className="divider" />
 
       {/* Grid pattern */}
       <div className="absolute inset-0 grid-pattern pointer-events-none" />
@@ -44,11 +44,11 @@ export function Technology() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="label-mono-light mb-4 block" style={{ color: '#d4a84b' }}>Technology</span>
-          <h2 className="font-display font-bold text-display-lg mb-5 !text-white">
+          <span className="label-mono mb-4 block text-amber-600">Technology</span>
+          <h2 className="font-display font-bold text-display-lg mb-5 text-ink-900">
             Built on cutting-edge infrastructure
           </h2>
-          <p className="text-base sm:text-lg font-body max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-base sm:text-lg font-body max-w-2xl mx-auto text-ink-400">
             We leverage the most advanced technologies to build reliable, scalable, and intelligent systems.
           </p>
         </motion.div>
@@ -57,23 +57,23 @@ export function Technology() {
         <div className="relative mb-20 overflow-hidden py-6">
           <motion.div style={{ x: x1 }} className="flex gap-3 mb-3">
             {[...techStack, ...techStack].map((tech, i) => (
-              <div key={`${tech.name}-${i}`} className="flex-none px-5 py-3 rounded-lg group" style={{ background: 'rgba(42, 42, 53, 0.6)', border: '1px solid rgba(94, 94, 120, 0.2)' }}>
-                <div className="text-sm font-display font-semibold text-white/80 group-hover:text-gold-400 transition-colors">{tech.name}</div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.3)' }}>{tech.category}</div>
+              <div key={`${tech.name}-${i}`} className="flex-none px-5 py-3 rounded-lg group card-clean">
+                <div className="text-sm font-display font-semibold text-ink-800 group-hover:text-amber-600 transition-colors">{tech.name}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink-400">{tech.category}</div>
               </div>
             ))}
           </motion.div>
           <motion.div style={{ x: x2 }} className="flex gap-3">
             {[...techStack.slice().reverse(), ...techStack.slice().reverse()].map((tech, i) => (
-              <div key={`${tech.name}-rev-${i}`} className="flex-none px-5 py-3 rounded-lg group" style={{ background: 'rgba(42, 42, 53, 0.6)', border: '1px solid rgba(94, 94, 120, 0.2)' }}>
-                <div className="text-sm font-display font-semibold text-white/80 group-hover:text-gold-400 transition-colors">{tech.name}</div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.3)' }}>{tech.category}</div>
+              <div key={`${tech.name}-rev-${i}`} className="flex-none px-5 py-3 rounded-lg group card-clean">
+                <div className="text-sm font-display font-semibold text-ink-800 group-hover:text-amber-600 transition-colors">{tech.name}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink-400">{tech.category}</div>
               </div>
             ))}
           </motion.div>
 
-          <div className="absolute inset-y-0 left-0 w-16 sm:w-32 pointer-events-none" style={{ background: 'linear-gradient(to right, #1a1a22, transparent)' }} />
-          <div className="absolute inset-y-0 right-0 w-16 sm:w-32 pointer-events-none" style={{ background: 'linear-gradient(to left, #1a1a22, transparent)' }} />
+          <div className="absolute inset-y-0 left-0 w-16 sm:w-32 pointer-events-none" style={{ background: 'linear-gradient(to right, #f5f5f0, transparent)' }} />
+          <div className="absolute inset-y-0 right-0 w-16 sm:w-32 pointer-events-none" style={{ background: 'linear-gradient(to left, #f5f5f0, transparent)' }} />
         </div>
 
         {/* Metrics */}
@@ -89,14 +89,14 @@ export function Technology() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.4 + i * 0.08 }}
-              className="card-glass p-5 sm:p-8 text-center rounded-xl hover-lift"
+              className="card-clean p-5 sm:p-8 text-center rounded-xl hover-lift"
             >
               <div className="flex items-baseline justify-center gap-1 mb-2">
                 <span className="stat-display-gold text-3xl sm:text-4xl">{m.value}</span>
-                {m.unit && <span className="text-base sm:text-lg font-mono" style={{ color: '#d4a84b' }}>{m.unit}</span>}
+                {m.unit && <span className="text-base sm:text-lg font-mono text-amber-600">{m.unit}</span>}
               </div>
-              <div className="text-sm font-display font-semibold text-white mb-1">{m.label}</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.3)' }}>{m.description}</div>
+              <div className="text-sm font-display font-semibold text-ink-900 mb-1">{m.label}</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink-400">{m.description}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -107,10 +107,10 @@ export function Technology() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <div className="card-glass p-5 sm:p-8 lg:p-10 rounded-xl">
+          <div className="card-clean p-5 sm:p-8 lg:p-10 rounded-xl">
             <div className="flex items-center justify-between mb-10">
-              <h3 className="font-display font-bold text-xl !text-white">System Architecture</h3>
-              <span className="font-mono text-[10px] uppercase tracking-[0.15em]" style={{ color: 'rgba(255,255,255,0.2)' }}>ARCH-001</span>
+              <h3 className="font-display font-bold text-xl text-ink-900">System Architecture</h3>
+              <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink-300">ARCH-001</span>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-4">
@@ -119,12 +119,12 @@ export function Technology() {
                 { label: '02', title: 'AI Core', desc: 'Multi-model orchestration with GPU-accelerated inference engines.' },
                 { label: '03', title: 'Integration', desc: 'API-first architecture with enterprise connectors and webhooks.' },
               ].map((layer) => (
-                <div key={layer.label} className="text-center p-6 rounded-xl transition-colors" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(94, 94, 120, 0.15)' }}>
-                  <div className="w-12 h-12 mx-auto mb-5 rounded-xl flex items-center justify-center" style={{ background: 'rgba(201, 164, 76, 0.1)' }}>
-                    <span className="font-mono font-bold text-sm" style={{ color: '#d4a84b' }}>{layer.label}</span>
+                <div key={layer.label} className="text-center p-6 rounded-xl transition-colors card-tinted">
+                  <div className="w-12 h-12 mx-auto mb-5 rounded-xl flex items-center justify-center bg-amber-50">
+                    <span className="font-mono font-bold text-sm text-amber-700">{layer.label}</span>
                   </div>
-                  <h4 className="text-lg font-display font-semibold text-white mb-2">{layer.title}</h4>
-                  <p className="text-sm font-body" style={{ color: 'rgba(255,255,255,0.4)' }}>{layer.desc}</p>
+                  <h4 className="text-lg font-display font-semibold text-ink-900 mb-2">{layer.title}</h4>
+                  <p className="text-sm font-body text-ink-400">{layer.desc}</p>
                 </div>
               ))}
             </div>

@@ -43,13 +43,7 @@ export function Navbar() {
           >
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              {isScrolled ? (
-                <img src="/logo.png" alt="Autosapien" className="h-10 w-auto" />
-              ) : (
-                <div className="bg-white/90 rounded-lg p-1.5 backdrop-blur-sm">
-                  <img src="/logo.png" alt="Autosapien" className="h-8 w-auto" />
-                </div>
-              )}
+              <img src="/logo.png" alt="Autosapien" className={isScrolled ? 'h-10 w-auto' : 'h-10 w-auto'} />
             </Link>
 
             {/* Desktop Nav */}
@@ -58,19 +52,13 @@ export function Navbar() {
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm font-body transition-colors group ${
-                    isScrolled
-                      ? 'text-ink-500 hover:text-ink-900'
-                      : 'text-white/60 hover:text-white'
-                  }`}
+                  className="relative px-4 py-2 text-sm font-body transition-colors group text-ink-500 hover:text-ink-900"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
                 >
                   {link.name}
-                  <span className={`absolute bottom-0 left-4 right-4 h-px scale-x-0 group-hover:scale-x-100 transition-transform origin-left ${
-                    isScrolled ? 'bg-amber-500' : 'bg-gold-400'
-                  }`} />
+                  <span className="absolute bottom-0 left-4 right-4 h-px scale-x-0 group-hover:scale-x-100 transition-transform origin-left bg-amber-500" />
                 </motion.a>
               ))}
             </div>
@@ -80,9 +68,7 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className={`hidden md:block text-sm font-body ${
-                isScrolled ? 'text-ink-400' : 'text-gold-400/60'
-              }`}
+              className="hidden md:block text-sm font-body text-ink-400"
             >
               AI & Robotics
             </motion.span>
@@ -90,9 +76,7 @@ export function Navbar() {
             {/* Mobile toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`md:hidden p-2 transition-colors ${
-                isScrolled ? 'text-ink-500 hover:text-ink-900' : 'text-white/60 hover:text-white'
-              }`}
+              className="md:hidden p-2 transition-colors text-ink-500 hover:text-ink-900"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
