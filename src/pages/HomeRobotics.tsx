@@ -42,19 +42,19 @@ const useCases = [
     title: 'Independent Living',
     description: 'Enabling seniors to age in place with dignity. From medication management to emergency response, our robots provide the support needed for independent living.',
     personas: ['Seniors', 'People with disabilities', 'Post-surgery recovery'],
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Busy Families',
     description: 'For families juggling work, kids, and everything in between. Help with household chores, childcare assistance, and keeping the home running smoothly.',
     personas: ['Working parents', 'Single parents', 'Large families'],
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Smart Living',
     description: 'The physical interface your smart home has been missing. Control everything through natural interaction, not apps.',
     personas: ['Tech enthusiasts', 'Home automation fans', 'Early adopters'],
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
 ]
 
@@ -92,7 +92,7 @@ export function HomeRobotics() {
   const isSafetyInView = useInView(safetyRef, { once: true, margin: '-100px' })
 
   return (
-    <div style={{ background: '#fafaf8' }}>
+    <div style={{ background: '#fafafa' }}>
       <PageHero
         icon={Home}
         category="Home Robotics"
@@ -146,12 +146,12 @@ export function HomeRobotics() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Everything a helpful{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 household member
               </span>{' '}
               should do
@@ -167,8 +167,8 @@ export function HomeRobotics() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <feature.icon className="w-7 h-7 text-amber-600" />
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <feature.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
                 <p className="text-ink-400">{feature.description}</p>
@@ -187,12 +187,12 @@ export function HomeRobotics() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Who It's For
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Designed for{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 real families
               </span>
             </h2>
@@ -207,7 +207,7 @@ export function HomeRobotics() {
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift"
               >
-                <div className="w-full h-2 rounded-full bg-amber-400 mb-6" />
+                <div className="w-full h-2 rounded-full bg-sky-400 mb-6" />
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{useCase.title}</h3>
                 <p className="text-ink-400 mb-6">{useCase.description}</p>
                 <div className="flex flex-wrap gap-2">
@@ -235,12 +235,12 @@ export function HomeRobotics() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Safety & Privacy
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Built for{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 trust
               </span>
             </h2>
@@ -258,8 +258,8 @@ export function HomeRobotics() {
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 text-center hover-lift"
               >
-                <div className="w-16 h-16 rounded-lg bg-amber-50 flex items-center justify-center mb-6 mx-auto">
-                  <feature.icon className="w-8 h-8 text-amber-600" />
+                <div className="w-16 h-16 rounded-lg bg-sky-50 flex items-center justify-center mb-6 mx-auto">
+                  <feature.icon className="w-8 h-8 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
                 <p className="text-ink-400">{feature.description}</p>
@@ -278,7 +278,7 @@ export function HomeRobotics() {
             viewport={{ once: true }}
             className="card-clean rounded-xl p-12"
           >
-            <Sparkles className="w-12 h-12 text-amber-600 mx-auto mb-6" />
+            <Sparkles className="w-12 h-12 text-sky-600 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-ink-900 mb-4">
               The beginning of robotic household members
             </h2>

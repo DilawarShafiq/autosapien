@@ -41,22 +41,22 @@ const applications = [
   {
     title: 'Industrial Automation',
     description: 'Autonomous manufacturing, assembly, and quality inspection systems.',
-    image: 'from-amber-400 to-amber-600',
+    image: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Healthcare Robotics',
     description: 'Surgical assistance, rehabilitation, and patient care automation.',
-    image: 'from-amber-400 to-amber-600',
+    image: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Logistics & Warehousing',
     description: 'Autonomous material handling, sorting, and inventory management.',
-    image: 'from-amber-400 to-amber-600',
+    image: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Agricultural Robotics',
     description: 'Precision farming, harvesting, and crop monitoring systems.',
-    image: 'from-amber-400 to-amber-600',
+    image: 'from-sky-400 to-sky-600',
   },
 ]
 
@@ -74,7 +74,7 @@ export function Robotics() {
   const isApplicationsInView = useInView(applicationsRef, { once: true, margin: '-100px' })
 
   return (
-    <div style={{ background: '#fafaf8' }}>
+    <div style={{ background: '#fafafa' }}>
       <PageHero
         icon={Bot}
         category="Robotics"
@@ -101,12 +101,12 @@ export function Robotics() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Core Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Built for the{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 real world
               </span>
             </h2>
@@ -124,8 +124,8 @@ export function Robotics() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-amber-600" />
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
                 <p className="text-ink-400">{cap.description}</p>
@@ -169,12 +169,12 @@ export function Robotics() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Applications
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Transforming{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 industries
               </span>
             </h2>
@@ -190,12 +190,12 @@ export function Robotics() {
                 className="group relative card-clean rounded-xl p-8 overflow-hidden hover-lift"
               >
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-6">
-                    <Zap className="w-6 h-6 text-amber-600" />
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-6">
+                    <Zap className="w-6 h-6 text-sky-600" />
                   </div>
                   <h3 className="text-2xl font-bold text-ink-900 mb-3">{app.title}</h3>
                   <p className="text-ink-400 mb-6">{app.description}</p>
-                  <button className="text-sm text-amber-600 hover:text-amber-500 transition-colors flex items-center gap-2">
+                  <button className="text-sm text-sky-600 hover:text-sky-500 transition-colors flex items-center gap-2">
                     Learn more
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

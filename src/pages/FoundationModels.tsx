@@ -107,7 +107,7 @@ export function FoundationModels() {
   const isApplicationsInView = useInView(applicationsRef, { once: true, margin: '-100px' })
 
   return (
-    <div style={{ background: '#fafaf8' }}>
+    <div style={{ background: '#fafafa' }}>
       <PageHero
         icon={Brain}
         category="Foundation Models"
@@ -160,12 +160,12 @@ export function FoundationModels() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Core Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               AI built for the{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 physical world
               </span>
             </h2>
@@ -183,8 +183,8 @@ export function FoundationModels() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-amber-600" />
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
                 <p className="text-ink-400">{cap.description}</p>
@@ -203,12 +203,12 @@ export function FoundationModels() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Research Focus
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Pushing the{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 boundaries
               </span>
             </h2>
@@ -224,13 +224,13 @@ export function FoundationModels() {
                 className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center">
-                    <area.icon className="w-7 h-7 text-amber-600" />
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center">
+                    <area.icon className="w-7 h-7 text-sky-600" />
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                     area.status === 'Active'
                       ? 'bg-green-50 text-green-700'
-                      : 'bg-amber-50 text-amber-700'
+                      : 'bg-sky-50 text-sky-700'
                   }`}>
                     {area.status}
                   </span>
@@ -252,12 +252,12 @@ export function FoundationModels() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Cross-Platform Intelligence
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               One foundation.{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 Infinite applications.
               </span>
             </h2>
@@ -303,9 +303,9 @@ export function FoundationModels() {
             viewport={{ once: true }}
             className="card-clean rounded-xl p-12 text-center relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-amber-50/50" />
+            <div className="absolute inset-0 bg-sky-50/50" />
             <div className="relative">
-              <Sparkles className="w-12 h-12 text-amber-600 mx-auto mb-6" />
+              <Sparkles className="w-12 h-12 text-sky-600 mx-auto mb-6" />
               <h2 className="text-3xl font-bold text-ink-900 mb-6">
                 Our Philosophy
               </h2>
@@ -330,7 +330,7 @@ export function FoundationModels() {
             viewport={{ once: true }}
             className="card-clean rounded-xl p-12"
           >
-            <Cpu className="w-12 h-12 text-amber-600 mx-auto mb-6" />
+            <Cpu className="w-12 h-12 text-sky-600 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-ink-900 mb-4">
               Join our research team
             </h2>

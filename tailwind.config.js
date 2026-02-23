@@ -10,21 +10,21 @@ export default {
         // Light canvas
         'surface': {
           0: '#ffffff',
-          50: '#fafaf8',
-          100: '#f5f5f0',
-          200: '#ebebE5',
-          300: '#d9d9d2',
-          400: '#b8b8b0',
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e8e8e8',
+          300: '#d4d4d4',
+          400: '#b0b0b0',
         },
-        // Warm slate — for dark sections
+        // Cool slate
         'slate': {
-          950: '#0f0f14',
-          900: '#1a1a22',
-          850: '#22222c',
-          800: '#2a2a35',
-          700: '#343442',
-          600: '#44445a',
-          500: '#5e5e78',
+          950: '#0a0f14',
+          900: '#141c24',
+          850: '#1c2530',
+          800: '#253040',
+          700: '#354050',
+          600: '#45556a',
+          500: '#607080',
         },
         // Text hierarchy
         'ink': {
@@ -37,36 +37,23 @@ export default {
           300: '#a8a8a8',
           200: '#c8c8c8',
         },
-        // Rich gold accent
-        'gold': {
-          50: '#fdf9ef',
-          100: '#faf0d5',
-          200: '#f5e0a8',
-          300: '#e8c86a',
-          400: '#d4a84b',
-          500: '#c9a44c',
-          600: '#b8933f',
-          700: '#9a7830',
-          800: '#7a5e24',
-          900: '#5a4419',
-        },
-        // Keep amber for compatibility
-        'amber': {
-          50: '#fffcf5',
-          100: '#fff3d6',
-          200: '#ffe4a8',
-          300: '#ffd06a',
-          400: '#f0a030',
-          500: '#d4920a',
-          600: '#b87a08',
-          700: '#8c5d06',
-          800: '#6b4705',
-          900: '#4a3104',
+        // Sky blue accent (Boston Dynamics style)
+        'sky': {
+          50: '#f0f7ff',
+          100: '#dbeeff',
+          200: '#b8ddff',
+          300: '#78c0ff',
+          400: '#3aa0f0',
+          500: '#0085d4',
+          600: '#006db3',
+          700: '#005590',
+          800: '#003f6b',
+          900: '#002a47',
         },
         // Functional
         'status': {
           live: '#22c55e',
-          dev: '#f0a030',
+          dev: '#3aa0f0',
         },
       },
       fontFamily: {
@@ -75,9 +62,9 @@ export default {
         'mono': ['Space Mono', 'monospace'],
       },
       fontSize: {
-        'display-2xl': ['clamp(3.5rem, 10vw, 8.5rem)', { lineHeight: '1.0', letterSpacing: '-0.05em' }],
-        'display-xl': ['clamp(2.5rem, 7vw, 5.5rem)', { lineHeight: '1.05', letterSpacing: '-0.04em' }],
-        'display-lg': ['clamp(1.8rem, 4.5vw, 3.2rem)', { lineHeight: '1.15', letterSpacing: '-0.03em' }],
+        'display-2xl': ['clamp(3.5rem, 10vw, 8.5rem)', { lineHeight: '1.15', letterSpacing: '-0.05em' }],
+        'display-xl': ['clamp(2.5rem, 7vw, 5.5rem)', { lineHeight: '1.15', letterSpacing: '-0.04em' }],
+        'display-lg': ['clamp(1.8rem, 4.5vw, 3.2rem)', { lineHeight: '1.25', letterSpacing: '-0.03em' }],
       },
       animation: {
         'scan': 'scan 10s linear infinite',
@@ -117,8 +104,6 @@ export default {
         'card': '0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.03)',
         'card-hover': '0 4px 12px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.06)',
         'elevated': '0 8px 30px rgba(0,0,0,0.08)',
-        'glow-gold': '0 0 20px rgba(201, 164, 76, 0.15), 0 0 60px rgba(201, 164, 76, 0.08)',
-        'glow-gold-strong': '0 0 30px rgba(201, 164, 76, 0.25), 0 0 80px rgba(201, 164, 76, 0.12)',
       },
     },
   },

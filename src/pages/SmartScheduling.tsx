@@ -83,7 +83,7 @@ export function SmartScheduling() {
   const isUseCasesInView = useInView(useCasesRef, { once: true, margin: '-100px' })
 
   return (
-    <div style={{ background: '#fafaf8' }}>
+    <div style={{ background: '#fafafa' }}>
       <PageHero
         icon={Calendar}
         category="Operations"
@@ -136,12 +136,12 @@ export function SmartScheduling() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Platform Features
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Scheduling that{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 works for everyone
               </span>
             </h2>
@@ -156,8 +156,8 @@ export function SmartScheduling() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <feature.icon className="w-7 h-7 text-amber-600" />
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <feature.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
                 <p className="text-ink-400">{feature.description}</p>
@@ -176,12 +176,12 @@ export function SmartScheduling() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Use Cases
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Built for{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 every setting
               </span>
             </h2>
@@ -197,8 +197,8 @@ export function SmartScheduling() {
                 className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
-                    <useCase.icon className="w-7 h-7 text-amber-600" />
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center flex-shrink-0">
+                    <useCase.icon className="w-7 h-7 text-sky-600" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-ink-900 mb-3">{useCase.title}</h3>

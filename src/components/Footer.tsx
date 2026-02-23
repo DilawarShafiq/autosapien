@@ -34,7 +34,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative pt-16 sm:pt-24 pb-6 sm:pb-10" style={{ background: '#f5f5f0' }}>
+    <footer className="relative pt-16 sm:pt-24 pb-6 sm:pb-10" style={{ background: '#f5f5f5' }}>
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-10 mb-12 sm:mb-16">
           {/* Brand */}
@@ -80,12 +80,12 @@ export function Footer() {
                 {links.map((link) => (
                   <li key={link.name}>
                     {'isRoute' in link && link.isRoute ? (
-                      <Link to={link.href} className="text-sm text-ink-400 font-body hover:text-amber-700 transition-colors">{link.name}</Link>
+                      <Link to={link.href} className="text-sm text-ink-400 font-body hover:text-sky-700 transition-colors">{link.name}</Link>
                     ) : (
                       <a
                         href={link.href}
                         {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                        className="text-sm text-ink-400 font-body hover:text-amber-700 transition-colors"
+                        className="text-sm text-ink-400 font-body hover:text-sky-700 transition-colors"
                       >{link.name}</a>
                     )}
                   </li>

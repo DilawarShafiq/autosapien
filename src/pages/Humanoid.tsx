@@ -51,25 +51,25 @@ const useCases = [
     title: 'Home Assistance',
     description: 'From cleaning and cooking to eldercare and companionship, Autosapien G1 becomes a helpful household member.',
     icon: Heart,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Healthcare Support',
     description: 'Patient monitoring, medication management, mobility assistance, and clinical support in hospitals and care facilities.',
     icon: Activity,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Industrial Operations',
     description: 'Flexible manufacturing, quality inspection, logistics, and human-robot collaboration on the factory floor.',
     icon: Zap,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Service & Hospitality',
     description: 'Customer service, concierge duties, warehouse operations, and any task requiring physical presence and intelligence.',
     icon: Users,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
 ]
 
@@ -89,7 +89,7 @@ export function Humanoid() {
   const isUseCasesInView = useInView(useCasesRef, { once: true, margin: '-100px' })
 
   return (
-    <div style={{ background: '#fafaf8' }}>
+    <div style={{ background: '#fafafa' }}>
       <PageHero
         icon={Bot}
         category="Humanoid Robotics"
@@ -117,7 +117,7 @@ export function Humanoid() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Technical Specifications
             </span>
             <h2 className="text-3xl font-bold text-ink-900">Built to human scale</h2>
@@ -154,12 +154,12 @@ export function Humanoid() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Core Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               More than a machine.{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 A new species.
               </span>
             </h2>
@@ -177,8 +177,8 @@ export function Humanoid() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-amber-600" />
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
                 <p className="text-ink-400">{cap.description}</p>
@@ -197,12 +197,12 @@ export function Humanoid() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Applications
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Everywhere humans need{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 a helping hand
               </span>
             </h2>
@@ -218,7 +218,7 @@ export function Humanoid() {
                 className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center">
                     <useCase.icon className="w-7 h-7 text-ink-900" />
                   </div>
                   <h3 className="text-xl font-bold text-ink-900">{useCase.title}</h3>
@@ -255,13 +255,13 @@ export function Humanoid() {
                   className="flex-1 text-center relative"
                 >
                   {i < timeline.length - 1 && (
-                    <div className="hidden md:block absolute top-4 left-1/2 w-full h-px bg-amber-400/30" />
+                    <div className="hidden md:block absolute top-4 left-1/2 w-full h-px bg-sky-400/30" />
                   )}
                   <div className={`w-8 h-8 rounded-full mx-auto mb-3 flex items-center justify-center ${
                     item.status === 'completed'
                       ? 'bg-green-500'
                       : item.status === 'current'
-                      ? 'bg-amber-400 animate-pulse'
+                      ? 'bg-sky-400 animate-pulse'
                       : 'bg-surface-100'
                   }`}>
                     {item.status === 'completed' && (

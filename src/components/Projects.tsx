@@ -48,7 +48,7 @@ export function Projects() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="projects" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#fafaf8' }}>
+    <section id="projects" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#fafafa' }}>
       <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -57,7 +57,7 @@ export function Projects() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16"
         >
           <div>
-            <span className="label-mono text-amber-600 mb-4 block">Projects</span>
+            <span className="label-mono text-sky-600 mb-4 block">Projects</span>
             <h2 className="font-display font-bold text-display-lg">
               From silicon minds to steel bodies
             </h2>
@@ -80,17 +80,17 @@ export function Projects() {
               <div className="card-clean h-full p-6 sm:p-8 lg:p-10 rounded-xl flex flex-col">
                 <div className="flex items-start justify-between mb-6 flex-wrap gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center">
-                      <Bot className="w-6 h-6 text-amber-600" />
+                    <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center">
+                      <Bot className="w-6 h-6 text-sky-600" />
                     </div>
                     <div>
-                      <span className="label-mono text-[10px] text-amber-600">{projects[0].code}</span>
-                      <h3 className="font-display font-bold text-2xl sm:text-3xl text-ink-900 group-hover:text-amber-700 transition-colors">
+                      <span className="label-mono text-[10px] text-sky-600">{projects[0].code}</span>
+                      <h3 className="font-display font-bold text-2xl sm:text-3xl text-ink-900 group-hover:text-sky-700 transition-colors">
                         {projects[0].title}
                       </h3>
                     </div>
                   </div>
-                  <span className="badge-pill badge-amber">
+                  <span className="badge-pill badge-sky">
                     <span className="status-dot developing" />
                     In Development
                   </span>
@@ -136,11 +136,11 @@ export function Projects() {
                 const card = (
                   <div className="card-clean h-full p-5 rounded-xl flex flex-col">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-9 h-9 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-amber-50 transition-colors">
-                        <project.icon className="w-4.5 h-4.5 text-ink-400 group-hover:text-amber-600 transition-colors" />
+                      <div className="w-9 h-9 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-sky-50 transition-colors">
+                        <project.icon className="w-4.5 h-4.5 text-ink-400 group-hover:text-sky-600 transition-colors" />
                       </div>
                       {project.status === 'developing' && (
-                        <span className="badge-pill badge-amber text-[10px] py-1 px-2"><span className="status-dot developing" />Dev</span>
+                        <span className="badge-pill badge-sky text-[10px] py-1 px-2"><span className="status-dot developing" />Dev</span>
                       )}
                       {project.status === 'active' && (
                         <span className="badge-pill badge-live text-[10px] py-1 px-2"><span className="status-dot active" />Live</span>
@@ -148,7 +148,7 @@ export function Projects() {
                     </div>
 
                     <span className="label-mono text-[10px] text-ink-300">{project.code}</span>
-                    <h3 className="font-display font-bold text-lg text-ink-900 group-hover:text-amber-700 transition-colors">
+                    <h3 className="font-display font-bold text-lg text-ink-900 group-hover:text-sky-700 transition-colors">
                       {project.title}
                     </h3>
                     <span className="label-mono text-[10px] mb-3">{project.category}</span>
@@ -193,7 +193,7 @@ export function Projects() {
           <p className="text-ink-400 font-body mb-5 max-w-2xl mx-auto">
             Every project is interconnected. The AI that powers our humanoid also optimizes our factories.
           </p>
-          <a href="#technology" className="inline-flex items-center gap-2 text-ink-900 hover:text-amber-700 transition-colors group font-display font-semibold">
+          <a href="#technology" className="inline-flex items-center gap-2 text-ink-900 hover:text-sky-700 transition-colors group font-display font-semibold">
             Explore Our Technology Stack
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>

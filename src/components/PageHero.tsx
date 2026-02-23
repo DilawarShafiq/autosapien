@@ -44,7 +44,7 @@ export function PageHero({
   }, [])
 
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-24" style={{ background: '#fafaf8' }}>
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-24" style={{ background: '#fafafa' }}>
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 w-full">
         {/* Back */}
         <motion.div
@@ -71,17 +71,17 @@ export function PageHero({
               transition={{ duration: 0.6 }}
               className="flex items-start gap-4 mb-8"
             >
-              <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center">
-                <Icon className="w-6 h-6 text-amber-600" />
+              <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center">
+                <Icon className="w-6 h-6 text-sky-600" />
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="label-mono text-amber-600 text-[10px]">{code}</span>
+                  <span className="label-mono text-sky-600 text-[10px]">{code}</span>
                   <span className="label-mono text-[10px]">{category}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   {status === 'developing' && (
-                    <span className="badge-pill badge-amber"><span className="status-dot developing" />Development</span>
+                    <span className="badge-pill badge-sky"><span className="status-dot developing" />Development</span>
                   )}
                   {status === 'launching' && (
                     <span className="badge-pill"><Clock className="w-3 h-3" />{daysUntilLaunch} days</span>
@@ -97,7 +97,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display font-bold text-display-xl mb-4 text-amber-600"
+              className="font-display font-bold text-display-xl mb-4 text-sky-600"
             >
               {title}
             </motion.h1>
@@ -151,8 +151,8 @@ export function PageHero({
                   transition={{ delay: 0.4 + i * 0.06 }}
                   className="card-clean p-5 rounded-xl group hover-lift"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-surface-100 flex items-center justify-center mb-3 group-hover:bg-amber-50 transition-colors">
-                    <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                  <div className="w-8 h-8 rounded-lg bg-surface-100 flex items-center justify-center mb-3 group-hover:bg-sky-50 transition-colors">
+                    <div className="w-1.5 h-1.5 rounded-full bg-sky-500" />
                   </div>
                   <p className="text-ink-900 font-display font-medium text-sm">{feature}</p>
                 </motion.div>

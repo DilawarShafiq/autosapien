@@ -9,25 +9,25 @@ const agents = [
     name: 'Intake Agent',
     description: 'Handles patient registration, demographic verification, and insurance eligibility.',
     tasks: ['Patient Registration', 'Insurance Verification', 'Demographic Updates', 'Consent Management'],
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     name: 'Scheduling Agent',
     description: 'Manages appointments, handles rescheduling, and optimizes provider calendars.',
     tasks: ['Appointment Booking', 'Rescheduling', 'Waitlist Management', 'Reminder Automation'],
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     name: 'Billing Agent',
     description: 'Processes claims, manages denials, and handles payment posting.',
     tasks: ['Claim Submission', 'Denial Appeals', 'Payment Posting', 'Patient Billing'],
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     name: 'Clinical Agent',
     description: 'Assists with documentation, coding, and clinical decision support.',
     tasks: ['Chart Prep', 'Medical Coding', 'CDI Queries', 'Order Management'],
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
 ]
 
@@ -101,7 +101,7 @@ export function AgenticAI() {
   const isCapabilitiesInView = useInView(capabilitiesRef, { once: true, margin: '-100px' })
 
   return (
-    <div style={{ background: '#fafaf8' }}>
+    <div style={{ background: '#fafafa' }}>
       <PageHero
         icon={Bot}
         category="AI FTEs & Custom Agents"
@@ -160,12 +160,12 @@ export function AgenticAI() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               AI Agent Fleet
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Meet your{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 AI workforce
               </span>
             </h2>
@@ -184,8 +184,8 @@ export function AgenticAI() {
                 className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center">
-                    <Bot className="w-7 h-7 text-amber-600" />
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center">
+                    <Bot className="w-7 h-7 text-sky-600" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-ink-900">{agent.name}</h3>
@@ -221,12 +221,12 @@ export function AgenticAI() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Core Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Beyond simple{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 automation
               </span>
             </h2>
@@ -241,8 +241,8 @@ export function AgenticAI() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-amber-600" />
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
                 <p className="text-ink-400">{cap.description}</p>
@@ -276,14 +276,14 @@ export function AgenticAI() {
                   transition={{ delay: i * 0.1 }}
                   className="flex items-center gap-6 p-4 rounded-lg bg-surface-100 hover:bg-surface-100 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0">
-                    <layer.icon className="w-6 h-6 text-amber-600" />
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center flex-shrink-0">
+                    <layer.icon className="w-6 h-6 text-sky-600" />
                   </div>
                   <div className="flex-1">
                     <div className="font-bold text-ink-900">{layer.layer}</div>
                     <div className="text-sm text-ink-400">{layer.description}</div>
                   </div>
-                  <div className="hidden sm:block w-8 h-px bg-amber-400/30" />
+                  <div className="hidden sm:block w-8 h-px bg-sky-400/30" />
                 </motion.div>
               ))}
             </div>

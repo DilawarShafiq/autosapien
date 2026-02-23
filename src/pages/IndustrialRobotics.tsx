@@ -43,28 +43,28 @@ const applications = [
     description: 'High-speed, precision assembly with 24/7 operation. From electronics to automotive, our robots handle complex assembly tasks.',
     metrics: '99.9% accuracy',
     icon: Factory,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Logistics & Warehousing',
     description: 'Autonomous picking, packing, and palletizing. Optimize warehouse operations and reduce fulfillment times.',
     metrics: '5x throughput',
     icon: Package,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Quality Inspection',
     description: 'Visual inspection at production speed. Catch defects, measure tolerances, and ensure compliance automatically.',
     metrics: '100% inspection',
     icon: Eye,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     title: 'Material Handling',
     description: 'Heavy lifting, precise placement, and dangerous environment operation. Let robots handle what humans shouldn\'t.',
     metrics: '500kg payload',
     icon: Zap,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
 ]
 
@@ -89,7 +89,7 @@ export function IndustrialRobotics() {
   const isApplicationsInView = useInView(applicationsRef, { once: true, margin: '-100px' })
 
   return (
-    <div style={{ background: '#fafaf8' }}>
+    <div style={{ background: '#fafafa' }}>
       <PageHero
         icon={Factory}
         category="Industrial Robotics"
@@ -143,12 +143,12 @@ export function IndustrialRobotics() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Core Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Intelligence that{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 never stops improving
               </span>
             </h2>
@@ -166,8 +166,8 @@ export function IndustrialRobotics() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-amber-600" />
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
                 <p className="text-ink-400">{cap.description}</p>
@@ -186,12 +186,12 @@ export function IndustrialRobotics() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Applications
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Transforming{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 manufacturing
               </span>
             </h2>
@@ -207,10 +207,10 @@ export function IndustrialRobotics() {
                 className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center">
-                    <app.icon className="w-7 h-7 text-amber-600" />
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center">
+                    <app.icon className="w-7 h-7 text-sky-600" />
                   </div>
-                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-sky-50 text-sky-700">
                     {app.metrics}
                   </span>
                 </div>
@@ -246,7 +246,7 @@ export function IndustrialRobotics() {
                   transition={{ delay: i * 0.1 }}
                   className="text-center p-4 rounded-lg bg-surface-100"
                 >
-                  <Shield className="w-8 h-8 text-amber-600 mx-auto mb-3" />
+                  <Shield className="w-8 h-8 text-sky-600 mx-auto mb-3" />
                   <div className="font-bold text-ink-900 mb-1">{standard.standard}</div>
                   <div className="text-sm text-ink-500">{standard.description}</div>
                 </motion.div>
@@ -265,7 +265,7 @@ export function IndustrialRobotics() {
             viewport={{ once: true }}
             className="card-clean rounded-xl p-12 text-center"
           >
-            <RefreshCw className="w-12 h-12 text-amber-600 mx-auto mb-6" />
+            <RefreshCw className="w-12 h-12 text-sky-600 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-ink-900 mb-4">
               Seamless integration with your existing systems
             </h2>

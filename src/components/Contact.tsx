@@ -7,14 +7,14 @@ export function Contact() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="contact" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#fafaf8' }}>
+    <section id="contact" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#fafafa' }}>
       <div ref={ref} className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="label-mono text-amber-600 mb-4 block">Contact</span>
+          <span className="label-mono text-sky-600 mb-4 block">Contact</span>
 
           <h2 className="font-display font-bold text-display-lg mb-5">
             Let's build the future together
@@ -34,12 +34,12 @@ export function Contact() {
               className="inline-block card-clean p-6 sm:p-8 rounded-xl group hover-lift"
             >
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center group-hover:bg-amber-100 transition-colors">
-                  <Mail className="w-6 h-6 text-amber-600" />
+                <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center group-hover:bg-sky-100 transition-colors">
+                  <Mail className="w-6 h-6 text-sky-600" />
                 </div>
                 <div className="text-center sm:text-left">
                   <div className="label-mono text-[10px] mb-1">Email us at</div>
-                  <div className="text-xl sm:text-2xl font-display font-bold text-ink-900 group-hover:text-amber-700 transition-colors break-all">
+                  <div className="text-xl sm:text-2xl font-display font-bold text-ink-900 group-hover:text-sky-700 transition-colors break-all">
                     info@autosapien.com
                   </div>
                 </div>

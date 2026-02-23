@@ -31,7 +31,7 @@ export function Technology() {
   const x2 = useTransform(scrollYProgress, [0, 1], [0, 200])
 
   return (
-    <section id="technology" ref={containerRef} className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#f5f5f0' }}>
+    <section id="technology" ref={containerRef} className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#f5f5f5' }}>
       <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -39,7 +39,7 @@ export function Technology() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="label-mono mb-4 block text-amber-600">Technology</span>
+          <span className="label-mono mb-4 block text-sky-600">Technology</span>
           <h2 className="font-display font-bold text-display-lg mb-5 text-ink-900">
             Built on cutting-edge infrastructure
           </h2>
@@ -53,7 +53,7 @@ export function Technology() {
           <motion.div style={{ x: x1 }} className="flex gap-3 mb-3">
             {[...techStack, ...techStack].map((tech, i) => (
               <div key={`${tech.name}-${i}`} className="flex-none px-5 py-3 rounded-lg group card-clean">
-                <div className="text-sm font-display font-semibold text-ink-800 group-hover:text-amber-600 transition-colors">{tech.name}</div>
+                <div className="text-sm font-display font-semibold text-ink-800 group-hover:text-sky-600 transition-colors">{tech.name}</div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink-400">{tech.category}</div>
               </div>
             ))}
@@ -61,14 +61,14 @@ export function Technology() {
           <motion.div style={{ x: x2 }} className="flex gap-3">
             {[...techStack.slice().reverse(), ...techStack.slice().reverse()].map((tech, i) => (
               <div key={`${tech.name}-rev-${i}`} className="flex-none px-5 py-3 rounded-lg group card-clean">
-                <div className="text-sm font-display font-semibold text-ink-800 group-hover:text-amber-600 transition-colors">{tech.name}</div>
+                <div className="text-sm font-display font-semibold text-ink-800 group-hover:text-sky-600 transition-colors">{tech.name}</div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink-400">{tech.category}</div>
               </div>
             ))}
           </motion.div>
 
-          <div className="absolute inset-y-0 left-0 w-16 sm:w-32 pointer-events-none" style={{ background: 'linear-gradient(to right, #f5f5f0, transparent)' }} />
-          <div className="absolute inset-y-0 right-0 w-16 sm:w-32 pointer-events-none" style={{ background: 'linear-gradient(to left, #f5f5f0, transparent)' }} />
+          <div className="absolute inset-y-0 left-0 w-16 sm:w-32 pointer-events-none" style={{ background: 'linear-gradient(to right, #f5f5f5, transparent)' }} />
+          <div className="absolute inset-y-0 right-0 w-16 sm:w-32 pointer-events-none" style={{ background: 'linear-gradient(to left, #f5f5f5, transparent)' }} />
         </div>
 
         {/* Metrics */}
@@ -87,8 +87,8 @@ export function Technology() {
               className="card-clean p-5 sm:p-8 text-center rounded-xl hover-lift"
             >
               <div className="flex items-baseline justify-center gap-1 mb-2">
-                <span className="stat-display-gold text-3xl sm:text-4xl">{m.value}</span>
-                {m.unit && <span className="text-base sm:text-lg font-mono text-amber-600">{m.unit}</span>}
+                <span className="stat-display-sky text-3xl sm:text-4xl">{m.value}</span>
+                {m.unit && <span className="text-base sm:text-lg font-mono text-sky-600">{m.unit}</span>}
               </div>
               <div className="text-sm font-display font-semibold text-ink-900 mb-1">{m.label}</div>
               <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink-400">{m.description}</div>
@@ -115,8 +115,8 @@ export function Technology() {
                 { label: '03', title: 'Integration', desc: 'API-first architecture with enterprise connectors and webhooks.' },
               ].map((layer) => (
                 <div key={layer.label} className="text-center p-6 rounded-xl transition-colors card-tinted">
-                  <div className="w-12 h-12 mx-auto mb-5 rounded-xl flex items-center justify-center bg-amber-50">
-                    <span className="font-mono font-bold text-sm text-amber-700">{layer.label}</span>
+                  <div className="w-12 h-12 mx-auto mb-5 rounded-xl flex items-center justify-center bg-sky-50">
+                    <span className="font-mono font-bold text-sm text-sky-700">{layer.label}</span>
                   </div>
                   <h4 className="text-lg font-display font-semibold text-ink-900 mb-2">{layer.title}</h4>
                   <p className="text-sm font-body text-ink-400">{layer.desc}</p>

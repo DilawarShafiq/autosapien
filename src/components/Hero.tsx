@@ -54,7 +54,7 @@ export function Hero() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 45% 35% at 50% 45%, rgba(201, 164, 76, 0.04) 0%, transparent 70%)'
+          background: 'radial-gradient(ellipse 45% 35% at 50% 45%, rgba(0, 133, 212, 0.04) 0%, transparent 70%)'
         }}
       />
 
@@ -64,10 +64,10 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, delay: 0.8 }}
       >
-        <div className="absolute top-28 left-6 sm:left-10 w-14 h-14 border-t-2 border-l-2 border-amber-300/40 hidden lg:block" />
-        <div className="absolute top-28 right-6 sm:right-10 w-14 h-14 border-t-2 border-r-2 border-amber-300/40 hidden lg:block" />
-        <div className="absolute bottom-20 left-6 sm:left-10 w-14 h-14 border-b-2 border-l-2 border-amber-300/40 hidden lg:block" />
-        <div className="absolute bottom-20 right-6 sm:right-10 w-14 h-14 border-b-2 border-r-2 border-amber-300/40 hidden lg:block" />
+        <div className="absolute top-28 left-6 sm:left-10 w-14 h-14 border-t-2 border-l-2 border-sky-300/40 hidden lg:block" />
+        <div className="absolute top-28 right-6 sm:right-10 w-14 h-14 border-t-2 border-r-2 border-sky-300/40 hidden lg:block" />
+        <div className="absolute bottom-20 left-6 sm:left-10 w-14 h-14 border-b-2 border-l-2 border-sky-300/40 hidden lg:block" />
+        <div className="absolute bottom-20 right-6 sm:right-10 w-14 h-14 border-b-2 border-r-2 border-sky-300/40 hidden lg:block" />
       </motion.div>
 
       {/* Side rotated labels */}
@@ -104,7 +104,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="flex justify-center mb-10 sm:mb-14"
         >
-          <div className="badge-pill badge-amber rounded-full">
+          <div className="badge-pill badge-sky rounded-full">
             <span className="status-dot developing" />
             <span>Building the Machines That Will Build Tomorrow</span>
           </div>
@@ -118,9 +118,9 @@ export function Hero() {
           className="text-center mb-8"
         >
           <h1 className="font-display font-bold text-display-2xl text-ink-900">
-            <span className="block opacity-75">WHERE</span>
-            <span className="block text-amber-600">INTELLIGENCE</span>
-            <span className="block opacity-75">MEETS FORM</span>
+            <span className="block text-sky-600">Engineering</span>
+            <span className="block opacity-75">Intelligence</span>
+            <span className="block opacity-75">into Existence</span>
           </h1>
         </motion.div>
 
@@ -181,10 +181,10 @@ export function Hero() {
                 <a
                   href={stat.href}
                   {...(stat.href.startsWith('#') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-                  className="block h-full p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center group hover:border-amber-300 hover:shadow-elevated transition-all duration-300 flex flex-col items-center justify-center"
+                  className="block h-full p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center group hover:border-sky-300 hover:shadow-elevated transition-all duration-300 flex flex-col items-center justify-center"
                 >
                   <div className="mb-2">
-                    <span className={`stat-display-gold group-hover:opacity-80 transition-opacity ${stat.value.length > 5 ? 'text-sm sm:text-base md:text-lg' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
+                    <span className={`stat-display-sky group-hover:opacity-80 transition-opacity ${stat.value.length > 5 ? 'text-sm sm:text-base md:text-lg' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
                       <AnimatedNumber value={stat.value} />
                     </span>
                   </div>
@@ -193,7 +193,7 @@ export function Hero() {
               ) : (
                 <div className="h-full p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center flex flex-col items-center justify-center">
                   <div className="mb-2">
-                    <span className={`stat-display-gold ${stat.value.length > 5 ? 'text-sm sm:text-base md:text-lg' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
+                    <span className={`stat-display-sky ${stat.value.length > 5 ? 'text-sm sm:text-base md:text-lg' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
                       <AnimatedNumber value={stat.value} />
                     </span>
                   </div>
@@ -226,7 +226,7 @@ export function Hero() {
       <div
         className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
         style={{
-          background: 'linear-gradient(to bottom, transparent, #fafaf8)'
+          background: 'linear-gradient(to bottom, transparent, #fafafa)'
         }}
       />
     </section>

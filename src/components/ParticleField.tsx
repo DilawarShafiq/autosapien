@@ -100,7 +100,7 @@ function FloatingDots() {
       </bufferGeometry>
       <pointsMaterial
         size={0.06}
-        color="#d4a84b"
+        color="#3aa0f0"
         transparent
         opacity={0.15}
         sizeAttenuation
@@ -112,7 +112,7 @@ function FloatingDots() {
 
 function SceneSetup() {
   const { scene } = useThree()
-  scene.background = new THREE.Color('#fafaf8')
+  scene.background = new THREE.Color('#fafafa')
   return null
 }
 
@@ -122,9 +122,9 @@ export function ParticleField() {
       <Canvas
         camera={{ position: [0, 0, 20], fov: 50 }}
         gl={{ antialias: true, alpha: false }}
-        style={{ background: '#fafaf8' }}
+        style={{ background: '#fafafa' }}
         dpr={[1, 1.5]}
-        onCreated={({ scene }) => { scene.background = new THREE.Color('#fafaf8') }}
+        onCreated={({ scene }) => { scene.background = new THREE.Color('#fafafa') }}
       >
         <SceneSetup />
         <FloatingDots />

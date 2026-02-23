@@ -96,7 +96,7 @@ export function HealthcareIT() {
   const isImpactInView = useInView(impactRef, { once: true, margin: '-100px' })
 
   return (
-    <div style={{ background: '#fafaf8' }}>
+    <div style={{ background: '#fafafa' }}>
       <PageHero
         icon={Heart}
         category="Healthcare AI"
@@ -150,12 +150,12 @@ export function HealthcareIT() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Platform Modules
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               One platform.{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 Complete healthcare operations.
               </span>
             </h2>
@@ -174,8 +174,8 @@ export function HealthcareIT() {
                 className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
-                    <module.icon className="w-7 h-7 text-amber-600" />
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center flex-shrink-0">
+                    <module.icon className="w-7 h-7 text-sky-600" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-ink-900 mb-2">{module.title}</h3>
@@ -207,12 +207,12 @@ export function HealthcareIT() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               AI-Powered Features
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Healthcare AI that{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 actually works
               </span>
             </h2>
@@ -230,8 +230,8 @@ export function HealthcareIT() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-amber-600" />
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
                 <p className="text-ink-400">{cap.description}</p>
@@ -250,12 +250,12 @@ export function HealthcareIT() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Why It Matters
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Healing{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 USA healthcare
               </span>
             </h2>
@@ -277,9 +277,9 @@ export function HealthcareIT() {
                   <div className="text-ink-500 text-sm mb-1">The Problem</div>
                   <div className="text-ink-900 font-medium">{item.problem}</div>
                 </div>
-                <ArrowRight className="w-6 h-6 text-amber-600 hidden md:block" />
+                <ArrowRight className="w-6 h-6 text-sky-600 hidden md:block" />
                 <div className="flex-1">
-                  <div className="text-amber-600 text-sm mb-1">Our Solution</div>
+                  <div className="text-sky-600 text-sm mb-1">Our Solution</div>
                   <div className="text-ink-900 font-medium">{item.solution}</div>
                 </div>
               </motion.div>
@@ -311,7 +311,7 @@ export function HealthcareIT() {
                 transition={{ delay: i * 0.1 }}
                 className="card-clean rounded-lg px-8 py-6 text-center"
               >
-                <Shield className="w-8 h-8 text-amber-600 mx-auto mb-3" />
+                <Shield className="w-8 h-8 text-sky-600 mx-auto mb-3" />
                 <div className="text-2xl font-bold text-ink-900 mb-1">{item.badge}</div>
                 <div className="text-sm text-ink-500">{item.description}</div>
               </motion.div>
@@ -329,9 +329,9 @@ export function HealthcareIT() {
             viewport={{ once: true }}
             className="card-clean rounded-xl p-12 relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-amber-50/50" />
+            <div className="absolute inset-0 bg-sky-50/50" />
             <div className="relative">
-              <Clock className="w-12 h-12 text-amber-600 mx-auto mb-6" />
+              <Clock className="w-12 h-12 text-sky-600 mx-auto mb-6" />
               <h2 className="text-3xl font-bold text-ink-900 mb-4">
                 Ready to transform your practice?
               </h2>

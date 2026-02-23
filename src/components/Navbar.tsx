@@ -58,7 +58,7 @@ export function Navbar() {
                   transition={{ delay: i * 0.08 }}
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-4 right-4 h-px scale-x-0 group-hover:scale-x-100 transition-transform origin-left bg-amber-500" />
+                  <span className="absolute bottom-0 left-4 right-4 h-px scale-x-0 group-hover:scale-x-100 transition-transform origin-left bg-sky-500" />
                 </motion.a>
               ))}
             </div>
@@ -104,7 +104,7 @@ export function Navbar() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08 }}
-                  className="text-3xl font-display font-bold text-ink-900 hover:text-amber-600 transition-colors"
+                  className="text-3xl font-display font-bold text-ink-900 hover:text-sky-600 transition-colors"
                 >
                   {link.name}
                 </motion.a>

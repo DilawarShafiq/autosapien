@@ -49,7 +49,7 @@ export function Capabilities() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="label-mono text-amber-600 mb-4 block">Capabilities</span>
+          <span className="label-mono text-sky-600 mb-4 block">Capabilities</span>
           <h2 className="font-display font-bold text-display-lg mb-5">
             Six frontiers of innovation
           </h2>
@@ -73,16 +73,16 @@ export function Capabilities() {
                 onClick={() => setActiveCapability(cap)}
                 className={`flex-none lg:w-full min-w-[180px] lg:min-w-0 p-4 text-left transition-all duration-300 group rounded-lg border ${
                   activeCapability.id === cap.id
-                    ? 'bg-white border-amber-300 shadow-card'
+                    ? 'bg-white border-sky-300 shadow-card'
                     : 'border-transparent hover:bg-white hover:shadow-card'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all ${
-                    activeCapability.id === cap.id ? 'bg-amber-100' : 'bg-surface-100 group-hover:bg-surface-200'
+                    activeCapability.id === cap.id ? 'bg-sky-100' : 'bg-surface-100 group-hover:bg-surface-200'
                   }`}>
                     <cap.icon className={`w-4.5 h-4.5 ${
-                      activeCapability.id === cap.id ? 'text-amber-600' : 'text-ink-400'
+                      activeCapability.id === cap.id ? 'text-sky-600' : 'text-ink-400'
                     }`} />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -119,23 +119,23 @@ export function Capabilities() {
               >
                 <div className="flex items-start justify-between mb-6 flex-wrap gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center">
-                      <activeCapability.icon className="w-6 h-6 text-amber-600" />
+                    <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center">
+                      <activeCapability.icon className="w-6 h-6 text-sky-600" />
                     </div>
                     <div>
-                      <span className="label-mono text-[10px] text-amber-600">{activeCapability.code}</span>
+                      <span className="label-mono text-[10px] text-sky-600">{activeCapability.code}</span>
                       <h3 className="font-display font-bold text-xl text-ink-900">{activeCapability.title}</h3>
                     </div>
                   </div>
                   {activeCapability.status === 'developing' && (
-                    <span className="badge-pill badge-amber rounded-full"><span className="status-dot developing" />Development</span>
+                    <span className="badge-pill badge-sky rounded-full"><span className="status-dot developing" />Development</span>
                   )}
                   {activeCapability.status === 'active' && (
                     <span className="badge-pill badge-live rounded-full"><span className="status-dot active" />Live</span>
                   )}
                 </div>
 
-                <p className="text-amber-700 font-display font-semibold text-sm mb-4">{activeCapability.subtitle}</p>
+                <p className="text-sky-700 font-display font-semibold text-sm mb-4">{activeCapability.subtitle}</p>
                 <p className="text-ink-500 font-body mb-8 leading-relaxed">{activeCapability.description}</p>
 
                 <div className="grid sm:grid-cols-2 gap-3 mb-8">
@@ -147,7 +147,7 @@ export function Capabilities() {
                       transition={{ delay: i * 0.06 }}
                       className="flex items-center gap-3 p-3 bg-surface-50 rounded-lg"
                     >
-                      <div className="w-1 h-1 rounded-full bg-amber-500" />
+                      <div className="w-1 h-1 rounded-full bg-sky-500" />
                       <span className="text-sm text-ink-700 font-body">{feature}</span>
                     </motion.div>
                   ))}

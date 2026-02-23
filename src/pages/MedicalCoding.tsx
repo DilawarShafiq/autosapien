@@ -83,14 +83,14 @@ export function MedicalCoding() {
   const isProcessInView = useInView(processRef, { once: true, margin: '-100px' })
 
   return (
-    <div style={{ background: '#fafaf8' }}>
+    <div style={{ background: '#fafafa' }}>
       <PageHero
         icon={FileText}
         category="Medical Coding"
         title="AI Medical Coding"
         subtitle="Superhuman accuracy meets compliance"
         description="Our AI coding engine reads clinical documentation like an expert coder, assigning accurate codes in seconds while ensuring full compliance with payer requirements and coding guidelines."
-        gradient="from-amber-500 to-orange-500"
+        gradient="from-sky-500 to-orange-500"
         features={[
           'ICD-10 Coding',
           'CPT Assignment',
@@ -172,12 +172,12 @@ export function MedicalCoding() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Platform Features
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Coding intelligence{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 reimagined
               </span>
             </h2>
@@ -192,8 +192,8 @@ export function MedicalCoding() {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <feature.icon className="w-7 h-7 text-amber-600" />
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <feature.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
                 <p className="text-ink-400">{feature.description}</p>
@@ -212,12 +212,12 @@ export function MedicalCoding() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               How It Works
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               From documentation to{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 accurate codes
               </span>
             </h2>
@@ -233,10 +233,10 @@ export function MedicalCoding() {
                 className="relative"
               >
                 {i < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-amber-300" />
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-sky-300" />
                 )}
                 <div className="card-clean rounded-xl p-8 h-full">
-                  <div className="text-5xl font-bold text-amber-500/20 mb-4">
+                  <div className="text-5xl font-bold text-sky-500/20 mb-4">
                     {step.step}
                   </div>
                   <h3 className="text-xl font-bold text-ink-900 mb-3">{step.title}</h3>

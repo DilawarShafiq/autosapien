@@ -52,7 +52,7 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#fafaf8' }}>
+    <section id="about" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#fafafa' }}>
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 sm:gap-20 items-start mb-28">
           {/* Left */}
@@ -62,7 +62,7 @@ export function About() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="label-mono text-amber-600 mb-6 block">About</span>
+            <span className="label-mono text-sky-600 mb-6 block">About</span>
 
             <h2 className="font-display font-bold text-display-lg mb-8">
               Creating machines that understand humanity
@@ -117,7 +117,7 @@ export function About() {
               </div>
 
               <blockquote>
-                <div className="text-5xl font-display font-bold text-amber-300/60 absolute -mt-2 -ml-1">"</div>
+                <div className="text-5xl font-display font-bold text-sky-300/60 absolute -mt-2 -ml-1">"</div>
                 <p className="text-lg sm:text-xl lg:text-2xl text-ink-800 font-display leading-relaxed pl-6">
                   We believe the defining technology of this century won't be artificial intelligence
                   in isolation—it will be artificial intelligence given a body, purpose, and the
@@ -160,11 +160,11 @@ export function About() {
               className="group card-clean p-6 rounded-xl hover-lift cursor-pointer"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="w-10 h-10 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-amber-50 transition-colors">
-                  <pillar.icon className="w-5 h-5 text-ink-400 group-hover:text-amber-600 transition-colors" />
+                <div className="w-10 h-10 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-sky-50 transition-colors">
+                  <pillar.icon className="w-5 h-5 text-ink-400 group-hover:text-sky-600 transition-colors" />
                 </div>
                 {pillar.status === 'developing' && (
-                  <span className="badge-pill badge-amber text-[10px] py-1 px-2 rounded-full">
+                  <span className="badge-pill badge-sky text-[10px] py-1 px-2 rounded-full">
                     <span className="status-dot developing" />
                     Dev
                   </span>
@@ -178,7 +178,7 @@ export function About() {
               </div>
 
               <span className="label-mono text-[10px] text-ink-300">{pillar.code}</span>
-              <h3 className="font-display font-semibold text-ink-900 mb-2 group-hover:text-amber-700 transition-colors">
+              <h3 className="font-display font-semibold text-ink-900 mb-2 group-hover:text-sky-700 transition-colors">
                 {pillar.title}
               </h3>
               <p className="text-sm text-ink-400 font-body leading-relaxed">
@@ -187,7 +187,7 @@ export function About() {
 
               <div className="mt-5 pt-4 border-t border-surface-200 flex items-center justify-between">
                 <span className="label-mono text-[10px]">Learn More</span>
-                <ArrowUpRight className="w-4 h-4 text-ink-300 group-hover:text-amber-600 transition-colors" />
+                <ArrowUpRight className="w-4 h-4 text-ink-300 group-hover:text-sky-600 transition-colors" />
               </div>
             </motion.div>
           ))}

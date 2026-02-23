@@ -10,42 +10,42 @@ const agents = [
     role: 'Screenplay & Narrative',
     description: 'Crafts compelling stories, dialogue, and scene descriptions from high-level concepts or detailed prompts.',
     icon: Pen,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     name: 'Director Agent',
     role: 'Visual Planning',
     description: 'Interprets scripts into shot compositions, camera movements, lighting decisions, and visual style guides.',
     icon: Camera,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     name: 'Editor Agent',
     role: 'Sequence Assembly',
     description: 'Assembles generated footage, manages pacing, creates transitions, and ensures narrative coherence.',
     icon: Scissors,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     name: 'Composer Agent',
     role: 'Audio & Music',
     description: 'Generates original scores, sound effects, ambient audio, and ensures audio-visual synchronization.',
     icon: Music,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     name: 'VFX Agent',
     role: 'Visual Effects',
     description: 'Creates visual effects, composites elements, enhances footage, and ensures visual consistency.',
     icon: Wand2,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
   {
     name: 'Producer Agent',
     role: 'Orchestration',
     description: 'Coordinates all agents, manages workflow, resolves conflicts, and ensures cohesive output.',
     icon: Layers,
-    color: 'from-amber-400 to-amber-600',
+    color: 'from-sky-400 to-sky-600',
   },
 ]
 
@@ -116,14 +116,14 @@ export function FilmStudio() {
   const isProcessInView = useInView(processRef, { once: true, margin: '-100px' })
 
   return (
-    <div style={{ background: '#fafaf8' }}>
+    <div style={{ background: '#fafafa' }}>
       <PageHero
         icon={Film}
         category="Generative Cinema"
         title="AI Film Studio"
         subtitle="Where imagination becomes cinema"
         description="The future of filmmaking is autonomous. Our AI film studio orchestrates a fleet of specialized agents—writers, directors, editors, composers, VFX artists—to produce complete short films from a single prompt. Using state-of-the-art diffusion models and audio synthesis, we're creating a new medium where the only limit is imagination."
-        gradient="from-synth-500 to-amber-500"
+        gradient="from-synth-500 to-sky-500"
         status="developing"
         features={[
           'Video Diffusion',
@@ -170,12 +170,12 @@ export function FilmStudio() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               AI Production Crew
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Meet your{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 autonomous film crew
               </span>
             </h2>
@@ -194,8 +194,8 @@ export function FilmStudio() {
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center">
-                    <agent.icon className="w-6 h-6 text-amber-600" />
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center">
+                    <agent.icon className="w-6 h-6 text-sky-600" />
                   </div>
                   <div>
                     <h3 className="font-bold text-ink-900">{agent.name}</h3>
@@ -218,12 +218,12 @@ export function FilmStudio() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Core Technology
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Generative cinema{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 technology
               </span>
             </h2>
@@ -238,8 +238,8 @@ export function FilmStudio() {
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-amber-600" />
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
                 <p className="text-ink-400">{cap.description}</p>
@@ -258,12 +258,12 @@ export function FilmStudio() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="label-mono text-amber-600 mb-4 block">
+            <span className="label-mono text-sky-600 mb-4 block">
               Production Pipeline
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               From prompt to{' '}
-              <span className="text-amber-500">
+              <span className="text-sky-500">
                 premiere
               </span>
             </h2>
@@ -278,7 +278,7 @@ export function FilmStudio() {
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 className="card-clean rounded-xl p-8 flex items-start gap-6"
               >
-                <div className="text-5xl font-bold text-amber-500 flex-shrink-0">
+                <div className="text-5xl font-bold text-sky-500 flex-shrink-0">
                   {step.step}
                 </div>
                 <div>
@@ -300,10 +300,10 @@ export function FilmStudio() {
             viewport={{ once: true }}
             className="card-clean rounded-xl p-12 relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-amber-50/50" />
+            <div className="absolute inset-0 bg-sky-50/50" />
             <div className="relative">
-              <div className="w-20 h-20 rounded-full bg-amber-50 flex items-center justify-center mx-auto mb-6">
-                <Play className="w-10 h-10 text-amber-600 ml-1" />
+              <div className="w-20 h-20 rounded-full bg-sky-50 flex items-center justify-center mx-auto mb-6">
+                <Play className="w-10 h-10 text-sky-600 ml-1" />
               </div>
               <h2 className="text-3xl font-bold text-ink-900 mb-4">
                 See it in action
