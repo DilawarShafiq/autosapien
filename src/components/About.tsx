@@ -38,7 +38,7 @@ const pillars = [
     title: 'Healthcare AI',
     description: 'xEHR.io—our AI-powered platform transforming how the USA delivers and manages healthcare.',
     color: 'rose',
-    status: 'launching',
+    status: 'active',
   },
   {
     icon: Film,

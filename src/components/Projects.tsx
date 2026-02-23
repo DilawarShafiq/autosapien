@@ -46,8 +46,8 @@ const projects = [
     gradient: 'from-rose-500 to-pink-500',
     features: ['AI Clinical Documentation', 'Autonomous RCM', 'FHIR R4 Native', '98% Clean Claims'],
     metrics: { value: '#1', label: 'AI-Powered Healthcare IT' },
-    status: 'launching',
-    launchDate: 'March 22',
+    status: 'active',
+    metrics: { value: 'Live', label: 'xEHR.io' },
   },
   {
     id: 'film-studio',

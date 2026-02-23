@@ -42,7 +42,7 @@ const capabilities = [
     icon: Heart,
     title: 'Healthcare AI',
     subtitle: 'xEHR.io Platform',
-    status: 'launching',
+    status: 'active',
     description: 'xEHR.io is our enterprise healthcare platform combining EHR, practice management, and revenue cycle automation. Powered by AI agents that work 24/7, we\'re eliminating the administrative burden crushing USA healthcare. From clinical documentation to claims processing, our system achieves 98% clean claim rates while providers focus on what matters: patients.',
     features: [
       'AI clinical documentation',
