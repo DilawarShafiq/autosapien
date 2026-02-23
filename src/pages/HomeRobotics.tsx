@@ -42,19 +42,19 @@ const useCases = [
     title: 'Independent Living',
     description: 'Enabling seniors to age in place with dignity. From medication management to emergency response, our robots provide the support needed for independent living.',
     personas: ['Seniors', 'People with disabilities', 'Post-surgery recovery'],
-    color: 'from-neural-500 to-indigo-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Busy Families',
     description: 'For families juggling work, kids, and everything in between. Help with household chores, childcare assistance, and keeping the home running smoothly.',
     personas: ['Working parents', 'Single parents', 'Large families'],
-    color: 'from-rose-500 to-pink-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Smart Living',
     description: 'The physical interface your smart home has been missing. Control everything through natural interaction, not apps.',
     personas: ['Tech enthusiasts', 'Home automation fans', 'Early adopters'],
-    color: 'from-cyber-500 to-blue-500',
+    color: 'from-amber-400 to-amber-600',
   },
 ]
 
@@ -113,8 +113,8 @@ export function HomeRobotics() {
 
       {/* Specs Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="glass rounded-3xl p-8 md:p-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="card-clean rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {specs.map((spec, i) => (
                 <motion.div
@@ -125,11 +125,11 @@ export function HomeRobotics() {
                   transition={{ delay: i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neural-500 to-indigo-500 bg-clip-text text-transparent mb-2">
+                  <div className="stat-display text-3xl sm:text-4xl mb-2">
                     {spec.value}
                   </div>
-                  <div className="text-white font-medium mb-1">{spec.label}</div>
-                  <div className="text-sm text-neutral-500">{spec.description}</div>
+                  <div className="text-ink-900 font-medium mb-1">{spec.label}</div>
+                  <div className="text-sm text-ink-500">{spec.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -139,22 +139,19 @@ export function HomeRobotics() {
 
       {/* Features Section */}
       <section ref={featuresRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 dot-pattern opacity-30" />
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-neural-600/10 rounded-full blur-3xl -translate-y-1/2" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-neural-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Everything a helpful{' '}
-              <span className="bg-gradient-to-r from-neural-500 to-indigo-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 household member
               </span>{' '}
               should do
@@ -168,13 +165,13 @@ export function HomeRobotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift group"
+                className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-neural-500/20 to-indigo-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <feature.icon className="w-7 h-7 text-neural-400" />
+                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <feature.icon className="w-7 h-7 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-neutral-400">{feature.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
+                <p className="text-ink-400">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -183,23 +180,19 @@ export function HomeRobotics() {
 
       {/* Use Cases Section */}
       <section ref={useCasesRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl -translate-y-1/2" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isUseCasesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-indigo-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Who It's For
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Designed for{' '}
-              <span className="bg-gradient-to-r from-neural-500 to-indigo-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 real families
               </span>
             </h2>
@@ -212,16 +205,16 @@ export function HomeRobotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isUseCasesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift"
+                className="card-clean rounded-xl p-8 hover-lift"
               >
-                <div className={`w-full h-2 rounded-full bg-gradient-to-r ${useCase.color} mb-6`} />
-                <h3 className="text-xl font-bold text-white mb-3">{useCase.title}</h3>
-                <p className="text-neutral-400 mb-6">{useCase.description}</p>
+                <div className="w-full h-2 rounded-full bg-amber-400 mb-6" />
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{useCase.title}</h3>
+                <p className="text-ink-400 mb-6">{useCase.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {useCase.personas.map((persona) => (
                     <span
                       key={persona}
-                      className="px-3 py-1 rounded-lg bg-white/5 text-xs text-neutral-300"
+                      className="px-3 py-1 rounded-lg bg-surface-100 text-xs text-ink-500"
                     >
                       {persona}
                     </span>
@@ -235,23 +228,23 @@ export function HomeRobotics() {
 
       {/* Safety Section */}
       <section ref={safetyRef} className="relative py-32 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isSafetyInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-neural-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Safety & Privacy
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Built for{' '}
-              <span className="bg-gradient-to-r from-neural-500 to-indigo-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 trust
               </span>
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 max-w-2xl mx-auto">
               Welcoming a robot into your home requires trust. We've engineered safety and privacy into every layer.
             </p>
           </motion.div>
@@ -263,13 +256,13 @@ export function HomeRobotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isSafetyInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="glass rounded-3xl p-8 text-center hover-lift"
+                className="card-clean rounded-xl p-8 text-center hover-lift"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-neural-500/20 to-indigo-500/20 flex items-center justify-center mb-6 mx-auto">
-                  <feature.icon className="w-8 h-8 text-neural-400" />
+                <div className="w-16 h-16 rounded-lg bg-amber-50 flex items-center justify-center mb-6 mx-auto">
+                  <feature.icon className="w-8 h-8 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-neutral-400">{feature.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
+                <p className="text-ink-400">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -278,21 +271,21 @@ export function HomeRobotics() {
 
       {/* CTA Section */}
       <section className="relative py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-3xl p-12"
+            className="card-clean rounded-xl p-12"
           >
-            <Sparkles className="w-12 h-12 text-neural-400 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <Sparkles className="w-12 h-12 text-amber-600 mx-auto mb-6" />
+            <h2 className="text-3xl font-bold text-ink-900 mb-4">
               The beginning of robotic household members
             </h2>
-            <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 mb-8 max-w-2xl mx-auto">
               Join our early access program and be among the first to welcome a home robot that actually helps.
             </p>
-            <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-neural-500 to-indigo-500 text-white font-medium text-lg hover:opacity-90 transition-opacity">
+            <button className="btn-primary rounded-lg">
               Request Early Access
             </button>
           </motion.div>

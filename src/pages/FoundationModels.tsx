@@ -127,8 +127,8 @@ export function FoundationModels() {
 
       {/* Metrics Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="glass rounded-3xl p-8 md:p-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="card-clean rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -139,11 +139,11 @@ export function FoundationModels() {
                   transition={{ delay: i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neural-400 to-plasma-400 bg-clip-text text-transparent mb-2">
+                  <div className="stat-display text-3xl sm:text-4xl mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-white font-medium mb-1">{metric.label}</div>
-                  <div className="text-sm text-neutral-500">{metric.description}</div>
+                  <div className="text-ink-900 font-medium mb-1">{metric.label}</div>
+                  <div className="text-sm text-ink-500">{metric.description}</div>
                 </motion.div>
               ))}
             </div>
@@ -153,26 +153,23 @@ export function FoundationModels() {
 
       {/* Capabilities Section */}
       <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 dot-pattern opacity-30" />
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-neural-600/10 rounded-full blur-3xl -translate-y-1/2" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-neural-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Core Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               AI built for the{' '}
-              <span className="bg-gradient-to-r from-neural-400 to-plasma-400 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 physical world
               </span>
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 max-w-2xl mx-auto">
               Traditional AI understands text and images. Our models understand physics, space, and action.
             </p>
           </motion.div>
@@ -184,13 +181,13 @@ export function FoundationModels() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift group"
+                className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-neural-400/20 to-plasma-400/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-neural-400" />
+                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
-                <p className="text-neutral-400">{cap.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
+                <p className="text-ink-400">{cap.description}</p>
               </motion.div>
             ))}
           </div>
@@ -199,23 +196,19 @@ export function FoundationModels() {
 
       {/* Research Areas Section */}
       <section ref={researchRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-plasma-600/10 rounded-full blur-3xl -translate-y-1/2" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isResearchInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-plasma-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Research Focus
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Pushing the{' '}
-              <span className="bg-gradient-to-r from-neural-400 to-plasma-400 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 boundaries
               </span>
             </h2>
@@ -228,22 +221,22 @@ export function FoundationModels() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isResearchInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift"
+                className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-neural-400/20 to-plasma-400/20 flex items-center justify-center">
-                    <area.icon className="w-7 h-7 text-neural-400" />
+                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center">
+                    <area.icon className="w-7 h-7 text-amber-600" />
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                     area.status === 'Active'
-                      ? 'bg-green-500/20 text-green-400'
-                      : 'bg-yellow-500/20 text-yellow-400'
+                      ? 'bg-green-50 text-green-700'
+                      : 'bg-amber-50 text-amber-700'
                   }`}>
                     {area.status}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{area.title}</h3>
-                <p className="text-neutral-400">{area.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{area.title}</h3>
+                <p className="text-ink-400">{area.description}</p>
               </motion.div>
             ))}
           </div>
@@ -252,23 +245,23 @@ export function FoundationModels() {
 
       {/* Applications Section */}
       <section ref={applicationsRef} className="relative py-32 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isApplicationsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-neural-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Cross-Platform Intelligence
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               One foundation.{' '}
-              <span className="bg-gradient-to-r from-neural-400 to-plasma-400 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 Infinite applications.
               </span>
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 max-w-2xl mx-auto">
               The same core intelligence powers every Autosapien product—adapted and optimized for each domain.
             </p>
           </motion.div>
@@ -280,16 +273,16 @@ export function FoundationModels() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isApplicationsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-3xl p-6 text-center hover-lift"
+                className="card-clean rounded-xl p-6 text-center hover-lift"
               >
                 <div className="text-4xl mb-4">{app.icon}</div>
-                <h3 className="text-lg font-bold text-white mb-2">{app.name}</h3>
-                <p className="text-sm text-neutral-500 mb-4">{app.description}</p>
+                <h3 className="text-lg font-bold text-ink-900 mb-2">{app.name}</h3>
+                <p className="text-sm text-ink-500 mb-4">{app.description}</p>
                 <div className="space-y-2">
                   {app.models.map((model) => (
                     <div
                       key={model}
-                      className="text-xs text-neutral-400 px-3 py-1 rounded-lg bg-white/5"
+                      className="text-xs text-ink-500 px-3 py-1 rounded-lg bg-surface-100"
                     >
                       {model}
                     </div>
@@ -303,24 +296,24 @@ export function FoundationModels() {
 
       {/* Philosophy Section */}
       <section className="relative py-20">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-3xl p-12 text-center relative overflow-hidden"
+            className="card-clean rounded-xl p-12 text-center relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-neural-400/10 to-plasma-400/10" />
+            <div className="absolute inset-0 bg-amber-50/50" />
             <div className="relative">
-              <Sparkles className="w-12 h-12 text-neural-400 mx-auto mb-6" />
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <Sparkles className="w-12 h-12 text-amber-600 mx-auto mb-6" />
+              <h2 className="text-3xl font-bold text-ink-900 mb-6">
                 Our Philosophy
               </h2>
-              <p className="text-lg text-neutral-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-ink-400 mb-8 max-w-2xl mx-auto leading-relaxed">
                 "Intelligence without embodiment is incomplete. A mind that cannot touch the world can only observe it.
                 We're building AI that doesn't just think—it acts, learns, and grows through physical interaction with reality."
               </p>
-              <div className="text-neutral-500">
+              <div className="text-ink-500">
                 — Autosapien Research Team
               </div>
             </div>
@@ -330,21 +323,21 @@ export function FoundationModels() {
 
       {/* CTA Section */}
       <section className="relative py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-3xl p-12"
+            className="card-clean rounded-xl p-12"
           >
-            <Cpu className="w-12 h-12 text-plasma-400 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <Cpu className="w-12 h-12 text-amber-600 mx-auto mb-6" />
+            <h2 className="text-3xl font-bold text-ink-900 mb-4">
               Join our research team
             </h2>
-            <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 mb-8 max-w-2xl mx-auto">
               We're looking for researchers, engineers, and dreamers who want to build the AI systems that will define the next century.
             </p>
-            <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-neural-400 to-plasma-400 text-white font-medium text-lg hover:opacity-90 transition-opacity">
+            <button className="btn-primary rounded-lg">
               View Open Positions
             </button>
           </motion.div>

@@ -51,25 +51,25 @@ const useCases = [
     title: 'Home Assistance',
     description: 'From cleaning and cooking to eldercare and companionship, Autosapien G1 becomes a helpful household member.',
     icon: Heart,
-    color: 'from-rose-500 to-pink-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Healthcare Support',
     description: 'Patient monitoring, medication management, mobility assistance, and clinical support in hospitals and care facilities.',
     icon: Activity,
-    color: 'from-emerald-500 to-cyan-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Industrial Operations',
     description: 'Flexible manufacturing, quality inspection, logistics, and human-robot collaboration on the factory floor.',
     icon: Zap,
-    color: 'from-cyber-500 to-blue-500',
+    color: 'from-amber-400 to-amber-600',
   },
   {
     title: 'Service & Hospitality',
     description: 'Customer service, concierge duties, warehouse operations, and any task requiring physical presence and intelligence.',
     icon: Users,
-    color: 'from-synth-500 to-amber-500',
+    color: 'from-amber-400 to-amber-600',
   },
 ]
 
@@ -110,20 +110,20 @@ export function Humanoid() {
 
       {/* Specifications Section */}
       <section ref={specsRef} className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isSpecsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-plasma-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Technical Specifications
             </span>
-            <h2 className="text-3xl font-bold text-white">Built to human scale</h2>
+            <h2 className="text-3xl font-bold text-ink-900">Built to human scale</h2>
           </motion.div>
 
-          <div className="glass rounded-3xl p-8 md:p-12">
+          <div className="card-clean rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {specifications.map((spec, i) => (
                 <motion.div
@@ -133,11 +133,11 @@ export function Humanoid() {
                   transition={{ delay: i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-plasma-500 to-neural-500 bg-clip-text text-transparent mb-1">
+                  <div className="stat-display text-3xl sm:text-4xl mb-1">
                     {spec.value}
                   </div>
-                  <div className="text-sm text-neutral-500 mb-1">{spec.unit}</div>
-                  <div className="text-white font-medium">{spec.label}</div>
+                  <div className="text-sm text-ink-500 mb-1">{spec.unit}</div>
+                  <div className="text-ink-900 font-medium">{spec.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -147,26 +147,23 @@ export function Humanoid() {
 
       {/* Capabilities Section */}
       <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 dot-pattern opacity-30" />
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-plasma-600/10 rounded-full blur-3xl -translate-y-1/2" />
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-neural-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Core Capabilities
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               More than a machine.{' '}
-              <span className="bg-gradient-to-r from-plasma-500 to-neural-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 A new species.
               </span>
             </h2>
-            <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 max-w-2xl mx-auto">
               Every capability engineered for the real world—messy, unpredictable, and infinitely complex.
             </p>
           </motion.div>
@@ -178,13 +175,13 @@ export function Humanoid() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift group"
+                className="card-clean rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-plasma-500/20 to-neural-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <cap.icon className="w-7 h-7 text-plasma-400" />
+                <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <cap.icon className="w-7 h-7 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{cap.title}</h3>
-                <p className="text-neutral-400">{cap.description}</p>
+                <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
+                <p className="text-ink-400">{cap.description}</p>
               </motion.div>
             ))}
           </div>
@@ -193,23 +190,19 @@ export function Humanoid() {
 
       {/* Use Cases Section */}
       <section ref={useCasesRef} className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-neural-600/10 rounded-full blur-3xl -translate-y-1/2" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isUseCasesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-sm text-plasma-400 mb-6">
+            <span className="label-mono text-amber-600 mb-4 block">
               Applications
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Everywhere humans need{' '}
-              <span className="bg-gradient-to-r from-plasma-500 to-neural-500 bg-clip-text text-transparent">
+              <span className="text-amber-500">
                 a helping hand
               </span>
             </h2>
@@ -222,15 +215,15 @@ export function Humanoid() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isUseCasesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="glass rounded-3xl p-8 hover-lift"
+                className="card-clean rounded-xl p-8 hover-lift"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${useCase.color} flex items-center justify-center`}>
-                    <useCase.icon className="w-7 h-7 text-white" />
+                  <div className="w-14 h-14 rounded-lg bg-amber-50 flex items-center justify-center">
+                    <useCase.icon className="w-7 h-7 text-ink-900" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">{useCase.title}</h3>
+                  <h3 className="text-xl font-bold text-ink-900">{useCase.title}</h3>
                 </div>
-                <p className="text-neutral-400">{useCase.description}</p>
+                <p className="text-ink-400">{useCase.description}</p>
               </motion.div>
             ))}
           </div>
@@ -239,18 +232,18 @@ export function Humanoid() {
 
       {/* Timeline Section */}
       <section className="relative py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Development Timeline</h3>
-            <p className="text-neutral-400">From prototype to production</p>
+            <h3 className="text-2xl font-bold text-ink-900 mb-4">Development Timeline</h3>
+            <p className="text-ink-400">From prototype to production</p>
           </motion.div>
 
-          <div className="glass rounded-3xl p-8">
+          <div className="card-clean rounded-xl p-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
               {timeline.map((item, i) => (
                 <motion.div
@@ -262,14 +255,14 @@ export function Humanoid() {
                   className="flex-1 text-center relative"
                 >
                   {i < timeline.length - 1 && (
-                    <div className="hidden md:block absolute top-4 left-1/2 w-full h-px bg-gradient-to-r from-plasma-500/50 to-transparent" />
+                    <div className="hidden md:block absolute top-4 left-1/2 w-full h-px bg-amber-400/30" />
                   )}
                   <div className={`w-8 h-8 rounded-full mx-auto mb-3 flex items-center justify-center ${
                     item.status === 'completed'
                       ? 'bg-green-500'
                       : item.status === 'current'
-                      ? 'bg-gradient-to-r from-plasma-500 to-neural-500 animate-pulse'
-                      : 'bg-white/10'
+                      ? 'bg-amber-400 animate-pulse'
+                      : 'bg-surface-100'
                   }`}>
                     {item.status === 'completed' && (
                       <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -277,8 +270,8 @@ export function Humanoid() {
                       </svg>
                     )}
                   </div>
-                  <div className="text-lg font-bold text-white mb-1">{item.year}</div>
-                  <div className="text-sm text-neutral-400">{item.milestone}</div>
+                  <div className="text-lg font-bold text-ink-900 mb-1">{item.year}</div>
+                  <div className="text-sm text-ink-400">{item.milestone}</div>
                 </motion.div>
               ))}
             </div>
@@ -288,20 +281,20 @@ export function Humanoid() {
 
       {/* CTA Section */}
       <section className="relative py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-3xl p-12"
+            className="card-clean rounded-xl p-12"
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-ink-900 mb-4">
               Be part of the future
             </h2>
-            <p className="text-lg text-neutral-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-ink-400 mb-8 max-w-2xl mx-auto">
               We're looking for beta partners across healthcare, manufacturing, and hospitality to help shape how humanoid robots integrate into our world.
             </p>
-            <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-plasma-500 to-neural-500 text-white font-medium text-lg hover:opacity-90 transition-opacity">
+            <button className="btn-primary rounded-lg">
               Join the Beta Program
             </button>
           </motion.div>
