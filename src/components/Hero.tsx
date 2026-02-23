@@ -150,7 +150,7 @@ export function Hero() {
           className="mt-12 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8"
         >
           {[
-            { value: '6', label: 'Core AI Verticals' },
+            { value: '6', label: 'Core AI Verticals', href: '#capabilities' },
             { value: '#1', label: 'AI-Powered Healthcare IT', href: 'https://xehr.io' },
             { value: '1st', label: 'Humanoid in Development' },
             { value: '24/7', label: 'Agentic AI FTEs', href: 'https://rcmemployee.com' },
@@ -163,7 +163,7 @@ export function Hero() {
               className="text-center"
             >
               {stat.href ? (
-                <a href={stat.href} target="_blank" rel="noopener noreferrer" className="group">
+                <a href={stat.href} {...(stat.href.startsWith('#') ? {} : { target: '_blank', rel: 'noopener noreferrer' })} className="group">
                   <div className="text-2xl sm:text-4xl font-bold gradient-text mb-1 group-hover:opacity-80 transition-opacity">{stat.value}</div>
                   <div className="text-xs sm:text-sm text-neutral-500 group-hover:text-neutral-300 transition-colors">{stat.label}</div>
                 </a>

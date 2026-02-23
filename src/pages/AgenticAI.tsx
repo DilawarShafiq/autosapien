@@ -104,17 +104,22 @@ export function AgenticAI() {
     <>
       <PageHero
         icon={Bot}
-        category="AI/Robotics"
+        category="AI FTEs & Custom Agents"
         title="Agentic AI Workforce"
-        subtitle="AI agents that work like your best employees"
-        description="Autonomous AI agents that handle complex multi-step workflows end-to-end. From patient intake to claim submission, our agents work 24/7 with superhuman accuracy and speed."
+        subtitle="AI FTEs that work 24/7 for USA healthcare providers"
+        description="We build and deploy autonomous AI FTEs for USA healthcare providers—including RCM Employee (rcmemployee.com) for revenue cycle management. From workflow automation and RCM automation to custom agents for administrative tasks, our AI workforce handles complex multi-step operations end-to-end."
         status="active"
         gradient="from-neural-500 to-plasma-500"
         features={[
+          'RCM Employee (rcmemployee.com)',
+          'Workflow Automation',
+          'RCM Automation',
+          'Custom Agent Development',
           'Autonomous Agents',
           'Multi-Step Workflows',
           'Self-Learning',
           'Human-in-the-Loop',
+          'HIPAA Compliant',
           '24/7 Operations',
           'Full Observability',
         ]}
