@@ -184,7 +184,7 @@ export function Hero() {
                   className="block p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center group hover:border-amber-300 hover:shadow-elevated transition-all duration-300"
                 >
                   <div className="mb-2">
-                    <span className={`stat-display-gold group-hover:opacity-80 transition-opacity ${stat.value.length > 5 ? 'text-lg sm:text-2xl md:text-3xl' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
+                    <span className={`stat-display-gold group-hover:opacity-80 transition-opacity ${stat.value.length > 5 ? 'text-sm sm:text-base md:text-lg' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
                       <AnimatedNumber value={stat.value} />
                     </span>
                   </div>
@@ -193,7 +193,7 @@ export function Hero() {
               ) : (
                 <div className="p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center">
                   <div className="mb-2">
-                    <span className={`stat-display-gold ${stat.value.length > 5 ? 'text-lg sm:text-2xl md:text-3xl' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
+                    <span className={`stat-display-gold ${stat.value.length > 5 ? 'text-sm sm:text-base md:text-lg' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
                       <AnimatedNumber value={stat.value} />
                     </span>
                   </div>
