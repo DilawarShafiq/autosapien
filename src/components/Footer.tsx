@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Zap, ArrowUp } from 'lucide-react'
+import { ArrowUp } from 'lucide-react'
 
 const footerLinks = {
   company: [
@@ -50,13 +50,12 @@ export function Footer() {
               className="inline-block mb-6"
               whileHover={{ scale: 1.02 }}
             >
-              <Link to="/" className="inline-flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-neural-500 via-plasma-500 to-cyber-500 flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold tracking-tight">
-                  Auto<span className="gradient-text">sapien</span>
-                </span>
+              <Link to="/" className="inline-flex items-center">
+                <img
+                  src="/logo.png"
+                  alt="Autosapien"
+                  className="h-10 w-auto"
+                />
               </Link>
             </motion.div>
             <p className="text-neutral-400 text-sm mb-6 max-w-xs">
