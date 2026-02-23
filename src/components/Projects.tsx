@@ -45,9 +45,8 @@ const projects = [
     icon: Heart,
     gradient: 'from-rose-500 to-pink-500',
     features: ['AI Clinical Documentation', 'Autonomous RCM', 'FHIR R4 Native', '98% Clean Claims'],
-    metrics: { value: '#1', label: 'AI-Powered Healthcare IT' },
-    status: 'active',
     metrics: { value: 'Live', label: 'xEHR.io' },
+    status: 'active',
   },
   {
     id: 'film-studio',
@@ -226,21 +225,12 @@ export function Projects() {
                       {/* Footer */}
                       <div className="flex items-center justify-between pt-4 border-t border-white/5">
                         <div>
-                          {project.status === 'launching' ? (
-                            <>
-                              <div className={`font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent ${project.featured ? 'text-3xl' : 'text-2xl'}`}>
-                                {project.launchDate}
-                              </div>
-                              <div className="text-xs text-neutral-500">Launch Date</div>
-                            </>
-                          ) : (
-                            <>
-                              <div className={`font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent ${project.featured ? 'text-3xl' : 'text-2xl'}`}>
-                                {project.metrics.value}
-                              </div>
-                              <div className="text-xs text-neutral-500">{project.metrics.label}</div>
-                            </>
-                          )}
+                          <>
+                            <div className={`font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent ${project.featured ? 'text-3xl' : 'text-2xl'}`}>
+                              {project.metrics.value}
+                            </div>
+                            <div className="text-xs text-neutral-500">{project.metrics.label}</div>
+                          </>
                         </div>
                         <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
                           <ArrowUpRight className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
