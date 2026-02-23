@@ -218,13 +218,13 @@ function FloatingWireframe() {
   })
 
   return (
-    <mesh ref={meshRef} position={[8, 2, -5]}>
+    <mesh ref={meshRef} position={[10, -4, -8]}>
       <icosahedronGeometry args={[2.5, 1]} />
       <meshBasicMaterial
-        color="#d4a84b"
+        color="#e8c86a"
         wireframe
         transparent
-        opacity={0.06}
+        opacity={0.04}
       />
     </mesh>
   )
@@ -242,13 +242,13 @@ function FloatingOctahedron() {
   })
 
   return (
-    <mesh ref={meshRef} position={[-10, -3, -8]}>
+    <mesh ref={meshRef} position={[-12, -5, -10]}>
       <octahedronGeometry args={[2, 0]} />
       <meshBasicMaterial
-        color="#d4a84b"
+        color="#e8c86a"
         wireframe
         transparent
-        opacity={0.05}
+        opacity={0.03}
       />
     </mesh>
   )

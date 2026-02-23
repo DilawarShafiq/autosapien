@@ -60,20 +60,6 @@ export function Hero() {
         style={{ opacity, y }}
         className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-0"
       >
-        {/* Top rule with annotation */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="flex items-center gap-4 mb-12 sm:mb-16 max-w-4xl mx-auto"
-        >
-          <div className="h-px flex-1 bg-surface-300" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-300">Autosapien</span>
-          <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-300">2024</span>
-          <div className="h-px flex-1 bg-surface-300" />
-        </motion.div>
-
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
