@@ -1,5 +1,5 @@
 import { useRef, useMemo } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 
 function Particles() {
@@ -104,23 +104,27 @@ function GeometricShapes() {
   )
 }
 
+function SceneSetup() {
+  const { scene } = useThree()
+  scene.background = new THREE.Color('#ffffff')
+  return null
+}
+
 export function ParticleField() {
   return (
     <div className="fixed inset-0 z-0">
       <Canvas
         camera={{ position: [0, 0, 15], fov: 60 }}
-        gl={{ antialias: true, alpha: true }}
+        gl={{ antialias: true }}
         style={{ background: '#ffffff' }}
         dpr={[1, 1.5]}
+        onCreated={({ scene }) => { scene.background = new THREE.Color('#ffffff') }}
       >
+        <SceneSetup />
         <Particles />
         <GridLines />
         <GeometricShapes />
       </Canvas>
-
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-carbon-900 via-transparent to-carbon-900 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-carbon-900/50 via-transparent to-carbon-900/50 pointer-events-none" />
     </div>
   )
 }
