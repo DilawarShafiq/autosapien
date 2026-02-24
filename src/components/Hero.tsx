@@ -219,7 +219,7 @@ export function Hero() {
           className="flex flex-col items-center gap-3"
         >
           <span className="label-mono text-[9px]">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-surface-300 to-transparent" />
+          <div className="w-[2px] h-10 bg-gradient-to-b from-ink-400 to-transparent" />
         </motion.div>
       </motion.div>
 

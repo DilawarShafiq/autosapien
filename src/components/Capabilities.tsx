@@ -79,7 +79,7 @@ export function Capabilities() {
                 className={`relative flex-none lg:w-full min-w-[180px] lg:min-w-0 p-4 text-left transition-all duration-300 group rounded-lg ${
                   activeCapability.id === cap.id
                     ? 'bg-white shadow-card'
-                    : 'hover:bg-white hover:shadow-card'
+                    : 'bg-surface-100 hover:bg-white hover:shadow-card'
                 }`}
               >
                 {/* Sliding indicator bar */}
