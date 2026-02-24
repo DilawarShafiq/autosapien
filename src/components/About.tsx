@@ -153,9 +153,6 @@ export function About() {
               {/* Top gradient accent line on hover */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-              {/* Code watermark */}
-              <div className="absolute top-3 right-3 font-mono text-[10px] text-ink-200/40 select-none">{pillar.code}</div>
-
               <div className="flex items-start justify-between mb-4">
                 <div className="w-10 h-10 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <pillar.icon className="w-5 h-5 text-ink-400 group-hover:text-sky-600 transition-colors" />
@@ -174,6 +171,7 @@ export function About() {
                 )}
               </div>
 
+              <span className="label-mono text-[10px] text-ink-500">{pillar.code}</span>
               <h3 className="font-display font-semibold text-ink-900 mb-2 group-hover:text-sky-700 transition-colors">
                 {pillar.title}
               </h3>
