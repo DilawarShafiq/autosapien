@@ -340,6 +340,77 @@
       linear-gradient(90deg, rgba(0, 0, 0, 0.018) 1px, transparent 1px);
     background-size: 60px 60px;
   }
+
+  /* =============================================
+     DOT GRID - Subtle radial dot pattern
+     ============================================= */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(0, 133, 212, 0.07) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* =============================================
+     HOVER GLOW - Sky-blue glow on hover
+     ============================================= */
+  .hover-glow {
+    transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(0, 133, 212, 0.12), 0 8px 32px rgba(0, 133, 212, 0.08);
+  }
+
+  /* =============================================
+     NUMBER MARKER - Large faded section numbers
+     ============================================= */
+  .number-marker {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    color: rgba(0, 133, 212, 0.08);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* =============================================
+     SECTION ACCENT TOP - Thin gradient line
+     ============================================= */
+  .section-accent-top {
+    position: relative;
+  }
+
+  .section-accent-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(80%, 600px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 133, 212, 0.3), transparent);
+  }
+
+  /* =============================================
+     ACCENT UNDERLINE - Animated underline on hover
+     ============================================= */
+  .accent-underline {
+    position: relative;
+  }
+
+  .accent-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, #0085d4, #3aa0f0);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .accent-underline:hover::after {
+    width: 100%;
+  }
 }
 
 @layer utilities {

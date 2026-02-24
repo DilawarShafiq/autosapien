@@ -52,7 +52,10 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#fafafa' }}>
+    <section id="about" className="relative py-24 sm:py-40 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+      {/* Number watermark */}
+      <div className="absolute top-8 left-8 sm:top-12 sm:left-16 number-marker text-[120px] sm:text-[180px] select-none">01</div>
+
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 sm:gap-20 items-start mb-28">
           {/* Left */}
@@ -62,7 +65,11 @@ export function About() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="label-mono text-sky-600 mb-6 block">About</span>
+            {/* Label with gradient accent line */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className="label-mono text-sky-600">About</span>
+              <div className="h-px w-16 bg-gradient-to-r from-sky-400/60 to-transparent" />
+            </div>
 
             <h2 className="font-display font-bold text-display-lg mb-8">
               Creating machines that understand humanity
@@ -93,14 +100,17 @@ export function About() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="card-tinted p-6 sm:p-10 rounded-xl">
+            <div className="bg-white border border-surface-200 p-6 sm:p-10 rounded-xl hover-glow relative overflow-hidden transition-all duration-400">
+              {/* Top gradient accent line */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
+
               <div className="flex items-center justify-between mb-8">
                 <span className="label-mono">Vision</span>
                 <span className="label-mono">VS-001</span>
               </div>
 
-              <blockquote>
-                <div className="text-5xl font-display font-bold text-sky-300/60 absolute -mt-2 -ml-1">"</div>
+              <blockquote className="border-l-2 border-sky-400/40">
+                <div className="text-5xl font-display font-bold text-sky-300/60 absolute -mt-2 ml-4">"</div>
                 <p className="text-lg sm:text-xl lg:text-2xl text-ink-800 font-display leading-relaxed pl-6">
                   We believe the defining technology of this century won't be artificial intelligence
                   in isolation—it will be artificial intelligence given a body, purpose, and the
@@ -140,10 +150,16 @@ export function About() {
               initial={{ opacity: 0, y: 25 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5 + i * 0.06, duration: 0.5 }}
-              className="group card-clean p-6 rounded-xl hover-lift cursor-pointer"
+              className="group card-clean p-6 rounded-xl hover-lift hover-glow cursor-pointer relative overflow-hidden hover:border-sky-200/50 transition-colors"
             >
+              {/* Top gradient accent line on hover */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+              {/* Code watermark */}
+              <div className="absolute top-3 right-3 font-mono text-[10px] text-ink-200/40 select-none">{pillar.code}</div>
+
               <div className="flex items-start justify-between mb-4">
-                <div className="w-10 h-10 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-sky-50 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <pillar.icon className="w-5 h-5 text-ink-400 group-hover:text-sky-600 transition-colors" />
                 </div>
                 {pillar.status === 'developing' && (
@@ -168,7 +184,7 @@ export function About() {
                 {pillar.description}
               </p>
 
-              <div className="mt-5 pt-4 border-t border-surface-200 flex items-center justify-between">
+              <div className="mt-5 pt-4 border-t border-surface-200 group-hover:border-sky-200/50 transition-colors flex items-center justify-between">
                 <span className="label-mono text-[10px]">Learn More</span>
                 <ArrowUpRight className="w-4 h-4 text-ink-300 group-hover:text-sky-600 transition-colors" />
               </div>

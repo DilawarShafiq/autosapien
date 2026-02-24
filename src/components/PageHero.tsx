@@ -44,7 +44,12 @@ export function PageHero({
   }, [])
 
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-24" style={{ background: '#fafafa' }}>
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-24 dot-grid" style={{ background: '#fafafa' }}>
+      {/* Large faded code watermark */}
+      <div className="hidden sm:block absolute top-24 right-8 sm:right-16 number-marker text-[120px] sm:text-[160px] select-none" style={{ color: 'rgba(0, 133, 212, 0.05)' }}>
+        {code}
+      </div>
+
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 w-full">
         {/* Back */}
         <motion.div
@@ -54,9 +59,9 @@ export function PageHero({
         >
           <Link
             to="/"
-            className="inline-flex items-center gap-3 text-ink-400 hover:text-ink-900 transition-colors mb-12 group"
+            className="inline-flex items-center gap-3 text-ink-400 hover:text-sky-600 transition-colors mb-12 group"
           >
-            <div className="w-9 h-9 rounded-full border border-surface-300 flex items-center justify-center group-hover:border-ink-900 transition-colors">
+            <div className="w-9 h-9 rounded-full border border-surface-300 flex items-center justify-center group-hover:border-sky-400 group-hover:bg-sky-50 transition-all">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
             </div>
             <span className="font-body text-sm">Back to Home</span>
@@ -149,10 +154,10 @@ export function PageHero({
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + i * 0.06 }}
-                  className="card-clean p-5 rounded-xl group hover-lift"
+                  className="card-clean p-5 rounded-xl group hover-lift hover-glow hover:border-sky-200/50 transition-colors"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-surface-100 flex items-center justify-center mb-3 group-hover:bg-sky-50 transition-colors">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-500" />
+                  <div className="w-8 h-8 rounded-lg bg-surface-100 flex items-center justify-center mb-3 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
+                    <span className="font-mono text-[10px] font-bold text-sky-600/60">{String(i + 1).padStart(2, '0')}</span>
                   </div>
                   <p className="text-ink-900 font-display font-medium text-sm">{feature}</p>
                 </motion.div>
@@ -162,7 +167,7 @@ export function PageHero({
         </div>
       </div>
 
-      <div className="divider absolute bottom-0 left-0 right-0" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
     </section>
   )
 }

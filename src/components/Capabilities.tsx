@@ -41,7 +41,10 @@ export function Capabilities() {
   const [activeCapability, setActiveCapability] = useState(capabilities[0])
 
   return (
-    <section id="capabilities" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#ffffff' }}>
+    <section id="capabilities" className="relative py-24 sm:py-40 overflow-hidden section-accent-top" style={{ background: '#ffffff' }}>
+      {/* Number watermark */}
+      <div className="absolute top-8 right-8 sm:top-12 sm:right-16 number-marker text-[120px] sm:text-[180px] select-none">02</div>
+
       <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -49,7 +52,12 @@ export function Capabilities() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="label-mono text-sky-600 mb-4 block">Capabilities</span>
+          {/* Centered label with flanking gradient lines */}
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-sky-300/50" />
+            <span className="label-mono text-sky-600">Capabilities</span>
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-sky-300/50" />
+          </div>
           <h2 className="font-display font-bold text-display-lg mb-5">
             Six frontiers of innovation
           </h2>
@@ -65,18 +73,26 @@ export function Capabilities() {
             initial={{ opacity: 0, x: -25 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 -mx-4 px-4 lg:mx-0 lg:px-0"
+            className="relative flex lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 -mx-4 px-4 lg:mx-0 lg:px-0"
           >
             {capabilities.map((cap) => (
               <button
                 key={cap.id}
                 onClick={() => setActiveCapability(cap)}
-                className={`flex-none lg:w-full min-w-[180px] lg:min-w-0 p-4 text-left transition-all duration-300 group rounded-lg border ${
+                className={`relative flex-none lg:w-full min-w-[180px] lg:min-w-0 p-4 text-left transition-all duration-300 group rounded-lg ${
                   activeCapability.id === cap.id
-                    ? 'bg-white border-sky-300 shadow-card'
-                    : 'border-transparent hover:bg-white hover:shadow-card'
+                    ? 'bg-white shadow-card'
+                    : 'hover:bg-white hover:shadow-card'
                 }`}
               >
+                {/* Sliding indicator bar */}
+                {activeCapability.id === cap.id && (
+                  <motion.div
+                    layoutId="capability-indicator"
+                    className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-sky-500"
+                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                  />
+                )}
                 <div className="flex items-center gap-3">
                   <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all ${
                     activeCapability.id === cap.id ? 'bg-sky-100' : 'bg-surface-100 group-hover:bg-surface-200'
@@ -115,50 +131,56 @@ export function Capabilities() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.25 }}
-                className="card-clean p-6 sm:p-8 lg:p-10 h-full rounded-xl"
+                className="card-clean p-6 sm:p-8 lg:p-10 h-full rounded-xl relative overflow-hidden"
               >
-                <div className="flex items-start justify-between mb-6 flex-wrap gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center">
-                      <activeCapability.icon className="w-6 h-6 text-sky-600" />
+                {/* Dot grid texture behind content */}
+                <div className="absolute inset-0 dot-grid pointer-events-none opacity-50" />
+
+                <div className="relative">
+                  <div className="flex items-start justify-between mb-6 flex-wrap gap-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center">
+                        <activeCapability.icon className="w-6 h-6 text-sky-600" />
+                      </div>
+                      <div>
+                        <span className="label-mono text-[10px] text-sky-600">{activeCapability.code}</span>
+                        <h3 className="font-display font-bold text-xl text-ink-900">{activeCapability.title}</h3>
+                      </div>
                     </div>
-                    <div>
-                      <span className="label-mono text-[10px] text-sky-600">{activeCapability.code}</span>
-                      <h3 className="font-display font-bold text-xl text-ink-900">{activeCapability.title}</h3>
-                    </div>
+                    {activeCapability.status === 'developing' && (
+                      <span className="badge-pill badge-sky rounded-full"><span className="status-dot developing" />Development</span>
+                    )}
+                    {activeCapability.status === 'active' && (
+                      <span className="badge-pill badge-live rounded-full"><span className="status-dot active" />Live</span>
+                    )}
                   </div>
-                  {activeCapability.status === 'developing' && (
-                    <span className="badge-pill badge-sky rounded-full"><span className="status-dot developing" />Development</span>
-                  )}
-                  {activeCapability.status === 'active' && (
-                    <span className="badge-pill badge-live rounded-full"><span className="status-dot active" />Live</span>
-                  )}
+
+                  <p className="text-sky-700 font-display font-semibold text-sm mb-4">{activeCapability.subtitle}</p>
+                  <p className="text-ink-500 font-body mb-8 leading-relaxed">{activeCapability.description}</p>
+
+                  <div className="grid sm:grid-cols-2 gap-3 mb-8">
+                    {activeCapability.features.map((feature, i) => (
+                      <motion.div
+                        key={feature}
+                        initial={{ opacity: 0, x: -8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.06 }}
+                        className="flex items-center gap-3 p-3 rounded-lg border border-surface-200 hover:border-sky-200/50 transition-colors bg-white"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-sky-500 flex-shrink-0" />
+                        <span className="text-sm text-ink-700 font-body">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  <button className="btn-primary group rounded-lg relative overflow-hidden">
+                    <span className="relative z-10 flex items-center gap-3">
+                      Explore {activeCapability.title}
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 bg-sky-700 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
+                  </button>
                 </div>
-
-                <p className="text-sky-700 font-display font-semibold text-sm mb-4">{activeCapability.subtitle}</p>
-                <p className="text-ink-500 font-body mb-8 leading-relaxed">{activeCapability.description}</p>
-
-                <div className="grid sm:grid-cols-2 gap-3 mb-8">
-                  {activeCapability.features.map((feature, i) => (
-                    <motion.div
-                      key={feature}
-                      initial={{ opacity: 0, x: -8 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.06 }}
-                      className="flex items-center gap-3 p-3 bg-surface-50 rounded-lg"
-                    >
-                      <div className="w-1 h-1 rounded-full bg-sky-500" />
-                      <span className="text-sm text-ink-700 font-body">{feature}</span>
-                    </motion.div>
-                  ))}
-                </div>
-
-                <button className="btn-primary group rounded-lg">
-                  <span className="flex items-center gap-3">
-                    Explore {activeCapability.title}
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </button>
               </motion.div>
             </AnimatePresence>
           </motion.div>

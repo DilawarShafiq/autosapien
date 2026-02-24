@@ -73,6 +73,7 @@ export default {
         'fade-in': 'fadeIn 0.8s ease-out forwards',
         'slide-up': 'slideUp 1s ease-out forwards',
         'glow-pulse': 'glowPulse 4s ease-in-out infinite',
+        'border-glow': 'borderGlow 3s ease-in-out infinite',
       },
       keyframes: {
         scan: {
@@ -99,11 +100,16 @@ export default {
           '0%, 100%': { opacity: '0.4' },
           '50%': { opacity: '0.8' },
         },
+        borderGlow: {
+          '0%, 100%': { borderColor: 'rgba(0, 133, 212, 0.15)' },
+          '50%': { borderColor: 'rgba(0, 133, 212, 0.4)' },
+        },
       },
       boxShadow: {
         'card': '0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.03)',
         'card-hover': '0 4px 12px rgba(0,0,0,0.06), 0 12px 40px rgba(0,0,0,0.06)',
         'elevated': '0 8px 30px rgba(0,0,0,0.08)',
+        'glow-sky': '0 0 20px rgba(0, 133, 212, 0.12), 0 8px 32px rgba(0, 133, 212, 0.08)',
       },
     },
   },

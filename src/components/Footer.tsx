@@ -99,16 +99,20 @@ export function Footer() {
         <div className="pt-6 border-t border-surface-200">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="text-xs text-ink-400 font-body">&copy; {new Date().getFullYear()} Autosapien. All rights reserved.</span>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500" />
+              </span>
+              <span className="text-xs text-ink-900 font-body">&copy; {new Date().getFullYear()} Autosapien (Pvt) Ltd. All rights reserved.</span>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="text-xs text-ink-400 font-body">Engineering intelligence into existence</span>
+            <div className="flex items-center gap-5">
+              <span className="text-[10px] text-ink-600 font-mono uppercase tracking-[0.2em]">Engineering intelligence into existence</span>
               <button
                 onClick={scrollToTop}
-                className="w-8 h-8 rounded-full border border-surface-300 flex items-center justify-center hover:bg-ink-900 hover:border-ink-900 transition-all group"
+                className="w-8 h-8 rounded-full border border-surface-300 flex items-center justify-center hover:bg-sky-600 hover:border-sky-600 transition-all group"
                 aria-label="Scroll to top"
               >
-                <ArrowUp className="w-3.5 h-3.5 text-ink-400 group-hover:text-white transition-colors" />
+                <ArrowUp className="w-3.5 h-3.5 text-ink-500 group-hover:text-white transition-colors" />
               </button>
             </div>
           </div>
