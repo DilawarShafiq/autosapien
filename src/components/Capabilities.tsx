@@ -41,7 +41,7 @@ export function Capabilities() {
   const [activeCapability, setActiveCapability] = useState(capabilities[0])
 
   return (
-    <section id="capabilities" className="relative py-24 sm:py-40 overflow-hidden section-accent-top" style={{ background: '#ffffff' }}>
+    <section id="capabilities" className="relative py-24 sm:py-40 section-accent-top" style={{ background: '#ffffff', overflowX: 'clip' }}>
       <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 25 }}

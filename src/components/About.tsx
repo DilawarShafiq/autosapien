@@ -52,7 +52,7 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="relative py-24 sm:py-40 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+    <section id="about" className="relative py-24 sm:py-40 dot-grid" style={{ background: '#fafafa', overflowX: 'clip' }}>
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 sm:gap-20 items-start mb-28">
           {/* Left */}

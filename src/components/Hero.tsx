@@ -48,7 +48,8 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center"
+      style={{ overflowX: 'clip' }}
     >
       {/* Soft radial warmth behind headline — no heavy frosted overlay */}
       <div

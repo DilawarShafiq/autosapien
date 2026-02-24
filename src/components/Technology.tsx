@@ -46,7 +46,7 @@ export function Technology() {
   const x2 = useTransform(scrollYProgress, [0, 1], [0, 200])
 
   return (
-    <section id="technology" ref={containerRef} className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#f5f5f5' }}>
+    <section id="technology" ref={containerRef} className="relative py-24 sm:py-40" style={{ background: '#f5f5f5', overflowX: 'clip' }}>
       {/* Top gradient divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(80%,600px)] h-px bg-gradient-to-r from-transparent via-sky-300/30 to-transparent" />
 

@@ -63,16 +63,6 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Right side */}
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="hidden md:block text-sm font-body text-ink-400"
-            >
-              AI & Robotics
-            </motion.span>
-
             {/* Mobile toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

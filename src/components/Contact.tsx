@@ -7,7 +7,7 @@ export function Contact() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="contact" className="relative py-24 sm:py-40 overflow-hidden section-accent-top" style={{ background: '#ffffff' }}>
+    <section id="contact" className="relative py-24 sm:py-40 section-accent-top" style={{ background: '#ffffff', overflowX: 'clip' }}>
       {/* Radial sky glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,133,212,0.04) 0%, transparent 70%)' }} />
 

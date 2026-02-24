@@ -48,7 +48,7 @@ export function Projects() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="projects" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#fafafa' }}>
+    <section id="projects" className="relative py-24 sm:py-40" style={{ background: '#fafafa', overflowX: 'clip' }}>
       {/* Top gradient divider line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(80%,600px)] h-px bg-gradient-to-r from-transparent via-sky-300/30 to-transparent" />
 
