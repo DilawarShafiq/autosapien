@@ -85,23 +85,6 @@ export function About() {
               </p>
             </div>
 
-            {/* Team */}
-            <div className="mt-10 flex items-center gap-5">
-              <div className="flex -space-x-2">
-                {[0, 1, 2, 3].map((i) => (
-                  <div
-                    key={i}
-                    className="w-9 h-9 rounded-full bg-surface-100 border-2 border-white flex items-center justify-center"
-                  >
-                    <span className="text-[10px] font-mono text-ink-400">{String(i + 1).padStart(2, '0')}</span>
-                  </div>
-                ))}
-              </div>
-              <div>
-                <div className="text-ink-900 font-display font-semibold text-sm">Multidisciplinary Team</div>
-                <div className="label-mono text-[10px]">Roboticists · AI Researchers · Healthcare Experts</div>
-              </div>
-            </div>
           </motion.div>
 
           {/* Right - Quote */}
