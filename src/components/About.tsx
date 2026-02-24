@@ -53,9 +53,6 @@ export function About() {
 
   return (
     <section id="about" className="relative py-24 sm:py-40 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
-      {/* Number watermark */}
-      <div className="absolute top-8 left-8 sm:top-12 sm:left-16 number-marker text-[120px] sm:text-[180px] select-none">01</div>
-
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 sm:gap-20 items-start mb-28">
           {/* Left */}
@@ -176,7 +173,7 @@ export function About() {
                 )}
               </div>
 
-              <span className="label-mono text-[10px] text-ink-300">{pillar.code}</span>
+              <span className="label-mono text-[10px] text-ink-500">{pillar.code}</span>
               <h3 className="font-display font-semibold text-ink-900 mb-2 group-hover:text-sky-700 transition-colors">
                 {pillar.title}
               </h3>
@@ -186,7 +183,7 @@ export function About() {
 
               <div className="mt-5 pt-4 border-t border-surface-200 group-hover:border-sky-200/50 transition-colors flex items-center justify-between">
                 <span className="label-mono text-[10px]">Learn More</span>
-                <ArrowUpRight className="w-4 h-4 text-ink-300 group-hover:text-sky-600 transition-colors" />
+                <ArrowUpRight className="w-4 h-4 text-ink-500 group-hover:text-sky-600 transition-colors" />
               </div>
             </motion.div>
           ))}

@@ -49,9 +49,6 @@ export function Projects() {
 
   return (
     <section id="projects" className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#fafafa' }}>
-      {/* Number watermark */}
-      <div className="absolute top-8 left-8 sm:top-12 sm:left-16 number-marker text-[120px] sm:text-[180px] select-none">03</div>
-
       {/* Top gradient divider line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(80%,600px)] h-px bg-gradient-to-r from-transparent via-sky-300/30 to-transparent" />
 
@@ -170,7 +167,7 @@ export function Projects() {
                       )}
                     </div>
 
-                    <span className="label-mono text-[10px] text-ink-300">{project.code}</span>
+                    <span className="label-mono text-[10px] text-ink-500">{project.code}</span>
                     <h3 className="font-display font-bold text-lg text-ink-900 group-hover:text-sky-700 transition-colors">
                       {project.title}
                     </h3>

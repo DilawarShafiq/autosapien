@@ -32,9 +32,6 @@ export function Technology() {
 
   return (
     <section id="technology" ref={containerRef} className="relative py-24 sm:py-40 overflow-hidden" style={{ background: '#f5f5f5' }}>
-      {/* Number watermark */}
-      <div className="absolute top-8 right-8 sm:top-12 sm:right-16 number-marker text-[120px] sm:text-[180px] select-none">04</div>
-
       {/* Top gradient divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(80%,600px)] h-px bg-gradient-to-r from-transparent via-sky-300/30 to-transparent" />
 
@@ -127,7 +124,7 @@ export function Technology() {
             <div className="relative">
               <div className="flex items-center justify-between mb-10">
                 <h3 className="font-display font-bold text-xl text-ink-900">System Architecture</h3>
-                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink-300">ARCH-001</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-ink-500">ARCH-001</span>
               </div>
 
               <div className="grid lg:grid-cols-3 gap-4 relative">

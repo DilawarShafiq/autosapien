@@ -77,7 +77,7 @@ export function Hero() {
         transition={{ duration: 1, delay: 1.2 }}
         className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 items-center"
       >
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-300 -rotate-90 origin-center whitespace-nowrap">
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500 -rotate-90 origin-center whitespace-nowrap">
           Autosapien (Pvt) Ltd — Est. 2024
         </span>
       </motion.div>
@@ -87,7 +87,7 @@ export function Hero() {
         transition={{ duration: 1, delay: 1.2 }}
         className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 items-center"
       >
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-300 rotate-90 origin-center whitespace-nowrap">
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500 rotate-90 origin-center whitespace-nowrap">
           Engineering Intelligence
         </span>
       </motion.div>

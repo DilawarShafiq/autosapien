@@ -42,9 +42,6 @@ export function Capabilities() {
 
   return (
     <section id="capabilities" className="relative py-24 sm:py-40 overflow-hidden section-accent-top" style={{ background: '#ffffff' }}>
-      {/* Number watermark */}
-      <div className="absolute top-8 right-8 sm:top-12 sm:right-16 number-marker text-[120px] sm:text-[180px] select-none">02</div>
-
       <div ref={ref} className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 25 }}

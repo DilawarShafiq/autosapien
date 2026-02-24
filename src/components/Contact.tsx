@@ -11,9 +11,6 @@ export function Contact() {
       {/* Radial sky glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,133,212,0.04) 0%, transparent 70%)' }} />
 
-      {/* Number watermark */}
-      <div className="absolute top-8 right-8 sm:top-12 sm:right-16 number-marker text-[120px] sm:text-[180px] select-none">05</div>
-
       <div ref={ref} className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 25 }}

@@ -45,11 +45,6 @@ export function PageHero({
 
   return (
     <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-24 dot-grid" style={{ background: '#fafafa' }}>
-      {/* Large faded code watermark */}
-      <div className="hidden sm:block absolute top-24 right-8 sm:right-16 number-marker text-[120px] sm:text-[160px] select-none" style={{ color: 'rgba(0, 133, 212, 0.05)' }}>
-        {code}
-      </div>
-
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 w-full">
         {/* Back */}
         <motion.div
