@@ -62,9 +62,9 @@ export default {
         'mono': ['Space Mono', 'monospace'],
       },
       fontSize: {
-        'display-2xl': ['clamp(3.5rem, 10vw, 8.5rem)', { lineHeight: '1.1', letterSpacing: '-0.05em' }],
-        'display-xl': ['clamp(2.5rem, 7vw, 5.5rem)', { lineHeight: '1.15', letterSpacing: '-0.04em' }],
-        'display-lg': ['clamp(1.8rem, 4.5vw, 3.2rem)', { lineHeight: '1.2', letterSpacing: '-0.03em' }],
+        'display-2xl': ['clamp(3.5rem, 10vw, 8.5rem)', { lineHeight: '1.3', letterSpacing: '-0.05em' }],
+        'display-xl': ['clamp(2.5rem, 7vw, 5.5rem)', { lineHeight: '1.3', letterSpacing: '-0.04em' }],
+        'display-lg': ['clamp(1.8rem, 4.5vw, 3.2rem)', { lineHeight: '1.3', letterSpacing: '-0.03em' }],
       },
       animation: {
         'scan': 'scan 10s linear infinite',
