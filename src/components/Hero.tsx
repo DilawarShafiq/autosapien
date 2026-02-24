@@ -117,10 +117,10 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.15 }}
           className="text-center mb-8"
         >
-          <h1 className="font-display font-bold text-display-2xl text-ink-900">
-            <span className="block opacity-75">Engineering</span>
+          <h1 className="font-display font-bold text-display-xl">
+            <span className="block text-ink-600">Engineering</span>
             <span className="block text-sky-600">Intelligence</span>
-            <span className="block opacity-75">into Existence</span>
+            <span className="block text-ink-600">into Existence</span>
           </h1>
         </motion.div>
 
