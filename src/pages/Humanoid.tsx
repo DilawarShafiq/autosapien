@@ -109,7 +109,8 @@ export function Humanoid() {
       />
 
       {/* Specifications Section */}
-      <section ref={specsRef} className="relative py-20">
+      <section ref={specsRef} className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -123,7 +124,7 @@ export function Humanoid() {
             <h2 className="text-3xl font-bold text-ink-900">Built to human scale</h2>
           </motion.div>
 
-          <div className="card-clean rounded-xl p-8 md:p-12">
+          <div className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {specifications.map((spec, i) => (
                 <motion.div
@@ -146,7 +147,8 @@ export function Humanoid() {
       </section>
 
       {/* Capabilities Section */}
-      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
+      <section ref={capabilitiesRef} className="dot-grid relative py-32 overflow-hidden" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -175,9 +177,9 @@ export function Humanoid() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift group"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-sky-50 transition-all">
                   <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
@@ -189,7 +191,8 @@ export function Humanoid() {
       </section>
 
       {/* Use Cases Section */}
-      <section ref={useCasesRef} className="relative py-32 overflow-hidden">
+      <section ref={useCasesRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -215,10 +218,10 @@ export function Humanoid() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isUseCasesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift"
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center group-hover:bg-sky-50 transition-all">
                     <useCase.icon className="w-7 h-7 text-ink-900" />
                   </div>
                   <h3 className="text-xl font-bold text-ink-900">{useCase.title}</h3>
@@ -231,7 +234,8 @@ export function Humanoid() {
       </section>
 
       {/* Timeline Section */}
-      <section className="relative py-20">
+      <section className="dot-grid relative py-20" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -243,7 +247,7 @@ export function Humanoid() {
             <p className="text-ink-400">From prototype to production</p>
           </motion.div>
 
-          <div className="card-clean rounded-xl p-8">
+          <div className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
               {timeline.map((item, i) => (
                 <motion.div
@@ -280,13 +284,14 @@ export function Humanoid() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20">
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-clean rounded-xl p-12"
+            className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-12"
           >
             <h2 className="text-3xl font-bold text-ink-900 mb-4">
               Be part of the future
