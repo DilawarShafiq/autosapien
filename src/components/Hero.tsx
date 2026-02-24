@@ -96,7 +96,7 @@ export function Hero() {
       {/* Main content */}
       <motion.div
         style={{ opacity, y }}
-        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-0"
+        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-0"
       >
         {/* Badge */}
         <motion.div
@@ -211,7 +211,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-20"
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}
