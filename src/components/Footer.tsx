@@ -21,10 +21,10 @@ const footerLinks = {
     { name: 'RCM AI Employees', href: 'https://rcmemployee.com' },
   ],
   legal: [
-    { name: 'Privacy', href: '#privacy' },
-    { name: 'Terms', href: '#terms' },
-    { name: 'Security', href: '#security' },
-    { name: 'HIPAA', href: '#hipaa' },
+    { name: 'Privacy', href: '/privacy', isRoute: true },
+    { name: 'Terms', href: '/terms', isRoute: true },
+    { name: 'Security', href: '/security', isRoute: true },
+    { name: 'HIPAA', href: '/hipaa', isRoute: true },
   ],
 }
 
