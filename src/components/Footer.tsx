@@ -98,12 +98,8 @@ export function Footer() {
         {/* Bottom */}
         <div className="pt-6 border-t border-surface-200">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500" />
-              </span>
-              <span className="text-xs text-ink-900 font-body">&copy; {new Date().getFullYear()} Autosapien (Pvt) Ltd. All rights reserved.</span>
+            <div className="flex items-center">
+              <span className="text-xs text-ink-500 font-body">&copy; {new Date().getFullYear()} Autosapien (Pvt) Ltd. All rights reserved.</span>
             </div>
             <div className="flex items-center gap-5">
               <span className="text-[10px] text-ink-600 font-mono uppercase tracking-[0.2em]">Engineering intelligence into existence</span>
