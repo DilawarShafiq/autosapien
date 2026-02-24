@@ -135,10 +135,11 @@ export function FilmStudio() {
         ]}
       />
 
-      {/* Metrics Section */}
-      <section className="relative py-20">
+      {/* Metrics Section — ODD (#ffffff) */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="card-clean rounded-xl p-8 md:p-12">
+          <div className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -161,8 +162,9 @@ export function FilmStudio() {
         </div>
       </section>
 
-      {/* AI Agents Section */}
-      <section ref={agentsRef} className="relative py-32 overflow-hidden">
+      {/* AI Agents Section — EVEN (#fafafa + dot-grid) */}
+      <section ref={agentsRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -191,10 +193,10 @@ export function FilmStudio() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isAgentsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift group"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                     <agent.icon className="w-6 h-6 text-sky-600" />
                   </div>
                   <div>
@@ -209,8 +211,9 @@ export function FilmStudio() {
         </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
+      {/* Capabilities Section — ODD (#ffffff) */}
+      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -236,9 +239,9 @@ export function FilmStudio() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift group"
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
@@ -249,8 +252,9 @@ export function FilmStudio() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section ref={processRef} className="relative py-32 overflow-hidden">
+      {/* Process Section — EVEN (#fafafa + dot-grid) */}
+      <section ref={processRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -276,7 +280,7 @@ export function FilmStudio() {
                 initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
                 animate={isProcessInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 flex items-start gap-6"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 flex items-start gap-6 group"
               >
                 <div className="text-5xl font-bold text-sky-500 flex-shrink-0">
                   {step.step}
@@ -291,18 +295,19 @@ export function FilmStudio() {
         </div>
       </section>
 
-      {/* Demo CTA Section */}
-      <section className="relative py-20">
+      {/* Demo CTA Section — ODD (#ffffff) */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-clean rounded-xl p-12 relative overflow-hidden"
+            className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-12 relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-sky-50/50" />
             <div className="relative">
-              <div className="w-20 h-20 rounded-full bg-sky-50 flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 rounded-full bg-sky-50 flex items-center justify-center mx-auto mb-6 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                 <Play className="w-10 h-10 text-sky-600 ml-1" />
               </div>
               <h2 className="text-3xl font-bold text-ink-900 mb-4">
