@@ -111,10 +111,11 @@ export function HomeRobotics() {
         ]}
       />
 
-      {/* Specs Section */}
-      <section className="relative py-20">
+      {/* Specs Section - Section 1 (odd): white bg */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="card-clean rounded-xl p-8 md:p-12">
+          <div className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {specs.map((spec, i) => (
                 <motion.div
@@ -137,8 +138,9 @@ export function HomeRobotics() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section ref={featuresRef} className="relative py-32 overflow-hidden">
+      {/* Features Section - Section 2 (even): fafafa + dot-grid */}
+      <section ref={featuresRef} className="relative dot-grid py-32 overflow-hidden" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -165,9 +167,9 @@ export function HomeRobotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift group"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <feature.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
@@ -178,8 +180,9 @@ export function HomeRobotics() {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section ref={useCasesRef} className="relative py-32 overflow-hidden">
+      {/* Use Cases Section - Section 3 (odd): white bg */}
+      <section ref={useCasesRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -205,7 +208,7 @@ export function HomeRobotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isUseCasesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift"
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift"
               >
                 <div className="w-full h-2 rounded-full bg-sky-400 mb-6" />
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{useCase.title}</h3>
@@ -226,8 +229,9 @@ export function HomeRobotics() {
         </div>
       </section>
 
-      {/* Safety Section */}
-      <section ref={safetyRef} className="relative py-32 overflow-hidden">
+      {/* Safety Section - Section 4 (even): fafafa + dot-grid */}
+      <section ref={safetyRef} className="relative dot-grid py-32 overflow-hidden" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -256,9 +260,9 @@ export function HomeRobotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isSafetyInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 text-center hover-lift"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 text-center hover-lift group"
               >
-                <div className="w-16 h-16 rounded-lg bg-sky-50 flex items-center justify-center mb-6 mx-auto">
+                <div className="w-16 h-16 rounded-lg bg-sky-50 flex items-center justify-center mb-6 mx-auto group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <feature.icon className="w-8 h-8 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
@@ -269,14 +273,15 @@ export function HomeRobotics() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-20">
+      {/* CTA Section - Section 5 (odd): white bg */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-clean rounded-xl p-12"
+            className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-12"
           >
             <Sparkles className="w-12 h-12 text-sky-600 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-ink-900 mb-4">

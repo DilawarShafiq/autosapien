@@ -108,10 +108,11 @@ export function IndustrialRobotics() {
         ]}
       />
 
-      {/* Metrics Section */}
-      <section className="relative py-20">
+      {/* Metrics Section - Section 1 (odd): white bg */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="card-clean rounded-xl p-8 md:p-12">
+          <div className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -134,8 +135,9 @@ export function IndustrialRobotics() {
         </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
+      {/* Capabilities Section - Section 2 (even): fafafa + dot-grid */}
+      <section ref={capabilitiesRef} className="relative dot-grid py-32 overflow-hidden" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -164,9 +166,9 @@ export function IndustrialRobotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift group"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
@@ -177,8 +179,9 @@ export function IndustrialRobotics() {
         </div>
       </section>
 
-      {/* Applications Section */}
-      <section ref={applicationsRef} className="relative py-32 overflow-hidden">
+      {/* Applications Section - Section 3 (odd): white bg */}
+      <section ref={applicationsRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -204,10 +207,10 @@ export function IndustrialRobotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isApplicationsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift"
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                     <app.icon className="w-7 h-7 text-sky-600" />
                   </div>
                   <span className="px-3 py-1 rounded-full text-xs font-medium bg-sky-50 text-sky-700">
@@ -222,8 +225,9 @@ export function IndustrialRobotics() {
         </div>
       </section>
 
-      {/* Safety & Compliance Section */}
-      <section className="relative py-20">
+      {/* Safety & Compliance Section - Section 4 (even): fafafa + dot-grid */}
+      <section className="relative dot-grid py-20" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -235,7 +239,7 @@ export function IndustrialRobotics() {
             <p className="text-ink-400">Meeting and exceeding global industrial standards</p>
           </motion.div>
 
-          <div className="card-clean rounded-xl p-8">
+          <div className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {safetyStandards.map((standard, i) => (
                 <motion.div
@@ -256,14 +260,15 @@ export function IndustrialRobotics() {
         </div>
       </section>
 
-      {/* Integration Section */}
-      <section className="relative py-20">
+      {/* Integration Section - Section 5 (odd): white bg */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-clean rounded-xl p-12 text-center"
+            className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-12 text-center"
           >
             <RefreshCw className="w-12 h-12 text-sky-600 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-ink-900 mb-4">
