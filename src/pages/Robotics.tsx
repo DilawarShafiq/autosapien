@@ -92,8 +92,9 @@ export function Robotics() {
         ]}
       />
 
-      {/* Capabilities Section */}
-      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
+      {/* Section 1: Capabilities – ODD (white bg) */}
+      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -122,9 +123,9 @@ export function Robotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift group"
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
@@ -135,10 +136,11 @@ export function Robotics() {
         </div>
       </section>
 
-      {/* Specifications */}
-      <section className="relative py-20">
+      {/* Section 2: Specifications – EVEN (fafafa + dot-grid) */}
+      <section className="relative py-20 dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="card-clean rounded-xl p-8 md:p-12">
+          <div className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {specs.map((spec, i) => (
                 <motion.div
@@ -160,8 +162,9 @@ export function Robotics() {
         </div>
       </section>
 
-      {/* Applications Section */}
-      <section ref={applicationsRef} className="relative py-32 overflow-hidden">
+      {/* Section 3: Applications – ODD (white bg) */}
+      <section ref={applicationsRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -187,10 +190,10 @@ export function Robotics() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isApplicationsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="group relative card-clean rounded-xl p-8 overflow-hidden hover-lift"
+                className="group relative card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 overflow-hidden hover-lift"
               >
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center mb-6 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                     <Zap className="w-6 h-6 text-sky-600" />
                   </div>
                   <h3 className="text-2xl font-bold text-ink-900 mb-3">{app.title}</h3>

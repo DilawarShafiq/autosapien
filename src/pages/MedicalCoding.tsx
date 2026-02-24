@@ -101,10 +101,11 @@ export function MedicalCoding() {
         ]}
       />
 
-      {/* Metrics Section */}
-      <section className="relative py-20">
+      {/* Section 1: Metrics – ODD (white bg) */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="card-clean rounded-xl p-8 md:p-12">
+          <div className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -127,8 +128,9 @@ export function MedicalCoding() {
         </div>
       </section>
 
-      {/* Code Types Section */}
-      <section className="relative py-20">
+      {/* Section 2: Code Types – EVEN (fafafa + dot-grid) */}
+      <section className="relative py-20 dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -148,7 +150,7 @@ export function MedicalCoding() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="card-clean rounded-lg p-6 flex items-center justify-between"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-lg p-6 flex items-center justify-between"
               >
                 <div>
                   <div className="text-xl font-bold text-ink-900 mb-1">{type.code}</div>
@@ -163,8 +165,9 @@ export function MedicalCoding() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section ref={featuresRef} className="relative py-32 overflow-hidden">
+      {/* Section 3: Features – ODD (white bg) */}
+      <section ref={featuresRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -190,9 +193,9 @@ export function MedicalCoding() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isFeaturesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift group"
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <feature.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{feature.title}</h3>
@@ -203,8 +206,9 @@ export function MedicalCoding() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section ref={processRef} className="relative py-32 overflow-hidden">
+      {/* Section 4: Process – EVEN (fafafa + dot-grid) */}
+      <section ref={processRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -235,7 +239,7 @@ export function MedicalCoding() {
                 {i < process.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-sky-300" />
                 )}
-                <div className="card-clean rounded-xl p-8 h-full">
+                <div className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 h-full">
                   <div className="text-5xl font-bold text-sky-500/20 mb-4">
                     {step.step}
                   </div>
