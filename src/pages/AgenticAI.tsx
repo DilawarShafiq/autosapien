@@ -125,10 +125,11 @@ export function AgenticAI() {
         ]}
       />
 
-      {/* Metrics Section */}
-      <section className="relative py-20">
+      {/* Section 1: Metrics — ODD (white bg, card-clean hover-glow) */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="card-clean rounded-xl p-8 md:p-12">
+          <div className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -151,8 +152,9 @@ export function AgenticAI() {
         </div>
       </section>
 
-      {/* Agents Section */}
-      <section ref={agentsRef} className="relative py-32 overflow-hidden">
+      {/* Section 2: Agents — EVEN (#fafafa + dot-grid, card-tinted) */}
+      <section ref={agentsRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -181,10 +183,10 @@ export function AgenticAI() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isAgentsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                     <Bot className="w-7 h-7 text-sky-600" />
                   </div>
                   <div>
@@ -212,8 +214,9 @@ export function AgenticAI() {
         </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
+      {/* Section 3: Capabilities — ODD (white bg, card-clean hover-glow) */}
+      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -239,9 +242,9 @@ export function AgenticAI() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift group"
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
@@ -252,8 +255,9 @@ export function AgenticAI() {
         </div>
       </section>
 
-      {/* Architecture Section */}
-      <section className="relative py-20">
+      {/* Section 4: Architecture — EVEN (#fafafa + dot-grid, card-tinted) */}
+      <section className="relative py-20 dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -265,7 +269,7 @@ export function AgenticAI() {
             <p className="text-ink-400">Built for scale, security, and reliability</p>
           </motion.div>
 
-          <div className="card-clean rounded-xl p-8">
+          <div className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8">
             <div className="space-y-4">
               {architecture.map((layer, i) => (
                 <motion.div
@@ -274,9 +278,9 @@ export function AgenticAI() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-6 p-4 rounded-lg bg-surface-100 hover:bg-surface-100 transition-colors"
+                  className="flex items-center gap-6 p-4 rounded-lg bg-surface-100 hover:bg-surface-100 transition-colors group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center flex-shrink-0 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                     <layer.icon className="w-6 h-6 text-sky-600" />
                   </div>
                   <div className="flex-1">

@@ -125,10 +125,11 @@ export function FoundationModels() {
         ]}
       />
 
-      {/* Metrics Section */}
-      <section className="relative py-20">
+      {/* Section 1: Metrics — ODD (white bg, card-clean hover-glow) */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="card-clean rounded-xl p-8 md:p-12">
+          <div className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -151,8 +152,9 @@ export function FoundationModels() {
         </div>
       </section>
 
-      {/* Capabilities Section */}
-      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden">
+      {/* Section 2: Capabilities — EVEN (#fafafa + dot-grid, card-tinted) */}
+      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -181,9 +183,9 @@ export function FoundationModels() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isCapabilitiesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift group"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
-                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
@@ -194,8 +196,9 @@ export function FoundationModels() {
         </div>
       </section>
 
-      {/* Research Areas Section */}
-      <section ref={researchRef} className="relative py-32 overflow-hidden">
+      {/* Section 3: Research Areas — ODD (white bg, card-clean hover-glow) */}
+      <section ref={researchRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -221,10 +224,10 @@ export function FoundationModels() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isResearchInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift"
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                     <area.icon className="w-7 h-7 text-sky-600" />
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
@@ -243,8 +246,9 @@ export function FoundationModels() {
         </div>
       </section>
 
-      {/* Applications Section */}
-      <section ref={applicationsRef} className="relative py-32 overflow-hidden">
+      {/* Section 4: Applications — EVEN (#fafafa + dot-grid, card-tinted) */}
+      <section ref={applicationsRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -273,7 +277,7 @@ export function FoundationModels() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isApplicationsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-xl p-6 text-center hover-lift"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-6 text-center hover-lift"
               >
                 <div className="text-4xl mb-4">{app.icon}</div>
                 <h3 className="text-lg font-bold text-ink-900 mb-2">{app.name}</h3>
@@ -294,14 +298,15 @@ export function FoundationModels() {
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="relative py-20">
+      {/* Section 5: Philosophy — ODD (white bg, card-clean hover-glow) */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-clean rounded-xl p-12 text-center relative overflow-hidden"
+            className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-12 text-center relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-sky-50/50" />
             <div className="relative">
@@ -321,14 +326,15 @@ export function FoundationModels() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-20">
+      {/* Section 6: CTA — EVEN (#fafafa + dot-grid, card-tinted) */}
+      <section className="relative py-20 dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-clean rounded-xl p-12"
+            className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-12"
           >
             <Cpu className="w-12 h-12 text-sky-600 mx-auto mb-6" />
             <h2 className="text-3xl font-bold text-ink-900 mb-4">
