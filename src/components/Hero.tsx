@@ -96,14 +96,14 @@ export function Hero() {
       {/* Main content */}
       <motion.div
         style={{ opacity, y }}
-        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-0"
+        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-28 sm:pt-0"
       >
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex justify-center mb-10 sm:mb-14"
+          className="flex justify-center mb-6 sm:mb-8"
         >
           <div className="badge-pill badge-sky rounded-full">
             <span className="status-dot developing" />
