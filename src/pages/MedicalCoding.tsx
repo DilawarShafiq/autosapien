@@ -166,7 +166,7 @@ export function MedicalCoding() {
       </section>
 
       {/* Section 3: Features – ODD (white bg) */}
-      <section ref={featuresRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+      <section ref={featuresRef} className="relative py-32" style={{ background: '#ffffff', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -207,7 +207,7 @@ export function MedicalCoding() {
       </section>
 
       {/* Section 4: Process – EVEN (fafafa + dot-grid) */}
-      <section ref={processRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+      <section ref={processRef} className="relative py-32 dot-grid" style={{ background: '#fafafa', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div

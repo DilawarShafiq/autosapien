@@ -129,7 +129,7 @@ export function SmartScheduling() {
       </section>
 
       {/* Section 2: Features – EVEN (fafafa + dot-grid) */}
-      <section ref={featuresRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+      <section ref={featuresRef} className="relative py-32 dot-grid" style={{ background: '#fafafa', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -170,7 +170,7 @@ export function SmartScheduling() {
       </section>
 
       {/* Section 3: Use Cases – ODD (white bg) */}
-      <section ref={useCasesRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+      <section ref={useCasesRef} className="relative py-32" style={{ background: '#ffffff', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div

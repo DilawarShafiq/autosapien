@@ -93,7 +93,7 @@ export function Robotics() {
       />
 
       {/* Section 1: Capabilities – ODD (white bg) */}
-      <section ref={capabilitiesRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+      <section ref={capabilitiesRef} className="relative py-32" style={{ background: '#ffffff', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -163,7 +163,7 @@ export function Robotics() {
       </section>
 
       {/* Section 3: Applications – ODD (white bg) */}
-      <section ref={applicationsRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+      <section ref={applicationsRef} className="relative py-32" style={{ background: '#ffffff', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div

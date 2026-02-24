@@ -143,7 +143,7 @@ export function HealthcareIT() {
       </section>
 
       {/* Core Modules Section — EVEN (fafafa + dot-grid) */}
-      <section ref={modulesRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+      <section ref={modulesRef} className="relative py-32 dot-grid" style={{ background: '#fafafa', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -201,7 +201,7 @@ export function HealthcareIT() {
       </section>
 
       {/* AI Capabilities Section — ODD (white bg) */}
-      <section ref={aiRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+      <section ref={aiRef} className="relative py-32" style={{ background: '#ffffff', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -245,7 +245,7 @@ export function HealthcareIT() {
       </section>
 
       {/* Impact on USA Healthcare Section — EVEN (fafafa + dot-grid) */}
-      <section ref={impactRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+      <section ref={impactRef} className="relative py-32 dot-grid" style={{ background: '#fafafa', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div

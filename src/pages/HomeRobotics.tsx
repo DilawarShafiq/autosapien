@@ -139,7 +139,7 @@ export function HomeRobotics() {
       </section>
 
       {/* Features Section - Section 2 (even): fafafa + dot-grid */}
-      <section ref={featuresRef} className="relative dot-grid py-32 overflow-hidden" style={{ background: '#fafafa' }}>
+      <section ref={featuresRef} className="relative dot-grid py-32" style={{ background: '#fafafa', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -181,7 +181,7 @@ export function HomeRobotics() {
       </section>
 
       {/* Use Cases Section - Section 3 (odd): white bg */}
-      <section ref={useCasesRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+      <section ref={useCasesRef} className="relative py-32" style={{ background: '#ffffff', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -230,7 +230,7 @@ export function HomeRobotics() {
       </section>
 
       {/* Safety Section - Section 4 (even): fafafa + dot-grid */}
-      <section ref={safetyRef} className="relative dot-grid py-32 overflow-hidden" style={{ background: '#fafafa' }}>
+      <section ref={safetyRef} className="relative dot-grid py-32" style={{ background: '#fafafa', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div

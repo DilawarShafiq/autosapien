@@ -147,7 +147,7 @@ export function Humanoid() {
       </section>
 
       {/* Capabilities Section */}
-      <section ref={capabilitiesRef} className="dot-grid relative py-32 overflow-hidden" style={{ background: '#fafafa' }}>
+      <section ref={capabilitiesRef} className="dot-grid relative py-32" style={{ background: '#fafafa', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -191,7 +191,7 @@ export function Humanoid() {
       </section>
 
       {/* Use Cases Section */}
-      <section ref={useCasesRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+      <section ref={useCasesRef} className="relative py-32" style={{ background: '#ffffff', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
