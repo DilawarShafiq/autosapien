@@ -115,10 +115,11 @@ export function HealthcareIT() {
         ]}
       />
 
-      {/* Metrics Section */}
-      <section className="relative py-20">
+      {/* Metrics Section — ODD (white bg) */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="card-clean rounded-xl p-8 md:p-12">
+          <div className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 md:p-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {metrics.map((metric, i) => (
                 <motion.div
@@ -141,8 +142,9 @@ export function HealthcareIT() {
         </div>
       </section>
 
-      {/* Core Modules Section */}
-      <section ref={modulesRef} className="relative py-32 overflow-hidden">
+      {/* Core Modules Section — EVEN (fafafa + dot-grid) */}
+      <section ref={modulesRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -171,10 +173,10 @@ export function HealthcareIT() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isModulesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-8 group"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center flex-shrink-0 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                     <module.icon className="w-7 h-7 text-sky-600" />
                   </div>
                   <div>
@@ -198,8 +200,9 @@ export function HealthcareIT() {
         </div>
       </section>
 
-      {/* AI Capabilities Section */}
-      <section ref={aiRef} className="relative py-32 overflow-hidden">
+      {/* AI Capabilities Section — ODD (white bg) */}
+      <section ref={aiRef} className="relative py-32 overflow-hidden" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -228,9 +231,9 @@ export function HealthcareIT() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isAiInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-xl p-8 hover-lift group"
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 group"
               >
-                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-lg bg-sky-50 flex items-center justify-center mb-6 group-hover:bg-sky-50 group-hover:scale-105 transition-all">
                   <cap.icon className="w-7 h-7 text-sky-600" />
                 </div>
                 <h3 className="text-xl font-bold text-ink-900 mb-3">{cap.title}</h3>
@@ -241,8 +244,9 @@ export function HealthcareIT() {
         </div>
       </section>
 
-      {/* Impact on USA Healthcare Section */}
-      <section ref={impactRef} className="relative py-32 overflow-hidden">
+      {/* Impact on USA Healthcare Section — EVEN (fafafa + dot-grid) */}
+      <section ref={impactRef} className="relative py-32 overflow-hidden dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -271,7 +275,7 @@ export function HealthcareIT() {
                 initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
                 animate={isImpactInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="card-clean rounded-lg p-6 flex flex-col md:flex-row md:items-center gap-4"
+                className="card-tinted hover:border-sky-200/50 transition-colors rounded-lg p-6 flex flex-col md:flex-row md:items-center gap-4"
               >
                 <div className="flex-1">
                   <div className="text-ink-500 text-sm mb-1">The Problem</div>
@@ -288,8 +292,9 @@ export function HealthcareIT() {
         </div>
       </section>
 
-      {/* Compliance Section */}
-      <section className="relative py-20">
+      {/* Compliance Section — ODD (white bg) */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -309,9 +314,11 @@ export function HealthcareIT() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="card-clean rounded-lg px-8 py-6 text-center"
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-lg px-8 py-6 text-center group"
               >
-                <Shield className="w-8 h-8 text-sky-600 mx-auto mb-3" />
+                <div className="w-8 h-8 mx-auto mb-3 flex items-center justify-center group-hover:bg-sky-50 group-hover:scale-105 transition-all rounded-lg">
+                  <Shield className="w-8 h-8 text-sky-600" />
+                </div>
                 <div className="text-2xl font-bold text-ink-900 mb-1">{item.badge}</div>
                 <div className="text-sm text-ink-500">{item.description}</div>
               </motion.div>
@@ -320,14 +327,15 @@ export function HealthcareIT() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-20">
+      {/* CTA Section — EVEN (fafafa + dot-grid) */}
+      <section className="relative py-20 dot-grid" style={{ background: '#fafafa' }}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-clean rounded-xl p-12 relative overflow-hidden"
+            className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-12 relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-sky-50/50" />
             <div className="relative">
