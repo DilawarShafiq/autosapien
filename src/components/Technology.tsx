@@ -2,19 +2,34 @@ import { useRef } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 
 const techStack = [
-  { name: 'PyTorch', category: 'ML Framework' }, { name: 'TensorFlow', category: 'ML Framework' },
-  { name: 'CUDA', category: 'GPU Computing' }, { name: 'Kubernetes', category: 'Orchestration' },
-  { name: 'React', category: 'Frontend' }, { name: 'FastAPI', category: 'Backend' },
-  { name: 'PostgreSQL', category: 'Database' }, { name: 'Redis', category: 'Cache' },
-  { name: 'OpenAI', category: 'LLM' }, { name: 'Anthropic', category: 'LLM' },
-  { name: 'ROS2', category: 'Robotics' }, { name: 'Docker', category: 'Container' },
+  // AI & ML
+  { name: 'PyTorch', category: 'ML Framework' }, { name: 'ONNX Runtime', category: 'Inference' },
+  { name: 'Anthropic Claude', category: 'LLM' }, { name: 'OpenAI', category: 'LLM' },
+  { name: 'Google Vertex AI', category: 'AI Platform' }, { name: 'MuJoCo', category: 'Simulation' },
+  // Robotics
+  { name: 'ROS2', category: 'Robotics' }, { name: 'Isaac Gym', category: 'RL Training' },
+  { name: 'Jetson Thor', category: 'Edge Compute' }, { name: 'ChromaDB', category: 'Vector DB' },
+  // Backend & Data
+  { name: 'FastAPI', category: 'Backend' }, { name: 'PostgreSQL', category: 'Database' },
+  { name: 'Redis', category: 'Cache' }, { name: 'FAISS', category: 'Search' },
+  // Frontend
+  { name: 'React', category: 'Frontend' }, { name: 'Next.js', category: 'Frontend' },
+  { name: 'TypeScript', category: 'Language' }, { name: 'Three.js', category: '3D Graphics' },
+  // Infrastructure
+  { name: 'Kubernetes', category: 'Orchestration' }, { name: 'Docker', category: 'Container' },
+  { name: 'Google Cloud', category: 'Platform' }, { name: 'Terraform', category: 'IaC' },
+  { name: 'DAPR', category: 'Distributed' },
+  // Languages
+  { name: 'Python', category: 'Language' }, { name: 'C++20', category: 'Language' },
+  // Healthcare
+  { name: 'FHIR R4', category: 'Healthcare' }, { name: 'HL7', category: 'Healthcare' },
 ]
 
 const metrics = [
   { value: '99.99', unit: '%', label: 'Uptime SLA', description: 'Enterprise-grade reliability' },
   { value: '<50', unit: 'ms', label: 'Latency', description: 'Real-time inference' },
   { value: '1B', unit: '+', label: 'Parameters', description: 'Model complexity' },
-  { value: 'SOC2', unit: '', label: 'Certified', description: 'Security compliance' },
+  { value: 'HIPAA', unit: '', label: 'Compliant', description: 'Healthcare security' },
 ]
 
 export function Technology() {
@@ -132,9 +147,9 @@ export function Technology() {
                 <div className="hidden lg:block absolute top-1/2 left-[33.33%] w-[33.33%] h-px border-t border-dashed border-sky-300/30 -translate-y-1/2 pointer-events-none" />
 
                 {[
-                  { label: '01', title: 'Data Layer', desc: 'Distributed data infrastructure with real-time streaming and batch processing.' },
-                  { label: '02', title: 'AI Core', desc: 'Multi-model orchestration with GPU-accelerated inference engines.' },
-                  { label: '03', title: 'Integration', desc: 'API-first architecture with enterprise connectors and webhooks.' },
+                  { label: '01', title: 'Perception & Data', desc: 'Sensor fusion, vector databases, and real-time streaming from robots to cloud via DDS and DAPR.' },
+                  { label: '02', title: 'AI Core', desc: 'PyTorch models, LLM orchestration, reinforcement learning, and on-device inference via ONNX and Jetson Thor.' },
+                  { label: '03', title: 'Application Layer', desc: 'FastAPI services, FHIR-native healthcare APIs, React frontends, and Kubernetes-orchestrated deployments on GCP.' },
                 ].map((layer) => (
                   <div key={layer.label} className="group text-center p-6 rounded-xl transition-all card-tinted hover-glow hover:border-sky-200/50">
                     <div className="w-12 h-12 mx-auto mb-5 rounded-xl flex items-center justify-center bg-sky-50 border border-transparent group-hover:border-sky-200/50 transition-colors">
