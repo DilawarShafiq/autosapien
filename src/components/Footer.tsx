@@ -40,7 +40,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <Link to="/" className="inline-flex items-center mb-5">
-              <img src="/logo.png" alt="Autosapien" className="h-10 w-auto" />
+              <img src="/logo.png?v=2" alt="Autosapien" className="h-10 w-auto" />
             </Link>
 
             <p className="text-ink-400 font-body text-sm mb-6 max-w-xs leading-relaxed">

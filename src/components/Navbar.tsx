@@ -43,7 +43,7 @@ export function Navbar() {
           >
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <img src="/logo.png" alt="Autosapien" className={isScrolled ? 'h-10 w-auto' : 'h-10 w-auto'} />
+              <img src="/logo.png?v=2" alt="Autosapien" className={isScrolled ? 'h-10 w-auto' : 'h-10 w-auto'} />
             </Link>
 
             {/* Desktop Nav */}
