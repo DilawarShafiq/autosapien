@@ -106,13 +106,14 @@ export function About() {
                 <span className="label-mono">VS-001</span>
               </div>
 
-              <blockquote className="border-l-2 border-sky-400/40">
-                <div className="text-5xl font-display font-bold text-sky-300/60 absolute -mt-2 ml-4">"</div>
-                <p className="text-lg sm:text-xl lg:text-2xl text-ink-800 font-display leading-relaxed pl-6">
+              <blockquote className="border-l-2 border-sky-400/40 pl-6 relative">
+                <span className="text-5xl font-display font-bold text-sky-300/40 leading-none select-none">"</span>
+                <p className="text-lg sm:text-xl lg:text-2xl text-ink-800 font-display leading-relaxed mt-2">
                   We believe the defining technology of this century won't be artificial intelligence
                   in isolation—it will be artificial intelligence given a body, purpose, and the
                   ability to heal, help, and create alongside humanity.
                 </p>
+                <span className="text-5xl font-display font-bold text-sky-300/40 leading-none select-none block text-right -mt-2">"</span>
               </blockquote>
 
               <div className="mt-8 pt-6 border-t border-surface-200 flex items-center gap-4">
