@@ -57,7 +57,7 @@ export default {
         },
       },
       fontFamily: {
-        'display': ['Syne', 'system-ui', 'sans-serif'],
+        'display': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
         'body': ['Outfit', 'system-ui', 'sans-serif'],
         'mono': ['Space Mono', 'monospace'],
       },

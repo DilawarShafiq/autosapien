@@ -174,7 +174,6 @@ export function About() {
                 )}
               </div>
 
-              <span className="label-mono text-[10px] text-ink-500">{pillar.code}</span>
               <h3 className="font-display font-semibold text-ink-900 mb-2 group-hover:text-sky-700 transition-colors">
                 {pillar.title}
               </h3>
