@@ -136,7 +136,7 @@ export function About() {
           transition={{ delay: 0.4 }}
           className="text-center mb-14"
         >
-          <h3 className="font-display font-bold text-2xl text-ink-900 mb-3">Our Six Pillars</h3>
+          <h3 className="font-display font-bold text-2xl text-ink-900 mb-3">Our Six Verticals</h3>
           <p className="text-ink-400 font-body">The domains where we're building the future</p>
         </motion.div>
 
