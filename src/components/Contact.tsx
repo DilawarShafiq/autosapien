@@ -9,7 +9,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative py-24 sm:py-40 section-accent-top" style={{ background: '#ffffff', overflowX: 'clip' }}>
       {/* Radial sky glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,133,212,0.04) 0%, transparent 70%)' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[400px] md:h-[600px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,133,212,0.04) 0%, transparent 70%)' }} />
 
       <div ref={ref} className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <motion.div

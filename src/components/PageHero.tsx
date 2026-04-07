@@ -44,7 +44,7 @@ export function PageHero({
   }, [])
 
   return (
-    <section className="relative min-h-[80vh] flex items-center pt-24 dot-grid" style={{ background: '#fafafa', overflowX: 'clip' }}>
+    <section className="relative min-h-[60vh] sm:min-h-[80vh] flex items-center pt-24 dot-grid" style={{ background: '#fafafa', overflowX: 'clip' }}>
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 w-full">
         {/* Back */}
         <motion.div

@@ -44,11 +44,11 @@ export function Footer() {
       {/* Ambient glow — subtle */}
       <div
         className="glow-orb-blue absolute"
-        style={{ width: '500px', height: '500px', bottom: '-20%', right: '-5%', opacity: 0.18 }}
+        style={{ width: 'min(500px, 70vw)', height: 'min(500px, 70vw)', bottom: '-20%', right: '-5%', opacity: 0.18 }}
       />
       <div
         className="glow-orb-blue absolute"
-        style={{ width: '400px', height: '400px', top: '-10%', left: '-8%', opacity: 0.12 }}
+        style={{ width: 'min(400px, 60vw)', height: 'min(400px, 60vw)', top: '-10%', left: '-8%', opacity: 0.12 }}
       />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-6 sm:pb-10">
@@ -60,7 +60,7 @@ export function Footer() {
             </Link>
 
             <p className="text-white/40 font-body text-sm mb-7 max-w-xs leading-relaxed">
-              Building the machines that will build tomorrow. From humanoid robots to healthcare AI,
+              From humanoid robots to healthcare AI,
               we're engineering intelligence into existence.
             </p>
 

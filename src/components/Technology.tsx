@@ -60,11 +60,11 @@ export function Technology() {
       {/* Ambient glow orbs */}
       <div
         className="glow-orb-blue absolute"
-        style={{ width: '600px', height: '600px', top: '-10%', right: '-10%', opacity: 0.35 }}
+        style={{ width: 'min(600px, 80vw)', height: 'min(600px, 80vw)', top: '-10%', right: '-10%', opacity: 0.35 }}
       />
       <div
         className="glow-orb-blue absolute"
-        style={{ width: '500px', height: '500px', bottom: '-5%', left: '-8%', opacity: 0.25 }}
+        style={{ width: 'min(500px, 70vw)', height: 'min(500px, 70vw)', bottom: '-5%', left: '-8%', opacity: 0.25 }}
       />
 
       {/* Scan line */}

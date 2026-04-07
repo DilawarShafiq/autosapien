@@ -107,7 +107,7 @@ export function Hero() {
         >
           <div className="badge-pill badge-sky rounded-full">
             <span className="status-dot developing" />
-            <span>Building the Machines That Will Build Tomorrow</span>
+            <span>Engineering Intelligence into Existence</span>
           </div>
         </motion.div>
 
