@@ -98,19 +98,6 @@ export function Hero() {
         style={{ opacity, y }}
         className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-0"
       >
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex justify-center mb-6 sm:mb-8"
-        >
-          <div className="badge-pill badge-sky rounded-full">
-            <span className="status-dot developing" />
-            <span>Engineering Intelligence into Existence</span>
-          </div>
-        </motion.div>
-
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
