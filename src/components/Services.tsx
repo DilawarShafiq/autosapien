@@ -52,7 +52,7 @@ const services = [
     fit: 'Best for: enterprises with complex back-office workflows that no single SaaS can model.',
     featured: true,
     caseStudy: {
-      name: 'Active enterprise engagement',
+      name: 'Workflow Agentic Automation Project',
       label: 'Under NDA',
       blurb:
         'Currently building a custom multi-agentic platform for an enterprise client—orchestrating specialised agents across their operations stack. Engagement details confidential.',
