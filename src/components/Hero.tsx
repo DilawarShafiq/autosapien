@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 function AnimatedNumber({ value, suffix = '' }: { value: string; suffix?: string }) {
   const [display, setDisplay] = useState('0')
@@ -131,16 +132,16 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 sm:mb-24"
         >
-          <button className="btn-primary group rounded-lg">
+          <Link to="/projects/humanoid" className="btn-primary group rounded-lg">
             <span className="flex items-center gap-3">
               Robotics — Under Development
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
-          </button>
+          </Link>
 
-          <a href="https://xehr.io" target="_blank" rel="noopener noreferrer" className="btn-secondary group rounded-lg">
+          <a href="#products" className="btn-secondary group rounded-lg">
             <span className="flex items-center gap-3 transition-colors">
-              Explore xEHR.io
+              See our shipped products
               <span className="status-dot active" />
             </span>
           </a>

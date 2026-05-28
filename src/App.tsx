@@ -16,6 +16,7 @@ import { MedicalCoding } from './pages/MedicalCoding'
 import { SmartScheduling } from './pages/SmartScheduling'
 import { AgenticAI } from './pages/AgenticAI'
 import { Robotics } from './pages/Robotics'
+import { Thales } from './pages/Thales'
 import { Privacy } from './pages/Privacy'
 import { Terms } from './pages/Terms'
 import { Security } from './pages/Security'
@@ -58,6 +59,7 @@ function App() {
             <Route path="/projects/smart-scheduling" element={<SmartScheduling />} />
             <Route path="/projects/agentic-ai" element={<AgenticAI />} />
             <Route path="/projects/robotics" element={<Robotics />} />
+            <Route path="/projects/thales" element={<Thales />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/security" element={<Security />} />

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const navLinks = [
   { name: 'About', href: '#about' },
-  { name: 'Capabilities', href: '#capabilities' },
-  { name: 'Projects', href: '#projects' },
+  { name: 'Products', href: '#products' },
+  { name: 'Services', href: '#services' },
   { name: 'Technology', href: '#technology' },
   { name: 'Contact', href: '#contact' },
 ]

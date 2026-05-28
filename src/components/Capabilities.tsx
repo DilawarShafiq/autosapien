@@ -1,35 +1,42 @@
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Bot, Heart, Film, Factory, Home, Brain, ChevronRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const capabilities = [
   {
     id: 'humanoid', icon: Bot, title: 'Humanoid Robotics', subtitle: 'Autosapien G1', status: 'developing', code: 'CAP-001',
+    href: '/projects/humanoid',
     description: 'Our flagship humanoid robot represents the pinnacle of embodied AI. Standing at human height with 40+ degrees of freedom, Autosapien G1 is designed to navigate human environments, manipulate objects with dexterity, and interact naturally through voice, gesture, and expression.',
     features: ['Bipedal locomotion on any terrain', 'Human-like hand dexterity', 'Natural language conversation', 'Emotional expression & recognition'],
   },
   {
     id: 'healthcare', icon: Heart, title: 'Healthcare AI', subtitle: 'xEHR.io Platform', status: 'active', code: 'CAP-002',
+    href: '/projects/healthcare-it',
     description: 'xEHR.io is our enterprise healthcare platform combining EHR, practice management, and revenue cycle automation. Powered by AI agents that work 24/7, we\'re eliminating the administrative burden crushing USA healthcare.',
     features: ['AI clinical documentation', 'Autonomous RCM agents', 'FHIR R4 interoperability', 'HIPAA & SOC2 compliant'],
   },
   {
     id: 'industrial', icon: Factory, title: 'Industrial Robotics', subtitle: 'Factory Intelligence', status: 'developing', code: 'CAP-003',
+    href: '/projects/industrial-robotics',
     description: 'Our industrial robots don\'t just execute—they learn, adapt, and optimize. Using reinforcement learning and computer vision, these systems continuously improve manufacturing processes.',
     features: ['Self-optimizing workflows', 'Predictive maintenance', 'Human-safe collaboration', 'Real-time quality control'],
   },
   {
     id: 'home', icon: Home, title: 'Home Robotics', subtitle: 'Companion Systems', status: 'developing', code: 'CAP-004',
+    href: '/projects/home-robotics',
     description: 'Home robots that actually help. Our domestic systems handle household tasks, provide companionship for the elderly, monitor home security, and serve as the physical interface for your smart home.',
     features: ['Household task automation', 'Eldercare assistance', 'Smart home integration', 'Voice-first interaction'],
   },
   {
     id: 'film', icon: Film, title: 'AI Film Studio', subtitle: 'Generative Cinema', status: 'developing', code: 'CAP-005',
+    href: '/projects/film-studio',
     description: 'The future of filmmaking is autonomous. Our AI film studio combines multiple specialized agents—writers, directors, editors, composers—orchestrated to produce complete short films.',
     features: ['Multi-agent orchestration', 'Video diffusion generation', 'AI audio & music synthesis', 'Automated editing & post'],
   },
   {
     id: 'agentic', icon: Brain, title: 'Agentic AI', subtitle: 'AI Employees & Custom Agents', status: 'active', code: 'CAP-006',
+    href: '/projects/agentic-ai',
     description: 'We build and deploy AI FTEs—fully autonomous AI employees that work 24/7. Our flagship RCM Employee automates revenue cycle management for USA healthcare providers.',
     features: ['RCM Employee (rcmemployee.com)', 'Workflow Automation', 'RCM Automation for US Healthcare', 'Custom Agent Development'],
   },
@@ -170,13 +177,13 @@ export function Capabilities() {
                     ))}
                   </div>
 
-                  <button className="btn-primary group rounded-lg relative overflow-hidden">
+                  <Link to={activeCapability.href} className="btn-primary group rounded-lg relative overflow-hidden inline-flex">
                     <span className="relative z-10 flex items-center gap-3">
                       Explore {activeCapability.title}
                       <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </span>
                     <div className="absolute inset-0 bg-sky-700 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             </AnimatePresence>
