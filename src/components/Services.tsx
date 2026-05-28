@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Stethoscope, Workflow, Network, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react'
+import { Stethoscope, Workflow, Network, ArrowRight, CheckCircle2, Sparkles, FileCode2, FlaskConical, Share2 } from 'lucide-react'
 
 const services = [
   {
@@ -52,11 +52,61 @@ const services = [
     fit: 'Best for: enterprises with complex back-office workflows that no single SaaS can model.',
     featured: true,
     caseStudy: {
-      name: 'Agent SMITH',
-      label: 'Active Engagement',
+      name: 'Active enterprise engagement',
+      label: 'Under NDA',
       blurb:
-        'Currently in development for an enterprise client—Agent SMITH is a custom multi-agentic platform orchestrating specialised agents across the client’s operations stack.',
+        'Currently building a custom multi-agentic platform for an enterprise client—orchestrating specialised agents across their operations stack. Engagement details confidential.',
     },
+  },
+  {
+    code: 'SRV-04',
+    icon: FileCode2,
+    title: 'EDI Integration for Existing EHRs',
+    pitch: 'Wire your EHR into the US payer ecosystem—claims to remits, end to end.',
+    description:
+      'We add production-grade X12 EDI to EHRs we did not build. Whether your platform is in development or already shipping, we plug it into clearinghouses and payers so claims, eligibility, and remittances flow without manual workarounds.',
+    deliverables: [
+      '837 claim submission (Professional, Institutional, Dental)',
+      '270 / 271 real-time eligibility & benefits',
+      '276 / 277 claim status inquiry',
+      '835 ERA auto-posting',
+      'Clearinghouse setup (Availity, Change, Waystar, etc.)',
+      'Validation, rejections handling, and observability',
+    ],
+    fit: 'Best for: EHR vendors and practices whose current platform lacks billing-grade EDI.',
+  },
+  {
+    code: 'SRV-05',
+    icon: FlaskConical,
+    title: 'Lab Integration for EHRs',
+    pitch: 'Orders out, results in—against any lab, any EHR.',
+    description:
+      'We integrate reference labs and in-house lab systems with EHRs over HL7 v2, FHIR DiagnosticReport, and modern vendor APIs. Orders go out cleanly, results arrive structured, and abnormal flags route exactly where they should.',
+    deliverables: [
+      'HL7 v2 ORM / ORU / OBR pipelines',
+      'FHIR R4 DiagnosticReport & Observation',
+      'LabCorp, Quest, hospital-lab, and in-house LIS integrations',
+      'Reflex testing rules & abnormal-result routing',
+      'Structured result reconciliation back to the chart',
+    ],
+    fit: 'Best for: clinics tired of faxed PDFs and manual result entry.',
+  },
+  {
+    code: 'SRV-06',
+    icon: Share2,
+    title: 'Multi-EHR Interoperability',
+    pitch: 'For providers who work in a hospital and run their own clinic.',
+    description:
+      'Many physicians hold privileges at a hospital and also run their own specialty clinic on a different EHR. We connect their personal clinic EHR with the hospital systems they touch—so charts, results, and patient context travel with them, not just between organisations.',
+    deliverables: [
+      'Bidirectional FHIR R4 + C-CDA exchange',
+      'HL7 v2 ADT / ORU / SIU messaging',
+      'IHE profiles (XDS.b, XCA, PDQ, PIX)',
+      'Patient identity reconciliation across EHRs',
+      'Consent, audit, and access-control across boundaries',
+      'Bridge to Epic, Cerner, Meditech, Athena and others',
+    ],
+    fit: 'Best for: specialty providers splitting time between a hospital and their own practice.',
   },
 ]
 
