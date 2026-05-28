@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import { Cpu, ShieldCheck, Layers, GitBranch, Workflow, Gauge } from 'lucide-react'
 
 const techStack = [
   // AI & ML
@@ -30,6 +31,78 @@ const metrics = [
   { value: '<50', unit: 'ms', label: 'Latency', description: 'Real-time inference' },
   { value: '1B', unit: '+', label: 'Parameters', description: 'Model complexity' },
   { value: 'HIPAA', unit: '', label: 'Compliant', description: 'Healthcare security' },
+]
+
+const principles = [
+  {
+    icon: Cpu,
+    title: 'Foundation-model fluency',
+    description:
+      'We work natively with Claude, GPT-4o-class, and open-weight models. We pick by task, not by vendor—and we benchmark cost, latency, and accuracy on real workloads.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Security as a precondition',
+    description:
+      'HIPAA, SOC 2 patterns, BAA-ready vendors, encrypted at rest and in transit. PHI never leaves the audit boundary. Every action by every agent is logged.',
+  },
+  {
+    icon: Layers,
+    title: 'Multi-agent orchestration',
+    description:
+      'Planner, executor, reviewer, escalator. We compose specialised agents the way good engineers compose services—each with a clear contract and observable behaviour.',
+  },
+  {
+    icon: GitBranch,
+    title: 'Owned, not rented',
+    description:
+      'Clients receive source, infrastructure-as-code, and runbooks. We build to hand off, not to lock in. Your platform should outlive your relationship with us.',
+  },
+  {
+    icon: Workflow,
+    title: 'Workflow-first design',
+    description:
+      'We start with the manual workflow on a whiteboard, not the model on a benchmark. Automation is judged by what it removes from a human queue—not by what the model can do.',
+  },
+  {
+    icon: Gauge,
+    title: 'Production observability',
+    description:
+      'Traces, costs, decisions, and outcomes for every agent run. You can answer "what did the AI do last Tuesday and why" without opening a ticket with us.',
+  },
+]
+
+const stackPillars = [
+  {
+    pillar: 'AI / ML',
+    items: 'PyTorch · ONNX · MuJoCo · Isaac Gym',
+    note: 'Training, simulation, inference',
+  },
+  {
+    pillar: 'LLM Orchestration',
+    items: 'Anthropic Claude · OpenAI · Vertex AI · ChromaDB · FAISS',
+    note: 'Reasoning, RAG, tool-use',
+  },
+  {
+    pillar: 'Backend',
+    items: 'FastAPI · PostgreSQL · Redis · DAPR · ROS2',
+    note: 'Real-time, distributed, fault-tolerant',
+  },
+  {
+    pillar: 'Frontend',
+    items: 'React · Next.js · TypeScript · Three.js',
+    note: 'Production-grade interfaces',
+  },
+  {
+    pillar: 'Infrastructure',
+    items: 'Kubernetes · Docker · Google Cloud · Terraform',
+    note: 'Scalable, reproducible, multi-region',
+  },
+  {
+    pillar: 'Healthcare',
+    items: 'FHIR R4 · HL7 · X12 EDI · HIPAA',
+    note: 'Interoperability without compromise',
+  },
 ]
 
 export function Technology() {
@@ -84,10 +157,13 @@ export function Technology() {
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-sky-500/50" />
           </div>
           <h2 className="font-display font-bold text-display-lg mb-5 text-white">
-            Built on cutting-edge infrastructure
+            The stack behind every product we ship
           </h2>
-          <p className="text-base sm:text-lg font-body max-w-2xl mx-auto text-white/50">
-            We leverage the most advanced technologies to build reliable, scalable, and intelligent systems.
+          <p className="text-base sm:text-lg font-body max-w-3xl mx-auto text-white/55 leading-relaxed">
+            Our products run on the same engineering substrate we offer to clients: modern foundation
+            models, audited data pipelines, real-time inference, and the kind of observability that
+            holds up in front of an enterprise security review. No black boxes. No throwaway
+            prototypes. Production-grade by default.
           </p>
         </motion.div>
 
@@ -168,6 +244,89 @@ export function Technology() {
               <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/35">{m.description}</div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Engineering Principles */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="mb-20"
+        >
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="label-mono-white text-sky-400">Engineering Principles</span>
+                <div className="h-px w-12 bg-gradient-to-r from-sky-400/50 to-transparent" />
+              </div>
+              <h3 className="font-display font-bold text-2xl sm:text-3xl text-white max-w-xl leading-tight">
+                How we build—and why our systems hold up in production.
+              </h3>
+            </div>
+            <p className="text-white/45 font-body text-sm max-w-md">
+              Six commitments we don&rsquo;t compromise on, regardless of the model, the framework,
+              or the deadline.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {principles.map((p, i) => (
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.5 + i * 0.07 }}
+                className="card-glass rounded-2xl p-6 relative overflow-hidden group"
+              >
+                {/* hover hairline */}
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400/0 group-hover:via-sky-400/60 to-transparent transition-all duration-500" />
+
+                <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4 group-hover:border-sky-400/40 transition-colors">
+                  <p.icon className="w-5 h-5 text-sky-400" />
+                </div>
+                <h4 className="font-display font-bold text-white text-base mb-2 leading-tight">
+                  {p.title}
+                </h4>
+                <p className="text-[13px] text-white/50 font-body leading-relaxed">
+                  {p.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Stack Pillars */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.55 }}
+          className="mb-20"
+        >
+          <div className="flex items-center justify-between mb-6">
+            <span className="label-mono-white text-sky-400">Stack Pillars</span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/30">
+              6 layers · 1 system
+            </span>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {stackPillars.map((s) => (
+              <div
+                key={s.pillar}
+                className="card-glass rounded-xl p-5 group hover:border-sky-400/30 transition-colors"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="font-display font-bold text-sm text-white">{s.pillar}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-500/60 group-hover:bg-sky-400 transition-colors" />
+                </div>
+                <div className="text-[13px] text-white/70 font-body leading-snug mb-2">
+                  {s.items}
+                </div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/35">
+                  {s.note}
+                </div>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Architecture */}
