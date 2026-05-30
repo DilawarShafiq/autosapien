@@ -168,7 +168,8 @@ function BookSection({ book, index }: { book: (typeof allBooks)[0]; index: numbe
               <span className="label-mono text-ink-400 text-xs">{book.eyebrow}</span>
               <span className="badge-sky text-xs">{book.badge}</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-ink-900 mb-3">{book.title}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-ink-900 mb-2">{book.title}</h2>
+            <p className="text-xs text-ink-400 mb-4 label-mono">by {book.author}</p>
             <p className="text-ink-500 mb-4 leading-relaxed">{book.description}</p>
             <blockquote className="border-l-2 border-sky-400 pl-4 text-sm text-ink-400 italic leading-relaxed">
               "{book.hook}"

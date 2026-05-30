@@ -16,7 +16,10 @@ export interface Book {
   audience: string[]
   modules: AcademyModule[]
   quickStart: { label: string; slug: string }
+  author: string
 }
+
+export const ACADEMY_AUTHOR = 'Dilawar Gopang'
 
 export const allBooks: Book[] = [
   {
@@ -31,6 +34,7 @@ export const allBooks: Book[] = [
     totalHours: '68+',
     audience: ['Robotics Engineers', 'ML Researchers', 'G1 Development Team', 'Physical AI Students'],
     quickStart: { label: 'Start with the Humanoid Landscape', slug: 'humanoid-landscape' },
+    author: ACADEMY_AUTHOR,
     modules: academyModules,
   },
   {
@@ -45,6 +49,7 @@ export const allBooks: Book[] = [
     totalHours: '44+',
     audience: ['Healthcare IT Students', 'EHR Specialists', 'Medical Records Staff', 'HIM Professionals'],
     quickStart: { label: 'Start with the Exam Blueprint', slug: 'ehr-ecosystem' },
+    author: ACADEMY_AUTHOR,
     modules: cehrsModules,
   },
   {
@@ -59,6 +64,7 @@ export const allBooks: Book[] = [
     totalHours: '52+',
     audience: ['AI Developers', 'Healthcare Startups', 'RCM Professionals', 'Practice Managers', 'Health IT Engineers'],
     quickStart: { label: 'Start with the $500B Problem', slug: 'us-healthcare-admin-crisis' },
+    author: ACADEMY_AUTHOR,
     modules: agenticHealthcareModules,
   },
 ]
