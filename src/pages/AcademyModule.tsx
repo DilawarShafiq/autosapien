@@ -3,21 +3,23 @@ import { Link, useParams, Navigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowLeft, Clock, BookOpen, ChevronRight, ChevronDown, FlaskConical, FileText, Tag, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Contact } from '../components/Contact'
-import { academyModules } from '../data/academyData'
+import { findModule } from '../data/allBooks'
 import type { Lesson } from '../data/academyData'
 
 export function AcademyModule() {
   const { slug } = useParams<{ slug: string }>()
-  const mod = academyModules.find((m) => m.slug === slug)
+  const found = slug ? findModule(slug) : null
   const [activeLesson, setActiveLesson] = useState(0)
   const contentRef = useRef<HTMLDivElement>(null)
 
-  if (!mod) return <Navigate to="/academy" replace />
+  if (!found) return <Navigate to="/academy" replace />
 
+  const { module: mod, book } = found
   const lesson: Lesson = mod.lessons[activeLesson]
-  const currentIndex = academyModules.findIndex((m) => m.slug === slug)
-  const prevModule = currentIndex > 0 ? academyModules[currentIndex - 1] : null
-  const nextModule = currentIndex < academyModules.length - 1 ? academyModules[currentIndex + 1] : null
+  const bookModules = book.modules
+  const currentIndex = bookModules.findIndex((m) => m.slug === slug)
+  const prevModule = currentIndex > 0 ? bookModules[currentIndex - 1] : null
+  const nextModule = currentIndex < bookModules.length - 1 ? bookModules[currentIndex + 1] : null
 
   const handleLessonSelect = (index: number) => {
     setActiveLesson(index)
@@ -38,7 +40,9 @@ export function AcademyModule() {
             className="inline-flex items-center gap-2 text-sm text-ink-400 hover:text-sky-600 transition-colors mb-8 group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Autosapien Academy
+            <span>Academy</span>
+            <span className="text-ink-200">/</span>
+            <span className="badge-sky text-xs">{book.badge}</span>
           </Link>
 
           <div className="flex flex-wrap items-start justify-between gap-6">
@@ -141,7 +145,7 @@ export function AcademyModule() {
                   <div className="label-mono text-ink-400 text-xs mb-3">PREREQUISITES</div>
                   <ul className="space-y-2">
                     {mod.prerequisites.map((pre) => {
-                      const prereqMod = academyModules.find((m) => m.slug === pre)
+                      const prereqMod = book.modules.find((m) => m.slug === pre)
                       return prereqMod ? (
                         <li key={pre}>
                           <Link

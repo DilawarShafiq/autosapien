@@ -62,17 +62,19 @@ export function Navbar() {
                 </motion.a>
               ))}
 
-              <motion.a
-                href="https://xehr.io"
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navLinks.length * 0.07 + 0.3 }}
-                className="ml-3 px-5 py-2 text-sm font-display font-semibold rounded-full bg-ink-900 hover:bg-sky-600 text-white transition-all duration-300"
+                className="ml-3"
               >
-                xEHR.io ↗
-              </motion.a>
+                <Link
+                  to="/academy"
+                  className="px-5 py-2 text-sm font-display font-semibold rounded-full bg-ink-900 hover:bg-sky-600 text-white transition-all duration-300 block"
+                >
+                  Academy
+                </Link>
+              </motion.div>
             </div>
 
             {/* Mobile toggle */}
@@ -113,17 +115,20 @@ export function Navbar() {
                   {link.name}
                 </motion.a>
               ))}
-              <motion.a
-                href="https://xehr.io"
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navLinks.length * 0.07 }}
-                className="mt-2 px-8 py-3 rounded-full bg-ink-900 text-white font-display font-semibold text-lg"
+                className="mt-2"
               >
-                xEHR.io ↗
-              </motion.a>
+                <Link
+                  to="/academy"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-8 py-3 rounded-full bg-ink-900 text-white font-display font-semibold text-lg block"
+                >
+                  Academy
+                </Link>
+              </motion.div>
             </nav>
 
             <button

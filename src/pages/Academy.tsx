@@ -1,17 +1,15 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
-import { BookOpen, Clock, ChevronRight, Cpu, Zap, Brain, Shield, Bot, Activity, BarChart2, Layers, Map } from 'lucide-react'
+import { BookOpen, Clock, ChevronRight, ArrowRight, Users, Zap } from 'lucide-react'
 import { Contact } from '../components/Contact'
-import { academyModules } from '../data/academyData'
+import { allBooks } from '../data/allBooks'
 
-const moduleIcons = [Map, Zap, Activity, Brain, Cpu, Bot, Layers, Shield, BarChart2, BookOpen]
-
-const stats = [
-  { value: '10', label: 'Modules' },
-  { value: '47', label: 'Lessons' },
-  { value: '68+', label: 'Hours of Study' },
-  { value: '2026', label: 'Frontier Research' },
+const globalStats = [
+  { value: '3', label: 'Books' },
+  { value: '28', label: 'Modules' },
+  { value: '100+', label: 'Lessons' },
+  { value: 'Free', label: 'Forever' },
 ]
 
 const levelColors: Record<string, string> = {
@@ -22,63 +20,58 @@ const levelColors: Record<string, string> = {
 
 export function Academy() {
   const statsRef = useRef(null)
-  const gridRef = useRef(null)
   const isStatsInView = useInView(statsRef, { once: true, margin: '-80px' })
-  const isGridInView = useInView(gridRef, { once: true, margin: '-80px' })
 
   return (
     <div style={{ background: '#fafafa' }}>
 
-      {/* Hero */}
-      <section className="dot-grid relative py-24 md:py-32" style={{ background: '#fafafa', overflowX: 'clip' }}>
+      {/* Manifesto Hero */}
+      <section className="dot-grid relative pt-28 pb-20" style={{ background: '#fafafa', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/30 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="max-w-3xl"
+            className="max-w-4xl"
           >
-            <span className="label-mono text-sky-600 mb-6 block">AUTOSAPIEN ACADEMY</span>
+            <span className="label-mono text-sky-600 mb-5 block">AUTOSAPIEN ACADEMY</span>
             <h1 className="text-display-xl font-bold text-ink-900 mb-6 leading-tight">
-              Physical AI &<br />
-              <span className="text-sky-500">Humanoid Robotics</span>
+              Three books.<br />
+              <span className="text-sky-500">One mission.</span>
             </h1>
-            <p className="text-xl text-ink-400 mb-10 max-w-2xl leading-relaxed">
-              The curriculum powering G1. Research-grade content on the 2024-2026 frontier — from QDD actuators to VLA foundation models — structured for the team building the next generation of humanoid robots.
+            <p className="text-xl text-ink-400 leading-relaxed max-w-2xl mb-4">
+              US healthcare wastes $500B/year on admin. Humanoid robots are 5 years from your living room. The engineers and operators who understand both will define the next decade.
+            </p>
+            <p className="text-base text-ink-300 mb-10 font-medium">
+              All three books are free. No account required. No paywall. Ever.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link
-                to={`/academy/${academyModules[0].slug}`}
-                className="btn-primary rounded-lg px-7 py-3 text-sm font-semibold"
-              >
-                Start Module 1
+              <Link to={`/academy/${allBooks[0].quickStart.slug}`} className="btn-primary rounded-lg px-7 py-3 text-sm font-semibold flex items-center gap-2">
+                Start Reading <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link
-                to="#modules"
-                className="btn-secondary rounded-lg px-7 py-3 text-sm font-semibold"
-              >
-                Browse All Modules
-              </Link>
+              <a href="#books" className="btn-secondary rounded-lg px-7 py-3 text-sm font-semibold">
+                Browse All Books
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section ref={statsRef} className="relative py-16" style={{ background: '#ffffff' }}>
+      {/* Global Stats */}
+      <section ref={statsRef} className="relative py-12" style={{ background: '#ffffff' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {globalStats.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={isStatsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: i * 0.08 }}
-                className="card-tinted rounded-xl p-6 text-center"
+                transition={{ delay: i * 0.07 }}
+                className="card-tinted rounded-xl p-5 text-center"
               >
-                <div className="stat-display-sky text-4xl mb-1">{stat.value}</div>
+                <div className="stat-display-sky text-3xl mb-1">{stat.value}</div>
                 <div className="label-mono text-ink-400 text-xs">{stat.label}</div>
               </motion.div>
             ))}
@@ -86,139 +79,183 @@ export function Academy() {
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="relative py-20" style={{ background: '#fafafa' }}>
+      {/* Three Books */}
+      <section id="books" className="relative py-24" style={{ background: '#fafafa', overflowX: 'clip' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="label-mono text-sky-600 mb-4 block">WHY THIS CURRICULUM</span>
-              <h2 className="text-3xl font-bold text-ink-900 mb-6">
-                Built for practitioners, not students
-              </h2>
-              <p className="text-ink-400 leading-relaxed mb-6">
-                Every lesson is grounded in 2024-2026 research — the papers, platforms, and engineering decisions that are actually shaping what robots can do today. Not a survey course. A working knowledge base for the Autosapien G1 development team.
-              </p>
-              <p className="text-ink-400 leading-relaxed">
-                Modules draw directly from work at Physical Intelligence, ETH Zurich, MIT CSAIL, CMU Robotics, and Berkeley RAIL — the labs and companies defining the field. Where G1 design decisions are informed by the research, we say so explicitly.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { label: 'Actuator engineering', sub: 'QDD, SEA, joint-level spec' },
-                { label: 'VLA deployment', sub: 'π0, OpenVLA, on-device inference' },
-                { label: 'Locomotion RL', sub: 'ETH/Berkeley/CMU methods' },
-                { label: 'Safety standards', sub: 'ISO 10218, ISO/TS 15066' },
-              ].map((item) => (
-                <div key={item.label} className="card-clean rounded-xl p-5">
-                  <div className="w-2 h-2 rounded-full bg-sky-500 mb-3" />
-                  <div className="text-sm font-semibold text-ink-900 mb-1">{item.label}</div>
-                  <div className="text-xs text-ink-400">{item.sub}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-32">
+          {allBooks.map((book, bookIndex) => (
+            <BookSection key={book.id} book={book} index={bookIndex} />
+          ))}
         </div>
       </section>
 
-      {/* Module Grid */}
-      <section id="modules" ref={gridRef} className="relative py-24" style={{ background: '#ffffff', overflowX: 'clip' }}>
+      {/* Who is this for */}
+      <section className="relative py-20" style={{ background: '#ffffff' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isGridInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-14"
-          >
-            <span className="label-mono text-sky-600 mb-4 block">CURRICULUM</span>
-            <h2 className="text-4xl font-bold text-ink-900">10 Modules, Zero Fluff</h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {academyModules.map((mod, i) => {
-              const Icon = moduleIcons[i] ?? BookOpen
-              return (
-                <motion.div
-                  key={mod.slug}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isGridInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: i * 0.05, duration: 0.5 }}
+          <div className="text-center mb-12">
+            <span className="label-mono text-sky-600 mb-3 block">WHO READS THIS</span>
+            <h2 className="text-3xl font-bold text-ink-900">Pick your starting point</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: '🤖',
+                role: 'Building a robot',
+                cta: 'Start with Book 1',
+                desc: 'Robotics engineers, ML researchers, and the G1 development team. Start with Module 1 (Humanoid Landscape) or jump to the VLA module if you already know your actuators.',
+                link: allBooks[0].quickStart.slug,
+              },
+              {
+                icon: '🏥',
+                role: 'Working in healthcare IT',
+                cta: 'Start with Book 2',
+                desc: 'EHR specialists, HIM professionals, and anyone preparing for the NHA CEHRS exam. The 10-day study plan in Module 10 gets you exam-ready from scratch.',
+                link: allBooks[1].quickStart.slug,
+              },
+              {
+                icon: '⚡',
+                role: 'Automating healthcare admin',
+                cta: 'Start with Book 3',
+                desc: 'AI developers and healthcare startups building RCM automation, prior auth agents, and personal medical billing systems. Start with the $500B problem, then go straight to the architecture.',
+                link: allBooks[2].quickStart.slug,
+              },
+            ].map((path) => (
+              <motion.div
+                key={path.role}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-8 hover-lift group"
+              >
+                <div className="text-3xl mb-5">{path.icon}</div>
+                <h3 className="text-lg font-bold text-ink-900 mb-3">{path.role}</h3>
+                <p className="text-sm text-ink-400 leading-relaxed mb-6">{path.desc}</p>
+                <Link
+                  to={`/academy/${path.link}`}
+                  className="flex items-center gap-2 text-sm font-semibold text-sky-600 group-hover:text-sky-800 transition-colors"
                 >
-                  <Link
-                    to={`/academy/${mod.slug}`}
-                    className="card-clean hover-glow hover:border-sky-200/50 transition-all rounded-xl p-7 hover-lift group flex flex-col h-full block"
-                  >
-                    <div className="flex items-start justify-between mb-5">
-                      <div className="flex items-center gap-4">
-                        <div className="relative">
-                          <span className="absolute -top-1 -left-1 text-[3rem] font-bold leading-none text-surface-200 select-none">
-                            {String(mod.number).padStart(2, '0')}
-                          </span>
-                          <div className="relative z-10 w-11 h-11 rounded-lg bg-sky-50 flex items-center justify-center mt-3 ml-3 group-hover:bg-sky-100 transition-colors">
-                            <Icon className="w-5 h-5 text-sky-600" />
-                          </div>
-                        </div>
-                        <div className="ml-2">
-                          <div className="text-xs text-ink-400 mb-0.5">{mod.subtitle}</div>
-                          <h3 className="text-lg font-bold text-ink-900 group-hover:text-sky-600 transition-colors leading-tight">
-                            {mod.title}
-                          </h3>
-                        </div>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-ink-300 group-hover:text-sky-500 group-hover:translate-x-1 transition-all mt-1 shrink-0" />
-                    </div>
-
-                    <p className="text-sm text-ink-400 leading-relaxed mb-5 flex-1">
-                      {mod.description}
-                    </p>
-
-                    <div className="flex items-center gap-3 flex-wrap">
-                      <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${levelColors[mod.level]}`}>
-                        {mod.level}
-                      </span>
-                      <span className="flex items-center gap-1.5 text-xs text-ink-400">
-                        <Clock className="w-3 h-3" />
-                        {mod.duration}
-                      </span>
-                      <span className="flex items-center gap-1.5 text-xs text-ink-400">
-                        <BookOpen className="w-3 h-3" />
-                        {mod.lessons.length} lessons
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              )
-            })}
+                  {path.cta}
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* G1 CTA */}
-      <section className="relative py-24" style={{ background: '#fafafa' }}>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-12"
-          >
-            <span className="label-mono text-sky-600 mb-4 block">AUTOSAPIEN G1</span>
-            <h2 className="text-3xl font-bold text-ink-900 mb-4">
-              This is the science behind the robot
-            </h2>
-            <p className="text-lg text-ink-400 mb-8 max-w-xl mx-auto">
-              Every module in this curriculum informs a design decision in G1. See where it all comes together.
-            </p>
-            <Link to="/projects/humanoid" className="btn-primary rounded-lg px-8 py-3">
-              Meet Autosapien G1
-            </Link>
-          </motion.div>
         </div>
       </section>
 
       <Contact />
+    </div>
+  )
+}
+
+function BookSection({ book, index }: { book: (typeof allBooks)[0]; index: number }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
+
+  return (
+    <div ref={ref}>
+      {/* Book Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+        className="mb-12"
+      >
+        <div className="flex flex-wrap items-start justify-between gap-6 mb-8">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="label-mono text-ink-400 text-xs">{book.eyebrow}</span>
+              <span className="badge-sky text-xs">{book.badge}</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-ink-900 mb-3">{book.title}</h2>
+            <p className="text-ink-500 mb-4 leading-relaxed">{book.description}</p>
+            <blockquote className="border-l-2 border-sky-400 pl-4 text-sm text-ink-400 italic leading-relaxed">
+              "{book.hook}"
+            </blockquote>
+          </div>
+
+          <div className="card-tinted rounded-xl p-6 min-w-[220px]">
+            <div className="space-y-3 mb-5">
+              <div className="flex items-center gap-2 text-sm text-ink-500">
+                <Clock className="w-4 h-4 text-sky-500 shrink-0" />
+                {book.totalHours} hours of content
+              </div>
+              <div className="flex items-center gap-2 text-sm text-ink-500">
+                <BookOpen className="w-4 h-4 text-sky-500 shrink-0" />
+                {book.modules.length} modules · {book.modules.reduce((s, m) => s + m.lessons.length, 0)} lessons
+              </div>
+              <div className="flex items-center gap-2 text-sm text-ink-500">
+                <Zap className="w-4 h-4 text-sky-500 shrink-0" />
+                Free forever
+              </div>
+            </div>
+            <div className="mb-5">
+              <div className="flex items-center gap-1.5 text-xs text-ink-400 mb-2">
+                <Users className="w-3 h-3" />
+                For
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {book.audience.slice(0, 3).map((a) => (
+                  <span key={a} className="text-xs bg-surface-100 text-ink-500 px-2 py-0.5 rounded-full">{a}</span>
+                ))}
+              </div>
+            </div>
+            <Link
+              to={`/academy/${book.quickStart.slug}`}
+              className="btn-primary rounded-lg text-xs px-4 py-2.5 w-full text-center block"
+            >
+              {book.quickStart.label}
+            </Link>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Module Grid */}
+      <div className="grid md:grid-cols-2 gap-4">
+        {book.modules.map((mod, i) => (
+          <motion.div
+            key={mod.slug}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.1 + i * 0.04, duration: 0.45 }}
+          >
+            <Link
+              to={`/academy/${mod.slug}`}
+              className="card-clean hover-glow hover:border-sky-200/50 transition-all rounded-xl p-6 hover-lift group flex gap-5 items-start h-full block"
+            >
+              <div className="shrink-0 relative w-12 h-12">
+                <span className="absolute inset-0 text-[2.5rem] font-bold leading-none text-surface-200 select-none flex items-center justify-center">
+                  {String(mod.number).padStart(2, '0')}
+                </span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-sm font-bold text-ink-900 group-hover:text-sky-600 transition-colors mb-1 leading-snug">
+                  {mod.title}
+                </h3>
+                <p className="text-xs text-ink-400 leading-relaxed mb-3 line-clamp-2">{mod.description}</p>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${levelColors[mod.level]}`}>
+                    {mod.level}
+                  </span>
+                  <span className="flex items-center gap-1 text-xs text-ink-400">
+                    <Clock className="w-3 h-3" />{mod.duration}
+                  </span>
+                  <span className="flex items-center gap-1 text-xs text-ink-400">
+                    <BookOpen className="w-3 h-3" />{mod.lessons.length} lessons
+                  </span>
+                </div>
+              </div>
+              <ChevronRight className="w-4 h-4 text-ink-200 group-hover:text-sky-400 transition-colors shrink-0 mt-1" />
+            </Link>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Book divider */}
+      {index < allBooks.length - 1 && (
+        <div className="mt-20 h-px bg-gradient-to-r from-transparent via-surface-200 to-transparent" />
+      )}
     </div>
   )
 }
