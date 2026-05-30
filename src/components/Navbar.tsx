@@ -131,12 +131,8 @@ export function Navbar() {
               </motion.div>
             </nav>
 
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="absolute top-6 right-6 p-2 text-ink-500"
-            >
-              <X className="w-6 h-6" />
-            </button>
+            {/* Close handled by the header toggle (which shows an X when open) —
+                no separate close button, to avoid two X's. */}
           </motion.div>
         )}
       </AnimatePresence>
