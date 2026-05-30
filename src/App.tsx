@@ -21,8 +21,6 @@ import { Privacy } from './pages/Privacy'
 import { Terms } from './pages/Terms'
 import { Security } from './pages/Security'
 import { HIPAA } from './pages/HIPAA'
-import { Academy } from './pages/Academy'
-import { AcademyModule } from './pages/AcademyModule'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -31,6 +29,16 @@ function ScrollToTop() {
     window.scrollTo(0, 0)
   }, [pathname])
 
+  return null
+}
+
+// The Academy now lives on its own subdomain. Send any /academy URL there.
+const ACADEMY_URL = 'https://academy.autosapien.com'
+
+function ExternalRedirect({ to }: { to: string }) {
+  useEffect(() => {
+    window.location.replace(to)
+  }, [to])
   return null
 }
 
@@ -62,8 +70,8 @@ function App() {
             <Route path="/projects/agentic-ai" element={<AgenticAI />} />
             <Route path="/projects/robotics" element={<Robotics />} />
             <Route path="/projects/thales" element={<Thales />} />
-            <Route path="/academy" element={<Academy />} />
-            <Route path="/academy/:slug" element={<AcademyModule />} />
+            <Route path="/academy" element={<ExternalRedirect to={ACADEMY_URL} />} />
+            <Route path="/academy/:slug" element={<ExternalRedirect to={ACADEMY_URL} />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/security" element={<Security />} />
