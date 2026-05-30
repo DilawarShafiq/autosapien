@@ -53,9 +53,10 @@ export function AcademyModule() {
               className="max-w-2xl"
             >
               <span className="label-mono text-sky-600 mb-3 block">
-                MODULE {String(mod.number).padStart(2, '0')}
+                {book.eyebrow} · MODULE {String(mod.number).padStart(2, '0')}
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-ink-900 mb-3">{mod.title}</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-ink-900 mb-2">{mod.title}</h1>
+              <p className="text-sm text-ink-400 mb-3 label-mono">by {book.author}</p>
               <p className="text-lg text-ink-400 mb-5">{mod.subtitle}</p>
               <p className="text-ink-500 leading-relaxed">{mod.description}</p>
 
