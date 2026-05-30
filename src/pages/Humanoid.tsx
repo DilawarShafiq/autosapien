@@ -1,6 +1,7 @@
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
-import { Bot, Brain, Eye, Hand, Heart, Mic, Shield, Zap, Activity, Users } from 'lucide-react'
+import { Bot, Brain, Eye, Hand, Heart, Mic, Shield, Zap, Activity, Users, BookOpen } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { Contact } from '../components/Contact'
 
@@ -283,26 +284,49 @@ export function Humanoid() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Dual CTA Section */}
       <section className="relative py-20" style={{ background: '#ffffff' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(60%,400px)] h-px bg-gradient-to-r from-transparent via-sky-300/20 to-transparent" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-12"
-          >
-            <h2 className="text-3xl font-bold text-ink-900 mb-4">
-              Be part of the future
-            </h2>
-            <p className="text-lg text-ink-400 mb-8 max-w-2xl mx-auto">
-              We're looking for beta partners across healthcare, manufacturing, and hospitality to help shape how humanoid robots integrate into our world.
-            </p>
-            <button className="btn-primary rounded-lg">
-              Join the Beta Program
-            </button>
-          </motion.div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="card-clean hover-glow hover:border-sky-200/50 transition-colors rounded-xl p-10"
+            >
+              <h2 className="text-2xl font-bold text-ink-900 mb-3">
+                Be part of the future
+              </h2>
+              <p className="text-ink-400 mb-7 leading-relaxed">
+                We're looking for beta partners across healthcare, manufacturing, and hospitality to help shape how humanoid robots integrate into our world.
+              </p>
+              <button className="btn-primary rounded-lg text-sm">
+                Join the Beta Program
+              </button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="card-tinted hover:border-sky-200/50 transition-colors rounded-xl p-10"
+            >
+              <div className="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-5">
+                <BookOpen className="w-5 h-5 text-sky-600" />
+              </div>
+              <h2 className="text-2xl font-bold text-ink-900 mb-3">
+                Study the science behind G1
+              </h2>
+              <p className="text-ink-400 mb-7 leading-relaxed">
+                10 modules covering every technology that goes into G1 — from QDD actuators to VLA foundation models. Research-grade, 2026 frontier.
+              </p>
+              <Link to="/academy" className="btn-secondary rounded-lg text-sm inline-block">
+                Explore the Academy
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 
