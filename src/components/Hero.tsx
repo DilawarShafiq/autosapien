@@ -49,7 +49,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center"
+      className="relative min-h-screen flex items-center justify-center pt-28 pb-16"
       style={{ overflowX: 'clip' }}
     >
       {/* Soft radial warmth behind headline — no heavy frosted overlay */}
@@ -97,7 +97,7 @@ export function Hero() {
       {/* Main content */}
       <motion.div
         style={{ opacity, y }}
-        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-0"
+        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6"
       >
         {/* Headline */}
         <motion.div

@@ -68,12 +68,12 @@ export function Navbar() {
                 transition={{ delay: navLinks.length * 0.07 + 0.3 }}
                 className="ml-3"
               >
-                <Link
-                  to="/academy"
+                <a
+                  href="https://academy.autosapien.com"
                   className="px-5 py-2 text-sm font-display font-semibold rounded-full bg-ink-900 hover:bg-sky-600 text-white transition-all duration-300 block"
                 >
                   Academy
-                </Link>
+                </a>
               </motion.div>
             </div>
 
@@ -121,13 +121,13 @@ export function Navbar() {
                 transition={{ delay: navLinks.length * 0.07 }}
                 className="mt-2"
               >
-                <Link
-                  to="/academy"
+                <a
+                  href="https://academy.autosapien.com"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="px-8 py-3 rounded-full bg-ink-900 text-white font-display font-semibold text-lg block"
                 >
                   Academy
-                </Link>
+                </a>
               </motion.div>
             </nav>
 
