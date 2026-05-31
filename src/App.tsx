@@ -32,15 +32,8 @@ function ScrollToTop() {
   return null
 }
 
-// The Academy now lives on its own subdomain. Send any /academy URL there.
-const ACADEMY_URL = 'https://academy.autosapien.com'
-
-function ExternalRedirect({ to }: { to: string }) {
-  useEffect(() => {
-    window.location.replace(to)
-  }, [to])
-  return null
-}
+// The Academy lives entirely on its own subdomain (academy.autosapien.com).
+// There is no /academy on the main site — the navbar links straight there.
 
 function App() {
   return (
@@ -70,8 +63,6 @@ function App() {
             <Route path="/projects/agentic-ai" element={<AgenticAI />} />
             <Route path="/projects/robotics" element={<Robotics />} />
             <Route path="/projects/thales" element={<Thales />} />
-            <Route path="/academy" element={<ExternalRedirect to={ACADEMY_URL} />} />
-            <Route path="/academy/:slug" element={<ExternalRedirect to={ACADEMY_URL} />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/security" element={<Security />} />
