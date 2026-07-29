@@ -30,38 +30,66 @@ const ROUTES = [
   },
   {
     path: '/projects/healthcare-it',
-    title: `xEHR.io — AI Healthcare Platform for USA Practices | ${BRAND}`,
+    title: `xEHR.io — AI-Native EHR & Medical Billing Automation | ${BRAND}`,
     description:
-      'xEHR.io combines a FHIR R4-native EHR, practice management, and autonomous revenue cycle automation into one platform, powered by AI agents working 24/7.',
+      'xEHR.io combines a FHIR R4-native EHR, practice management, and revenue cycle automation for US healthcare, powered by agentic AI working 24/7.',
     priority: '0.9',
+    product: {
+      type: 'SoftwareApplication',
+      name: 'xEHR.io',
+      category: 'HealthApplication',
+      sameAs: 'https://xehr.io',
+      serviceType: 'AI-native EHR, practice management and revenue cycle automation',
+    },
   },
   {
     path: '/projects/agentic-ai',
-    title: `Agentic AI Workforce — AI FTEs for Healthcare | ${BRAND}`,
+    title: `US Healthcare Administrative Workflow Automation | ${BRAND}`,
     description:
-      'Autonomous AI FTEs for USA healthcare providers, including RCM Employee for revenue cycle management, workflow automation, and custom agents.',
+      'Agentic AI that automates US healthcare administrative workflows — eligibility, prior authorization, billing, and A/R — delivered as autonomous AI FTEs.',
     priority: '0.9',
+    product: {
+      type: 'Service',
+      name: 'RCM Employee',
+      sameAs: 'https://rcmemployee.com',
+      serviceType: 'US healthcare administrative workflow automation with agentic AI',
+    },
   },
   {
     path: '/projects/rcm-automation',
-    title: `RCM Automation for USA Healthcare | ${BRAND}`,
+    title: `Revenue Cycle Management Automation with Agentic AI | ${BRAND}`,
     description:
-      'End-to-end revenue cycle management powered by agentic AI — from charge capture to payment posting, automating billing while maximizing reimbursement.',
+      'Revenue cycle management automation for US healthcare — charge capture, claim scrubbing, submission, denial management, payment posting and A/R follow-up.',
     priority: '0.9',
+    product: {
+      type: 'Service',
+      name: 'RCM Automation',
+      serviceType: 'Revenue cycle management automation with agentic AI',
+    },
   },
   {
     path: '/projects/medical-coding',
-    title: `AI Medical Coding | ${BRAND}`,
+    title: `Medical Billing and Coding Automation with Agentic AI | ${BRAND}`,
     description:
-      'An AI coding engine that reads clinical documentation like an expert coder, assigning accurate codes in seconds with full payer compliance.',
-    priority: '0.8',
+      'Medical billing and coding automation with agentic AI — ICD-10-CM, CPT and E&M code assignment from clinical documentation, with payer compliance built in.',
+    priority: '0.9',
+    product: {
+      type: 'Service',
+      name: 'AI Medical Coding',
+      serviceType: 'Medical billing and coding automation with agentic AI',
+    },
   },
   {
     path: '/projects/smart-scheduling',
-    title: `Smart Scheduling for Healthcare | ${BRAND}`,
+    title: `Patient Scheduling & Intake Automation with Agentic AI | ${BRAND}`,
     description:
-      'AI-powered scheduling that maximizes provider utilization, minimizes patient wait times, and creates a seamless booking experience across all channels.',
-    priority: '0.8',
+      'Patient scheduling and intake automation with agentic AI — booking, reminders, waitlist backfill, registration and insurance eligibility verification.',
+    priority: '0.9',
+    product: {
+      type: 'Service',
+      name: 'Smart Scheduling',
+      serviceType: 'Patient scheduling and intake automation with agentic AI',
+    },
   },
   {
     path: '/projects/thales',
@@ -69,6 +97,13 @@ const ROUTES = [
     description:
       'Thales is a conversational trading agent that talks to clients on WhatsApp, generates signals from fused market data, and executes autonomously on Binance.',
     priority: '0.8',
+    product: {
+      type: 'SoftwareApplication',
+      name: 'Thales',
+      category: 'FinanceApplication',
+      sameAs: 'https://thales.autosapien.com',
+      serviceType: 'Agentic crypto trading over WhatsApp',
+    },
   },
   {
     path: '/projects/humanoid',
@@ -152,22 +187,105 @@ function canonicalFor(routePath) {
   return routePath === '/' ? `${ORIGIN}/` : `${ORIGIN}${routePath}/`;
 }
 
-// Organization schema — gives Google explicit brand/entity data for the site.
+const ORG_ID = `${ORIGIN}/#organization`;
+
+// Topics the organization is an authority on. Feeds Google's entity
+// understanding of what this company actually does.
+const KNOWS_ABOUT = [
+  'US healthcare administrative workflow automation',
+  'Medical billing automation',
+  'Medical billing and coding automation',
+  'Revenue cycle management automation',
+  'Patient scheduling and intake automation',
+  'Insurance eligibility verification',
+  'Prior authorization automation',
+  'Denial management and appeals',
+  'Agentic AI',
+  'Robotics',
+];
+
+// Organization schema — gives Google explicit brand/entity data for the site,
+// and an offer catalog naming the products so they are attributed to Autosapien
+// rather than read as unrelated third-party domains.
 const ORG_JSONLD = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': ORG_ID,
   name: 'Autosapien',
   url: `${ORIGIN}/`,
   logo: `${ORIGIN}/logo.png`,
   description:
-    'Autosapien builds AI and robotics for the real world — humanoids, autonomous systems, and agentic AI that automates USA healthcare operations.',
+    'Autosapien automates US healthcare administrative workflows with agentic AI — medical billing, coding, revenue cycle management, and patient scheduling and intake — alongside its robotics and embodied AI research.',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Lahore',
     addressCountry: 'PK',
   },
-  areaServed: 'US',
+  areaServed: { '@type': 'Country', name: 'United States' },
+  knowsAbout: KNOWS_ABOUT,
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Autosapien products',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'SoftwareApplication',
+          name: 'xEHR.io',
+          applicationCategory: 'HealthApplication',
+          url: 'https://xehr.io',
+          description: 'AI-native EHR, practice management and revenue cycle automation for US healthcare practices.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'RCM Employee',
+          url: 'https://rcmemployee.com',
+          description: 'An autonomous AI FTE that runs revenue cycle management for US healthcare providers.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'BetterCompliant',
+          url: 'https://bettercompliant.com',
+          description: 'Compliance automation for regulated organizations.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'SoftwareApplication',
+          name: 'Thales',
+          applicationCategory: 'FinanceApplication',
+          url: 'https://thales.autosapien.com',
+          description: 'Agentic crypto trading delivered over WhatsApp.',
+        },
+      },
+    ],
+  },
 };
+
+/** Per-page schema tying a product back to the Autosapien organization. */
+function productJsonLd(route) {
+  const p = route.product;
+  const node = {
+    '@context': 'https://schema.org',
+    '@type': p.type,
+    name: p.name,
+    description: route.description,
+    url: canonicalFor(route.path),
+    provider: { '@type': 'Organization', '@id': ORG_ID, name: BRAND },
+    areaServed: { '@type': 'Country', name: 'United States' },
+  };
+  if (p.sameAs) node.sameAs = p.sameAs;
+  if (p.category) node.applicationCategory = p.category;
+  if (p.type === 'Service') node.serviceType = p.serviceType;
+  return node;
+}
 
 function renderRoute(template, route) {
   const canonical = canonicalFor(route.path);
@@ -207,10 +325,14 @@ function renderRoute(template, route) {
     `<meta name="twitter:image" content="${OG_IMAGE}" />`
   );
 
-  // Canonical link + (homepage only) Organization schema.
+  // Canonical link, plus Organization schema on the homepage and product
+  // schema (provider-linked to the same Organization node) on product pages.
   const head = [`    <link rel="canonical" href="${canonical}" />`];
   if (route.path === '/') {
     head.push(`    <script type="application/ld+json">${JSON.stringify(ORG_JSONLD)}</script>`);
+  }
+  if (route.product) {
+    head.push(`    <script type="application/ld+json">${JSON.stringify(productJsonLd(route))}</script>`);
   }
   html = html.replace('</head>', `${head.join('\n')}\n  </head>`);
 
