@@ -16,10 +16,12 @@ const footerLinks = {
     { name: 'Thales', href: '/projects/thales', isRoute: true },
   ],
   services: [
-    { name: 'Custom EHR / PM Development', href: '/#services' },
-    { name: 'Admin Workflow Automation', href: '/#services' },
-    { name: 'Multi-Agentic Workflows', href: '/#services' },
+    { name: 'RCM Automation', href: '/projects/rcm-automation', isRoute: true },
+    { name: 'Medical Billing & Coding', href: '/projects/medical-coding', isRoute: true },
+    { name: 'Patient Scheduling & Intake', href: '/projects/smart-scheduling', isRoute: true },
     { name: 'Agentic AI', href: '/projects/agentic-ai', isRoute: true },
+    { name: 'Custom EHR / PM Development', href: '/#services' },
+    { name: 'Multi-Agentic Workflows', href: '/#services' },
   ],
   legal: [
     { name: 'Privacy', href: '/privacy', isRoute: true },
