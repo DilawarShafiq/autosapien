@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import { Heart, Database, Shield, Bot, FileText, Activity, Clock, DollarSign, Users, Zap, CheckCircle, ArrowRight } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { Contact } from '../components/Contact'
+import { PageContent } from '../components/PageContent'
 
 const coreModules = [
   {
@@ -363,6 +364,8 @@ export function HealthcareIT() {
           </motion.div>
         </div>
       </section>
+
+      <PageContent route="/projects/healthcare-it" />
 
       <Contact />
     </div>

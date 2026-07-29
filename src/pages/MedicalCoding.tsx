@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import { FileText, Brain, Shield, CheckCircle, Target, BookOpen, AlertTriangle } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { Contact } from '../components/Contact'
+import { PageContent } from '../components/PageContent'
 
 const features = [
   {
@@ -251,6 +252,8 @@ export function MedicalCoding() {
           </div>
         </div>
       </section>
+
+      <PageContent route="/projects/medical-coding" />
 
       <Contact />
     </div>

@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import { Calendar, Clock, Users, Bell, BarChart3, Zap, MapPin, RefreshCw } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { Contact } from '../components/Contact'
+import { PageContent } from '../components/PageContent'
 
 const features = [
   {
@@ -245,6 +246,8 @@ export function SmartScheduling() {
           </div>
         </div>
       </section>
+
+      <PageContent route="/projects/smart-scheduling" />
 
       <Contact />
     </div>

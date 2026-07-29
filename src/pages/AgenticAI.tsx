@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import { Bot, Brain, Workflow, Shield, RefreshCw, MessageSquare, Eye } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { Contact } from '../components/Contact'
+import { PageContent } from '../components/PageContent'
 
 const agents = [
   {
@@ -294,6 +295,8 @@ export function AgenticAI() {
           </div>
         </div>
       </section>
+
+      <PageContent route="/projects/agentic-ai" />
 
       <Contact />
     </div>

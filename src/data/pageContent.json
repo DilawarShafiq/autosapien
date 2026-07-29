@@ -1,0 +1,437 @@
+{
+  "/projects/rcm-automation": {
+    "sections": [
+      {
+        "label": "The Full Picture",
+        "heading": "What revenue cycle",
+        "highlight": "automation actually covers",
+        "intro": [
+          "Revenue cycle management is the entire financial arc of a patient encounter, from the moment an appointment is booked to the moment the last dollar is collected. In a US practice that arc crosses a dozen systems and as many payer rulebooks, and almost every handoff between them is still performed by a person retyping data from one screen into another.",
+          "Revenue cycle management automation with agentic AI replaces those handoffs. Rather than a single model answering questions, a set of specialised agents each own a stage of the cycle, pass structured work between each other, and escalate to a human only when the decision genuinely requires one."
+        ],
+        "points": [
+          {
+            "title": "Patient access and eligibility",
+            "body": "Before a visit happens, coverage has to be confirmed. Automated eligibility runs the EDI 270 request and parses the 271 response for active coverage, plan type, deductible status, copay and coinsurance, so front-desk staff are not calling payer IVR lines for information a transaction can return in seconds."
+          },
+          {
+            "title": "Charge capture and coding",
+            "body": "Charges are extracted from clinical documentation and matched against the procedures actually performed. Missed charges are pure lost revenue, and they are invisible on any report because nobody ever billed for them. Automated capture reconciles the schedule against posted charges to surface encounters that were never billed at all."
+          },
+          {
+            "title": "Claim scrubbing and submission",
+            "body": "Before an EDI 837 leaves the building it is validated against payer-specific edits, NCCI procedure-to-procedure pairs, LCD and NCD medical necessity policies, and plain formatting rules. Most denials are avoidable at this step, which is why scrubbing is the highest-leverage automation in the cycle."
+          },
+          {
+            "title": "Remittance and payment posting",
+            "body": "The EDI 835 remittance advice returns payment detail alongside CARC and RARC codes explaining every adjustment. Automated posting reconciles those against expected contract rates and flags underpayments, which otherwise pass silently because a partially paid claim looks like a paid claim on a worklist."
+          },
+          {
+            "title": "Denial management and appeals",
+            "body": "Denials arrive as reason codes, not explanations. Agents classify each denial by root cause, distinguish the ones worth appealing from the ones that need a corrected claim, and assemble the appeal packet with the clinical evidence and policy citation that supports it."
+          },
+          {
+            "title": "A/R follow-up",
+            "body": "Ageing claims need status checks, and the EDI 276 and 277 pair provides them without a phone call. Agents work the entire A/R inventory on a cadence rather than the top of a worklist, so low-value claims that staff never reach still get pursued."
+          }
+        ]
+      },
+      {
+        "label": "Why It Matters",
+        "heading": "Where revenue",
+        "highlight": "quietly leaks",
+        "intro": [
+          "Revenue rarely disappears in one dramatic event. It drains through small, repeated failures that no single person is positioned to see: a claim denied for a missing prior authorisation, an underpayment three percent below contract, a secondary claim never filed, an appeal deadline missed by a week.",
+          "The economics of manual rework are what make this durable. When the staff cost of appealing a claim approaches the value of the claim itself, the rational decision is to write it off. Practices therefore abandon large volumes of genuinely collectable revenue, not through carelessness but through arithmetic. Automation changes that arithmetic, because the marginal cost of working one more claim falls close to zero."
+        ],
+        "points": []
+      },
+      {
+        "label": "The Difference",
+        "heading": "Agentic AI versus",
+        "highlight": "rules-based automation",
+        "intro": [
+          "Practices have had rules engines and robotic process automation for years. They break for a predictable reason: they encode a fixed path through a process that is not fixed. A payer changes a portal layout, a form gains a field, an edit is updated, and the script fails silently.",
+          "Agentic systems are structured differently. They are given a goal, a set of tools, and the authority to choose among them, which means they can read an unfamiliar denial letter, decide it needs a corrected claim rather than an appeal, and route it accordingly. That flexibility is also why guardrails matter more, not less: every action is logged, bounded by policy, and reversible, with defined thresholds that force human review."
+        ],
+        "points": []
+      },
+      {
+        "label": "What We Built",
+        "heading": "RCM Employee runs",
+        "highlight": "this cycle end to end",
+        "intro": [
+          "RCM Employee is our autonomous AI FTE for the revenue cycle. It is not a tool a biller operates; it is assigned the work itself — eligibility and benefits, coding and claim scrubbing, denial appeals and payment posting — and works it continuously, in plain English, with a full audit trail behind every action.",
+          "It runs alongside xEHR.io, our AI-native EHR and practice management platform, or against the system a practice already uses. Where an existing EHR lacks payer connectivity, we add production-grade X12 EDI to it directly, including 837 claim submission, 270 and 271 real-time eligibility, and remittance handling, so the cycle described above can actually run."
+        ],
+        "points": []
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is revenue cycle management automation?",
+        "a": "It is the use of software to perform the administrative and financial steps of a patient encounter without manual data entry, covering eligibility verification, charge capture, coding, claim submission, payment posting, denial management and accounts receivable follow-up. Agentic AI extends this by handling steps that require judgement rather than a fixed rule, such as classifying a denial or assembling an appeal."
+      },
+      {
+        "q": "How does agentic AI differ from the automation already in my practice management system?",
+        "a": "Most built-in automation is rules-based: it follows a predetermined path and stops when reality departs from that path. An agentic system is given a goal and a set of tools and selects its own route, so it can absorb a changed payer form or an unfamiliar denial reason without a developer rewriting the rule. Every action remains logged and bounded by policy."
+      },
+      {
+        "q": "Does automating the revenue cycle mean replacing billing staff?",
+        "a": "In practice it reassigns them. Automation absorbs the repetitive volume — status checks, eligibility calls, straightforward resubmissions — while people handle payer negotiations, complex appeals, and the exceptions that need clinical or contractual context. The usual outcome is that a billing team works a much larger claim inventory rather than a smaller one."
+      },
+      {
+        "q": "How is protected health information handled?",
+        "a": "Revenue cycle data is protected health information under HIPAA, so it requires a Business Associate Agreement with every vendor that touches it, encryption in transit and at rest, role-based access control, and an audit trail recording which agent or user accessed which record and when. Any AI component must operate under the same controls as the rest of the stack."
+      },
+      {
+        "q": "Which claims should be automated first?",
+        "a": "High-volume, low-variation work returns the most immediately: eligibility verification, claim status checks and payment posting are largely deterministic and carry low clinical risk. Denial appeals and coding are higher value but need a human review step before they run unattended, so they are usually the second phase rather than the first."
+      },
+      {
+        "q": "Does this work with our existing EHR?",
+        "a": "It has to. Practices rarely replace an EHR to adopt automation, so integration happens through whatever the system exposes — FHIR APIs where available, HL7 interfaces, EDI transactions through a clearinghouse, or database-level extracts. The integration path is a scoping question, not a barrier."
+      }
+    ]
+  },
+  "/projects/medical-coding": {
+    "sections": [
+      {
+        "label": "The Work Itself",
+        "heading": "What medical billing and",
+        "highlight": "coding automation does",
+        "intro": [
+          "Coding converts a clinical narrative into the standardised codes payers reimburse against. A physician documents an encounter in prose; a coder reads it and assigns ICD-10-CM diagnosis codes, CPT or HCPCS procedure codes, the correct evaluation and management level, and any modifiers that explain the circumstances of care.",
+          "Medical billing and coding automation with agentic AI performs that translation directly from the documentation. The model reads the note the way a coder does — problem list, history, examination, assessment and plan — and proposes codes with the specific passage of text that justifies each one, so a human reviewer can confirm or correct the reasoning rather than starting from a blank screen."
+        ],
+        "points": [
+          {
+            "title": "Diagnosis coding to full specificity",
+            "body": "ICD-10-CM rewards specificity: laterality, encounter type, and severity all change the code. Documentation frequently supports a more specific code than the one selected, and automated extraction surfaces that gap by reading the entire note rather than the assessment line alone."
+          },
+          {
+            "title": "Procedure coding and modifiers",
+            "body": "CPT and HCPCS selection carries the bulk of reimbursement risk. Modifiers explain circumstances a bare code cannot — a bilateral procedure, a distinct service, a repeat encounter on the same day — and omitting them is a common cause of underpayment and of denials that look like coding errors."
+          },
+          {
+            "title": "Evaluation and management levels",
+            "body": "Since the 2021 revision, office visit E&M levels are selected on either medical decision making or total time, not on bullet counts of history and examination. That change made levelling a matter of interpreting complexity, which is exactly the kind of judgement that suits a language model with a coder reviewing the result."
+          },
+          {
+            "title": "Compliance edits before submission",
+            "body": "NCCI procedure-to-procedure edits, medically unlikely edits, and local and national coverage determinations all constrain what may be billed together. Checking those at coding time rather than after a denial removes an entire category of rework."
+          },
+          {
+            "title": "Clinical documentation integrity",
+            "body": "When documentation does not support the code the encounter warrants, the answer is a physician query, not a guess. Automation drafts compliant, non-leading queries and routes them to the clinician, which is the difference between improving documentation and inflating it."
+          },
+          {
+            "title": "Audit trail on every code",
+            "body": "Each proposed code carries the text that supports it. That evidence trail is what makes the output defensible in an audit and reviewable by a coder, and it is the reason automated coding belongs in a human-in-the-loop workflow rather than running silently."
+          }
+        ]
+      },
+      {
+        "label": "The Constraint",
+        "heading": "Why coding stays",
+        "highlight": "human-in-the-loop",
+        "intro": [
+          "Coding sits directly on the compliance boundary. Codes that overstate the service performed are upcoding, and the consequences run from recoupment to False Claims Act exposure. Codes that understate it are lost revenue that no report will ever show. Both failure modes are expensive and neither is self-correcting.",
+          "The defensible design is therefore assistive rather than autonomous: the system proposes, a certified coder disposes, and the reviewer sees the supporting documentation alongside every suggestion. Throughput rises because review is faster than origination, while accountability for the submitted claim stays with a credentialed human."
+        ],
+        "points": []
+      },
+      {
+        "label": "What We Built",
+        "heading": "Coding is one job inside",
+        "highlight": "RCM Employee",
+        "intro": [
+          "We do not sell coding as an isolated product. It is one of the responsibilities carried by RCM Employee, our autonomous AI FTE for US healthcare providers, alongside eligibility and benefits verification, claim scrubbing, denial appeals and payment posting.",
+          "That structure matters, because a code proposed in isolation is a guess. A code proposed by a system that has also seen the eligibility response, the payer's edit history and the denial that came back on a similar claim last month is a decision made with context. Where a practice runs xEHR.io, our AI-native EHR, that context extends to the clinical documentation itself."
+        ],
+        "points": []
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Can AI replace a certified medical coder?",
+        "a": "No, and a system designed to do so would be difficult to defend in an audit. Automated coding is assistive: it proposes codes with the documentation that supports them, and a certified coder reviews and finalises. The gain is throughput and consistency, not the removal of the credentialed reviewer who remains accountable for the submitted claim."
+      },
+      {
+        "q": "How accurate is automated medical coding?",
+        "a": "Accuracy depends far more on documentation quality than on the model. A thorough, specific note supports precise coding; a sparse one does not, regardless of who or what reads it. This is why clinical documentation integrity and coding automation are usually deployed together rather than separately."
+      },
+      {
+        "q": "Does automated coding increase audit risk?",
+        "a": "It reduces it when built correctly. Every proposed code is linked to the text that justifies it, producing a more complete audit trail than manual coding typically leaves behind. Risk rises only when a system is allowed to submit codes without review, which is why the reviewer step is a design requirement rather than a preference."
+      },
+      {
+        "q": "What about E&M levelling under the current guidelines?",
+        "a": "Office and outpatient E&M levels are selected on medical decision making or total time following the 2021 revision. Both routes require interpreting the encounter rather than counting documentation elements, so the system evaluates the complexity of problems addressed, data reviewed and risk assumed, and presents its reasoning for the coder to confirm."
+      },
+      {
+        "q": "Which specialties does this suit?",
+        "a": "Specialties with high encounter volume and repeatable documentation patterns see returns first, including primary care, behavioural health and outpatient specialties. Highly procedural areas such as surgery and interventional cardiology benefit as well, though they carry more modifier complexity and warrant a longer supervised phase."
+      },
+      {
+        "q": "How does it handle payer-specific rules?",
+        "a": "Payer rules are applied as edits at coding time rather than discovered through denials. That includes NCCI procedure-to-procedure and medically unlikely edits, local and national coverage determinations, and individual payer policies where they diverge from the national standard."
+      }
+    ]
+  },
+  "/projects/smart-scheduling": {
+    "sections": [
+      {
+        "label": "Two Problems",
+        "heading": "Scheduling and intake are",
+        "highlight": "one continuous workflow",
+        "intro": [
+          "Practices treat booking and registration as separate problems, which is why both stay broken. A patient books by phone, then arrives to complete a clipboard of forms containing information the practice could have collected days earlier, while a staff member verifies insurance that could have been checked at the moment of booking.",
+          "Patient scheduling and intake automation with agentic AI treats the two as a single pipeline running from first contact to a clinically ready chart. Everything the encounter needs — demographics, coverage, consent, clinical questionnaires, cost estimate — is gathered before the patient arrives, because every item collected in advance is one not being collected in a waiting room."
+        ],
+        "points": [
+          {
+            "title": "Booking across every channel",
+            "body": "Patients book by phone, web, text and patient portal, and the schedule has to stay consistent across all of them. Agents handle booking and rescheduling conversationally in whichever channel the patient chose, applying provider templates, visit-type durations and referral requirements as they go."
+          },
+          {
+            "title": "Eligibility at the moment of booking",
+            "body": "Running the EDI 270 and 271 exchange at booking rather than at check-in changes what is possible. Coverage problems surface while there is still time to resolve them, instead of becoming a front-desk conversation with a patient who is already in the building."
+          },
+          {
+            "title": "Digital intake and registration",
+            "body": "Demographics, insurance cards, consents and clinical questionnaires are collected in advance and written into the chart rather than transcribed from paper. This removes the transcription step where most registration errors, and the downstream claim denials they cause, originate."
+          },
+          {
+            "title": "Reminders and no-show reduction",
+            "body": "Reminders work when they are timed to the visit type and easy to act on. A conversational reminder that lets a patient reschedule in the same thread converts a silent no-show into a released slot the practice can still fill."
+          },
+          {
+            "title": "Waitlist backfill",
+            "body": "An empty slot is unrecoverable revenue with fixed costs already committed. When a cancellation lands, agents work the waitlist immediately against clinical suitability and patient preference, filling the gap in the window where filling it is still possible."
+          },
+          {
+            "title": "Cost estimates and referrals",
+            "body": "Uninsured and self-pay patients are entitled to a Good Faith Estimate under the No Surprises Act, and referral-driven visits carry authorisation requirements that must be satisfied before the appointment. Both are deterministic checks that belong in the booking flow rather than in a follow-up call."
+          }
+        ]
+      },
+      {
+        "label": "The Economics",
+        "heading": "Why an empty slot",
+        "highlight": "costs more than it looks",
+        "intro": [
+          "A no-show is not a neutral event. The provider's time is already paid for, the room is already staffed, and the patient who could have taken the slot has been turned away. The loss is the full value of the visit plus the delayed care of whoever was waiting for that appointment.",
+          "Access failures compound in the same direction. When the next opening is weeks out, patients seek care elsewhere or not at all, which harms both continuity and revenue. Automating scheduling and intake attacks both ends: fewer slots lost to no-shows and cancellations, and more capacity released by removing the administrative work that limits how many patients a front desk can process."
+        ],
+        "points": []
+      },
+      {
+        "label": "What We Built",
+        "heading": "Scheduling and intake",
+        "highlight": "inside xEHR.io",
+        "intro": [
+          "Scheduling, eligibility and the patient portal ship as part of xEHR.io, our AI-native EHR and practice management platform for US practices. Because they share a single data model with the clinical record, an appointment that has been booked, verified and registered arrives as a chart ready for the encounter rather than as three systems waiting to be reconciled.",
+          "For practices staying on their current EHR, we deliver the same workflows as an automation layer on top of it: scheduling triage, insurance eligibility and benefits verification, inbound fax and document classification, and patient outreach by SMS, email and voice."
+        ],
+        "points": []
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is patient intake automation?",
+        "a": "It is the collection and validation of everything an encounter requires before the patient arrives: demographics, insurance details, consent forms, clinical questionnaires and, where applicable, a cost estimate. The information is written directly into the chart rather than transcribed from paper, which removes the step where most registration errors begin."
+      },
+      {
+        "q": "How does automated scheduling reduce no-shows?",
+        "a": "Through reminder timing matched to visit type and, more importantly, by making rescheduling frictionless. Most no-shows are not refusals; they are appointments the patient could not keep and had no easy way to move. A reminder that allows rescheduling in the same conversation converts a lost slot into a released one."
+      },
+      {
+        "q": "Will patients actually use a conversational booking agent?",
+        "a": "Adoption is highest where the agent works in a channel the patient already uses and where a human is reachable on request. Phone and text tend to outperform portals, which require a login patients frequently do not have. The design goal is fewer steps than calling the office, not a new application to install."
+      },
+      {
+        "q": "Does insurance verification happen before the visit?",
+        "a": "That is the point of running it at booking. The EDI 270 request and 271 response confirm active coverage, plan type, deductible status and patient responsibility while there is still time to act on a problem, rather than surfacing it at check-in when the options have narrowed considerably."
+      },
+      {
+        "q": "How does this integrate with our existing scheduling system?",
+        "a": "Automation sits on top of the existing schedule rather than replacing it, reading and writing through whatever interface the system exposes — FHIR appointment resources, an HL7 SIU feed, or a vendor API. The practice keeps its system of record and its established templates."
+      },
+      {
+        "q": "Is a Good Faith Estimate required for every patient?",
+        "a": "Under the No Surprises Act it is required for uninsured and self-pay patients scheduling care, with timing requirements tied to how far in advance the service is booked. Because the trigger is deterministic, it is well suited to being handled inside the booking flow rather than tracked manually."
+      }
+    ]
+  },
+  "/projects/agentic-ai": {
+    "sections": [
+      {
+        "label": "The Category",
+        "heading": "US healthcare administrative",
+        "highlight": "workflow automation",
+        "intro": [
+          "American healthcare spends an extraordinary share of every dollar on administration rather than care. The spending is not primarily clinical: it is eligibility checks, prior authorisations, claim submissions, denial appeals, credentialing packets and status calls, performed by people moving data between systems that do not talk to each other.",
+          "This is the work agentic AI is genuinely suited to. Each task is high-volume, rule-bound but not rigid, and requires reading unstructured documents and acting on them. An AI FTE — an autonomous digital worker that owns a workflow end to end rather than assisting with a single step — is the delivery model that matches the shape of the problem."
+        ],
+        "points": [
+          {
+            "title": "Front office and patient access",
+            "body": "Eligibility and benefits verification, prior authorisation and pre-certification, scheduling and reminders, intake and registration, referral management, and Good Faith Estimates. This is where the largest share of preventable downstream denials originates."
+          },
+          {
+            "title": "Mid-cycle and clinical administration",
+            "body": "Diagnosis and procedure coding, evaluation and management levelling, clinical documentation integrity queries, charge capture and reconciliation, and quality measure abstraction for programmes such as MIPS and HEDIS."
+          },
+          {
+            "title": "Back office and revenue cycle",
+            "body": "Claim scrubbing and submission, clearinghouse rejection handling, remittance and payment posting, denial management and appeals, accounts receivable follow-up, underpayment detection, patient statements and credit balance resolution."
+          },
+          {
+            "title": "Credentialing and provider operations",
+            "body": "Payer credentialing and re-credentialing, CAQH profile maintenance, provider enrollment and contract management. Slow credentialing directly delays revenue, because an unenrolled provider cannot bill regardless of how much care they deliver."
+          },
+          {
+            "title": "Compliance and audit",
+            "body": "HIPAA audit trail generation, access review, policy attestation tracking and documentation retention. Automation helps here precisely because the requirement is completeness and consistency rather than judgement."
+          },
+          {
+            "title": "Patient communication",
+            "body": "Billing questions, statement explanations, payment plan negotiation and appointment logistics. These consume enormous front-desk capacity while following a narrow set of patterns, which makes them well suited to conversational agents with human escalation."
+          }
+        ]
+      },
+      {
+        "label": "The Architecture",
+        "heading": "What makes an agent",
+        "highlight": "safe to deploy",
+        "intro": [
+          "An autonomous system operating on protected health information and submitting claims to federal payers needs constraints proportionate to what it can do. The controls are not optional extras; they determine whether the system is deployable at all.",
+          "That means a Business Associate Agreement covering every component that touches PHI, encryption in transit and at rest, least-privilege access scoped per agent, and an immutable audit trail recording every action and the reasoning behind it. It also means explicit escalation thresholds, so that decisions above a defined dollar value or confidence level route to a human by design, and a rollback path for any action the system takes."
+        ],
+        "points": []
+      },
+      {
+        "label": "What We Built",
+        "heading": "A shipped AI FTE, and",
+        "highlight": "custom agent fleets",
+        "intro": [
+          "RCM Employee is our flagship AI FTE and the clearest demonstration of the model: an autonomous digital worker that owns eligibility, coding, claims, denials and payment posting for US healthcare providers, around the clock, with full audit trails. It is in production, not in a pilot deck.",
+          "Beyond it we design custom agent fleets for organisations whose back-office workflows no single SaaS can model — planner, executor and reviewer roles bound together with policy enforcement, escalation paths, long-running task memory, and full observability across traces, costs and decisions, deployed on GCP, AWS or on-premise. One such build is already shipped and complete: a custom AI agent that automates ActiveCampaign for patient lead capture, routing and follow-up, running across a client's marketing stack."
+        ],
+        "points": []
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is an AI FTE?",
+        "a": "An AI FTE is an autonomous digital worker that owns an administrative workflow end to end rather than assisting with an individual task. Where a copilot suggests and waits, an AI FTE is assigned a queue — eligibility verification or denial follow-up, for example — and works it continuously, escalating only the cases that need human judgement."
+      },
+      {
+        "q": "How is this different from robotic process automation?",
+        "a": "RPA replays a fixed sequence of interface actions and breaks when the interface or the process changes. Agentic systems are given a goal and a set of tools and choose their own path, so an unfamiliar form or an unexpected denial reason is something to interpret rather than a failure condition."
+      },
+      {
+        "q": "Is agentic AI HIPAA compliant?",
+        "a": "Compliance is a property of the deployment, not of the technology. It requires a Business Associate Agreement with every vendor processing PHI, encryption in transit and at rest, role-based least-privilege access, audit logging of all access, and a documented incident response process. An AI system inherits exactly the same obligations as any other system handling PHI."
+      },
+      {
+        "q": "Which workflow should we automate first?",
+        "a": "The best first candidate is high-volume, low-variation and low clinical risk, which usually means eligibility verification, claim status checks or payment posting. These produce measurable results quickly and build the operational confidence needed before automating judgement-heavy work such as appeals or coding."
+      },
+      {
+        "q": "What happens when an agent is uncertain?",
+        "a": "It escalates. Confidence thresholds, dollar-value limits and defined exception categories route work to a human queue rather than allowing the agent to guess. A system without a well-designed escalation path is not safe to run on financial or clinical data, regardless of how accurate it is on average."
+      },
+      {
+        "q": "How long does deployment take?",
+        "a": "Timelines are driven by integration and access rather than by the agent itself. Where a practice can provide clearinghouse access and an EHR interface, a first workflow can typically run in a supervised mode quickly, with the supervised phase existing to calibrate escalation thresholds against real cases before autonomy is widened."
+      }
+    ]
+  },
+  "/projects/healthcare-it": {
+    "sections": [
+      {
+        "label": "The Premise",
+        "heading": "An EHR built for",
+        "highlight": "agents, not just clinicians",
+        "intro": [
+          "Most electronic health records were designed as digital filing cabinets and later had automation bolted on. The consequence is familiar to anyone who has integrated with one: data locked in proprietary structures, interfaces built for human clicking rather than programmatic access, and AI features that sit beside the workflow instead of inside it.",
+          "xEHR.io starts from the opposite premise. If autonomous agents are going to perform administrative work, the record they operate on must be legible to them — standards-native, API-first, and structured so that an agent can read a chart, act on it, and write back an auditable result without screen-scraping anything."
+        ],
+        "points": [
+          {
+            "title": "FHIR R4 native",
+            "body": "Clinical data is modelled as FHIR resources rather than exported into them on request. Interoperability becomes a property of the system rather than an integration project, which matters for both agent access and for the data-sharing obligations practices now operate under."
+          },
+          {
+            "title": "USCDI data elements",
+            "body": "The United States Core Data for Interoperability defines the minimum dataset a certified record must support, covering demographics, vital signs, laboratory results, medications, allergies and clinical notes. Supporting it as a first-class structure is what makes downstream automation reliable."
+          },
+          {
+            "title": "Practice management in the same system",
+            "body": "Scheduling, registration, eligibility and patient communication share a data model with the clinical record. The alternative, an EHR bridged to a separate practice management system, produces exactly the reconciliation gaps that administrative automation then has to work around."
+          },
+          {
+            "title": "Revenue cycle as a native capability",
+            "body": "Charge capture, coding support, claim submission and denial management operate on the same record as the encounter that generated them. A code proposed from a note can cite that note, and a denial can be traced to the documentation that caused it."
+          },
+          {
+            "title": "Built for agent access",
+            "body": "Agents authenticate as scoped identities with least-privilege permissions, and every read and write they perform is attributed and logged. This is what allows autonomous work to be audited afterwards with the same rigour as human work."
+          },
+          {
+            "title": "HIPAA controls throughout",
+            "body": "Encryption in transit and at rest, role-based access control, immutable audit logging and defined retention policies apply uniformly, including to the automated components. Security that stops at the boundary of the AI features is not security."
+          }
+        ]
+      },
+      {
+        "label": "The Consequence",
+        "heading": "Why the architecture",
+        "highlight": "determines the ceiling",
+        "intro": [
+          "The limiting factor on healthcare automation is rarely model capability. It is access: whether the relevant data can be read reliably, whether an action can be written back safely, and whether the whole exchange can be audited afterwards.",
+          "A record designed around those three requirements raises the ceiling on everything built above it. One designed around human data entry, with automation retrofitted afterwards, caps what any agent can do no matter how capable the underlying model becomes."
+        ],
+        "points": []
+      },
+      {
+        "label": "What We Built",
+        "heading": "xEHR.io is",
+        "highlight": "live today",
+        "intro": [
+          "xEHR.io is in production. It combines AI clinical documentation, autonomous revenue cycle agents, FHIR R4 and HL7 native interoperability, and HIPAA and SOC 2 readiness in a single platform built for US practices, and it is the system RCM Employee works inside when a practice runs both.",
+          "For practices that have outgrown their current software, we also build EHR and practice management systems from the ground up — specialty-specific charting and templates, lab, pharmacy and clearinghouse integrations, role-based access with a full HIPAA audit trail, and migration from Athena, eCW, Kareo, NextGen and Practice Fusion. For practices keeping their existing EHR, we add production-grade X12 EDI so claims, eligibility and remittances flow without manual workarounds."
+        ],
+        "points": []
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What makes an EHR AI-native rather than AI-enabled?",
+        "a": "An AI-enabled record adds features such as note summarisation to an architecture designed for human data entry. An AI-native record is built so autonomous systems are first-class users: standards-based data models, API-first access, scoped machine identities and audit logging that attributes every automated action."
+      },
+      {
+        "q": "Why does FHIR R4 matter?",
+        "a": "FHIR R4 is the standard US healthcare data exchange has converged on. A record that stores data as FHIR resources natively can exchange it without a translation layer, which removes both the cost of custom interfaces and the data loss that translation between proprietary models tends to introduce."
+      },
+      {
+        "q": "Does xEHR.io replace our practice management system?",
+        "a": "It combines the clinical record and practice management in a single system with one data model, so scheduling, registration, eligibility and billing operate on the same underlying record. Practices running separate systems today can evaluate it as a consolidation rather than as an additional integration."
+      },
+      {
+        "q": "How is patient data protected?",
+        "a": "Through the controls HIPAA requires of any system processing protected health information: encryption in transit and at rest, role-based least-privilege access, immutable audit logging, defined retention and disposal policies, and Business Associate Agreements covering every processor. These apply to automated components on the same terms as human users."
+      },
+      {
+        "q": "Can it exchange data with hospitals and other practices?",
+        "a": "That is the purpose of building on FHIR and USCDI. Standards-native storage is what makes participation in interoperability frameworks and query-retrieve exchange with other organisations practical rather than a bespoke project for each counterparty."
+      },
+      {
+        "q": "What size practice is this designed for?",
+        "a": "The architecture targets independent and mid-sized practices, which carry the same regulatory and administrative burden as large health systems without the staff to absorb it. That group has the most to gain from consolidating the clinical record, practice management and revenue cycle into one automatable system."
+      }
+    ]
+  }
+}

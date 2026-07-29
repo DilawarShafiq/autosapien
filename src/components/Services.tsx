@@ -52,10 +52,10 @@ const services = [
     fit: 'Best for: enterprises with complex back-office workflows that no single SaaS can model.',
     featured: true,
     caseStudy: {
-      name: 'Workflow Agentic Automation Project',
-      label: 'Under NDA',
+      name: 'Patient Lead Automation Agent',
+      label: 'Shipped',
       blurb:
-        'Currently building a custom multi-agentic platform for an enterprise client—orchestrating specialised agents across their operations stack. Engagement details confidential.',
+        'A custom AI agent built, completed, and shipped for a client—automating ActiveCampaign for patient lead capture, routing, and follow-up across their marketing stack.',
     },
   },
   {
@@ -207,7 +207,7 @@ export function Services() {
                 {service.caseStudy && (
                   <div className="mb-6 p-4 rounded-xl bg-gradient-to-br from-sky-50 to-sky-50/40 border border-sky-200/60">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="status-dot developing" />
+                      <span className="status-dot active" />
                       <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-sky-700">
                         Case study · {service.caseStudy.label}
                       </span>

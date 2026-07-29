@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import { TrendingUp, FileCheck, AlertCircle, DollarSign, Clock, Zap, BarChart3, RefreshCw } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { Contact } from '../components/Contact'
+import { PageContent } from '../components/PageContent'
 
 const features = [
   {
@@ -261,6 +262,8 @@ export function RCMAutomation() {
           </div>
         </div>
       </section>
+
+      <PageContent route="/projects/rcm-automation" />
 
       <Contact />
     </div>

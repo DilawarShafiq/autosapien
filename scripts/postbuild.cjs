@@ -52,7 +52,8 @@ const ROUTES = [
       type: 'Service',
       name: 'RCM Employee',
       sameAs: 'https://rcmemployee.com',
-      serviceType: 'US healthcare administrative workflow automation with agentic AI',
+      serviceType:
+        'Agentic automation for medical billing, medical coding and revenue cycle management',
     },
   },
   {
@@ -243,7 +244,8 @@ const ORG_JSONLD = {
           '@type': 'Service',
           name: 'RCM Employee',
           url: 'https://rcmemployee.com',
-          description: 'An autonomous AI FTE that runs revenue cycle management for US healthcare providers.',
+          description:
+            'An autonomous AI FTE for US healthcare providers covering medical billing, medical coding and end-to-end revenue cycle management.',
         },
       },
       {
@@ -268,6 +270,27 @@ const ORG_JSONLD = {
     ],
   },
 };
+
+// Long-form copy and FAQs live in one JSON file shared with the React
+// components, so the rendered page and the structured data cannot diverge.
+const pageContent = JSON.parse(
+  fs.readFileSync(path.join(projectRoot, 'src', 'data', 'pageContent.json'), 'utf8')
+);
+
+/** FAQPage schema built from the same FAQ entries the page renders. */
+function faqJsonLd(routePath) {
+  const entry = pageContent[routePath];
+  if (!entry || !entry.faqs || entry.faqs.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: entry.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  };
+}
 
 /** Per-page schema tying a product back to the Autosapien organization. */
 function productJsonLd(route) {
@@ -333,6 +356,10 @@ function renderRoute(template, route) {
   }
   if (route.product) {
     head.push(`    <script type="application/ld+json">${JSON.stringify(productJsonLd(route))}</script>`);
+  }
+  const faq = faqJsonLd(route.path);
+  if (faq) {
+    head.push(`    <script type="application/ld+json">${JSON.stringify(faq)}</script>`);
   }
   html = html.replace('</head>', `${head.join('\n')}\n  </head>`);
 
