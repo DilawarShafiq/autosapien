@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowUpRight, Shield, Bot, TrendingUp, Film, MessageSquare } from 'lucide-react'
+import { WhatsAppIcon } from './WhatsAppIcon'
 
 type Product = {
   id: string
@@ -11,8 +12,8 @@ type Product = {
   logo: string
   /** Symbol-only brand mark, paired with a typeset wordmark when no lockup exists. */
   mark?: string
-  /** Overrides the "Visit site" footer label for products reached another way. */
-  cta?: string
+  /** Set when the product is reached through a messaging channel, not a website. */
+  channel?: keyof typeof channels
   tagline: string
   description: string
   capabilities: string[]
@@ -25,6 +26,12 @@ type Product = {
 }
 
 const accents = ['sky', 'teal', 'indigo', 'amber', 'emerald'] as const
+
+// Products with no site of their own: the handle replaces the domain and the
+// channel's own mark replaces the generic "visit" affordance.
+const channels = {
+  whatsapp: { label: 'Message on WhatsApp', Icon: WhatsAppIcon, tint: 'text-[#25D366]' },
+} as const
 
 const products: Product[] = [
   {
@@ -102,7 +109,7 @@ const products: Product[] = [
     url: 'https://wa.me/923254344354',
     logo: '',
     mark: '/logos/thales.png',
-    cta: 'Message on WhatsApp',
+    channel: 'whatsapp',
     tagline: 'Agentic Crypto Trading over WhatsApp',
     description:
       'A conversational trading agent that talks to clients over WhatsApp, generates signals, and executes autonomous trades on Binance. Risk-aware, policy-bound, and operating 24/7 across global markets.',
@@ -198,6 +205,7 @@ export function Products() {
             // An odd product count would leave a hole in the two-column grid;
             // the trailing card spans the full row instead.
             const wide = products.length % 2 === 1 && i === products.length - 1
+            const channel = product.channel ? channels[product.channel] : null
             const Card = (
               <article
                 className={`group relative h-full p-7 sm:p-9 rounded-2xl bg-white border border-surface-200 transition-all duration-500 hover:-translate-y-1 hover:border-surface-300 ring-1 ring-transparent ${accent.ring} ${accent.glow} overflow-hidden`}
@@ -263,6 +271,7 @@ export function Products() {
                   <div className="flex items-center gap-2 mb-1">
                     <h3 className="font-display font-bold text-xl text-ink-900">{product.name}</h3>
                     <span className="font-mono text-[10px] text-ink-400">·</span>
+                    {channel && <channel.Icon className={`w-3.5 h-3.5 shrink-0 ${channel.tint}`} />}
                     <span className="font-mono text-[10px] text-ink-500 tracking-[0.1em]">{product.domain}</span>
                   </div>
                   <p className="font-display font-semibold text-sky-700 text-sm">
@@ -296,8 +305,9 @@ export function Products() {
                   </div>
                   <div className="flex items-center gap-3">
                     {product.url !== '#' && (
-                      <span className="font-mono text-[11px] text-ink-500 uppercase tracking-[0.15em] hidden sm:inline">
-                        {product.cta ?? 'Visit site'}
+                      <span className="font-mono text-[11px] text-ink-500 uppercase tracking-[0.15em] hidden sm:inline-flex items-center gap-1.5">
+                        {channel && <channel.Icon className={`w-3.5 h-3.5 ${channel.tint}`} />}
+                        {channel?.label ?? 'Visit site'}
                       </span>
                     )}
                     <div className="w-10 h-10 rounded-full border border-surface-300 flex items-center justify-center group-hover:bg-ink-900 group-hover:border-ink-900 transition-all">
@@ -324,7 +334,7 @@ export function Products() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block h-full"
-                    aria-label={product.cta ? `${product.name} — ${product.cta}` : `Visit ${product.name}`}
+                    aria-label={channel ? `${product.name} — ${channel.label}` : `Visit ${product.name}`}
                   >
                     {Card}
                   </a>

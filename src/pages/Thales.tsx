@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { TrendingUp, MessageSquare, Shield, Zap, Brain, BarChart3, Lock, LineChart } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
+import { WhatsAppIcon } from '../components/WhatsAppIcon'
 import { Contact } from '../components/Contact'
 
 const capabilities = [
@@ -228,7 +229,7 @@ export function Thales() {
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-surface-200 bg-white hover:border-sky-200 transition-colors font-display font-semibold text-sm text-ink-900"
             >
-              <MessageSquare className="w-4 h-4 text-sky-600" />
+              <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
               Send a message on +92 325 4344354 to get started on WhatsApp
             </a>
           </div>
