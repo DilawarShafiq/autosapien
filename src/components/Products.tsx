@@ -1,13 +1,16 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { ArrowUpRight, Shield, Bot, TrendingUp, MessageSquare } from 'lucide-react'
+import { ArrowUpRight, Shield, Bot, TrendingUp, Film, MessageSquare } from 'lucide-react'
 
 type Product = {
   id: string
   name: string
   domain: string
   url: string
+  /** Horizontal wordmark lockup, rendered on its own. */
   logo: string
+  /** Symbol-only brand mark, paired with a typeset wordmark when no lockup exists. */
+  mark?: string
   tagline: string
   description: string
   capabilities: string[]
@@ -19,7 +22,7 @@ type Product = {
   code: string
 }
 
-const accents = ['sky', 'teal', 'indigo', 'amber'] as const
+const accents = ['sky', 'teal', 'indigo', 'amber', 'emerald'] as const
 
 const products: Product[] = [
   {
@@ -94,6 +97,7 @@ const products: Product[] = [
     domain: 'thales.autosapien.com',
     url: '#',
     logo: '',
+    mark: '/logos/thales.png',
     tagline: 'Agentic Crypto Trading over WhatsApp',
     description:
       'A conversational trading agent that talks to clients over WhatsApp, generates signals, and executes autonomous trades on Binance. Risk-aware, policy-bound, and operating 24/7 across global markets.',
@@ -110,6 +114,28 @@ const products: Product[] = [
     icon: TrendingUp,
     code: 'PROD-04',
   },
+  {
+    id: 'zaraai',
+    name: 'Zara AI',
+    domain: 'zaraai.autosapien.com',
+    url: 'https://zaraai.autosapien.com',
+    logo: '/logos/zaraai.png',
+    tagline: 'Text to short film, end to end',
+    description:
+      'A generative film studio in the browser. Zara AI turns a story prompt into a finished short—script, scenes, video, voiceover, and an original score—produced by a fleet of specialised agents instead of a production crew.',
+    capabilities: [
+      'AI Film Maker (DGMG)',
+      'Text to Video Generation',
+      'Text to Image Generation',
+      'AI Voice & Original Score',
+    ],
+    metric: { value: 'Live', label: 'Free Tier Available' },
+    status: 'live',
+    category: 'Generative Media',
+    accent: 'emerald',
+    icon: Film,
+    code: 'PROD-05',
+  },
 ]
 
 const accentClasses: Record<Product['accent'], { ring: string; chip: string; dot: string; glow: string }> = {
@@ -117,6 +143,7 @@ const accentClasses: Record<Product['accent'], { ring: string; chip: string; dot
   teal:   { ring: 'group-hover:ring-teal-300/50',   chip: 'text-teal-700 bg-teal-50 border-teal-200',    dot: 'bg-teal-500',   glow: 'group-hover:shadow-[0_0_60px_-15px_rgba(20,184,166,0.35)]' },
   indigo: { ring: 'group-hover:ring-indigo-300/50', chip: 'text-indigo-700 bg-indigo-50 border-indigo-200', dot: 'bg-indigo-500', glow: 'group-hover:shadow-[0_0_60px_-15px_rgba(99,102,241,0.35)]' },
   amber:  { ring: 'group-hover:ring-amber-300/50',  chip: 'text-amber-700 bg-amber-50 border-amber-200', dot: 'bg-amber-500',  glow: 'group-hover:shadow-[0_0_60px_-15px_rgba(245,158,11,0.35)]' },
+  emerald:{ ring: 'group-hover:ring-emerald-300/50', chip: 'text-emerald-700 bg-emerald-50 border-emerald-200', dot: 'bg-emerald-500', glow: 'group-hover:shadow-[0_0_60px_-15px_rgba(17,238,185,0.35)]' },
 }
 
 export function Products() {
@@ -145,15 +172,16 @@ export function Products() {
               Software we built. Live in production.
             </h2>
             <p className="text-ink-400 font-body text-base sm:text-lg leading-relaxed">
-              Four products, four markets—each a complete platform engineered in-house by Autosapien
-              and operating today for real customers across healthcare, compliance, and global trading.
+              Five products, five markets—each a complete platform engineered in-house by Autosapien
+              and operating today for real customers across healthcare, compliance, global trading,
+              and generative media.
             </p>
           </div>
           <div className="hidden lg:flex flex-col items-end gap-2 shrink-0">
             <span className="label-mono text-[10px]">Live products</span>
             <div className="flex items-center gap-2">
               <span className="status-dot active" />
-              <span className="font-mono text-xs text-ink-700">4 / 4 in production</span>
+              <span className="font-mono text-xs text-ink-700">4 live · 1 in private beta</span>
             </div>
           </div>
         </motion.div>
@@ -162,6 +190,9 @@ export function Products() {
         <div className="grid lg:grid-cols-2 gap-5">
           {products.map((product, i) => {
             const accent = accentClasses[product.accent]
+            // An odd product count would leave a hole in the two-column grid;
+            // the trailing card spans the full row instead.
+            const wide = products.length % 2 === 1 && i === products.length - 1
             const Card = (
               <article
                 className={`group relative h-full p-7 sm:p-9 rounded-2xl bg-white border border-surface-200 transition-all duration-500 hover:-translate-y-1 hover:border-surface-300 ring-1 ring-transparent ${accent.ring} ${accent.glow} overflow-hidden`}
@@ -202,13 +233,22 @@ export function Products() {
                       className="max-h-14 w-auto object-contain object-left transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   ) : (
-                    <div className="flex items-baseline gap-2">
-                      <span className="font-display font-bold text-4xl tracking-tight text-ink-900">
-                        {product.name}
-                      </span>
-                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-600">
-                        agent
-                      </span>
+                    <div className="flex items-center gap-3">
+                      {product.mark && (
+                        <img
+                          src={product.mark}
+                          alt={`${product.name} mark`}
+                          className="h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                        />
+                      )}
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-display font-bold text-4xl tracking-tight text-ink-900">
+                          {product.name}
+                        </span>
+                        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-600">
+                          agent
+                        </span>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -226,12 +266,12 @@ export function Products() {
                 </div>
 
                 {/* Description */}
-                <p className="text-ink-500 font-body text-[15px] leading-relaxed mb-7">
+                <p className={`text-ink-500 font-body text-[15px] leading-relaxed mb-7 ${wide ? 'max-w-3xl' : ''}`}>
                   {product.description}
                 </p>
 
                 {/* Capabilities */}
-                <div className="grid grid-cols-2 gap-2 mb-7">
+                <div className={`grid grid-cols-2 ${wide ? 'lg:grid-cols-4' : ''} gap-2 mb-7`}>
                   {product.capabilities.map((cap) => (
                     <div
                       key={cap}
@@ -269,6 +309,7 @@ export function Products() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.55, delay: 0.1 + i * 0.08 }}
+                className={wide ? 'lg:col-span-2' : undefined}
               >
                 {product.url === '#' ? (
                   <div className="block h-full cursor-default">{Card}</div>

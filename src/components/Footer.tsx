@@ -14,6 +14,7 @@ const footerLinks = {
     { name: 'RCM Employee', href: 'https://rcmemployee.com' },
     { name: 'BetterCompliant', href: 'https://bettercompliant.com' },
     { name: 'Thales', href: '/projects/thales', isRoute: true },
+    { name: 'Zara AI', href: 'https://zaraai.autosapien.com' },
   ],
   services: [
     { name: 'RCM Automation', href: '/projects/rcm-automation', isRoute: true },

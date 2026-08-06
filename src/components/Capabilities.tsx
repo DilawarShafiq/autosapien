@@ -29,10 +29,10 @@ const capabilities = [
     features: ['Household task automation', 'Eldercare assistance', 'Smart home integration', 'Voice-first interaction'],
   },
   {
-    id: 'film', icon: Film, title: 'AI Film Studio', subtitle: 'Generative Cinema', status: 'developing', code: 'CAP-005',
+    id: 'film', icon: Film, title: 'AI Film Studio', subtitle: 'Zara AI · Generative Cinema', status: 'active', code: 'CAP-005',
     href: '/projects/film-studio',
-    description: 'The future of filmmaking is autonomous. Our AI film studio combines multiple specialized agents—writers, directors, editors, composers—orchestrated to produce complete short films.',
-    features: ['Multi-agent orchestration', 'Video diffusion generation', 'AI audio & music synthesis', 'Automated editing & post'],
+    description: 'Shipped as Zara AI (zaraai.autosapien.com). Multiple specialized agents—writers, directors, editors, composers—orchestrated to turn a single story prompt into a finished short film.',
+    features: ['Zara AI (zaraai.autosapien.com)', 'Text-to-video generation', 'AI voice & original score', 'Automated editing & post'],
   },
   {
     id: 'agentic', icon: Brain, title: 'Agentic AI', subtitle: 'AI Employees & Custom Agents', status: 'active', code: 'CAP-006',

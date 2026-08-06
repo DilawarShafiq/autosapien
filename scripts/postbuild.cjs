@@ -143,10 +143,17 @@ const ROUTES = [
   },
   {
     path: '/projects/film-studio',
-    title: `AI Film Studio | ${BRAND}`,
+    title: `Zara AI — AI Film Studio & Text to Video | ${BRAND}`,
     description:
-      'A fleet of specialized AI agents — writers, directors, editors, composers, VFX artists — producing complete short films from a single prompt.',
+      'Zara AI turns a story prompt into a finished short film — script, scenes, video, AI voiceover and an original score — produced by a fleet of specialized AI agents.',
     priority: '0.8',
+    product: {
+      type: 'SoftwareApplication',
+      name: 'Zara AI',
+      category: 'MultimediaApplication',
+      sameAs: 'https://zaraai.autosapien.com',
+      serviceType: 'AI short-film, text-to-video and text-to-image generation',
+    },
   },
   {
     path: '/privacy',
@@ -203,6 +210,7 @@ const KNOWS_ABOUT = [
   'Denial management and appeals',
   'Agentic AI',
   'Robotics',
+  'Generative video and AI film production',
 ];
 
 // Organization schema — gives Google explicit brand/entity data for the site,
@@ -265,6 +273,17 @@ const ORG_JSONLD = {
           applicationCategory: 'FinanceApplication',
           url: 'https://thales.autosapien.com',
           description: 'Agentic crypto trading delivered over WhatsApp.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'SoftwareApplication',
+          name: 'Zara AI',
+          applicationCategory: 'MultimediaApplication',
+          url: 'https://zaraai.autosapien.com',
+          description:
+            'AI film studio that generates complete short films — script, scenes, video, voiceover and score — from a text prompt.',
         },
       },
     ],

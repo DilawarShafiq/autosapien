@@ -34,8 +34,8 @@ const pillars = [
   {
     icon: Film,
     title: 'AI Film Studio',
-    description: 'Generative AI agents that write, edit, and produce short films entirely autonomously.',
-    status: 'developing',
+    description: 'Zara AI—generative agents that write, shoot, score, and edit complete short films from a single prompt.',
+    status: 'active',
     code: 'FLM-05',
   },
   {

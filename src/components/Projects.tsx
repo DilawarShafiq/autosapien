@@ -18,10 +18,11 @@ const projects = [
     metrics: { value: 'Live', label: 'xEHR.io' }, status: 'active', code: 'PRJ-002',
   },
   {
-    id: 'film-studio', slug: '/projects/film-studio', title: 'AI Film Studio', category: 'Generative Cinema',
-    description: 'Our AI film studio orchestrates specialized agents to produce complete short films from a single prompt.',
-    icon: Film, features: ['Video Diffusion', 'AI Audio Synthesis', 'Multi-Agent Production', 'Automated Post'],
-    metrics: { value: '∞', label: 'Films Possible' }, status: 'developing', code: 'PRJ-003',
+    id: 'film-studio', slug: '/projects/film-studio',
+    title: 'Zara AI Film Studio', category: 'Generative Cinema',
+    description: 'Live as Zara AI. Specialized agents orchestrate script, scenes, video, voice, and score to produce a complete short film from a single prompt.',
+    icon: Film, features: ['Text-to-Video', 'AI Voice & Score', 'Multi-Agent Production', 'Automated Post'],
+    metrics: { value: 'Live', label: 'zaraai.autosapien.com' }, status: 'active', code: 'PRJ-003',
   },
   {
     id: 'home-robotics', slug: '/projects/home-robotics', title: 'Home Companions', category: 'Home Robotics',

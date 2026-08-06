@@ -121,10 +121,10 @@ export function FilmStudio() {
         icon={Film}
         category="Generative Cinema"
         title="AI Film Studio"
-        subtitle="Where imagination becomes cinema"
-        description="The future of filmmaking is autonomous. Our AI film studio orchestrates a fleet of specialized agents—writers, directors, editors, composers, VFX artists—to produce complete short films from a single prompt. Using state-of-the-art diffusion models and audio synthesis, we're creating a new medium where the only limit is imagination."
+        subtitle="Live as Zara AI — where imagination becomes cinema"
+        description="Our AI film studio ships as Zara AI (zaraai.autosapien.com). It orchestrates a fleet of specialized agents—writers, directors, editors, composers, VFX artists—to produce complete short films from a single prompt, using state-of-the-art diffusion models and audio synthesis. Text-to-image, text-to-video, and full film generation are available today, with a free tier to start."
         gradient="from-synth-500 to-sky-500"
-        status="developing"
+        status="active"
         features={[
           'Video Diffusion',
           'AI Music Synthesis',
@@ -159,6 +159,39 @@ export function FilmStudio() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Live product band — links the capability page to the shipped product */}
+      <section className="relative pb-4" style={{ background: '#ffffff' }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <a
+            href="https://zaraai.autosapien.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-5 px-6 py-6 rounded-xl border border-surface-200 bg-surface-50/50 hover:border-emerald-200 transition-colors"
+          >
+            <div className="flex items-center gap-5">
+              <img
+                src="/logos/zaraai.png"
+                alt="Zara AI logo"
+                className="h-9 w-auto object-contain"
+              />
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="status-dot active" />
+                  <span className="font-display font-semibold text-ink-900">Zara AI is live</span>
+                </div>
+                <p className="text-sm text-ink-500 font-body mt-0.5">
+                  Turn a story prompt into a finished short film. Free tier available.
+                </p>
+              </div>
+            </div>
+            <span className="inline-flex items-center gap-2 text-sm font-display font-semibold text-ink-900 group-hover:text-emerald-700 transition-colors whitespace-nowrap">
+              zaraai.autosapien.com
+              <Play className="w-4 h-4" />
+            </span>
+          </a>
         </div>
       </section>
 
