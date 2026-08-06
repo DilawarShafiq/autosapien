@@ -102,7 +102,8 @@ const ROUTES = [
       type: 'SoftwareApplication',
       name: 'Thales',
       category: 'FinanceApplication',
-      sameAs: 'https://thales.autosapien.com',
+      // No sameAs: Thales has no site of its own — onboarding is a WhatsApp
+      // thread, so this page is the canonical entity page.
       serviceType: 'Agentic crypto trading over WhatsApp',
     },
   },
@@ -271,7 +272,7 @@ const ORG_JSONLD = {
           '@type': 'SoftwareApplication',
           name: 'Thales',
           applicationCategory: 'FinanceApplication',
-          url: 'https://thales.autosapien.com',
+          url: `${ORIGIN}/projects/thales/`,
           description: 'Agentic crypto trading delivered over WhatsApp.',
         },
       },

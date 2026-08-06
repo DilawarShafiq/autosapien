@@ -222,6 +222,15 @@ export function Thales() {
               want to evaluate it for managed trading or as the foundation for a custom agentic
               trading product.
             </p>
+            <a
+              href="https://wa.me/923254344354"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-surface-200 bg-white hover:border-sky-200 transition-colors font-display font-semibold text-sm text-ink-900"
+            >
+              <MessageSquare className="w-4 h-4 text-sky-600" />
+              Send a message on +92 325 4344354 to get started on WhatsApp
+            </a>
           </div>
         </div>
       </section>

@@ -11,6 +11,8 @@ type Product = {
   logo: string
   /** Symbol-only brand mark, paired with a typeset wordmark when no lockup exists. */
   mark?: string
+  /** Overrides the "Visit site" footer label for products reached another way. */
+  cta?: string
   tagline: string
   description: string
   capabilities: string[]
@@ -94,10 +96,13 @@ const products: Product[] = [
   {
     id: 'thales',
     name: 'Thales',
-    domain: 'thales.autosapien.com',
-    url: '#',
+    // Thales has no web app — onboarding happens in the WhatsApp thread itself,
+    // so the contact number stands in for a domain.
+    domain: '+92 325 4344354',
+    url: 'https://wa.me/923254344354',
     logo: '',
     mark: '/logos/thales.png',
+    cta: 'Message on WhatsApp',
     tagline: 'Agentic Crypto Trading over WhatsApp',
     description:
       'A conversational trading agent that talks to clients over WhatsApp, generates signals, and executes autonomous trades on Binance. Risk-aware, policy-bound, and operating 24/7 across global markets.',
@@ -292,7 +297,7 @@ export function Products() {
                   <div className="flex items-center gap-3">
                     {product.url !== '#' && (
                       <span className="font-mono text-[11px] text-ink-500 uppercase tracking-[0.15em] hidden sm:inline">
-                        Visit site
+                        {product.cta ?? 'Visit site'}
                       </span>
                     )}
                     <div className="w-10 h-10 rounded-full border border-surface-300 flex items-center justify-center group-hover:bg-ink-900 group-hover:border-ink-900 transition-all">
@@ -319,7 +324,7 @@ export function Products() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block h-full"
-                    aria-label={`Visit ${product.name}`}
+                    aria-label={product.cta ? `${product.name} — ${product.cta}` : `Visit ${product.name}`}
                   >
                     {Card}
                   </a>
