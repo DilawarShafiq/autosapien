@@ -347,11 +347,18 @@ export function FilmStudio() {
                 See it in action
               </h2>
               <p className="text-lg text-ink-400 mb-8 max-w-2xl mx-auto">
-                Watch films generated entirely by AI agents—from concept to final cut in under an hour.
+                Films generated entirely by AI agents—from concept to final cut in under an hour.
+                Zara AI is live, with a free tier to start.
               </p>
-              <button className="btn-primary rounded-lg">
-                View Demo Reel
-              </button>
+              <a
+                href="https://zaraai.autosapien.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary rounded-lg inline-flex items-center gap-2"
+              >
+                Make a film with Zara AI
+                <Play className="w-4 h-4" />
+              </a>
             </div>
           </motion.div>
         </div>

@@ -18,10 +18,11 @@ const projects = [
     metrics: { value: 'Live', label: 'xEHR.io' }, status: 'active', code: 'PRJ-002',
   },
   {
-    id: 'film-studio', slug: '/projects/film-studio',
+    id: 'film-studio', slug: '/projects/film-studio', externalUrl: 'https://zaraai.autosapien.com',
     title: 'Zara AI Film Studio', category: 'Generative Cinema',
     description: 'Live as Zara AI. Specialized agents orchestrate script, scenes, video, voice, and score to produce a complete short film from a single prompt.',
-    icon: Film, features: ['Text-to-Video', 'AI Voice & Score', 'Multi-Agent Production', 'Automated Post'],
+    icon: Film, mark: '/logos/zaraai-mark.png',
+    features: ['Text-to-Video', 'AI Voice & Score', 'Multi-Agent Production', 'Automated Post'],
     metrics: { value: 'Live', label: 'zaraai.autosapien.com' }, status: 'active', code: 'PRJ-003',
   },
   {
@@ -157,8 +158,13 @@ export function Projects() {
                     <div className="absolute top-3 right-3 font-mono text-[10px] text-ink-200/30 select-none">{project.code}</div>
 
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-9 h-9 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-sky-50 group-hover:scale-105 transition-all">
-                        <project.icon className="w-4.5 h-4.5 text-ink-400 group-hover:text-sky-600 transition-colors" />
+                      {/* Shipped products show their own mark; the rest fall back to the category icon. */}
+                      <div className="w-9 h-9 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-sky-50 group-hover:scale-105 transition-all overflow-hidden">
+                        {project.mark ? (
+                          <img src={project.mark} alt={`${project.title} logo`} className="w-6 h-6 object-contain" />
+                        ) : (
+                          <project.icon className="w-4.5 h-4.5 text-ink-400 group-hover:text-sky-600 transition-colors" />
+                        )}
                       </div>
                       {project.status === 'developing' && (
                         <span className="badge-pill badge-sky text-[10px] py-1 px-2"><span className="status-dot developing" />Dev</span>
