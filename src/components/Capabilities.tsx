@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { Bot, Heart, Film, Factory, Home, Brain, ChevronRight } from 'lucide-react'
+import { Bot, Heart, Film, Factory, Home, Brain, ChevronRight, ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const capabilities = [
@@ -30,7 +30,7 @@ const capabilities = [
   },
   {
     id: 'film', icon: Film, title: 'AI Film Studio', subtitle: 'Zara AI · Generative Cinema', status: 'active', code: 'CAP-005',
-    href: '/projects/film-studio',
+    href: '/projects/film-studio', liveUrl: 'https://zaraai.autosapien.com', liveLabel: 'zaraai.autosapien.com',
     description: 'Shipped as Zara AI (zaraai.autosapien.com). Multiple specialized agents—writers, directors, editors, composers—orchestrated to turn a single story prompt into a finished short film.',
     features: ['Zara AI (zaraai.autosapien.com)', 'Text-to-video generation', 'AI voice & original score', 'Automated editing & post'],
   },
@@ -177,13 +177,28 @@ export function Capabilities() {
                     ))}
                   </div>
 
-                  <Link to={activeCapability.href} className="btn-primary group rounded-lg relative overflow-hidden inline-flex">
-                    <span className="relative z-10 flex items-center gap-3">
-                      Explore {activeCapability.title}
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                    <div className="absolute inset-0 bg-sky-700 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
-                  </Link>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                    <Link to={activeCapability.href} className="btn-primary group rounded-lg relative overflow-hidden inline-flex">
+                      <span className="relative z-10 flex items-center gap-3">
+                        Explore {activeCapability.title}
+                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                      <div className="absolute inset-0 bg-sky-700 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
+                    </Link>
+                    {/* Capabilities that have shipped link out to the product itself. */}
+                    {activeCapability.liveUrl && (
+                      <a
+                        href={activeCapability.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-ink-500 hover:text-sky-700 transition-colors"
+                      >
+                        <span className="status-dot active" />
+                        {activeCapability.liveLabel}
+                        <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>
