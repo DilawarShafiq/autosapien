@@ -9,12 +9,17 @@ const footerLinks = {
     { name: 'Technology', href: '/#technology' },
     { name: 'Contact', href: '/#contact' },
   ],
+  // Product links point at each product's page on this site, not at its own
+  // domain. Every page carries this footer, so these are the strongest internal
+  // links the site has — and xehr.io and rcmemployee.com do not currently
+  // resolve, so the old external hrefs were dead on every page.
+  // BetterCompliant keeps its external href: it has no page here.
   products: [
-    { name: 'xEHR.io', href: 'https://xehr.io' },
-    { name: 'RCM Employee', href: 'https://rcmemployee.com' },
+    { name: 'xEHR.io', href: '/projects/healthcare-it', isRoute: true },
+    { name: 'RCM Employee', href: '/projects/agentic-ai', isRoute: true },
     { name: 'BetterCompliant', href: 'https://bettercompliant.com' },
     { name: 'Thales', href: '/projects/thales', isRoute: true },
-    { name: 'Zara AI', href: 'https://zaraai.autosapien.com' },
+    { name: 'Zara AI', href: '/projects/film-studio', isRoute: true },
   ],
   services: [
     { name: 'RCM Automation', href: '/projects/rcm-automation', isRoute: true },

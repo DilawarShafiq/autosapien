@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { ArrowUpRight, Shield, Bot, TrendingUp, Film, MessageSquare } from 'lucide-react'
+import { ArrowUpRight, ArrowRight, Shield, Bot, TrendingUp, Film, MessageSquare } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { WhatsAppIcon } from './WhatsAppIcon'
 
 type Product = {
@@ -8,6 +9,13 @@ type Product = {
   name: string
   domain: string
   url: string
+  /**
+   * The product's own page on this site. When set the card links here rather
+   * than straight out to the product domain: the page carries the structured
+   * data and the outbound CTA, and without an inbound link it is an orphan
+   * Google will not rank.
+   */
+  page?: string
   /** Horizontal wordmark lockup, rendered on its own. */
   logo: string
   /** Symbol-only brand mark, paired with a typeset wordmark when no lockup exists. */
@@ -36,6 +44,7 @@ const channels = {
 const products: Product[] = [
   {
     id: 'xehr',
+    page: '/projects/healthcare-it',
     name: 'xEHR.io',
     domain: 'xehr.io',
     url: 'https://xehr.io',
@@ -58,6 +67,7 @@ const products: Product[] = [
   },
   {
     id: 'rcm-employee',
+    page: '/projects/agentic-ai',
     name: 'RCM Employee',
     domain: 'rcmemployee.com',
     url: 'https://rcmemployee.com',
@@ -102,6 +112,7 @@ const products: Product[] = [
   },
   {
     id: 'thales',
+    page: '/projects/thales',
     name: 'Thales',
     // Thales has no web app — onboarding happens in the WhatsApp thread itself,
     // so the contact number stands in for a domain.
@@ -128,6 +139,7 @@ const products: Product[] = [
   },
   {
     id: 'zaraai',
+    page: '/projects/film-studio',
     name: 'Zara AI',
     domain: 'zaraai.autosapien.com',
     url: 'https://zaraai.autosapien.com',
@@ -304,14 +316,18 @@ export function Products() {
                     <div className="label-mono text-[10px] mt-0.5">{product.metric.label}</div>
                   </div>
                   <div className="flex items-center gap-3">
-                    {product.url !== '#' && (
+                    {(product.page || product.url !== '#') && (
                       <span className="font-mono text-[11px] text-ink-500 uppercase tracking-[0.15em] hidden sm:inline-flex items-center gap-1.5">
-                        {channel && <channel.Icon className={`w-3.5 h-3.5 ${channel.tint}`} />}
-                        {channel?.label ?? 'Visit site'}
+                        {!product.page && channel && <channel.Icon className={`w-3.5 h-3.5 ${channel.tint}`} />}
+                        {product.page ? 'Explore' : channel?.label ?? 'Visit site'}
                       </span>
                     )}
                     <div className="w-10 h-10 rounded-full border border-surface-300 flex items-center justify-center group-hover:bg-ink-900 group-hover:border-ink-900 transition-all">
-                      <ArrowUpRight className="w-4 h-4 text-ink-500 group-hover:text-white transition-colors" />
+                      {product.page ? (
+                        <ArrowRight className="w-4 h-4 text-ink-500 group-hover:text-white transition-colors" />
+                      ) : (
+                        <ArrowUpRight className="w-4 h-4 text-ink-500 group-hover:text-white transition-colors" />
+                      )}
                     </div>
                   </div>
                 </div>
@@ -326,7 +342,11 @@ export function Products() {
                 transition={{ duration: 0.55, delay: 0.1 + i * 0.08 }}
                 className={wide ? 'lg:col-span-2' : undefined}
               >
-                {product.url === '#' ? (
+                {product.page ? (
+                  <Link to={product.page} className="block h-full" aria-label={`${product.name} — read more`}>
+                    {Card}
+                  </Link>
+                ) : product.url === '#' ? (
                   <div className="block h-full cursor-default">{Card}</div>
                 ) : (
                   <a

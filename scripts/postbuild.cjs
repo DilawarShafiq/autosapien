@@ -38,7 +38,9 @@ const ROUTES = [
       type: 'SoftwareApplication',
       name: 'xEHR.io',
       category: 'HealthApplication',
-      sameAs: 'https://xehr.io',
+      // No sameAs: xehr.io does not currently resolve, and pointing Google at a
+      // dead host weakens the entity rather than strengthening it. This page is
+      // the canonical entity page until the domain is live again.
       serviceType: 'AI-native EHR, practice management and revenue cycle automation',
     },
   },
@@ -51,7 +53,7 @@ const ROUTES = [
     product: {
       type: 'Service',
       name: 'RCM Employee',
-      sameAs: 'https://rcmemployee.com',
+      // No sameAs: rcmemployee.com has no DNS records. See the xEHR note above.
       serviceType:
         'Agentic automation for medical billing, medical coding and revenue cycle management',
     },
@@ -254,7 +256,7 @@ const ORG_JSONLD = {
           '@type': 'SoftwareApplication',
           name: 'xEHR.io',
           applicationCategory: 'HealthApplication',
-          url: 'https://xehr.io',
+          url: `${ORIGIN}/projects/healthcare-it/`,
           description: 'AI-native EHR, practice management and revenue cycle automation for US healthcare practices.',
         },
       },
@@ -263,7 +265,7 @@ const ORG_JSONLD = {
         itemOffered: {
           '@type': 'Service',
           name: 'RCM Employee',
-          url: 'https://rcmemployee.com',
+          url: `${ORIGIN}/projects/agentic-ai/`,
           description:
             'An autonomous AI FTE for US healthcare providers covering medical billing, medical coding and end-to-end revenue cycle management.',
         },

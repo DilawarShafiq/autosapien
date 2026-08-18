@@ -11,14 +11,14 @@ const projects = [
     metrics: { value: '40+', label: 'Degrees of Freedom' }, featured: true, status: 'developing', code: 'PRJ-001',
   },
   {
-    id: 'healthcare-it', slug: '/projects/healthcare-it', externalUrl: 'https://xehr.io',
+    id: 'healthcare-it', slug: '/projects/healthcare-it',
     title: 'xEHR.io Platform', category: 'Healthcare AI',
     description: 'The intelligent healthcare platform transforming how the USA delivers care. AI agents that work 24/7 to eliminate administrative burden.',
     icon: Heart, features: ['AI Clinical Documentation', 'Autonomous RCM', 'FHIR R4 Native', '98% Clean Claims'],
     metrics: { value: 'Live', label: 'xEHR.io' }, status: 'active', code: 'PRJ-002',
   },
   {
-    id: 'film-studio', slug: '/projects/film-studio', externalUrl: 'https://zaraai.autosapien.com',
+    id: 'film-studio', slug: '/projects/film-studio',
     title: 'Zara AI Film Studio', category: 'Generative Cinema',
     description: 'Live as Zara AI. Specialized agents orchestrate script, scenes, video, voice, and score to produce a complete short film from a single prompt.',
     icon: Film, mark: '/logos/zaraai-mark.png',
@@ -203,11 +203,11 @@ export function Projects() {
                     </div>
                   </div>
                 )
-                return project.externalUrl ? (
-                  <a href={project.externalUrl} target="_blank" rel="noopener noreferrer" className="block h-full group">{card}</a>
-                ) : (
-                  <Link to={project.slug} className="block h-full group">{card}</Link>
-                )
+                // Always internal. Two of these cards used to jump straight to
+                // xehr.io / zaraai, which left their own project pages with no
+                // inbound link on the site — Google had no reason to surface
+                // them. The project page carries the outbound CTA instead.
+                return <Link to={project.slug} className="block h-full group">{card}</Link>
               })()}
             </motion.div>
           ))}
