@@ -182,6 +182,17 @@ const ROUTES = [
   },
 ];
 
+// Legacy URLs Google still crawls from the pre-React site. They 404 today, which
+// Search Console reports as "Not found (404)". The content they used to hold now
+// lives as a section of the homepage, so redirect rather than leave them dead.
+// Deliberately NOT in ROUTES: these are redirects, not pages, so they stay out
+// of the sitemap.
+const LEGACY_REDIRECTS = [
+  { path: '/about', target: '/#about' },
+  { path: '/services', target: '/#services' },
+  { path: '/projects', target: '/#projects' },
+];
+
 /** Escape a string for safe use inside a double-quoted HTML attribute. */
 function attr(value) {
   return value
@@ -397,6 +408,33 @@ function writeRoute(template, route) {
   fs.writeFileSync(path.join(dir, 'index.html'), html);
 }
 
+/**
+ * A static redirect stub. GitHub Pages cannot issue a 301, so this pairs a
+ * meta refresh (which Google follows and treats as a redirect) with a canonical
+ * pointing at the destination, so link equity lands on the homepage instead of
+ * being lost to a 404.
+ */
+function writeRedirect({ path: routePath, target }) {
+  const url = `${ORIGIN}${target}`;
+  const html = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="canonical" href="${ORIGIN}/" />
+    <meta http-equiv="refresh" content="0; url=${attr(url)}" />
+    <title>Redirecting to ${BRAND}</title>
+  </head>
+  <body>
+    <p>This page has moved to <a href="${attr(url)}">${attr(url)}</a>.</p>
+    <script>window.location.replace(${JSON.stringify(url)});</script>
+  </body>
+</html>
+`;
+  const dir = path.join(distDir, routePath.replace(/^\//, ''));
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), html);
+}
+
 function writeSitemap() {
   const lastmod = new Date().toISOString().slice(0, 10);
   const urls = ROUTES.map(
@@ -414,12 +452,20 @@ function writeRobots() {
 
 const template = fs.readFileSync(source, 'utf8');
 
-// SPA fallback for genuinely unknown URLs. Built from the untouched template so
-// it keeps the generic homepage metadata.
-fs.writeFileSync(path.join(distDir, '404.html'), template);
+// SPA fallback for genuinely unknown URLs. GitHub Pages serves this with an
+// HTTP 404, but crawlers that ignore the status (and URLs invented by other
+// sites, e.g. /hipaa-ai for /hipaa) would otherwise see a renderable page — so
+// mark it noindex explicitly and give it no canonical of its own.
+fs.writeFileSync(
+  path.join(distDir, '404.html'),
+  template.replace('</head>', '    <meta name="robots" content="noindex, nofollow" />\n  </head>')
+);
 
 ROUTES.forEach((route) => writeRoute(template, route));
+LEGACY_REDIRECTS.forEach(writeRedirect);
 writeSitemap();
 writeRobots();
 
-console.log(`postbuild: wrote ${ROUTES.length} prerendered routes, sitemap.xml, robots.txt`);
+console.log(
+  `postbuild: wrote ${ROUTES.length} prerendered routes, ${LEGACY_REDIRECTS.length} legacy redirects, sitemap.xml, robots.txt`
+);
