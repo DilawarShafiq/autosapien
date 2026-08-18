@@ -20,6 +20,22 @@ const ORIGIN = 'https://autosapien.com';
 const OG_IMAGE = `${ORIGIN}/og-image.png`;
 const BRAND = 'Autosapien';
 
+/*
+ * A product's own site, or null while that site is down.
+ *
+ * These feed sameAs and the offer catalog — claims Googlebot verifies by
+ * fetching. As of 2026-08-18 xehr.io returns SERVFAIL and rcmemployee.com has no
+ * A record (hosting lapsed, being restored), so asserting them would point the
+ * crawler at hosts that do not answer. Null falls back to the product's page on
+ * this site, which is a real URL.
+ *
+ * Restore each entry once `nslookup <domain> 8.8.8.8` answers.
+ */
+const PRODUCT_SITES = {
+  xehr: null, // 'https://xehr.io'
+  rcmEmployee: null, // 'https://rcmemployee.com'
+};
+
 const ROUTES = [
   {
     path: '/',
@@ -38,9 +54,7 @@ const ROUTES = [
       type: 'SoftwareApplication',
       name: 'xEHR.io',
       category: 'HealthApplication',
-      // No sameAs: xehr.io does not currently resolve, and pointing Google at a
-      // dead host weakens the entity rather than strengthening it. This page is
-      // the canonical entity page until the domain is live again.
+      sameAs: PRODUCT_SITES.xehr,
       serviceType: 'AI-native EHR, practice management and revenue cycle automation',
     },
   },
@@ -53,7 +67,7 @@ const ROUTES = [
     product: {
       type: 'Service',
       name: 'RCM Employee',
-      // No sameAs: rcmemployee.com has no DNS records. See the xEHR note above.
+      sameAs: PRODUCT_SITES.rcmEmployee,
       serviceType:
         'Agentic automation for medical billing, medical coding and revenue cycle management',
     },
@@ -256,7 +270,7 @@ const ORG_JSONLD = {
           '@type': 'SoftwareApplication',
           name: 'xEHR.io',
           applicationCategory: 'HealthApplication',
-          url: `${ORIGIN}/projects/healthcare-it/`,
+          url: PRODUCT_SITES.xehr ?? `${ORIGIN}/projects/healthcare-it/`,
           description: 'AI-native EHR, practice management and revenue cycle automation for US healthcare practices.',
         },
       },
@@ -265,7 +279,7 @@ const ORG_JSONLD = {
         itemOffered: {
           '@type': 'Service',
           name: 'RCM Employee',
-          url: `${ORIGIN}/projects/agentic-ai/`,
+          url: PRODUCT_SITES.rcmEmployee ?? `${ORIGIN}/projects/agentic-ai/`,
           description:
             'An autonomous AI FTE for US healthcare providers covering medical billing, medical coding and end-to-end revenue cycle management.',
         },

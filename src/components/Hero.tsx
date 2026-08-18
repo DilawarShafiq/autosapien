@@ -156,9 +156,9 @@ export function Hero() {
         >
           {[
             { value: '6', label: 'Core AI Verticals', href: '#capabilities' },
-            { value: '#1', label: 'AI-Powered Healthcare IT', href: 'https://xehr.io' },
+            { value: '#1', label: 'AI-Powered Healthcare IT', href: '/projects/healthcare-it' },
             { value: '1st', label: 'Humanoid in Development' },
-            { value: 'Workflow Automation', label: 'Agentic AI FTEs', href: 'https://rcmemployee.com' },
+            { value: 'Workflow Automation', label: 'Agentic AI FTEs', href: '/projects/agentic-ai' },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -167,6 +167,22 @@ export function Hero() {
               transition={{ delay: 1 + i * 0.1 }}
             >
               {stat.href ? (
+                // Route hrefs go through Link so they stay client-side and read
+                // as internal links to a crawler; anchors and external URLs keep
+                // the plain anchor.
+                stat.href.startsWith('/') ? (
+                  <Link
+                    to={stat.href}
+                    className="block h-full p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center group hover:border-sky-300 hover:shadow-elevated transition-all duration-300 flex flex-col items-center justify-center"
+                  >
+                    <div className="mb-2">
+                      <span className={`stat-display-sky group-hover:opacity-80 transition-opacity ${stat.value.length > 5 ? 'text-sm sm:text-base md:text-lg' : 'text-2xl sm:text-4xl md:text-5xl'}`}>
+                        <AnimatedNumber value={stat.value} />
+                      </span>
+                    </div>
+                    <div className="label-mono text-[9px] sm:text-[10px]">{stat.label}</div>
+                  </Link>
+                ) : (
                 <a
                   href={stat.href}
                   {...(stat.href.startsWith('#') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
@@ -179,6 +195,7 @@ export function Hero() {
                   </div>
                   <div className="label-mono text-[9px] sm:text-[10px]">{stat.label}</div>
                 </a>
+                )
               ) : (
                 <div className="h-full p-4 sm:p-6 rounded-xl border border-surface-200 bg-white/70 backdrop-blur-sm text-center flex flex-col items-center justify-center">
                   <div className="mb-2">
