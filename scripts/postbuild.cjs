@@ -123,6 +123,21 @@ const ROUTES = [
     },
   },
   {
+    path: '/projects/bettercompliant',
+    title: `BetterCompliant — Continuous Compliance for Healthcare | ${BRAND}`,
+    description:
+      'BetterCompliant is a continuous compliance platform for healthcare and regulated SaaS: HIPAA and SOC 2 workflows, evidence collection, policy lifecycle and audit-ready reporting. Built by Autosapien for XEHR LLC.',
+    priority: '0.8',
+    product: {
+      type: 'SoftwareApplication',
+      name: 'BetterCompliant',
+      category: 'BusinessApplication',
+      owner: 'XEHR LLC',
+      sameAs: 'https://bettercompliant.com',
+      serviceType: 'Continuous compliance automation for HIPAA and SOC 2',
+    },
+  },
+  {
     path: '/projects/humanoid',
     title: `Autosapien G1 — Humanoid Robot | ${BRAND}`,
     description:

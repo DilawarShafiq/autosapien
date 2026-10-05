@@ -94,6 +94,7 @@ const products: Product[] = [
   },
   {
     id: 'bettercompliant',
+    page: '/projects/bettercompliant',
     name: 'BetterCompliant',
     domain: 'bettercompliant.com',
     client: 'XEHR LLC',

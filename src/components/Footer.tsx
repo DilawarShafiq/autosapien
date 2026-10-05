@@ -12,11 +12,10 @@ const footerLinks = {
   // Product links point at each product's page on this site, not at its own
   // domain. Every page carries this footer, so these are the strongest internal
   // links the site has. Each page links out to the product's own site.
-  // BetterCompliant keeps its external href: it has no page here.
   products: [
     { name: 'xEHR.io', href: '/projects/healthcare-it', isRoute: true },
     { name: 'RCM Employee', href: '/projects/agentic-ai', isRoute: true },
-    { name: 'BetterCompliant', href: 'https://bettercompliant.com' },
+    { name: 'BetterCompliant', href: '/projects/bettercompliant', isRoute: true },
     { name: 'Thales', href: '/projects/thales', isRoute: true },
     { name: 'Zara AI', href: '/projects/film-studio', isRoute: true },
   ],
