@@ -59,7 +59,7 @@ export function Privacy() {
 
               <h3 className="font-display font-semibold text-lg text-ink-800 mb-3">Protected Health Information (PHI)</h3>
               <p className="text-ink-600 font-body leading-relaxed">
-                Where Autosapien processes PHI, including in building and supporting xEHR.io and RCM Employee for XEHR LLC, we do so in accordance with HIPAA regulations. PHI is handled under Business Associate Agreements (BAAs) and is never used for marketing, advertising, or any purpose beyond providing healthcare services.
+                PHI in xEHR.io and RCM Employee is handled by XEHR LLC, which owns those products, under Business Associate Agreements (BAAs) with the practices that use them. Autosapien builds the products to HIPAA standards, and PHI is never used for marketing, advertising, or any purpose beyond providing healthcare services.
               </p>
             </div>
 

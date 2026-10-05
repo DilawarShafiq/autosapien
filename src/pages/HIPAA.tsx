@@ -45,10 +45,10 @@ export function HIPAA() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">Our Commitment</h2>
               <p className="text-ink-600 font-body leading-relaxed mb-4">
-                Autosapien implements comprehensive safeguards to protect the confidentiality, integrity, and availability of Protected Health Information (PHI). The healthcare AI platforms we build process clinical data, revenue cycle information, and patient records — all under strict HIPAA-compliant controls.
+                Autosapien builds the safeguards below into the healthcare platforms we develop, so the clinical data, revenue cycle information, and patient records they process stay under strict HIPAA-compliant controls.
               </p>
               <p className="text-ink-600 font-body leading-relaxed">
-                Wherever we handle PHI, we do so under a Business Associate Agreement (BAA), and we ensure our subcontractors and cloud providers maintain equivalent compliance standards.
+                xEHR.io and RCM Employee are XEHR LLC products. XEHR LLC handles all Protected Health Information (PHI) in them, and practices that use them sign their Business Associate Agreements (BAAs) with XEHR LLC.
               </p>
             </div>
 
@@ -103,14 +103,14 @@ export function HIPAA() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">Breach Notification</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                In the event of a breach involving unsecured PHI, Autosapien will notify affected covered entities within 24 hours of discovery — well ahead of the HIPAA-required 60-day window. We maintain a documented incident response plan with clear escalation paths and remediation procedures.
+                Breach notification for xEHR.io and RCM Employee is handled by XEHR LLC, which holds the patient data. The platforms we build include the logging and audit trails that incident response depends on.
               </p>
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-xl text-ink-900 mb-4">Request a BAA</h2>
+              <h2 className="font-display font-bold text-xl text-ink-900 mb-4">Questions</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                To request a Business Associate Agreement or ask about our HIPAA compliance program, contact our compliance team at{' '}
+                BAAs for xEHR.io and RCM Employee are signed with XEHR LLC. For questions about how we build HIPAA safeguards into our software, contact{' '}
                 <a href="mailto:compliance@autosapien.com" className="text-sky-600 hover:text-sky-700 transition-colors">compliance@autosapien.com</a>.
               </p>
             </div>

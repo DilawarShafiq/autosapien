@@ -105,7 +105,7 @@ export function Terms() {
                 {[
                   'Our AI tools assist clinical decision-making but do not replace professional medical judgment',
                   'Healthcare providers remain responsible for clinical decisions and patient care',
-                  'Use of healthcare services requires execution of a Business Associate Agreement (BAA)',
+                  'Use of healthcare services requires a Business Associate Agreement (BAA) signed with XEHR LLC',
                   'You are responsible for ensuring your use complies with applicable healthcare regulations',
                 ].map(item => (
                   <li key={item} className="flex items-start gap-3 text-ink-600 font-body">
