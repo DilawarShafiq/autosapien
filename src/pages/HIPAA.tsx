@@ -48,7 +48,7 @@ export function HIPAA() {
                 Autosapien builds the safeguards below into the healthcare platforms we develop, so the clinical data, revenue cycle information, and patient records they process stay under strict HIPAA-compliant controls.
               </p>
               <p className="text-ink-600 font-body leading-relaxed">
-                xEHR.io and RCM Employee are XEHR LLC products. XEHR LLC handles all Protected Health Information (PHI) in them, and practices that use them sign their Business Associate Agreements (BAAs) with XEHR LLC.
+                xEHR.io and RCM Employee are XEHR LLC products. XEHR LLC handles all Protected Health Information (PHI) in them, and practices that use them sign their Business Associate Agreements (BAAs) with XEHR LLC. For other companies that engage Autosapien to build their products, we sign the BAA directly.
               </p>
             </div>
 
@@ -108,9 +108,9 @@ export function HIPAA() {
             </div>
 
             <div>
-              <h2 className="font-display font-bold text-xl text-ink-900 mb-4">Questions</h2>
+              <h2 className="font-display font-bold text-xl text-ink-900 mb-4">Request a BAA</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                BAAs for xEHR.io and RCM Employee are signed with XEHR LLC. For questions about how we build HIPAA safeguards into our software, contact{' '}
+                When we develop a product for your company that handles PHI, Autosapien signs a Business Associate Agreement (BAA) with you. To request one or ask about our HIPAA compliance program, contact our compliance team at{' '}
                 <a href="mailto:compliance@autosapien.com" className="text-sky-600 hover:text-sky-700 transition-colors">compliance@autosapien.com</a>.
               </p>
             </div>
