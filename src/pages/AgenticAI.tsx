@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Bot, Brain, Workflow, Shield, RefreshCw, MessageSquare, Eye } from 'lucide-react'
+import { Bot, Brain, Workflow, Shield, RefreshCw, MessageSquare, Eye, ArrowUpRight } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { Contact } from '../components/Contact'
 import { PageContent } from '../components/PageContent'
@@ -110,6 +110,7 @@ export function AgenticAI() {
         subtitle="AI FTEs that work 24/7 for USA healthcare providers"
         description="We build and deploy autonomous AI FTEs for USA healthcare providers—including RCM Employee (rcmemployee.com), which we built for XEHR LLC, for revenue cycle management. From workflow automation and RCM automation to custom agents for administrative tasks, our AI workforce handles complex multi-step operations end-to-end."
         status="active"
+        code="PROD-02"
         gradient="from-neural-500 to-plasma-500"
         features={[
           'RCM Employee (rcmemployee.com)',
@@ -295,6 +296,18 @@ export function AgenticAI() {
           </div>
         </div>
       </section>
+
+      <div className="text-center pb-16" style={{ background: '#ffffff' }}>
+        <a
+          href="https://rcmemployee.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-secondary rounded-lg gap-2"
+        >
+          Visit rcmemployee.com
+          <ArrowUpRight className="w-4 h-4" />
+        </a>
+      </div>
 
       <PageContent route="/projects/agentic-ai" />
 

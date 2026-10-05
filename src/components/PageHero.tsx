@@ -32,7 +32,7 @@ export function PageHero({
   description,
   features,
   status,
-  code = 'PRJ-000',
+  code,
 }: PageHeroProps) {
   const [daysUntilLaunch, setDaysUntilLaunch] = useState(getDaysUntilLaunch())
 
@@ -76,7 +76,7 @@ export function PageHero({
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="label-mono text-sky-600 text-[10px]">{code}</span>
+                  {code && <span className="label-mono text-sky-600 text-[10px]">{code}</span>}
                   <span className="label-mono text-[10px]">{category}</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -97,7 +97,8 @@ export function PageHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display font-bold text-display-xl mb-4 text-sky-600"
+              // Single long words (BetterCompliant) overrun the column at display-xl.
+              className={`font-display font-bold mb-4 text-sky-600 ${title.length > 14 ? 'text-display-lg' : 'text-display-xl'}`}
             >
               {title}
             </motion.h1>

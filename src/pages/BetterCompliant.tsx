@@ -45,6 +45,7 @@ export function BetterCompliant() {
         description="BetterCompliant is a continuous compliance platform for healthcare and regulated SaaS. It turns sprawling policy, evidence and audit work into a living dashboard, so teams stay audit-ready every day, not just at renewal. Built by Autosapien for XEHR LLC."
         gradient="from-indigo-500 to-sky-500"
         status="active"
+        code="PROD-03"
         features={[
           'HIPAA / SOC 2 Workflows',
           'Evidence Auto-Collection',

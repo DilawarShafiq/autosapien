@@ -106,6 +106,7 @@ export function HealthcareIT() {
         description="xEHR.io combines a FHIR R4-native EHR, comprehensive practice management, and autonomous revenue cycle automation into a single platform. Powered by AI agents that work 24/7, we're eliminating the administrative burden crushing USA healthcare—so providers can focus on what matters: patients. Built by Autosapien for XEHR LLC."
         gradient="from-rose-500 to-pink-500"
         status="active"
+        code="PROD-01"
         features={[
           'FHIR R4 Native',
           'AI Documentation',
@@ -221,7 +222,7 @@ export function HealthcareIT() {
               </span>
             </h2>
             <p className="text-lg text-ink-400 max-w-2xl mx-auto">
-              Not demos or proofs of concept—production AI handling millions of real healthcare transactions.
+              Not demos or proofs of concept—production AI handling real healthcare transactions.
             </p>
           </motion.div>
 
@@ -348,9 +349,12 @@ export function HealthcareIT() {
                 See how xEHR.io can reduce administrative burden, accelerate collections, and let your team focus on patients.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn-primary rounded-lg">
+                <a
+                  href="mailto:info@autosapien.com?subject=xEHR.io%20demo"
+                  className="btn-primary rounded-lg"
+                >
                   Schedule Demo
-                </button>
+                </a>
                 <a
                   href="https://xehr.io"
                   target="_blank"
