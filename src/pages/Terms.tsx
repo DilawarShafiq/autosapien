@@ -37,7 +37,7 @@ export function Terms() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">1. Acceptance of Terms</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                By accessing or using any services provided by Autosapien (Pvt) Ltd ("Autosapien"), including our website (autosapien.com), software platforms, and APIs, you agree to be bound by these Terms of Service. If you do not agree, do not use our services. xEHR.io, RCM Employee, and BetterCompliant (xehr.io, rcmemployee.com, bettercompliant.com) were developed by Autosapien for XEHR LLC, which owns and operates them; use of those products is governed by XEHR LLC's own terms.
+                By accessing or using any services provided by Autosapien (Pvt) Ltd ("Autosapien"), including our website (autosapien.com), software platforms, and APIs, you agree to be bound by these Terms of Service. If you do not agree, do not use our services. xEHR.io, RCM Employee, and BetterCompliant (xehr.io, rcmemployee.com, bettercompliant.com) were developed by Autosapien for XEHR LLC, on order from XEHR LLC.
               </p>
             </div>
 
@@ -99,7 +99,7 @@ export function Terms() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">6. Healthcare-Specific Terms</h2>
               <p className="text-ink-600 font-body leading-relaxed mb-4">
-                For healthcare services Autosapien provides directly (xEHR.io and RCM Employee are operated by XEHR LLC under its own terms):
+                For users of xEHR.io and RCM Employee:
               </p>
               <ul className="space-y-2">
                 {[

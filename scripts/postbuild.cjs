@@ -24,16 +24,13 @@ const BRAND = 'Autosapien';
  * A product's own site, or null while that site is down.
  *
  * These feed sameAs and the offer catalog — claims Googlebot verifies by
- * fetching. As of 2026-08-18 xehr.io returns SERVFAIL and rcmemployee.com has no
- * A record (hosting lapsed, being restored), so asserting them would point the
- * crawler at hosts that do not answer. Null falls back to the product's page on
- * this site, which is a real URL.
- *
- * Restore each entry once `nslookup <domain> 8.8.8.8` answers.
+ * fetching, so set an entry to null if its site goes down; null falls back to the
+ * product's page on this site. Both sites were down in August 2026 and back up
+ * by 2026-10-06.
  */
 const PRODUCT_SITES = {
-  xehr: null, // 'https://xehr.io'
-  rcmEmployee: null, // 'https://rcmemployee.com'
+  xehr: 'https://xehr.io',
+  rcmEmployee: 'https://rcmemployee.com',
 };
 
 const ROUTES = [

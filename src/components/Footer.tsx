@@ -11,8 +11,7 @@ const footerLinks = {
   ],
   // Product links point at each product's page on this site, not at its own
   // domain. Every page carries this footer, so these are the strongest internal
-  // links the site has — and xehr.io and rcmemployee.com do not currently
-  // resolve, so the old external hrefs were dead on every page.
+  // links the site has. Each page links out to the product's own site.
   // BetterCompliant keeps its external href: it has no page here.
   products: [
     { name: 'xEHR.io', href: '/projects/healthcare-it', isRoute: true },

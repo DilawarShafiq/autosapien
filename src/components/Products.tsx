@@ -204,7 +204,7 @@ export function Products() {
               Five products, five markets—each a complete platform engineered by Autosapien and
               operating today for real customers across healthcare, compliance, global trading, and
               generative media. xEHR.io, RCM Employee and BetterCompliant were built for our client
-              XEHR LLC, which owns and operates them.
+              XEHR LLC, on order.
             </p>
           </div>
           <div className="hidden lg:flex flex-col items-end gap-2 shrink-0">
