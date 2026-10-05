@@ -156,7 +156,7 @@ export function Hero() {
         >
           {[
             { value: '6', label: 'Core AI Verticals', href: '#capabilities' },
-            { value: '#1', label: 'AI-Powered Healthcare IT', href: '/projects/healthcare-it' },
+            { value: '3', label: 'Healthcare Products Shipped', href: '/projects/healthcare-it' },
             { value: '1st', label: 'Humanoid in Development' },
             { value: 'Workflow Automation', label: 'Agentic AI FTEs', href: '/projects/agentic-ai' },
           ].map((stat, i) => (

@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import { Bot, Eye, Cpu, Workflow, Settings, Zap, Shield, Users } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { Contact } from '../components/Contact'
+import { Link } from 'react-router-dom'
 
 const capabilities = [
   {
@@ -42,6 +43,7 @@ const applications = [
     title: 'Industrial Automation',
     description: 'Autonomous manufacturing, assembly, and quality inspection systems.',
     image: 'from-sky-400 to-sky-600',
+    page: '/projects/industrial-robotics',
   },
   {
     title: 'Healthcare Robotics',
@@ -198,12 +200,20 @@ export function Robotics() {
                   </div>
                   <h3 className="text-2xl font-bold text-ink-900 mb-3">{app.title}</h3>
                   <p className="text-ink-400 mb-6">{app.description}</p>
-                  <button className="text-sm text-sky-600 hover:text-sky-500 transition-colors flex items-center gap-2">
-                    Learn more
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </button>
+                  {/* Applications with no page of their own go to an enquiry email. */}
+                  {(() => {
+                    const cls = 'text-sm text-sky-600 hover:text-sky-500 transition-colors inline-flex items-center gap-2'
+                    const arrow = (
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    )
+                    return app.page ? (
+                      <Link to={app.page} className={cls}>Learn more{arrow}</Link>
+                    ) : (
+                      <a href={`mailto:info@autosapien.com?subject=${encodeURIComponent(app.title)}`} className={cls}>Learn more{arrow}</a>
+                    )
+                  })()}
                 </div>
               </motion.div>
             ))}

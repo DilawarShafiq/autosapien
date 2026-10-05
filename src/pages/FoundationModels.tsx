@@ -343,9 +343,9 @@ export function FoundationModels() {
             <p className="text-lg text-ink-400 mb-8 max-w-2xl mx-auto">
               We're looking for researchers, engineers, and dreamers who want to build the AI systems that will define the next century.
             </p>
-            <button className="btn-primary rounded-lg">
+            <a href="mailto:info@autosapien.com?subject=Open%20positions" className="btn-primary rounded-lg">
               View Open Positions
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>

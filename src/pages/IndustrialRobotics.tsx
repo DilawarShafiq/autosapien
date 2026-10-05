@@ -287,9 +287,9 @@ export function IndustrialRobotics() {
                 </span>
               ))}
             </div>
-            <button className="btn-primary rounded-lg">
+            <a href="mailto:info@autosapien.com?subject=Factory%20assessment" className="btn-primary rounded-lg">
               Schedule Factory Assessment
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>

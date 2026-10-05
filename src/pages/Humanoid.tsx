@@ -301,9 +301,9 @@ export function Humanoid() {
               <p className="text-ink-400 mb-7 leading-relaxed">
                 We're looking for beta partners across healthcare, manufacturing, and hospitality to help shape how humanoid robots integrate into our world.
               </p>
-              <button className="btn-primary rounded-lg text-sm">
+              <a href="mailto:info@autosapien.com?subject=Humanoid%20beta%20program" className="btn-primary rounded-lg text-sm">
                 Join the Beta Program
-              </button>
+              </a>
             </motion.div>
 
             <motion.div
