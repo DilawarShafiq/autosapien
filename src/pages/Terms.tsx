@@ -37,7 +37,7 @@ export function Terms() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">1. Acceptance of Terms</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                By accessing or using any services provided by Autosapien (Pvt) Ltd ("Autosapien"), including our websites (autosapien.com, xehr.io, rcmemployee.com), software platforms, and APIs, you agree to be bound by these Terms of Service. If you do not agree, do not use our services.
+                By accessing or using any services provided by Autosapien (Pvt) Ltd ("Autosapien"), including our website (autosapien.com), software platforms, and APIs, you agree to be bound by these Terms of Service. If you do not agree, do not use our services. xEHR.io, RCM Employee, and BetterCompliant (xehr.io, rcmemployee.com, bettercompliant.com) were developed by Autosapien for XEHR LLC, which owns and operates them; use of those products is governed by XEHR LLC's own terms.
               </p>
             </div>
 
@@ -46,8 +46,8 @@ export function Terms() {
               <p className="text-ink-600 font-body leading-relaxed mb-4">Autosapien provides:</p>
               <ul className="space-y-2">
                 {[
-                  'AI-powered healthcare platforms (xEHR.io) including EHR, practice management, and revenue cycle automation',
-                  'Agentic AI employees and workflow automation (RCM Employee)',
+                  'Development of AI-powered healthcare platforms for clients, including xEHR.io, RCM Employee, and BetterCompliant for XEHR LLC',
+                  'Agentic AI employees and workflow automation',
                   'Robotics research and development (humanoid, industrial, and home robotics)',
                   'AI film production and foundation model research',
                 ].map(item => (
@@ -99,7 +99,7 @@ export function Terms() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">6. Healthcare-Specific Terms</h2>
               <p className="text-ink-600 font-body leading-relaxed mb-4">
-                For users of xEHR.io and RCM Employee:
+                For healthcare services Autosapien provides directly (xEHR.io and RCM Employee are operated by XEHR LLC under its own terms):
               </p>
               <ul className="space-y-2">
                 {[

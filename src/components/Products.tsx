@@ -22,6 +22,8 @@ type Product = {
   mark?: string
   /** Set when the product is reached through a messaging channel, not a website. */
   channel?: keyof typeof channels
+  /** Set when Autosapien built the product for a client who owns and operates it. */
+  client?: string
   tagline: string
   description: string
   capabilities: string[]
@@ -47,6 +49,7 @@ const products: Product[] = [
     page: '/projects/healthcare-it',
     name: 'xEHR.io',
     domain: 'xehr.io',
+    client: 'XEHR LLC',
     url: 'https://xehr.io',
     logo: '/logos/xehr.png',
     tagline: 'AI-native EHR & Practice Management',
@@ -70,6 +73,7 @@ const products: Product[] = [
     page: '/projects/agentic-ai',
     name: 'RCM Employee',
     domain: 'rcmemployee.com',
+    client: 'XEHR LLC',
     url: 'https://rcmemployee.com',
     logo: '/logos/rcmemployee.png',
     tagline: 'AI Revenue-Cycle Workforce',
@@ -92,6 +96,7 @@ const products: Product[] = [
     id: 'bettercompliant',
     name: 'BetterCompliant',
     domain: 'bettercompliant.com',
+    client: 'XEHR LLC',
     url: 'https://bettercompliant.com',
     logo: '/logos/bettercompliant.png',
     tagline: 'Compliance, automated end-to-end',
@@ -189,16 +194,17 @@ export function Products() {
         >
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <span className="label-mono text-sky-600">Our Products</span>
+              <span className="label-mono text-sky-600">Products We Built</span>
               <div className="h-px w-16 bg-gradient-to-r from-sky-400/60 to-transparent" />
             </div>
             <h2 className="font-display font-bold text-display-lg mb-5">
               Software we built. Live in production.
             </h2>
             <p className="text-ink-400 font-body text-base sm:text-lg leading-relaxed">
-              Five products, five markets—each a complete platform engineered in-house by Autosapien
-              and operating today for real customers across healthcare, compliance, global trading,
-              and generative media.
+              Five products, five markets—each a complete platform engineered by Autosapien and
+              operating today for real customers across healthcare, compliance, global trading, and
+              generative media. xEHR.io, RCM Employee and BetterCompliant were built for our client
+              XEHR LLC, which owns and operates them.
             </p>
           </div>
           <div className="hidden lg:flex flex-col items-end gap-2 shrink-0">
@@ -289,6 +295,11 @@ export function Products() {
                   <p className="font-display font-semibold text-sky-700 text-sm">
                     {product.tagline}
                   </p>
+                  {product.client && (
+                    <p className="font-mono text-[10px] text-ink-500 tracking-[0.1em] mt-1">
+                      Built by Autosapien for {product.client}
+                    </p>
+                  )}
                 </div>
 
                 {/* Description */}

@@ -33,7 +33,7 @@ export function HIPAA() {
               </div>
             </div>
             <p className="text-ink-500 font-body text-lg max-w-2xl leading-relaxed">
-              Autosapien's healthcare platforms — xEHR.io and RCM Employee — are built from the ground up for HIPAA compliance. Protecting patient data is not an afterthought; it's our foundation.
+              The healthcare platforms Autosapien builds — including xEHR.io and RCM Employee, developed for XEHR LLC — are built from the ground up for HIPAA compliance. Protecting patient data is not an afterthought; it's our foundation.
             </p>
           </motion.div>
         </div>

@@ -103,7 +103,7 @@ export function HealthcareIT() {
         category="Healthcare AI"
         title="xEHR.io Platform"
         subtitle="The intelligent healthcare platform transforming USA medicine"
-        description="xEHR.io combines a FHIR R4-native EHR, comprehensive practice management, and autonomous revenue cycle automation into a single platform. Powered by AI agents that work 24/7, we're eliminating the administrative burden crushing USA healthcare—so providers can focus on what matters: patients."
+        description="xEHR.io combines a FHIR R4-native EHR, comprehensive practice management, and autonomous revenue cycle automation into a single platform. Powered by AI agents that work 24/7, we're eliminating the administrative burden crushing USA healthcare—so providers can focus on what matters: patients. Built by Autosapien for XEHR LLC."
         gradient="from-rose-500 to-pink-500"
         status="active"
         features={[

@@ -54,6 +54,7 @@ const ROUTES = [
       type: 'SoftwareApplication',
       name: 'xEHR.io',
       category: 'HealthApplication',
+      owner: 'XEHR LLC',
       sameAs: PRODUCT_SITES.xehr,
       serviceType: 'AI-native EHR, practice management and revenue cycle automation',
     },
@@ -68,6 +69,7 @@ const ROUTES = [
       type: 'Service',
       name: 'RCM Employee',
       sameAs: PRODUCT_SITES.rcmEmployee,
+      owner: 'XEHR LLC',
       serviceType:
         'Agentic automation for medical billing, medical coding and revenue cycle management',
     },
@@ -241,9 +243,13 @@ const KNOWS_ABOUT = [
   'Generative video and AI film production',
 ];
 
+// Client who owns and operates xEHR.io, RCM Employee and BetterCompliant.
+const XEHR_LLC = { '@type': 'Organization', name: 'XEHR LLC' };
+
 // Organization schema — gives Google explicit brand/entity data for the site,
-// and an offer catalog naming the products so they are attributed to Autosapien
-// rather than read as unrelated third-party domains.
+// and an offer catalog naming the products so they are linked to Autosapien
+// rather than read as unrelated third-party domains. Products built for a
+// client carry that client as provider.
 const ORG_JSONLD = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -269,6 +275,7 @@ const ORG_JSONLD = {
         itemOffered: {
           '@type': 'SoftwareApplication',
           name: 'xEHR.io',
+          provider: XEHR_LLC,
           applicationCategory: 'HealthApplication',
           url: PRODUCT_SITES.xehr ?? `${ORIGIN}/projects/healthcare-it/`,
           description: 'AI-native EHR, practice management and revenue cycle automation for US healthcare practices.',
@@ -279,6 +286,7 @@ const ORG_JSONLD = {
         itemOffered: {
           '@type': 'Service',
           name: 'RCM Employee',
+          provider: XEHR_LLC,
           url: PRODUCT_SITES.rcmEmployee ?? `${ORIGIN}/projects/agentic-ai/`,
           description:
             'An autonomous AI FTE for US healthcare providers covering medical billing, medical coding and end-to-end revenue cycle management.',
@@ -289,6 +297,7 @@ const ORG_JSONLD = {
         itemOffered: {
           '@type': 'Service',
           name: 'BetterCompliant',
+          provider: XEHR_LLC,
           url: 'https://bettercompliant.com',
           description: 'Compliance automation for regulated organizations.',
         },
@@ -348,9 +357,13 @@ function productJsonLd(route) {
     name: p.name,
     description: route.description,
     url: canonicalFor(route.path),
-    provider: { '@type': 'Organization', '@id': ORG_ID, name: BRAND },
+    provider: p.owner
+      ? { '@type': 'Organization', name: p.owner }
+      : { '@type': 'Organization', '@id': ORG_ID, name: BRAND },
     areaServed: { '@type': 'Country', name: 'United States' },
   };
+  // Built for a client: the client provides it, Autosapien made it.
+  if (p.owner) node.creator = { '@type': 'Organization', '@id': ORG_ID, name: BRAND };
   if (p.sameAs) node.sameAs = p.sameAs;
   if (p.category) node.applicationCategory = p.category;
   if (p.type === 'Service') node.serviceType = p.serviceType;

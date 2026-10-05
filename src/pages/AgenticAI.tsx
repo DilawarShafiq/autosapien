@@ -108,7 +108,7 @@ export function AgenticAI() {
         category="AI FTEs & Custom Agents"
         title="Agentic AI Workforce"
         subtitle="AI FTEs that work 24/7 for USA healthcare providers"
-        description="We build and deploy autonomous AI FTEs for USA healthcare providers—including RCM Employee (rcmemployee.com) for revenue cycle management. From workflow automation and RCM automation to custom agents for administrative tasks, our AI workforce handles complex multi-step operations end-to-end."
+        description="We build and deploy autonomous AI FTEs for USA healthcare providers—including RCM Employee (rcmemployee.com), which we built for XEHR LLC, for revenue cycle management. From workflow automation and RCM automation to custom agents for administrative tasks, our AI workforce handles complex multi-step operations end-to-end."
         status="active"
         gradient="from-neural-500 to-plasma-500"
         features={[
