@@ -92,7 +92,7 @@ export function Terms() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">5. Intellectual Property</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                All content, software, algorithms, models, designs, and technology comprising our services are owned by Autosapien or our licensors and are protected by intellectual property laws. Our AI models, robotics designs, and healthcare platform architecture are proprietary. You retain ownership of data you input into our platforms, subject to the licenses necessary for us to provide the services.
+                All content, software, algorithms, models, designs, and technology comprising our services are owned by Autosapien or our licensors and are protected by intellectual property laws. Our AI models, robotics designs, and healthcare platform architecture are proprietary. You retain ownership of data you input into our platforms, subject to the licenses necessary for us to provide the services. Rights in xEHR.io, RCM Employee, and BetterCompliant, which Autosapien developed for XEHR LLC, are governed by Autosapien's agreement with XEHR LLC.
               </p>
             </div>
 

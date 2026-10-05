@@ -13,8 +13,8 @@ const capabilities = [
   {
     id: 'healthcare', icon: Heart, title: 'Healthcare AI', subtitle: 'xEHR.io Platform', status: 'active', code: 'CAP-002',
     href: '/projects/healthcare-it',
-    description: 'xEHR.io is our enterprise healthcare platform combining EHR, practice management, and revenue cycle automation. Powered by AI agents that work 24/7, we\'re eliminating the administrative burden crushing USA healthcare.',
-    features: ['AI clinical documentation', 'Autonomous RCM agents', 'FHIR R4 interoperability', 'HIPAA & SOC2 compliant'],
+    description: 'xEHR.io is the enterprise healthcare platform we built for XEHR LLC, combining EHR, practice management, and revenue cycle automation. Powered by AI agents that work 24/7, we\'re eliminating the administrative burden crushing USA healthcare.',
+    features: ['AI clinical documentation', 'Autonomous RCM agents', 'FHIR R4 interoperability', 'HIPAA & SOC 2 ready'],
   },
   {
     id: 'industrial', icon: Factory, title: 'Industrial Robotics', subtitle: 'Factory Intelligence', status: 'developing', code: 'CAP-003',
@@ -37,7 +37,7 @@ const capabilities = [
   {
     id: 'agentic', icon: Brain, title: 'Agentic AI', subtitle: 'AI Employees & Custom Agents', status: 'active', code: 'CAP-006',
     href: '/projects/agentic-ai',
-    description: 'We build and deploy AI FTEs—fully autonomous AI employees that work 24/7. Our flagship RCM Employee automates revenue cycle management for USA healthcare providers.',
+    description: 'We build and deploy AI FTEs—fully autonomous AI employees that work 24/7. RCM Employee, which we built for XEHR LLC, automates revenue cycle management for USA healthcare providers.',
     features: ['RCM Employee (rcmemployee.com)', 'Workflow Automation', 'RCM Automation for US Healthcare', 'Custom Agent Development'],
   },
 ]

@@ -93,7 +93,7 @@ export function Security() {
               <ul className="space-y-2">
                 {[
                   'HIPAA — Full compliance for all healthcare data handling, including PHI encryption, access controls, and audit trails',
-                  'SOC 2 Type II — Annual audits covering security, availability, processing integrity, confidentiality, and privacy',
+                  'SOC 2 — Controls designed to the Trust Services Criteria: security, availability, processing integrity, confidentiality, and privacy',
                   'FHIR R4 — Healthcare interoperability standard compliance for all clinical data exchange',
                   'OWASP Top 10 — Continuous security testing against common web application vulnerabilities',
                 ].map(item => (

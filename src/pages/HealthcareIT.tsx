@@ -64,9 +64,9 @@ const metrics = [
 
 const compliance = [
   { badge: 'HIPAA', description: 'Fully Compliant' },
-  { badge: 'SOC 2', description: 'Type II Certified' },
+  { badge: 'SOC 2', description: 'Ready' },
   { badge: 'FHIR R4', description: 'Native Support' },
-  { badge: 'ONC', description: 'Certified' },
+  { badge: 'ONC', description: 'Cures Act Aligned' },
 ]
 
 const usaHealthcare = [
@@ -112,7 +112,7 @@ export function HealthcareIT() {
           '98% Clean Claims',
           'Autonomous RCM',
           'HIPAA Compliant',
-          'SOC 2 Certified',
+          'SOC 2 Ready',
         ]}
       />
 

@@ -105,7 +105,7 @@ export function Privacy() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">5. Data Security</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                We implement industry-standard security measures including AES-256 encryption at rest, TLS 1.3 in transit, role-based access controls, continuous monitoring, and regular third-party security audits. Our healthcare platforms maintain HIPAA and SOC 2 Type II compliance.
+                We implement industry-standard security measures including AES-256 encryption at rest, TLS 1.3 in transit, role-based access controls, continuous monitoring, and regular third-party security audits. The healthcare platforms we build are designed for HIPAA compliance and SOC 2 readiness.
               </p>
             </div>
 

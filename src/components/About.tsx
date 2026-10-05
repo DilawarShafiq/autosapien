@@ -27,7 +27,7 @@ const pillars = [
   {
     icon: Heart,
     title: 'Healthcare AI',
-    description: 'xEHR.io—our AI-powered platform transforming how the USA delivers and manages healthcare.',
+    description: 'xEHR.io—the AI-powered platform we built for XEHR LLC, transforming how the USA delivers and manages healthcare.',
     status: 'active',
     code: 'HLT-04',
   },
@@ -84,7 +84,7 @@ export function About() {
                 that will reshape manufacturing, and AI that will revolutionize how healthcare is delivered.
               </p>
               <p>
-                With xEHR.io already transforming healthcare for millions of patients, and our Autosapien G1
+                With xEHR.io in production for US practices, and our Autosapien G1
                 humanoid in active development, we're building the future one breakthrough at a time.
               </p>
             </div>

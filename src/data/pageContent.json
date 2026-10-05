@@ -61,8 +61,8 @@
         "heading": "RCM Employee runs",
         "highlight": "this cycle end to end",
         "intro": [
-          "RCM Employee is our autonomous AI FTE for the revenue cycle. It is not a tool a biller operates; it is assigned the work itself — eligibility and benefits, coding and claim scrubbing, denial appeals and payment posting — and works it continuously, in plain English, with a full audit trail behind every action.",
-          "It runs alongside xEHR.io, our AI-native EHR and practice management platform, or against the system a practice already uses. Where an existing EHR lacks payer connectivity, we add production-grade X12 EDI to it directly, including 837 claim submission, 270 and 271 real-time eligibility, and remittance handling, so the cycle described above can actually run."
+          "RCM Employee, which we built for XEHR LLC, is an autonomous AI FTE for the revenue cycle. It is not a tool a biller operates; it is assigned the work itself — eligibility and benefits, coding and claim scrubbing, denial appeals and payment posting — and works it continuously, in plain English, with a full audit trail behind every action.",
+          "It runs alongside xEHR.io, the AI-native EHR and practice management platform we built for XEHR LLC, or against the system a practice already uses. Where an existing EHR lacks payer connectivity, we add production-grade X12 EDI to it directly, including 837 claim submission, 270 and 271 real-time eligibility, and remittance handling, so the cycle described above can actually run."
         ],
         "points": []
       }
@@ -146,8 +146,8 @@
         "heading": "Coding is one job inside",
         "highlight": "RCM Employee",
         "intro": [
-          "We do not sell coding as an isolated product. It is one of the responsibilities carried by RCM Employee, our autonomous AI FTE for US healthcare providers, alongside eligibility and benefits verification, claim scrubbing, denial appeals and payment posting.",
-          "That structure matters, because a code proposed in isolation is a guess. A code proposed by a system that has also seen the eligibility response, the payer's edit history and the denial that came back on a similar claim last month is a decision made with context. Where a practice runs xEHR.io, our AI-native EHR, that context extends to the clinical documentation itself."
+          "We do not sell coding as an isolated product. It is one of the responsibilities carried by RCM Employee, the autonomous AI FTE for US healthcare providers that we built for XEHR LLC, alongside eligibility and benefits verification, claim scrubbing, denial appeals and payment posting.",
+          "That structure matters, because a code proposed in isolation is a guess. A code proposed by a system that has also seen the eligibility response, the payer's edit history and the denial that came back on a similar claim last month is a decision made with context. Where a practice runs xEHR.io, the AI-native EHR we built for XEHR LLC, that context extends to the clinical documentation itself."
         ],
         "points": []
       }
@@ -231,7 +231,7 @@
         "heading": "Scheduling and intake",
         "highlight": "inside xEHR.io",
         "intro": [
-          "Scheduling, eligibility and the patient portal ship as part of xEHR.io, our AI-native EHR and practice management platform for US practices. Because they share a single data model with the clinical record, an appointment that has been booked, verified and registered arrives as a chart ready for the encounter rather than as three systems waiting to be reconciled.",
+          "Scheduling, eligibility and the patient portal ship as part of xEHR.io, the AI-native EHR and practice management platform we built for XEHR LLC. Because they share a single data model with the clinical record, an appointment that has been booked, verified and registered arrives as a chart ready for the encounter rather than as three systems waiting to be reconciled.",
           "For practices staying on their current EHR, we deliver the same workflows as an automation layer on top of it: scheduling triage, insurance eligibility and benefits verification, inbound fax and document classification, and patient outreach by SMS, email and voice."
         ],
         "points": []
@@ -316,7 +316,7 @@
         "heading": "A shipped AI FTE, and",
         "highlight": "custom agent fleets",
         "intro": [
-          "RCM Employee is our flagship AI FTE and the clearest demonstration of the model: an autonomous digital worker that owns eligibility, coding, claims, denials and payment posting for US healthcare providers, around the clock, with full audit trails. It is in production, not in a pilot deck.",
+          "RCM Employee, which we built for XEHR LLC, is the clearest demonstration of the model: an autonomous digital worker that owns eligibility, coding, claims, denials and payment posting for US healthcare providers, around the clock, with full audit trails. It is in production, not in a pilot deck.",
           "Beyond it we design custom agent fleets for organisations whose back-office workflows no single SaaS can model — planner, executor and reviewer roles bound together with policy enforcement, escalation paths, long-running task memory, and full observability across traces, costs and decisions, deployed on GCP, AWS or on-premise. One such build is already shipped and complete: a custom AI agent that automates ActiveCampaign for patient lead capture, routing and follow-up, running across a client's marketing stack."
         ],
         "points": []

@@ -45,10 +45,10 @@ export function HIPAA() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">Our Commitment</h2>
               <p className="text-ink-600 font-body leading-relaxed mb-4">
-                As a Business Associate under HIPAA, Autosapien implements comprehensive safeguards to protect the confidentiality, integrity, and availability of Protected Health Information (PHI). Our healthcare AI platforms process clinical data, revenue cycle information, and patient records — all under strict HIPAA-compliant controls.
+                Autosapien implements comprehensive safeguards to protect the confidentiality, integrity, and availability of Protected Health Information (PHI). The healthcare AI platforms we build process clinical data, revenue cycle information, and patient records — all under strict HIPAA-compliant controls.
               </p>
               <p className="text-ink-600 font-body leading-relaxed">
-                We execute Business Associate Agreements (BAAs) with all covered entities and ensure our subcontractors and cloud providers maintain equivalent compliance standards.
+                Wherever we handle PHI, we do so under a Business Associate Agreement (BAA), and we ensure our subcontractors and cloud providers maintain equivalent compliance standards.
               </p>
             </div>
 
