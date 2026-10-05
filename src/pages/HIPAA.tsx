@@ -45,10 +45,10 @@ export function HIPAA() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">Our Commitment</h2>
               <p className="text-ink-600 font-body leading-relaxed mb-4">
-                As a Business Associate under HIPAA, Autosapien implements comprehensive safeguards to protect the confidentiality, integrity, and availability of Protected Health Information (PHI). Our healthcare AI platforms process clinical data, revenue cycle information, and patient records — all under strict HIPAA-compliant controls.
+                Autosapien implements comprehensive safeguards to protect the confidentiality, integrity, and availability of Protected Health Information (PHI). The healthcare AI platforms we build process clinical data, revenue cycle information, and patient records — all under strict HIPAA-compliant controls.
               </p>
               <p className="text-ink-600 font-body leading-relaxed">
-                We execute Business Associate Agreements (BAAs) with all covered entities and ensure our subcontractors and cloud providers maintain equivalent compliance standards.
+                XEHR LLC signs all agreements for xEHR.io and RCM Employee, including Business Associate Agreements (BAAs) with covered entities. We ensure our subcontractors and cloud providers maintain equivalent compliance standards.
               </p>
             </div>
 
@@ -110,7 +110,7 @@ export function HIPAA() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">Request a BAA</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                To request a Business Associate Agreement or ask about our HIPAA compliance program, contact our compliance team at{' '}
+                Business Associate Agreements are signed by XEHR LLC. To request one or ask about our HIPAA compliance program, contact our compliance team at{' '}
                 <a href="mailto:compliance@autosapien.com" className="text-sky-600 hover:text-sky-700 transition-colors">compliance@autosapien.com</a>.
               </p>
             </div>
