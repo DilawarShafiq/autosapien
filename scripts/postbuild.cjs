@@ -17,7 +17,7 @@ const source = path.join(distDir, 'index.html');
 
 // Canonical origin: matches the CNAME file (apex, not www).
 const ORIGIN = 'https://autosapien.com';
-const OG_IMAGE = `${ORIGIN}/og-image.png`;
+const OG_IMAGE = `${ORIGIN}/og-card.png`;
 const BRAND = 'Autosapien';
 
 /*
