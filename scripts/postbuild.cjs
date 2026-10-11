@@ -36,7 +36,9 @@ const PRODUCT_SITES = {
 const ROUTES = [
   {
     path: '/',
-    title: 'Autosapien | AI & Robotics',
+    // The legal name and city tell search engines this is a company, not the
+    // Robosapien toy the bare word "Autosapien" gets matched to.
+    title: 'Autosapien (Pvt) Ltd | AI & Robotics, Lahore',
     description:
       'Autosapien builds AI and robotics for the real world — humanoids, autonomous systems, and agentic AI that automates USA healthcare operations.',
     priority: '1.0',
@@ -267,8 +269,11 @@ const ORG_JSONLD = {
   '@type': 'Organization',
   '@id': ORG_ID,
   name: 'Autosapien',
+  legalName: 'Autosapien (Pvt) Ltd',
   url: `${ORIGIN}/`,
   logo: `${ORIGIN}/logo.png`,
+  email: 'info@autosapien.com',
+  sameAs: ['https://www.linkedin.com/company/autosapien/'],
   description:
     'Autosapien automates US healthcare administrative workflows with agentic AI — medical billing, coding, revenue cycle management, and patient scheduling and intake — alongside its robotics and embodied AI research.',
   address: {
@@ -338,6 +343,20 @@ const ORG_JSONLD = {
     ],
   },
 };
+
+// WebSite schema: the name Google shows as the site name in results.
+const WEBSITE_JSONLD = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Autosapien',
+  alternateName: ['Autosapien (Pvt) Ltd', 'autosapien.com'],
+  url: `${ORIGIN}/`,
+  publisher: { '@id': ORG_ID },
+};
+
+// IndexNow (Bing, Yandex, Seznam and others): the key file proves we own the
+// host, so pings to api.indexnow.org about our URLs are accepted.
+const INDEXNOW_KEY = 'a6a732d2e8332e312f173553952339be';
 
 // Long-form copy and FAQs live in one JSON file shared with the React
 // components, so the rendered page and the structured data cannot diverge.
@@ -425,6 +444,7 @@ function renderRoute(template, route) {
   const head = [`    <link rel="canonical" href="${canonical}" />`];
   if (route.path === '/') {
     head.push(`    <script type="application/ld+json">${JSON.stringify(ORG_JSONLD)}</script>`);
+    head.push(`    <script type="application/ld+json">${JSON.stringify(WEBSITE_JSONLD)}</script>`);
   }
   if (route.product) {
     head.push(`    <script type="application/ld+json">${JSON.stringify(productJsonLd(route))}</script>`);
@@ -491,6 +511,40 @@ function writeRobots() {
   fs.writeFileSync(path.join(distDir, 'robots.txt'), txt);
 }
 
+/**
+ * llms.txt (llmstxt.org): a plain-markdown summary for AI assistants and their
+ * crawlers. Built from the same ROUTES and organization data as the pages, so
+ * it can't say anything the site doesn't.
+ */
+function writeLlms() {
+  const products = ORG_JSONLD.hasOfferCatalog.itemListElement.map(({ itemOffered: p }) => {
+    const by = p.provider ? ` (provided by ${p.provider.name}, built by Autosapien)` : '';
+    return `- [${p.name}](${p.url})${by}: ${p.description}`;
+  });
+  const pages = ROUTES.map((r) => `- [${r.title}](${canonicalFor(r.path)}): ${r.description}`);
+  const txt = [
+    `# ${ORG_JSONLD.legalName}`,
+    '',
+    `> ${ORG_JSONLD.description}`,
+    '',
+    `${ORG_JSONLD.legalName} is a company based in Lahore, Pakistan, serving the United States. Website: ${ORIGIN}/. Contact: ${ORG_JSONLD.email}. LinkedIn: ${ORG_JSONLD.sameAs[0]}`,
+    '',
+    '## Products',
+    '',
+    ...products,
+    '',
+    '## Pages',
+    '',
+    ...pages,
+    '',
+  ].join('\n');
+  fs.writeFileSync(path.join(distDir, 'llms.txt'), txt);
+}
+
+function writeIndexNowKey() {
+  fs.writeFileSync(path.join(distDir, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
+}
+
 const template = fs.readFileSync(source, 'utf8');
 
 // SPA fallback for genuinely unknown URLs. GitHub Pages serves this with an
@@ -506,7 +560,9 @@ ROUTES.forEach((route) => writeRoute(template, route));
 LEGACY_REDIRECTS.forEach(writeRedirect);
 writeSitemap();
 writeRobots();
+writeLlms();
+writeIndexNowKey();
 
 console.log(
-  `postbuild: wrote ${ROUTES.length} prerendered routes, ${LEGACY_REDIRECTS.length} legacy redirects, sitemap.xml, robots.txt`
+  `postbuild: wrote ${ROUTES.length} prerendered routes, ${LEGACY_REDIRECTS.length} legacy redirects, sitemap.xml, robots.txt, llms.txt, IndexNow key`
 );
