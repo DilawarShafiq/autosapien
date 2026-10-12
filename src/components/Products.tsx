@@ -47,7 +47,7 @@ const products: Product[] = [
   {
     id: 'xehr',
     page: '/projects/healthcare-it',
-    name: 'xEHR.io',
+    name: 'XEHR',
     domain: 'xehr.io',
     client: 'XEHR LLC',
     url: 'https://xehr.io',
@@ -204,7 +204,7 @@ export function Products() {
             <p className="text-ink-400 font-body text-base sm:text-lg leading-relaxed">
               Five products, five markets—each a complete platform engineered by Autosapien and
               operating today for real customers across healthcare, compliance, global trading, and
-              generative media. xEHR.io, RCM Employee and BetterCompliant were built for our client
+              generative media. XEHR, RCM Employee and BetterCompliant were built for our client
               XEHR LLC, on order.
             </p>
           </div>

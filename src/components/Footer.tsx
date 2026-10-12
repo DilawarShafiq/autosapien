@@ -13,7 +13,7 @@ const footerLinks = {
   // domain. Every page carries this footer, so these are the strongest internal
   // links the site has. Each page links out to the product's own site.
   products: [
-    { name: 'xEHR.io', href: '/projects/healthcare-it', isRoute: true },
+    { name: 'XEHR', href: '/projects/healthcare-it', isRoute: true },
     { name: 'RCM Employee', href: '/projects/agentic-ai', isRoute: true },
     { name: 'BetterCompliant', href: '/projects/bettercompliant', isRoute: true },
     { name: 'Thales', href: '/projects/thales', isRoute: true },

@@ -11,9 +11,9 @@ const capabilities = [
     features: ['Bipedal locomotion on any terrain', 'Human-like hand dexterity', 'Natural language conversation', 'Emotional expression & recognition'],
   },
   {
-    id: 'healthcare', icon: Heart, title: 'Healthcare AI', subtitle: 'xEHR.io Platform', status: 'active', code: 'CAP-002',
+    id: 'healthcare', icon: Heart, title: 'Healthcare AI', subtitle: 'XEHR Platform', status: 'active', code: 'CAP-002',
     href: '/projects/healthcare-it',
-    description: 'xEHR.io is the enterprise healthcare platform we built for XEHR LLC, combining EHR, practice management, and revenue cycle automation. Powered by AI agents that work 24/7, we\'re eliminating the administrative burden crushing USA healthcare.',
+    description: 'XEHR is the enterprise healthcare platform we built for XEHR LLC, combining EHR, practice management, and revenue cycle automation. Powered by AI agents that work 24/7, we\'re eliminating the administrative burden crushing USA healthcare.',
     features: ['AI clinical documentation', 'Autonomous RCM agents', 'FHIR R4 interoperability', 'HIPAA & SOC 2 ready'],
   },
   {

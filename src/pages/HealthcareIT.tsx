@@ -101,9 +101,9 @@ export function HealthcareIT() {
       <PageHero
         icon={Heart}
         category="Healthcare AI"
-        title="xEHR.io Platform"
+        title="XEHR Platform"
         subtitle="The intelligent healthcare platform transforming USA medicine"
-        description="xEHR.io combines a FHIR R4-native EHR, comprehensive practice management, and autonomous revenue cycle automation into a single platform. Powered by AI agents that work 24/7, we're eliminating the administrative burden crushing USA healthcare—so providers can focus on what matters: patients. Built by Autosapien for XEHR LLC."
+        description="XEHR combines a FHIR R4-native EHR, comprehensive practice management, and autonomous revenue cycle automation into a single platform. Powered by AI agents that work 24/7, we're eliminating the administrative burden crushing USA healthcare—so providers can focus on what matters: patients. Built by Autosapien for XEHR LLC."
         gradient="from-rose-500 to-pink-500"
         status="active"
         code="PROD-01"
@@ -346,11 +346,11 @@ export function HealthcareIT() {
                 Ready to transform your practice?
               </h2>
               <p className="text-lg text-ink-400 mb-8 max-w-2xl mx-auto">
-                See how xEHR.io can reduce administrative burden, accelerate collections, and let your team focus on patients.
+                See how XEHR can reduce administrative burden, accelerate collections, and let your team focus on patients.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="mailto:info@autosapien.com?subject=xEHR.io%20demo"
+                  href="mailto:info@autosapien.com?subject=XEHR%20demo"
                   className="btn-primary rounded-lg"
                 >
                   Schedule Demo
@@ -361,7 +361,7 @@ export function HealthcareIT() {
                   rel="noopener noreferrer"
                   className="btn-secondary rounded-lg"
                 >
-                  Visit xEHR.io
+                  Visit xehr.io
                 </a>
               </div>
             </div>

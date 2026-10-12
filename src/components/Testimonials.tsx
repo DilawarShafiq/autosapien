@@ -10,7 +10,7 @@ const placeholderSlots = [
     icon: Stethoscope,
     type: 'Practice Administrator',
     location: 'USA Healthcare Practice',
-    product: 'xEHR.io',
+    product: 'XEHR',
     expected: 'Q1 2026',
   },
   {

@@ -45,13 +45,13 @@ const ROUTES = [
   },
   {
     path: '/projects/healthcare-it',
-    title: `xEHR.io — AI-Native EHR & Medical Billing Automation | ${BRAND}`,
+    title: `XEHR — AI-Native EHR & Medical Billing Automation | ${BRAND}`,
     description:
-      'xEHR.io combines a FHIR R4-native EHR, practice management, and revenue cycle automation for US healthcare, powered by agentic AI working 24/7.',
+      'XEHR combines a FHIR R4-native EHR, practice management, and revenue cycle automation for US healthcare, powered by agentic AI working 24/7.',
     priority: '0.9',
     product: {
       type: 'SoftwareApplication',
-      name: 'xEHR.io',
+      name: 'XEHR',
       category: 'HealthApplication',
       owner: 'XEHR LLC',
       sameAs: PRODUCT_SITES.xehr,
@@ -257,7 +257,7 @@ const KNOWS_ABOUT = [
   'Generative video and AI film production',
 ];
 
-// Client who owns and operates xEHR.io, RCM Employee and BetterCompliant.
+// Client who owns and operates XEHR, RCM Employee and BetterCompliant.
 const XEHR_LLC = { '@type': 'Organization', name: 'XEHR LLC' };
 
 // Organization schema — gives Google explicit brand/entity data for the site,
@@ -291,7 +291,7 @@ const ORG_JSONLD = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'SoftwareApplication',
-          name: 'xEHR.io',
+          name: 'XEHR',
           provider: XEHR_LLC,
           applicationCategory: 'HealthApplication',
           url: PRODUCT_SITES.xehr ?? `${ORIGIN}/projects/healthcare-it/`,

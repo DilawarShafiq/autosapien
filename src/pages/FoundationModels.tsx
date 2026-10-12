@@ -73,7 +73,7 @@ const applications = [
   },
   {
     name: 'Healthcare AI',
-    description: 'Powering xEHR.io intelligence',
+    description: 'Powering XEHR intelligence',
     icon: '🏥',
     models: ['Clinical NLP', 'Medical Coding', 'Documentation'],
   },

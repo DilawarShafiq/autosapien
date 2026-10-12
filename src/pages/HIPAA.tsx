@@ -33,7 +33,7 @@ export function HIPAA() {
               </div>
             </div>
             <p className="text-ink-500 font-body text-lg max-w-2xl leading-relaxed">
-              The healthcare platforms Autosapien builds — including xEHR.io and RCM Employee, developed for XEHR LLC — are built from the ground up for HIPAA compliance. Protecting patient data is not an afterthought; it's our foundation.
+              The healthcare platforms Autosapien builds — including XEHR and RCM Employee, developed for XEHR LLC — are built from the ground up for HIPAA compliance. Protecting patient data is not an afterthought; it's our foundation.
             </p>
           </motion.div>
         </div>
@@ -48,7 +48,7 @@ export function HIPAA() {
                 Autosapien builds the safeguards below into the healthcare platforms we develop, so the clinical data, revenue cycle information, and patient records they process stay under strict HIPAA-compliant controls.
               </p>
               <p className="text-ink-600 font-body leading-relaxed">
-                xEHR.io and RCM Employee are XEHR LLC products. XEHR LLC handles all Protected Health Information (PHI) in them, and practices that use them sign their Business Associate Agreements (BAAs) with XEHR LLC. For other companies that engage Autosapien to build their products, we sign the BAA directly.
+                XEHR and RCM Employee are XEHR LLC products. XEHR LLC handles all Protected Health Information (PHI) in them, and practices that use them sign their Business Associate Agreements (BAAs) with XEHR LLC. For other companies that engage Autosapien to build their products, we sign the BAA directly.
               </p>
             </div>
 
@@ -103,7 +103,7 @@ export function HIPAA() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">Breach Notification</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                Breach notification for xEHR.io and RCM Employee is handled by XEHR LLC, which holds the patient data. The platforms we build include the logging and audit trails that incident response depends on.
+                Breach notification for XEHR and RCM Employee is handled by XEHR LLC, which holds the patient data. The platforms we build include the logging and audit trails that incident response depends on.
               </p>
             </div>
 

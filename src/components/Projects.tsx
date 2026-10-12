@@ -12,10 +12,10 @@ const projects = [
   },
   {
     id: 'healthcare-it', slug: '/projects/healthcare-it',
-    title: 'xEHR.io Platform', category: 'Healthcare AI',
+    title: 'XEHR Platform', category: 'Healthcare AI',
     description: 'The intelligent healthcare platform transforming how the USA delivers care. AI agents that work 24/7 to eliminate administrative burden.',
     icon: Heart, features: ['AI Clinical Documentation', 'Autonomous RCM', 'FHIR R4 Native', '98% Clean Claims'],
-    metrics: { value: 'Live', label: 'xEHR.io' }, status: 'active', code: 'PRJ-002',
+    metrics: { value: 'Live', label: 'XEHR' }, status: 'active', code: 'PRJ-002',
   },
   {
     id: 'film-studio', slug: '/projects/film-studio',

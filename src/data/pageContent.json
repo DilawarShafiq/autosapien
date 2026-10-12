@@ -62,7 +62,7 @@
         "highlight": "this cycle end to end",
         "intro": [
           "RCM Employee, which we built for XEHR LLC, is an autonomous AI FTE for the revenue cycle. It is not a tool a biller operates; it is assigned the work itself — eligibility and benefits, coding and claim scrubbing, denial appeals and payment posting — and works it continuously, in plain English, with a full audit trail behind every action.",
-          "It runs alongside xEHR.io, the AI-native EHR and practice management platform we built for XEHR LLC, or against the system a practice already uses. Where an existing EHR lacks payer connectivity, we add production-grade X12 EDI to it directly, including 837 claim submission, 270 and 271 real-time eligibility, and remittance handling, so the cycle described above can actually run."
+          "It runs alongside XEHR, the AI-native EHR and practice management platform we built for XEHR LLC, or against the system a practice already uses. Where an existing EHR lacks payer connectivity, we add production-grade X12 EDI to it directly, including 837 claim submission, 270 and 271 real-time eligibility, and remittance handling, so the cycle described above can actually run."
         ],
         "points": []
       }
@@ -147,7 +147,7 @@
         "highlight": "RCM Employee",
         "intro": [
           "We do not sell coding as an isolated product. It is one of the responsibilities carried by RCM Employee, the autonomous AI FTE for US healthcare providers that we built for XEHR LLC, alongside eligibility and benefits verification, claim scrubbing, denial appeals and payment posting.",
-          "That structure matters, because a code proposed in isolation is a guess. A code proposed by a system that has also seen the eligibility response, the payer's edit history and the denial that came back on a similar claim last month is a decision made with context. Where a practice runs xEHR.io, the AI-native EHR we built for XEHR LLC, that context extends to the clinical documentation itself."
+          "That structure matters, because a code proposed in isolation is a guess. A code proposed by a system that has also seen the eligibility response, the payer's edit history and the denial that came back on a similar claim last month is a decision made with context. Where a practice runs XEHR, the AI-native EHR we built for XEHR LLC, that context extends to the clinical documentation itself."
         ],
         "points": []
       }
@@ -229,9 +229,9 @@
       {
         "label": "What We Built",
         "heading": "Scheduling and intake",
-        "highlight": "inside xEHR.io",
+        "highlight": "inside XEHR",
         "intro": [
-          "Scheduling, eligibility and the patient portal ship as part of xEHR.io, the AI-native EHR and practice management platform we built for XEHR LLC. Because they share a single data model with the clinical record, an appointment that has been booked, verified and registered arrives as a chart ready for the encounter rather than as three systems waiting to be reconciled.",
+          "Scheduling, eligibility and the patient portal ship as part of XEHR, the AI-native EHR and practice management platform we built for XEHR LLC. Because they share a single data model with the clinical record, an appointment that has been booked, verified and registered arrives as a chart ready for the encounter rather than as three systems waiting to be reconciled.",
           "For practices staying on their current EHR, we deliver the same workflows as an automation layer on top of it: scheduling triage, insurance eligibility and benefits verification, inbound fax and document classification, and patient outreach by SMS, email and voice."
         ],
         "points": []
@@ -357,7 +357,7 @@
         "highlight": "agents, not just clinicians",
         "intro": [
           "Most electronic health records were designed as digital filing cabinets and later had automation bolted on. The consequence is familiar to anyone who has integrated with one: data locked in proprietary structures, interfaces built for human clicking rather than programmatic access, and AI features that sit beside the workflow instead of inside it.",
-          "xEHR.io starts from the opposite premise. If autonomous agents are going to perform administrative work, the record they operate on must be legible to them — standards-native, API-first, and structured so that an agent can read a chart, act on it, and write back an auditable result without screen-scraping anything."
+          "XEHR starts from the opposite premise. If autonomous agents are going to perform administrative work, the record they operate on must be legible to them — standards-native, API-first, and structured so that an agent can read a chart, act on it, and write back an auditable result without screen-scraping anything."
         ],
         "points": [
           {
@@ -398,10 +398,10 @@
       },
       {
         "label": "What We Built",
-        "heading": "xEHR.io is",
+        "heading": "XEHR is",
         "highlight": "live today",
         "intro": [
-          "xEHR.io is in production. It combines AI clinical documentation, autonomous revenue cycle agents, FHIR R4 and HL7 native interoperability, and HIPAA and SOC 2 readiness in a single platform built for US practices, and it is the system RCM Employee works inside when a practice runs both.",
+          "XEHR is in production. It combines AI clinical documentation, autonomous revenue cycle agents, FHIR R4 and HL7 native interoperability, and HIPAA and SOC 2 readiness in a single platform built for US practices, and it is the system RCM Employee works inside when a practice runs both.",
           "For practices that have outgrown their current software, we also build EHR and practice management systems from the ground up — specialty-specific charting and templates, lab, pharmacy and clearinghouse integrations, role-based access with a full HIPAA audit trail, and migration from Athena, eCW, Kareo, NextGen and Practice Fusion. For practices keeping their existing EHR, we add production-grade X12 EDI so claims, eligibility and remittances flow without manual workarounds."
         ],
         "points": []
@@ -417,7 +417,7 @@
         "a": "FHIR R4 is the standard US healthcare data exchange has converged on. A record that stores data as FHIR resources natively can exchange it without a translation layer, which removes both the cost of custom interfaces and the data loss that translation between proprietary models tends to introduce."
       },
       {
-        "q": "Does xEHR.io replace our practice management system?",
+        "q": "Does XEHR replace our practice management system?",
         "a": "It combines the clinical record and practice management in a single system with one data model, so scheduling, registration, eligibility and billing operate on the same underlying record. Practices running separate systems today can evaluate it as a consolidation rather than as an additional integration."
       },
       {

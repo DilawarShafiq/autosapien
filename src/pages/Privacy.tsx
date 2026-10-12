@@ -37,7 +37,7 @@ export function Privacy() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">1. Introduction</h2>
               <p className="text-ink-600 font-body leading-relaxed mb-4">
-                Autosapien (Pvt) Ltd ("Autosapien," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (autosapien.com) and use our products and services. xEHR.io, RCM Employee, and BetterCompliant were developed by Autosapien for XEHR LLC, on order from XEHR LLC.
+                Autosapien (Pvt) Ltd ("Autosapien," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (autosapien.com) and use our products and services. XEHR, RCM Employee, and BetterCompliant were developed by Autosapien for XEHR LLC, on order from XEHR LLC.
               </p>
               <p className="text-ink-600 font-body leading-relaxed">
                 We build AI and robotics technologies including healthcare platforms that handle sensitive data. We take our responsibility to protect this data extremely seriously, applying industry-leading security standards across all operations.
@@ -59,7 +59,7 @@ export function Privacy() {
 
               <h3 className="font-display font-semibold text-lg text-ink-800 mb-3">Protected Health Information (PHI)</h3>
               <p className="text-ink-600 font-body leading-relaxed">
-                PHI in xEHR.io and RCM Employee is handled by XEHR LLC, which owns those products, under Business Associate Agreements (BAAs) with the practices that use them. Autosapien builds the products to HIPAA standards, and PHI is never used for marketing, advertising, or any purpose beyond providing healthcare services.
+                PHI in XEHR and RCM Employee is handled by XEHR LLC, which owns those products, under Business Associate Agreements (BAAs) with the practices that use them. Autosapien builds the products to HIPAA standards, and PHI is never used for marketing, advertising, or any purpose beyond providing healthcare services.
               </p>
             </div>
 

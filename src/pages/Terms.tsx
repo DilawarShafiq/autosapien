@@ -37,7 +37,7 @@ export function Terms() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">1. Acceptance of Terms</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                By accessing or using any services provided by Autosapien (Pvt) Ltd ("Autosapien"), including our website (autosapien.com), software platforms, and APIs, you agree to be bound by these Terms of Service. If you do not agree, do not use our services. xEHR.io, RCM Employee, and BetterCompliant (xehr.io, rcmemployee.com, bettercompliant.com) were developed by Autosapien for XEHR LLC, on order from XEHR LLC.
+                By accessing or using any services provided by Autosapien (Pvt) Ltd ("Autosapien"), including our website (autosapien.com), software platforms, and APIs, you agree to be bound by these Terms of Service. If you do not agree, do not use our services. XEHR, RCM Employee, and BetterCompliant (xehr.io, rcmemployee.com, bettercompliant.com) were developed by Autosapien for XEHR LLC, on order from XEHR LLC.
               </p>
             </div>
 
@@ -46,7 +46,7 @@ export function Terms() {
               <p className="text-ink-600 font-body leading-relaxed mb-4">Autosapien provides:</p>
               <ul className="space-y-2">
                 {[
-                  'Development of AI-powered healthcare platforms for clients, including xEHR.io, RCM Employee, and BetterCompliant for XEHR LLC',
+                  'Development of AI-powered healthcare platforms for clients, including XEHR, RCM Employee, and BetterCompliant for XEHR LLC',
                   'Agentic AI employees and workflow automation',
                   'Robotics research and development (humanoid, industrial, and home robotics)',
                   'AI film production and foundation model research',
@@ -92,14 +92,14 @@ export function Terms() {
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">5. Intellectual Property</h2>
               <p className="text-ink-600 font-body leading-relaxed">
-                All content, software, algorithms, models, designs, and technology comprising our services are owned by Autosapien or our licensors and are protected by intellectual property laws. Our AI models, robotics designs, and healthcare platform architecture are proprietary. You retain ownership of data you input into our platforms, subject to the licenses necessary for us to provide the services. Rights in xEHR.io, RCM Employee, and BetterCompliant, which Autosapien developed for XEHR LLC, are governed by Autosapien's agreement with XEHR LLC.
+                All content, software, algorithms, models, designs, and technology comprising our services are owned by Autosapien or our licensors and are protected by intellectual property laws. Our AI models, robotics designs, and healthcare platform architecture are proprietary. You retain ownership of data you input into our platforms, subject to the licenses necessary for us to provide the services. Rights in XEHR, RCM Employee, and BetterCompliant, which Autosapien developed for XEHR LLC, are governed by Autosapien's agreement with XEHR LLC.
               </p>
             </div>
 
             <div>
               <h2 className="font-display font-bold text-xl text-ink-900 mb-4">6. Healthcare-Specific Terms</h2>
               <p className="text-ink-600 font-body leading-relaxed mb-4">
-                For users of xEHR.io and RCM Employee:
+                For users of XEHR and RCM Employee:
               </p>
               <ul className="space-y-2">
                 {[
