@@ -36,9 +36,9 @@ const PRODUCT_SITES = {
 const ROUTES = [
   {
     path: '/',
-    // The legal name and city tell search engines this is a company, not the
-    // Robosapien toy the bare word "Autosapien" gets matched to.
-    title: 'Autosapien (Pvt) Ltd | AI & Robotics, Lahore',
+    // The legal name stays in the JSON-LD (legalName/alternateName); the tab
+    // title is kept short, the way the owner wants it shown in the browser.
+    title: 'Autosapien | AI & Robotics',
     description:
       'Autosapien builds AI and robotics for the real world — humanoids, autonomous systems, and agentic AI that automates USA healthcare operations.',
     priority: '1.0',
