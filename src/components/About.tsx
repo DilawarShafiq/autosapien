@@ -152,10 +152,10 @@ export function About() {
               initial={{ opacity: 0, y: 25 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5 + i * 0.06, duration: 0.5 }}
-              className={`group card-clean p-6 rounded-xl relative overflow-hidden transition-all ${
+              className={`group p-6 rounded-xl relative overflow-hidden transition-all ${
                 isDev
-                  ? 'opacity-60 saturate-[.2]'
-                  : 'hover-lift hover-glow cursor-pointer hover:border-sky-200/50'
+                  ? 'bg-surface-100 border border-surface-200'
+                  : 'card-clean hover-lift hover-glow cursor-pointer hover:border-sky-200/50'
               }`}
             >
               {/* Top gradient accent line on hover — live cards only */}
@@ -164,8 +164,8 @@ export function About() {
               )}
 
               <div className="flex items-start justify-between mb-4">
-                <div className={`w-10 h-10 rounded-lg bg-surface-100 flex items-center justify-center transition-all ${!isDev ? 'group-hover:bg-sky-50 group-hover:scale-105' : ''}`}>
-                  <pillar.icon className={`w-5 h-5 transition-colors ${isDev ? 'text-ink-300' : 'text-ink-400 group-hover:text-sky-600'}`} />
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${isDev ? 'bg-white' : 'bg-surface-100 group-hover:bg-sky-50 group-hover:scale-105'}`}>
+                  <pillar.icon className={`w-5 h-5 transition-colors ${isDev ? 'text-ink-400' : 'text-ink-400 group-hover:text-sky-600'}`} />
                 </div>
                 {isDev ? (
                   <span className="badge-pill text-[10px] py-1 px-2 rounded-full bg-surface-100 text-ink-400 border border-surface-200">
