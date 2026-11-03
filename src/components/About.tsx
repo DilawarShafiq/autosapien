@@ -2,28 +2,9 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Bot, Brain, Heart, Film, Factory, Home, ArrowUpRight } from 'lucide-react'
 
+// Live products lead; the robotics verticals are future work and sit below,
+// greyed out, with a roadmap note instead of a "Learn More" affordance.
 const pillars = [
-  {
-    icon: Bot,
-    title: 'Humanoid Robotics',
-    description: 'Developing the Autosapien G1—our flagship humanoid robot designed to live alongside humans.',
-    status: 'developing',
-    code: 'HMD-01',
-  },
-  {
-    icon: Factory,
-    title: 'Industrial Automation',
-    description: 'Intelligent factory robots that learn, adapt, and optimize manufacturing processes autonomously.',
-    status: 'developing',
-    code: 'IND-02',
-  },
-  {
-    icon: Home,
-    title: 'Home Robotics',
-    description: 'Companion robots that assist with daily tasks, eldercare, and household management.',
-    status: 'developing',
-    code: 'HME-03',
-  },
   {
     icon: Heart,
     title: 'Healthcare AI',
@@ -44,6 +25,27 @@ const pillars = [
     description: 'AI FTEs and custom agents that work 24/7—including RCM Employee for USA healthcare providers, workflow automation, and RCM automation for administrative tasks.',
     status: 'active',
     code: 'AGT-06',
+  },
+  {
+    icon: Bot,
+    title: 'Humanoid Robotics',
+    description: 'Developing the Autosapien G1—our flagship humanoid robot designed to live alongside humans.',
+    status: 'developing',
+    code: 'HMD-01',
+  },
+  {
+    icon: Factory,
+    title: 'Industrial Automation',
+    description: 'Intelligent factory robots that learn, adapt, and optimize manufacturing processes autonomously.',
+    status: 'developing',
+    code: 'IND-02',
+  },
+  {
+    icon: Home,
+    title: 'Home Robotics',
+    description: 'Companion robots that assist with daily tasks, eldercare, and household management.',
+    status: 'developing',
+    code: 'HME-03',
   },
 ]
 
@@ -140,30 +142,37 @@ export function About() {
           <p className="text-ink-400 font-body">The domains where we're building the future</p>
         </motion.div>
 
-        {/* Pillars grid */}
+        {/* Pillars grid — live products first, future robotics greyed below */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {pillars.map((pillar, i) => (
+          {pillars.map((pillar, i) => {
+            const isDev = pillar.status === 'developing'
+            return (
             <motion.div
               key={pillar.title}
               initial={{ opacity: 0, y: 25 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5 + i * 0.06, duration: 0.5 }}
-              className="group card-clean p-6 rounded-xl hover-lift hover-glow cursor-pointer relative overflow-hidden hover:border-sky-200/50 transition-colors"
+              className={`group card-clean p-6 rounded-xl relative overflow-hidden transition-all ${
+                isDev
+                  ? 'opacity-60 saturate-[.2]'
+                  : 'hover-lift hover-glow cursor-pointer hover:border-sky-200/50'
+              }`}
             >
-              {/* Top gradient accent line on hover */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              {/* Top gradient accent line on hover — live cards only */}
+              {!isDev && (
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              )}
 
               <div className="flex items-start justify-between mb-4">
-                <div className="w-10 h-10 rounded-lg bg-surface-100 flex items-center justify-center group-hover:bg-sky-50 group-hover:scale-105 transition-all">
-                  <pillar.icon className="w-5 h-5 text-ink-400 group-hover:text-sky-600 transition-colors" />
+                <div className={`w-10 h-10 rounded-lg bg-surface-100 flex items-center justify-center transition-all ${!isDev ? 'group-hover:bg-sky-50 group-hover:scale-105' : ''}`}>
+                  <pillar.icon className={`w-5 h-5 transition-colors ${isDev ? 'text-ink-300' : 'text-ink-400 group-hover:text-sky-600'}`} />
                 </div>
-                {pillar.status === 'developing' && (
-                  <span className="badge-pill badge-sky text-[10px] py-1 px-2 rounded-full">
+                {isDev ? (
+                  <span className="badge-pill text-[10px] py-1 px-2 rounded-full bg-surface-100 text-ink-400 border border-surface-200">
                     <span className="status-dot developing" />
                     Dev
                   </span>
-                )}
-                {pillar.status === 'active' && (
+                ) : (
                   <span className="badge-pill badge-live text-[10px] py-1 px-2 rounded-full">
                     <span className="status-dot active" />
                     Live
@@ -172,19 +181,26 @@ export function About() {
               </div>
 
               <span className="label-mono text-[10px] text-ink-500">{pillar.code}</span>
-              <h3 className="font-display font-semibold text-ink-900 mb-2 group-hover:text-sky-700 transition-colors">
+              <h3 className={`font-display font-semibold text-ink-900 mb-2 transition-colors ${!isDev ? 'group-hover:text-sky-700' : ''}`}>
                 {pillar.title}
               </h3>
               <p className="text-sm text-ink-400 font-body leading-relaxed">
                 {pillar.description}
               </p>
 
-              <div className="mt-5 pt-4 border-t border-surface-200 group-hover:border-sky-200/50 transition-colors flex items-center justify-between">
-                <span className="label-mono text-[10px]">Learn More</span>
-                <ArrowUpRight className="w-4 h-4 text-ink-500 group-hover:text-sky-600 transition-colors" />
+              <div className="mt-5 pt-4 border-t border-surface-200 flex items-center justify-between">
+                {isDev ? (
+                  <span className="label-mono text-[10px] text-ink-400">On the long-term roadmap</span>
+                ) : (
+                  <>
+                    <span className="label-mono text-[10px]">Learn More</span>
+                    <ArrowUpRight className="w-4 h-4 text-ink-500 group-hover:text-sky-600 transition-colors" />
+                  </>
+                )}
               </div>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
